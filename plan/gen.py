@@ -6,7 +6,7 @@ def add(phase, domaine, lot, tache, r=C, a=C, c=N, i=T, prio="P2"):
 
 # ---------------- Phase 0 : fondations ----------------
 P0 = "0. Fondations"
-for t in ["Créer le dépôt GitHub privé vide Yard24/cotonou-city", "Installer Godot 4 sur ton PC", "Noter les caractéristiques de ton PC (processeur, mémoire, carte graphique)",
+for t in ["Créer le dépôt GitHub privé vide Yard24/cotonou-city", "Tester le jeu sur plusieurs PC et noter les images par seconde",
           "Ouvrir un compte Meshy et choisir un abonnement", "Ouvrir un compte ElevenLabs et choisir un abonnement", "Ouvrir un compte de génération musicale et choisir un abonnement",
           "Créer les clés API Meshy et ElevenLabs", "Déposer les clés API dans le coffre Supabase", "Fixer le budget mensuel du projet",
           "Choisir le nom définitif du jeu", "Valider le ton du jeu (humour, réalisme, niveau de violence)", "Valider le héros (nom, origine, caractère)"]:
@@ -33,7 +33,7 @@ SYS = {
  "Police et niveau de recherche": "niveau de recherche;patrouilles;poursuite à pied;poursuite en voiture;barrages;arrestation;amende et sortie du commissariat;fin de recherche",
  "Combat": "coups de poing;esquive;armes de mêlée;visée;armes à feu;mise à couvert;santé et protection;réaction des passants",
  "Moteur de missions": "déclencheurs;objectifs;points de contrôle;échec et reprise;récompenses;cinématiques;missions chronométrées;missions de filature;missions de livraison;journal de missions",
- "Dialogues": "sous-titres;choix de réponses;lecture des voix;mouvement des lèvres simplifié;langues (français, fon, mina);historique",
+ "Dialogues": "sous-titres;choix de réponses;lecture des voix;mouvement des lèvres simplifié;expressions fon élémentaires;historique",
  "Économie": "argent en FCFA;boutiques;prix des biens;revenus des activités;achat de propriétés;paiement mobile fictif;marchandage",
  "Téléphone du joueur": "contacts;appels entrants;messages;carte;appareil photo;réseau social fictif",
  "Carte et GPS": "mini-carte;grande carte;itinéraire;icônes de lieux;découverte progressive;repères personnels",
@@ -53,7 +53,7 @@ SYS = {
  "Caméra et cinématiques": "caméra libre;plans de cinématique;mode photo",
  "Affichage en jeu": "santé;argent;arme;notifications;indicateur de recherche",
  "Menus": "menu principal;pause;options graphiques;options audio;touches;manette",
- "Performance": "niveaux de détail;distance d'affichage;chargement progressif du monde;masquage des objets cachés;profil PC moyen;mesure des images par seconde",
+ "Performance": "niveaux de détail;distance d'affichage;chargement progressif du monde;masquage des objets cachés;niveaux graphiques bas, moyen, élevé, ultra;ombres et éclairage de qualité;reflets et eau;mesure des images par seconde",
  "Langues": "français;anglais;structure de traduction",
  "Tutoriel": "déplacement;conduite;première mission;téléphone",
  "Statistiques et succès": "statistiques du joueur;succès;pourcentage de progression",
@@ -79,7 +79,7 @@ QP1 = {"Ganhi", "Dantokpa", "Zone des ambassades", "Missèbo"}
 QSTEPS = ["relever le plan des rues à partir de cartes publiques", "tracer les routes et les carrefours", "poser les trottoirs et les caniveaux", "placer les îlots de bâtiments",
           "poser les bâtiments du quartier", "ajouter commerces et enseignes fictives", "ajouter végétation et mobilier de rue", "poser l'éclairage public",
           "placer les stationnements et les véhicules garés", "tracer les trajets de circulation", "placer les piétons et leurs routines", "poser les collisions",
-          "mesurer la fluidité sur un PC moyen"]
+          "mesurer la fluidité"]
 for q in QUART:
     pr = "P1" if q in QP1 else "P2"
     for st in QSTEPS:
@@ -109,7 +109,7 @@ for ville, ls in LIEUX.items():
 P3 = "3. Monde — autres villes"
 VSTEPS = ["tracer le plan simplifié de la ville", "tracer la route d'accès depuis Cotonou", "poser les routes principales", "poser les bâtiments", "ajouter commerces et enseignes fictives",
           "ajouter végétation et mobilier", "poser l'éclairage", "tracer la circulation", "placer les piétons", "poser les collisions", "créer le point d'arrivée du joueur",
-          "créer les lieux de mission", "régler le chargement de la ville", "mesurer la fluidité sur un PC moyen"]
+          "créer les lieux de mission", "régler le chargement de la ville", "mesurer la fluidité"]
 for v in ["Abomey-Calavi", "Porto-Novo", "Ouidah", "Parakou", "Sèmè-Kpodji", "Route inter-villes"]:
     for st in VSTEPS:
         add(P3, "Villes", v, f"{v} : {st}", C, C, N, T, "P3")
@@ -173,7 +173,7 @@ for t in ["Écrire le résumé général de l'histoire", "Écrire l'arc du héro
 for t in ["Valider l'histoire générale", "Valider la fin du jeu", "Relire les passages sensibles (politique, religion)"]:
     add(P5, "Écriture générale", "Trame", t, T, T, C, N, "P1")
 MST = [("écrire le synopsis", C, T, T, N), ("définir les objectifs et les conditions d'échec", C, C, N, T), ("écrire les dialogues en français", C, T, T, N),
-       ("ajouter expressions locales et répliques en fon ou mina", T, T, C, N), ("programmer le déroulement", C, C, N, T), ("placer les lieux et les personnages", C, C, N, T),
+       ("ajouter quelques expressions fon élémentaires", C, T, T, N), ("programmer le déroulement", C, C, N, T), ("placer les lieux et les personnages", C, C, N, T),
        ("monter la cinématique d'ouverture", C, C, N, T), ("produire les voix", C, T, T, N), ("intégrer les voix et les sous-titres", C, C, N, T),
        ("régler la difficulté et la récompense", C, C, T, N), ("écrire et passer le test automatique", C, C, N, T), ("jouer la mission sur ton PC", T, T, C, N),
        ("corriger d'après tes retours", C, T, T, N)]
@@ -208,8 +208,7 @@ for r_ in RADIO:
         add(P6, "Musique", r_, f"{r_} : morceau {k} — intégrer", C, C, N, T)
     add(P6, "Musique", r_, f"{r_} : écrire les interventions de l'animateur fictif", C, T, T, N)
     add(P6, "Musique", r_, f"{r_} : écouter et valider la station", T, T, C, N)
-for t in ["Trouver des comédiens pour les voix en fon et en mina", "Faire signer un accord écrit à chaque comédien", "Enregistrer les répliques en langues locales", "Valider l'accent des voix françaises générées",
-          "Contacter des artistes béninois pour des morceaux originaux", "Signer les accords de droits musicaux", "Vérifier les conditions d'usage commercial de chaque outil de génération"]:
+for t in ["Valider l'accent des voix françaises générées", "Valider la prononciation des expressions fon", "Vérifier les conditions d'usage commercial de chaque outil de génération"]:
     add(P6, "Voix et droits", "À faire par toi", t, T, T, C, N)
 for t in ["Choisir une voix par personnage principal", "Générer les voix de foule en français", "Créer la musique du menu", "Créer les thèmes de mission", "Régler le mixage général", "Régler le son selon la distance"]:
     add(P6, "Voix et droits", "Production", t, C, T, T, N)
@@ -233,7 +232,7 @@ for q in QUART:
     add(P8, "Qualité", "Contrôle du monde", f"{q} : chercher les trous, objets flottants et murs invisibles", C, C, N, T, "P3")
 for t in ["Jouer le chapitre 1 en entier et noter les problèmes", "Jouer le chapitre 2 en entier et noter les problèmes", "Jouer le chapitre 3 en entier et noter les problèmes",
           "Jouer le chapitre 4 en entier et noter les problèmes", "Jouer le chapitre 5 en entier et noter les problèmes", "Jouer le chapitre 6 en entier et noter les problèmes",
-          "Faire tester le jeu par 5 personnes de ton entourage", "Tester sur un deuxième PC moins puissant", "Décider du prix et du modèle de vente", "Créer le compte éditeur sur la boutique choisie",
+          "Faire tester le jeu par 5 personnes de ton entourage", "Tester sur un PC puissant et sur un PC modeste", "Décider du prix et du modèle de vente", "Créer le compte éditeur sur la boutique choisie",
           "Payer les frais d'inscription de la boutique", "Consulter un juriste sur les noms, lieux et musiques", "Décider de la structure juridique qui publie le jeu", "Valider la bande-annonce",
           "Annoncer le jeu sur tes réseaux", "Valider la version finale"]:
     add(P8, "Sortie", "À faire par toi", t, T, T, C, N, "P3")
@@ -245,10 +244,11 @@ for t in ["Corriger les problèmes du chapitre 1", "Corriger les problèmes du c
 
 # ---------------- sortie ----------------
 hdr = ["ID", "Phase", "Domaine", "Lot", "Tâche", "R (réalise)", "A (valide)", "C (consulté)", "I (informé)", "Priorité", "Statut"]
-out = [[f"T{n:04d}"] + r + ["à faire"] for n, r in enumerate(rows, 1)]
-with open("/home/claude/cotonou-plan/taches.csv", "w", newline="", encoding="utf-8") as f:
+DONE = ['Créer le dépôt GitHub privé vide Yard24/cotonou-city', 'Attacher le dépôt à la session et pousser le plan', 'Créer le projet Godot 4 vide (structure des dossiers)', 'Écrire le README du projet', 'Mettre en place les tests automatiques sans écran']
+out = [[f"T{n:04d}"] + r + ["fait" if r[3] in DONE else "à faire"] for n, r in enumerate(rows, 1)]
+with open("/home/claude/cotonou-city/plan/taches.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f); w.writerow(hdr); w.writerows(out)
-json.dump(out, open("/home/claude/cotonou-plan/taches.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+json.dump(out, open("/home/claude/cotonou-city/plan/taches.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
 print("TOTAL", len(out))
 print("R", collections.Counter(r[5] for r in out))
 print("A", collections.Counter(r[6] for r in out))

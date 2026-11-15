@@ -10,8 +10,8 @@ Jeu en monde ouvert 3D inspiré de Cotonou (Bénin), fait avec Godot 4.3, moteur
 - Test automatique : `godot --headless --fixed-fps 60 -- --selftest` (doit afficher `SELFTEST OK`)
 - Fabriquer le .exe : `godot --headless --export-release "Windows" build/CotonouCity.exe`
 
-## PC cible
-Intel Celeron N4020, Intel UHD 600, peu de mémoire : pas d'ombres, matières simples, distance d'affichage courte, objectif 30 images par seconde en 720p.
+## Graphismes
+Quatre niveaux, touche F4 en jeu : Bas (petits PC, sans ombres), Moyen, Élevé, Ultra. On vise la meilleure qualité possible en gardant le niveau Bas jouable.
 
 ## Règles de contenu
 Personnages, partis et entreprises fictifs. Français, avec quelques expressions fon élémentaires. Voix générées, pas de comédiens.

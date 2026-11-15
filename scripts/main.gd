@@ -1,6 +1,6 @@
 extends Node3D
 # Cotonou City — monde, circulation, missions, affichage.
-# Réglé pour un petit PC : pas d'ombres, matières simples, distance d'affichage courte.
+# Quatre niveaux graphiques (touche F4) : Bas pour les petits PC, jusqu'à Ultra.
 
 const CarScript := preload("res://scripts/car.gd")
 const PlayerScript := preload("res://scripts/player.gd")
@@ -33,6 +33,11 @@ var l_hint: Label
 var l_speed: Label
 var l_banner: Label
 var l_fps: Label
+var sun: DirectionalLight3D
+var env: Environment
+var quality := 2
+var quality_t := 0.0
+const QNAMES := ["Bas", "Moyen", "Élevé", "Ultra"]
 var selftest := false
 var frames := 0
 var st_start := Vector3.ZERO
@@ -49,7 +54,6 @@ func mat(c: Color) -> StandardMaterial3D:
 	if not mats.has(k):
 		var m := StandardMaterial3D.new()
 		m.albedo_color = c
-		m.shading_mode = BaseMaterial3D.SHADING_MODE_PER_VERTEX
 		mats[k] = m
 	return mats[k]
 
@@ -153,12 +157,13 @@ func _ready() -> void:
 	_people()
 	_hud()
 	_set_mission()
+	_apply_quality()
 	if not selftest:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 
 func _inputs() -> void:
 	var m := {"up": [KEY_W, KEY_UP], "down": [KEY_S, KEY_DOWN], "left": [KEY_A, KEY_LEFT], "right": [KEY_D, KEY_RIGHT],
-		"brake": [KEY_SPACE], "run": [KEY_SHIFT], "enter": [KEY_E], "quit": [KEY_ESCAPE], "fps": [KEY_F3]}
+		"brake": [KEY_SPACE], "run": [KEY_SHIFT], "enter": [KEY_E], "quit": [KEY_ESCAPE], "fps": [KEY_F3], "quality": [KEY_F4]}
 	for a in m:
 		if not InputMap.has_action(a):
 			InputMap.add_action(a)
@@ -170,21 +175,23 @@ func _inputs() -> void:
 func _env() -> void:
 	var we := WorldEnvironment.new()
 	var e := Environment.new()
+	env = e
 	e.background_mode = Environment.BG_COLOR
 	e.background_color = Color("f6cf96")
 	e.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
 	e.ambient_light_color = Color("fff1d6")
-	e.ambient_light_energy = 0.75
+	e.ambient_light_energy = 0.45
 	e.fog_enabled = true
 	e.fog_light_color = Color("f6cf96")
 	e.fog_density = 0.004
 	we.environment = e
 	add_child(we)
-	var sun := DirectionalLight3D.new()
+	sun = DirectionalLight3D.new()
 	sun.rotation_degrees = Vector3(-55, -50, 0)
 	sun.light_color = Color("ffdcaa")
-	sun.light_energy = 0.9
-	sun.shadow_enabled = false
+	sun.light_energy = 0.7
+	sun.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS
+	sun.directional_shadow_max_distance = 160.0
 	add_child(sun)
 	cam = Camera3D.new()
 	cam.fov = 62
@@ -466,6 +473,17 @@ func _banner(t: String) -> void:
 	l_banner.visible = true
 	banner_t = 3.0
 
+func _apply_quality() -> void:
+	var vp := get_viewport()
+	sun.shadow_enabled = quality >= 1
+	sun.directional_shadow_max_distance = [0.0, 110.0, 180.0, 260.0][quality]
+	vp.scaling_3d_scale = [0.7, 1.0, 1.0, 1.0][quality]
+	vp.msaa_3d = [Viewport.MSAA_DISABLED, Viewport.MSAA_DISABLED, Viewport.MSAA_2X, Viewport.MSAA_4X][quality]
+	cam.far = [260.0, 420.0, 600.0, 900.0][quality]
+	env.fog_density = [0.006, 0.0035, 0.0025, 0.0018][quality]
+	env.ssao_enabled = quality >= 3
+	env.glow_enabled = false
+
 # ---------------- monter / descendre ----------------
 func _nearest_car():
 	var best = null
@@ -517,6 +535,10 @@ func _physics_process(delta: float) -> void:
 		toggle_car()
 	if Input.is_action_just_pressed("quit") and not selftest:
 		get_tree().quit()
+	if Input.is_action_just_pressed("quality"):
+		quality = (quality + 1) % 4
+		_apply_quality()
+		quality_t = 3.0
 	if Input.is_action_just_pressed("fps"):
 		l_fps.visible = not l_fps.visible
 	if cur_car:
@@ -591,7 +613,7 @@ func _camera(delta: float, instant: bool) -> void:
 
 func _hud_update(delta: float) -> void:
 	l_money.text = "%d FCFA" % money
-	l_fps.text = "%d images/s" % Engine.get_frames_per_second()
+	l_fps.text = "%d images/s · Graphismes : %s (F4)" % [Engine.get_frames_per_second(), QNAMES[quality]]
 	var t := ""
 	if help_t > 0.0:
 		help_t -= delta
