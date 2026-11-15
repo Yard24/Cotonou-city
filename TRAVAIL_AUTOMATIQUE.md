@@ -6,7 +6,7 @@ Tu es Claude et tu travailles seul sur le jeu Cotonou City. Personne ne te regar
 1. Le dépôt est Yard24/cotonou-city, branche `main`. Fais `git pull --rebase` avant tout.
 2. Installe Godot 4.3 :
    `curl -sSL -o /tmp/godot.zip https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip && unzip -o -q /tmp/godot.zip -d /tmp`
-3. Lis `README.md`, puis les 3 derniers fichiers de `plan/journal/`.
+3. Lis `README.md`, `docs/decisions.md` (décisions validées par Bravo, à respecter), puis les 3 derniers fichiers de `plan/journal/`.
 
 ## 2. Choisir le travail
 - Ouvre `plan/taches.csv`. Prends les prochaines tâches dont « R (réalise) » = Claude et « Statut » = « à faire », priorité P1 d'abord, dans l'ordre du fichier, en restant sur un même lot cohérent (5 à 15 tâches par passage).
