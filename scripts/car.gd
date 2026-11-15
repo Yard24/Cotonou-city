@@ -17,6 +17,7 @@ var wheels: Array = []
 func setup(main, color: Color, taxi: bool, is_moto: bool) -> void:
 	moto = is_moto
 	motion_mode = CharacterBody3D.MOTION_MODE_FLOATING
+	collision_mask = 3   # couche 2 : murs réservés aux véhicules (bord de plage)
 	var cs := CollisionShape3D.new()
 	var b := BoxShape3D.new()
 	b.size = Vector3(0.8, 1.4, 1.8) if moto else Vector3(2.0, 1.4, 4.4)

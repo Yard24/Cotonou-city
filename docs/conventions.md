@@ -5,7 +5,7 @@ Règle générale : noms en minuscules, sans accent ni espace, mots séparés pa
 ## Dossiers
 | Dossier | Contenu |
 |---|---|
-| `scripts/` | Code GDScript. Un fichier par rôle (`player.gd`, `car.gd`, `minimap.gd`, `selftest.gd`). |
+| `scripts/` | Code GDScript. Un fichier par rôle (`player.gd`, `car.gd`, `relief.gd`, `decor.gd`, `interaction.gd`, `hud.gd`, `minimap.gd`, `selftest.gd`). |
 | `scenes/` | Scènes Godot `.tscn` quand il y en aura (aujourd'hui tout est construit par le code). |
 | `assets/modeles/` | Modèles 3D `.glb`, rangés par famille : `vehicules/`, `personnages/`, `batiments/`, `objets/`. |
 | `assets/textures/` | Images `.png` ou `.webp`. |
