@@ -31,10 +31,10 @@ T0029,0. Fondations,Démarrage,Mise en place,Tracer la carte générale de Coton
 T0030,0. Fondations,Démarrage,Mise en place,Découper la carte en zones chargées progressivement,Claude,Claude,—,Toi,P1,à faire
 T0031,0. Fondations,Démarrage,Mise en place,Définir l'ordre de construction des quartiers,Claude,Claude,—,Toi,P1,à faire
 T0032,1. Systèmes de jeu,Joueur à pied,marche,Joueur à pied — marche : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0033,1. Systèmes de jeu,Joueur à pied,marche,Joueur à pied — marche : coder,Claude,Claude,—,Toi,P1,à faire
-T0034,1. Systèmes de jeu,Joueur à pied,marche,Joueur à pied — marche : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0033,1. Systèmes de jeu,Joueur à pied,marche,Joueur à pied — marche : coder,Claude,Claude,—,Toi,P1,fait
+T0034,1. Systèmes de jeu,Joueur à pied,marche,Joueur à pied — marche : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0035,1. Systèmes de jeu,Joueur à pied,course,Joueur à pied — course : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0036,1. Systèmes de jeu,Joueur à pied,course,Joueur à pied — course : coder,Claude,Claude,—,Toi,P1,à faire
+T0036,1. Systèmes de jeu,Joueur à pied,course,Joueur à pied — course : coder,Claude,Claude,—,Toi,P1,fait
 T0037,1. Systèmes de jeu,Joueur à pied,course,Joueur à pied — course : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0038,1. Systèmes de jeu,Joueur à pied,saut,Joueur à pied — saut : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0039,1. Systèmes de jeu,Joueur à pied,saut,Joueur à pied — saut : coder,Claude,Claude,—,Toi,P1,à faire
@@ -52,7 +52,7 @@ T0050,1. Systèmes de jeu,Joueur à pied,franchissement de muret,Joueur à pied 
 T0051,1. Systèmes de jeu,Joueur à pied,franchissement de muret,Joueur à pied — franchissement de muret : coder,Claude,Claude,—,Toi,P1,à faire
 T0052,1. Systèmes de jeu,Joueur à pied,franchissement de muret,Joueur à pied — franchissement de muret : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0053,1. Systèmes de jeu,Joueur à pied,caméra à la troisième personne,Joueur à pied — caméra à la troisième personne : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0054,1. Systèmes de jeu,Joueur à pied,caméra à la troisième personne,Joueur à pied — caméra à la troisième personne : coder,Claude,Claude,—,Toi,P1,à faire
+T0054,1. Systèmes de jeu,Joueur à pied,caméra à la troisième personne,Joueur à pied — caméra à la troisième personne : coder,Claude,Claude,—,Toi,P1,fait
 T0055,1. Systèmes de jeu,Joueur à pied,caméra à la troisième personne,Joueur à pied — caméra à la troisième personne : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0056,1. Systèmes de jeu,Joueur à pied,interaction avec les objets,Joueur à pied — interaction avec les objets : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0057,1. Systèmes de jeu,Joueur à pied,interaction avec les objets,Joueur à pied — interaction avec les objets : coder,Claude,Claude,—,Toi,P1,à faire
@@ -60,22 +60,22 @@ T0058,1. Systèmes de jeu,Joueur à pied,interaction avec les objets,Joueur à p
 T0059,1. Systèmes de jeu,Joueur à pied,Essai,Joueur à pied : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0060,1. Systèmes de jeu,Joueur à pied,Essai,Joueur à pied : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
 T0061,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0062,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : coder,Claude,Claude,—,Toi,P1,à faire
-T0063,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0062,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : coder,Claude,Claude,—,Toi,P1,fait
+T0063,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0064,1. Systèmes de jeu,Conduite voiture,direction,Conduite voiture — direction : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0065,1. Systèmes de jeu,Conduite voiture,direction,Conduite voiture — direction : coder,Claude,Claude,—,Toi,P1,à faire
+T0065,1. Systèmes de jeu,Conduite voiture,direction,Conduite voiture — direction : coder,Claude,Claude,—,Toi,P1,fait
 T0066,1. Systèmes de jeu,Conduite voiture,direction,Conduite voiture — direction : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0067,1. Systèmes de jeu,Conduite voiture,frein à main,Conduite voiture — frein à main : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0068,1. Systèmes de jeu,Conduite voiture,frein à main,Conduite voiture — frein à main : coder,Claude,Claude,—,Toi,P1,à faire
+T0068,1. Systèmes de jeu,Conduite voiture,frein à main,Conduite voiture — frein à main : coder,Claude,Claude,—,Toi,P1,fait
 T0069,1. Systèmes de jeu,Conduite voiture,frein à main,Conduite voiture — frein à main : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0070,1. Systèmes de jeu,Conduite voiture,marche arrière,Conduite voiture — marche arrière : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0071,1. Systèmes de jeu,Conduite voiture,marche arrière,Conduite voiture — marche arrière : coder,Claude,Claude,—,Toi,P1,à faire
+T0071,1. Systèmes de jeu,Conduite voiture,marche arrière,Conduite voiture — marche arrière : coder,Claude,Claude,—,Toi,P1,fait
 T0072,1. Systèmes de jeu,Conduite voiture,marche arrière,Conduite voiture — marche arrière : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0073,1. Systèmes de jeu,Conduite voiture,suspension,Conduite voiture — suspension : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0074,1. Systèmes de jeu,Conduite voiture,suspension,Conduite voiture — suspension : coder,Claude,Claude,—,Toi,P1,à faire
 T0075,1. Systèmes de jeu,Conduite voiture,suspension,Conduite voiture — suspension : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0076,1. Systèmes de jeu,Conduite voiture,collisions,Conduite voiture — collisions : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0077,1. Systèmes de jeu,Conduite voiture,collisions,Conduite voiture — collisions : coder,Claude,Claude,—,Toi,P1,à faire
+T0077,1. Systèmes de jeu,Conduite voiture,collisions,Conduite voiture — collisions : coder,Claude,Claude,—,Toi,P1,fait
 T0078,1. Systèmes de jeu,Conduite voiture,collisions,Conduite voiture — collisions : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0079,1. Systèmes de jeu,Conduite voiture,dégâts visibles,Conduite voiture — dégâts visibles : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0080,1. Systèmes de jeu,Conduite voiture,dégâts visibles,Conduite voiture — dégâts visibles : coder,Claude,Claude,—,Toi,P1,à faire
@@ -87,7 +87,7 @@ T0085,1. Systèmes de jeu,Conduite voiture,klaxon,Conduite voiture — klaxon : 
 T0086,1. Systèmes de jeu,Conduite voiture,klaxon,Conduite voiture — klaxon : coder,Claude,Claude,—,Toi,P1,à faire
 T0087,1. Systèmes de jeu,Conduite voiture,klaxon,Conduite voiture — klaxon : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0088,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0089,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : coder,Claude,Claude,—,Toi,P1,à faire
+T0089,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : coder,Claude,Claude,—,Toi,P1,fait
 T0090,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0091,1. Systèmes de jeu,Conduite voiture,Essai,Conduite voiture : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0092,1. Systèmes de jeu,Conduite voiture,Essai,Conduite voiture : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
@@ -115,19 +115,19 @@ T0113,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra m
 T0114,1. Systèmes de jeu,Conduite moto,Essai,Conduite moto : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0115,1. Systèmes de jeu,Conduite moto,Essai,Conduite moto : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
 T0116,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté conducteur,Monter et descendre des véhicules — entrée côté conducteur : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0117,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté conducteur,Monter et descendre des véhicules — entrée côté conducteur : coder,Claude,Claude,—,Toi,P1,à faire
-T0118,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté conducteur,Monter et descendre des véhicules — entrée côté conducteur : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0117,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté conducteur,Monter et descendre des véhicules — entrée côté conducteur : coder,Claude,Claude,—,Toi,P1,fait
+T0118,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté conducteur,Monter et descendre des véhicules — entrée côté conducteur : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0119,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté passager,Monter et descendre des véhicules — entrée côté passager : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0120,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté passager,Monter et descendre des véhicules — entrée côté passager : coder,Claude,Claude,—,Toi,P1,à faire
 T0121,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté passager,Monter et descendre des véhicules — entrée côté passager : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0122,1. Systèmes de jeu,Monter et descendre des véhicules,sortie,Monter et descendre des véhicules — sortie : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0123,1. Systèmes de jeu,Monter et descendre des véhicules,sortie,Monter et descendre des véhicules — sortie : coder,Claude,Claude,—,Toi,P1,à faire
-T0124,1. Systèmes de jeu,Monter et descendre des véhicules,sortie,Monter et descendre des véhicules — sortie : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0123,1. Systèmes de jeu,Monter et descendre des véhicules,sortie,Monter et descendre des véhicules — sortie : coder,Claude,Claude,—,Toi,P1,fait
+T0124,1. Systèmes de jeu,Monter et descendre des véhicules,sortie,Monter et descendre des véhicules — sortie : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0125,1. Systèmes de jeu,Monter et descendre des véhicules,saut en marche,Monter et descendre des véhicules — saut en marche : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0126,1. Systèmes de jeu,Monter et descendre des véhicules,saut en marche,Monter et descendre des véhicules — saut en marche : coder,Claude,Claude,—,Toi,P1,à faire
 T0127,1. Systèmes de jeu,Monter et descendre des véhicules,saut en marche,Monter et descendre des véhicules — saut en marche : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0128,1. Systèmes de jeu,Monter et descendre des véhicules,emprunt d'un véhicule occupé,Monter et descendre des véhicules — emprunt d'un véhicule occupé : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0129,1. Systèmes de jeu,Monter et descendre des véhicules,emprunt d'un véhicule occupé,Monter et descendre des véhicules — emprunt d'un véhicule occupé : coder,Claude,Claude,—,Toi,P1,à faire
+T0129,1. Systèmes de jeu,Monter et descendre des véhicules,emprunt d'un véhicule occupé,Monter et descendre des véhicules — emprunt d'un véhicule occupé : coder,Claude,Claude,—,Toi,P1,fait
 T0130,1. Systèmes de jeu,Monter et descendre des véhicules,emprunt d'un véhicule occupé,Monter et descendre des véhicules — emprunt d'un véhicule occupé : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0131,1. Systèmes de jeu,Monter et descendre des véhicules,verrouillage des portes,Monter et descendre des véhicules — verrouillage des portes : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0132,1. Systèmes de jeu,Monter et descendre des véhicules,verrouillage des portes,Monter et descendre des véhicules — verrouillage des portes : coder,Claude,Claude,—,Toi,P1,à faire
@@ -138,7 +138,7 @@ T0136,1. Systèmes de jeu,Monter et descendre des véhicules,animation des porte
 T0137,1. Systèmes de jeu,Monter et descendre des véhicules,Essai,Monter et descendre des véhicules : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0138,1. Systèmes de jeu,Monter et descendre des véhicules,Essai,Monter et descendre des véhicules : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
 T0139,1. Systèmes de jeu,Circulation,réseau de voies,Circulation — réseau de voies : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0140,1. Systèmes de jeu,Circulation,réseau de voies,Circulation — réseau de voies : coder,Claude,Claude,—,Toi,P1,à faire
+T0140,1. Systèmes de jeu,Circulation,réseau de voies,Circulation — réseau de voies : coder,Claude,Claude,—,Toi,P1,fait
 T0141,1. Systèmes de jeu,Circulation,réseau de voies,Circulation — réseau de voies : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0142,1. Systèmes de jeu,Circulation,feux tricolores,Circulation — feux tricolores : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0143,1. Systèmes de jeu,Circulation,feux tricolores,Circulation — feux tricolores : coder,Claude,Claude,—,Toi,P1,à faire
@@ -147,7 +147,7 @@ T0145,1. Systèmes de jeu,Circulation,priorités aux carrefours,Circulation — 
 T0146,1. Systèmes de jeu,Circulation,priorités aux carrefours,Circulation — priorités aux carrefours : coder,Claude,Claude,—,Toi,P1,à faire
 T0147,1. Systèmes de jeu,Circulation,priorités aux carrefours,Circulation — priorités aux carrefours : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0148,1. Systèmes de jeu,Circulation,ronds-points,Circulation — ronds-points : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0149,1. Systèmes de jeu,Circulation,ronds-points,Circulation — ronds-points : coder,Claude,Claude,—,Toi,P1,à faire
+T0149,1. Systèmes de jeu,Circulation,ronds-points,Circulation — ronds-points : coder,Claude,Claude,—,Toi,P1,fait
 T0150,1. Systèmes de jeu,Circulation,ronds-points,Circulation — ronds-points : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0151,1. Systèmes de jeu,Circulation,dépassements,Circulation — dépassements : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0152,1. Systèmes de jeu,Circulation,dépassements,Circulation — dépassements : coder,Claude,Claude,—,Toi,P1,à faire
@@ -213,7 +213,7 @@ T0211,1. Systèmes de jeu,Taxis et transports,travail comme taxi,Taxis et transp
 T0212,1. Systèmes de jeu,Taxis et transports,Essai,Taxis et transports : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P2,à faire
 T0213,1. Systèmes de jeu,Taxis et transports,Essai,Taxis et transports : corriger d'après tes retours,Claude,Toi,Toi,—,P2,à faire
 T0214,1. Systèmes de jeu,Piétons,déplacement sur les trottoirs,Piétons — déplacement sur les trottoirs : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0215,1. Systèmes de jeu,Piétons,déplacement sur les trottoirs,Piétons — déplacement sur les trottoirs : coder,Claude,Claude,—,Toi,P1,à faire
+T0215,1. Systèmes de jeu,Piétons,déplacement sur les trottoirs,Piétons — déplacement sur les trottoirs : coder,Claude,Claude,—,Toi,P1,fait
 T0216,1. Systèmes de jeu,Piétons,déplacement sur les trottoirs,Piétons — déplacement sur les trottoirs : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0217,1. Systèmes de jeu,Piétons,traversée de route,Piétons — traversée de route : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0218,1. Systèmes de jeu,Piétons,traversée de route,Piétons — traversée de route : coder,Claude,Claude,—,Toi,P1,à faire
@@ -291,7 +291,7 @@ T0289,1. Systèmes de jeu,Moteur de missions,déclencheurs,Moteur de missions �
 T0290,1. Systèmes de jeu,Moteur de missions,déclencheurs,Moteur de missions — déclencheurs : coder,Claude,Claude,—,Toi,P1,à faire
 T0291,1. Systèmes de jeu,Moteur de missions,déclencheurs,Moteur de missions — déclencheurs : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0292,1. Systèmes de jeu,Moteur de missions,objectifs,Moteur de missions — objectifs : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0293,1. Systèmes de jeu,Moteur de missions,objectifs,Moteur de missions — objectifs : coder,Claude,Claude,—,Toi,P1,à faire
+T0293,1. Systèmes de jeu,Moteur de missions,objectifs,Moteur de missions — objectifs : coder,Claude,Claude,—,Toi,P1,fait
 T0294,1. Systèmes de jeu,Moteur de missions,objectifs,Moteur de missions — objectifs : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0295,1. Systèmes de jeu,Moteur de missions,points de contrôle,Moteur de missions — points de contrôle : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0296,1. Systèmes de jeu,Moteur de missions,points de contrôle,Moteur de missions — points de contrôle : coder,Claude,Claude,—,Toi,P1,à faire
@@ -300,7 +300,7 @@ T0298,1. Systèmes de jeu,Moteur de missions,échec et reprise,Moteur de mission
 T0299,1. Systèmes de jeu,Moteur de missions,échec et reprise,Moteur de missions — échec et reprise : coder,Claude,Claude,—,Toi,P1,à faire
 T0300,1. Systèmes de jeu,Moteur de missions,échec et reprise,Moteur de missions — échec et reprise : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0301,1. Systèmes de jeu,Moteur de missions,récompenses,Moteur de missions — récompenses : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0302,1. Systèmes de jeu,Moteur de missions,récompenses,Moteur de missions — récompenses : coder,Claude,Claude,—,Toi,P1,à faire
+T0302,1. Systèmes de jeu,Moteur de missions,récompenses,Moteur de missions — récompenses : coder,Claude,Claude,—,Toi,P1,fait
 T0303,1. Systèmes de jeu,Moteur de missions,récompenses,Moteur de missions — récompenses : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0304,1. Systèmes de jeu,Moteur de missions,cinématiques,Moteur de missions — cinématiques : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0305,1. Systèmes de jeu,Moteur de missions,cinématiques,Moteur de missions — cinématiques : coder,Claude,Claude,—,Toi,P1,à faire
@@ -383,8 +383,8 @@ T0381,1. Systèmes de jeu,Téléphone du joueur,réseau social fictif,Téléphon
 T0382,1. Systèmes de jeu,Téléphone du joueur,Essai,Téléphone du joueur : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P2,à faire
 T0383,1. Systèmes de jeu,Téléphone du joueur,Essai,Téléphone du joueur : corriger d'après tes retours,Claude,Toi,Toi,—,P2,à faire
 T0384,1. Systèmes de jeu,Carte et GPS,mini-carte,Carte et GPS — mini-carte : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0385,1. Systèmes de jeu,Carte et GPS,mini-carte,Carte et GPS — mini-carte : coder,Claude,Claude,—,Toi,P1,à faire
-T0386,1. Systèmes de jeu,Carte et GPS,mini-carte,Carte et GPS — mini-carte : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0385,1. Systèmes de jeu,Carte et GPS,mini-carte,Carte et GPS — mini-carte : coder,Claude,Claude,—,Toi,P1,fait
+T0386,1. Systèmes de jeu,Carte et GPS,mini-carte,Carte et GPS — mini-carte : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0387,1. Systèmes de jeu,Carte et GPS,grande carte,Carte et GPS — grande carte : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0388,1. Systèmes de jeu,Carte et GPS,grande carte,Carte et GPS — grande carte : coder,Claude,Claude,—,Toi,P1,à faire
 T0389,1. Systèmes de jeu,Carte et GPS,grande carte,Carte et GPS — grande carte : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
@@ -638,7 +638,7 @@ T0636,1. Systèmes de jeu,Affichage en jeu,santé,Affichage en jeu — santé : 
 T0637,1. Systèmes de jeu,Affichage en jeu,santé,Affichage en jeu — santé : coder,Claude,Claude,—,Toi,P1,à faire
 T0638,1. Systèmes de jeu,Affichage en jeu,santé,Affichage en jeu — santé : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0639,1. Systèmes de jeu,Affichage en jeu,argent,Affichage en jeu — argent : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0640,1. Systèmes de jeu,Affichage en jeu,argent,Affichage en jeu — argent : coder,Claude,Claude,—,Toi,P1,à faire
+T0640,1. Systèmes de jeu,Affichage en jeu,argent,Affichage en jeu — argent : coder,Claude,Claude,—,Toi,P1,fait
 T0641,1. Systèmes de jeu,Affichage en jeu,argent,Affichage en jeu — argent : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0642,1. Systèmes de jeu,Affichage en jeu,arme,Affichage en jeu — arme : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0643,1. Systèmes de jeu,Affichage en jeu,arme,Affichage en jeu — arme : coder,Claude,Claude,—,Toi,P1,à faire
@@ -652,11 +652,11 @@ T0650,1. Systèmes de jeu,Affichage en jeu,indicateur de recherche,Affichage en 
 T0651,1. Systèmes de jeu,Affichage en jeu,Essai,Affichage en jeu : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0652,1. Systèmes de jeu,Affichage en jeu,Essai,Affichage en jeu : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
 T0653,1. Systèmes de jeu,Menus,menu principal,Menus — menu principal : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0654,1. Systèmes de jeu,Menus,menu principal,Menus — menu principal : coder,Claude,Claude,—,Toi,P1,à faire
+T0654,1. Systèmes de jeu,Menus,menu principal,Menus — menu principal : coder,Claude,Claude,—,Toi,P1,fait
 T0655,1. Systèmes de jeu,Menus,menu principal,Menus — menu principal : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0656,1. Systèmes de jeu,Menus,pause,Menus — pause : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0657,1. Systèmes de jeu,Menus,pause,Menus — pause : coder,Claude,Claude,—,Toi,P1,à faire
-T0658,1. Systèmes de jeu,Menus,pause,Menus — pause : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0657,1. Systèmes de jeu,Menus,pause,Menus — pause : coder,Claude,Claude,—,Toi,P1,fait
+T0658,1. Systèmes de jeu,Menus,pause,Menus — pause : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0659,1. Systèmes de jeu,Menus,options graphiques,Menus — options graphiques : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0660,1. Systèmes de jeu,Menus,options graphiques,Menus — options graphiques : coder,Claude,Claude,—,Toi,P1,à faire
 T0661,1. Systèmes de jeu,Menus,options graphiques,Menus — options graphiques : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
@@ -684,7 +684,7 @@ T0682,1. Systèmes de jeu,Performance,masquage des objets cachés,Performance �
 T0683,1. Systèmes de jeu,Performance,masquage des objets cachés,Performance — masquage des objets cachés : coder,Claude,Claude,—,Toi,P1,à faire
 T0684,1. Systèmes de jeu,Performance,masquage des objets cachés,Performance — masquage des objets cachés : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0685,1. Systèmes de jeu,Performance,"niveaux graphiques bas, moyen, élevé, ultra","Performance — niveaux graphiques bas, moyen, élevé, ultra : décrire le fonctionnement attendu",Claude,Toi,Toi,—,P1,à faire
-T0686,1. Systèmes de jeu,Performance,"niveaux graphiques bas, moyen, élevé, ultra","Performance — niveaux graphiques bas, moyen, élevé, ultra : coder",Claude,Claude,—,Toi,P1,à faire
+T0686,1. Systèmes de jeu,Performance,"niveaux graphiques bas, moyen, élevé, ultra","Performance — niveaux graphiques bas, moyen, élevé, ultra : coder",Claude,Claude,—,Toi,P1,fait
 T0687,1. Systèmes de jeu,Performance,"niveaux graphiques bas, moyen, élevé, ultra","Performance — niveaux graphiques bas, moyen, élevé, ultra : écrire et passer le test automatique",Claude,Claude,—,Toi,P1,à faire
 T0688,1. Systèmes de jeu,Performance,ombres et éclairage de qualité,Performance — ombres et éclairage de qualité : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0689,1. Systèmes de jeu,Performance,ombres et éclairage de qualité,Performance — ombres et éclairage de qualité : coder,Claude,Claude,—,Toi,P1,à faire
@@ -693,7 +693,7 @@ T0691,1. Systèmes de jeu,Performance,reflets et eau,Performance — reflets et 
 T0692,1. Systèmes de jeu,Performance,reflets et eau,Performance — reflets et eau : coder,Claude,Claude,—,Toi,P1,à faire
 T0693,1. Systèmes de jeu,Performance,reflets et eau,Performance — reflets et eau : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0694,1. Systèmes de jeu,Performance,mesure des images par seconde,Performance — mesure des images par seconde : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0695,1. Systèmes de jeu,Performance,mesure des images par seconde,Performance — mesure des images par seconde : coder,Claude,Claude,—,Toi,P1,à faire
+T0695,1. Systèmes de jeu,Performance,mesure des images par seconde,Performance — mesure des images par seconde : coder,Claude,Claude,—,Toi,P1,fait
 T0696,1. Systèmes de jeu,Performance,mesure des images par seconde,Performance — mesure des images par seconde : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0697,1. Systèmes de jeu,Performance,Essai,Performance : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0698,1. Systèmes de jeu,Performance,Essai,Performance : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire

@@ -4,6 +4,7 @@ extends Node3D
 
 const CarScript := preload("res://scripts/car.gd")
 const PlayerScript := preload("res://scripts/player.gd")
+const MinimapScript := preload("res://scripts/minimap.gd")
 const PAL := ["f2e6d0", "e8c99a", "d98c5f", "f4f1ea", "c4d4c8", "e2b3a0", "9fc3d9", "f0dc8a", "d6d0c4"]
 const SHIRTS := ["d94f8a", "2a7de1", "ffffff", "3f9a3c", "ff7a00", "8e2bd1", "e8112d", "14a3a3"]
 const CARC := ["f4f4f4", "d8d8d8", "2b2b2b", "9aa3a8", "7a1f1f", "23407a"]
@@ -38,6 +39,11 @@ var env: Environment
 var quality := 2
 var quality_t := 0.0
 const QNAMES := ["Bas", "Moyen", "Élevé", "Ultra"]
+var road_segs: Array = []
+var menu: Control
+var menu_title: Label
+var menu_play: Button
+var minimap: Control
 var selftest := false
 var frames := 0
 var st_start := Vector3.ZERO
@@ -207,12 +213,14 @@ func _world() -> void:
 	var dashes: Array = []
 	for x in [-120, 0, 120]:
 		box(Vector3(14, 0.04, 367), road, Vector3(x, 0.0, 16.5))
+		road_segs.append([Vector2(x, -167), Vector2(x, 200), 14.0])
 		var z := -160.0
 		while z < 195.0:
 			dashes.append(Transform3D(Basis(), Vector3(x, 0.03, z)))
 			z += 14.0
 	for z in [-160, -120, 0, 120]:
 		box(Vector3(420 if z == -160 else 400, 0.04, 14), road, Vector3(0, 0.005, z))
+		road_segs.append([Vector2(-210, z), Vector2(210, z), 14.0])
 		var x := -195.0
 		while x < 195.0:
 			dashes.append(Transform3D(Basis(Vector3.UP, PI / 2), Vector3(x, 0.035, z)))
@@ -458,6 +466,75 @@ func _hud() -> void:
 	l_banner.visible = false
 	layer.add_child(l_banner)
 
+	minimap = MinimapScript.new()
+	minimap.main = self
+	minimap.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+	minimap.offset_left = -206
+	minimap.offset_top = 16
+	minimap.offset_right = -16
+	minimap.offset_bottom = 206
+	layer.add_child(minimap)
+	# écran d'accueil et de pause
+	menu = Control.new()
+	menu.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	layer.add_child(menu)
+	var bg := ColorRect.new()
+	bg.color = Color(0.08, 0.04, 0.02, 0.72)
+	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	menu.add_child(bg)
+	var cc := CenterContainer.new()
+	cc.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	menu.add_child(cc)
+	var vb := VBoxContainer.new()
+	vb.add_theme_constant_override("separation", 14)
+	cc.add_child(vb)
+	menu_title = label(84, Color("f5c400"))
+	menu_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vb.add_child(menu_title)
+	var flag := HBoxContainer.new()
+	flag.add_theme_constant_override("separation", 0)
+	flag.custom_minimum_size = Vector2(0, 8)
+	for fc in ["008751", "fcd116", "e8112d"]:
+		var r := ColorRect.new()
+		r.color = Color(fc)
+		r.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		flag.add_child(r)
+	vb.add_child(flag)
+	var help := label(22, Color.WHITE)
+	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	help.text = "Flèches ou ZQSD : avancer, reculer, tourner\nE : monter ou descendre d'une voiture\nEspace : frein à main · Maj : courir\nF4 : niveau graphique · F3 : images par seconde\nÉchap : pause"
+	vb.add_child(help)
+	menu_play = Button.new()
+	menu_play.add_theme_font_size_override("font_size", 30)
+	menu_play.custom_minimum_size = Vector2(360, 64)
+	menu_play.pressed.connect(_play)
+	vb.add_child(menu_play)
+	var bq := Button.new()
+	bq.text = "Quitter le jeu"
+	bq.add_theme_font_size_override("font_size", 22)
+	bq.custom_minimum_size = Vector2(360, 48)
+	bq.pressed.connect(func() -> void: get_tree().quit())
+	vb.add_child(bq)
+	open_menu("COTONOU CITY", "Jouer (Entrée)")
+	if selftest:
+		_play()
+
+func open_menu(title: String, play_text: String) -> void:
+	menu_title.text = title
+	menu_play.text = play_text
+	menu.visible = true
+	for a in ["up", "down", "left", "right", "brake", "run"]:
+		Input.action_release(a)
+
+func _play() -> void:
+	menu.visible = false
+
+func focus_pos() -> Vector3:
+	return cur_car.global_position if cur_car else player.global_position
+
+func focus_heading() -> float:
+	return cur_car.heading if cur_car else player.heading
+
 func _set_mission() -> void:
 	if mission_i < missions.size():
 		var m: Dictionary = missions[mission_i]
@@ -531,10 +608,17 @@ func _physics_process(delta: float) -> void:
 	if "--shot" in OS.get_cmdline_user_args() and frames == 90:
 		get_viewport().get_texture().get_image().save_png("user://shot.png")
 		get_tree().quit()
+	if Input.is_action_just_pressed("quit") and not selftest:
+		if menu.visible:
+			_play()
+		else:
+			open_menu("PAUSE", "Reprendre")
+	if menu.visible:
+		if Input.is_action_just_pressed("ui_accept"):
+			_play()
+		return
 	if Input.is_action_just_pressed("enter"):
 		toggle_car()
-	if Input.is_action_just_pressed("quit") and not selftest:
-		get_tree().quit()
 	if Input.is_action_just_pressed("quality"):
 		quality = (quality + 1) % 4
 		_apply_quality()
@@ -617,7 +701,7 @@ func _hud_update(delta: float) -> void:
 	var t := ""
 	if help_t > 0.0:
 		help_t -= delta
-		t = "Flèches ou ZQSD : bouger · E : monter/descendre · Espace : frein à main · Maj : courir · Échap : quitter"
+		t = "Flèches ou ZQSD : bouger · E : monter/descendre · Espace : frein à main · Maj : courir · Échap : pause"
 	if cur_car:
 		l_speed.text = "%d km/h" % int(abs(cur_car.speed) * 3.6)
 		if abs(cur_car.speed) < 1.5 and help_t <= 0.0:
@@ -636,7 +720,19 @@ func _hud_update(delta: float) -> void:
 
 # ---------------- test automatique ----------------
 func _selftest() -> void:
-	if frames == 10:
+	if frames == 4:
+		if road_segs.size() != 7 or minimap == null or not minimap.is_inside_tree():
+			_fail("mini-carte absente ou routes manquantes")
+			return
+		open_menu("PAUSE", "Reprendre")
+		st_start = traffic[0].global_position
+	elif frames == 8:
+		if traffic[0].global_position.distance_to(st_start) > 0.01:
+			_fail("la pause ne fige pas le jeu")
+			return
+		_play()
+		print("menu : pause et reprise OK · mini-carte présente")
+	elif frames == 10:
 		toggle_car()
 		if cur_car == null:
 			_fail("impossible de monter dans la voiture")
