@@ -1,0 +1,27 @@
+name: Test et build Windows
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Installer Godot 4.3
+        run: |
+          curl -sSL -o godot.zip https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip
+          unzip -q godot.zip && mv Godot_v4.3-stable_linux.x86_64 godot
+          curl -sSL -o tpl.tpz https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates/4.3.stable
+          unzip -q -j tpl.tpz 'templates/windows_release_x86_64.exe' 'templates/windows_debug_x86_64.exe' 'templates/version.txt' -d ~/.local/share/godot/export_templates/4.3.stable
+      - name: Test automatique
+        run: |
+          ./godot --headless --import || true
+          ./godot --headless --fixed-fps 60 -- --selftest | tee out.txt
+          grep -q "SELFTEST OK" out.txt
+      - name: Fabriquer le .exe
+        run: mkdir -p build && ./godot --headless --export-release "Windows" build/CotonouCity.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CotonouCity-Windows
+          path: build/CotonouCity.exe
