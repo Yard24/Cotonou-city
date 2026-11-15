@@ -12,7 +12,7 @@ T0010,0. Fondations,Démarrage,À faire par toi,"Valider le ton du jeu (humour, 
 T0011,0. Fondations,Démarrage,À faire par toi,"Valider le héros (nom, origine, caractère)",Toi,Toi,Claude,—,P1,à faire
 T0012,0. Fondations,Démarrage,Mise en place,Attacher le dépôt à la session et pousser le plan,Claude,Claude,—,Toi,P1,fait
 T0013,0. Fondations,Démarrage,Mise en place,Créer le projet Godot 4 vide (structure des dossiers),Claude,Claude,—,Toi,P1,fait
-T0014,0. Fondations,Démarrage,Mise en place,Définir les conventions de nommage des fichiers,Claude,Claude,—,Toi,P1,à faire
+T0014,0. Fondations,Démarrage,Mise en place,Définir les conventions de nommage des fichiers,Claude,Claude,—,Toi,P1,fait
 T0015,0. Fondations,Démarrage,Mise en place,Configurer Git LFS pour les gros fichiers,Claude,Claude,—,Toi,P1,à faire
 T0016,0. Fondations,Démarrage,Mise en place,Écrire le README du projet,Claude,Claude,—,Toi,P1,fait
 T0017,0. Fondations,Démarrage,Mise en place,Mettre en place les tests automatiques sans écran,Claude,Claude,—,Toi,P1,fait
@@ -24,24 +24,24 @@ T0022,0. Fondations,Démarrage,Mise en place,Programmer la tâche de nuit,Claude
 T0023,0. Fondations,Démarrage,Mise en place,Créer le modèle de compte rendu du matin,Claude,Claude,—,Toi,P1,à faire
 T0024,0. Fondations,Démarrage,Mise en place,Porter le prototype web vers Godot,Claude,Claude,—,Toi,P1,à faire
 T0025,0. Fondations,Démarrage,Mise en place,"Écrire le document de référence (histoire, carte, style)",Claude,Claude,—,Toi,P1,à faire
-T0026,0. Fondations,Démarrage,Mise en place,Définir le style graphique (low-poly coloré) et la palette,Claude,Claude,—,Toi,P1,à faire
-T0027,0. Fondations,Démarrage,Mise en place,Définir le budget de polygones par type d'objet,Claude,Claude,—,Toi,P1,à faire
-T0028,0. Fondations,Démarrage,Mise en place,"Définir l'échelle du monde (mètres, taille de la carte)",Claude,Claude,—,Toi,P1,à faire
+T0026,0. Fondations,Démarrage,Mise en place,Définir le style graphique (low-poly coloré) et la palette,Claude,Claude,—,Toi,P1,fait
+T0027,0. Fondations,Démarrage,Mise en place,Définir le budget de polygones par type d'objet,Claude,Claude,—,Toi,P1,fait
+T0028,0. Fondations,Démarrage,Mise en place,"Définir l'échelle du monde (mètres, taille de la carte)",Claude,Claude,—,Toi,P1,fait
 T0029,0. Fondations,Démarrage,Mise en place,Tracer la carte générale de Cotonou à partir de cartes publiques,Claude,Claude,—,Toi,P1,à faire
 T0030,0. Fondations,Démarrage,Mise en place,Découper la carte en zones chargées progressivement,Claude,Claude,—,Toi,P1,à faire
 T0031,0. Fondations,Démarrage,Mise en place,Définir l'ordre de construction des quartiers,Claude,Claude,—,Toi,P1,à faire
-T0032,1. Systèmes de jeu,Joueur à pied,marche,Joueur à pied — marche : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0032,1. Systèmes de jeu,Joueur à pied,marche,Joueur à pied — marche : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0033,1. Systèmes de jeu,Joueur à pied,marche,Joueur à pied — marche : coder,Claude,Claude,—,Toi,P1,fait
 T0034,1. Systèmes de jeu,Joueur à pied,marche,Joueur à pied — marche : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
-T0035,1. Systèmes de jeu,Joueur à pied,course,Joueur à pied — course : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0035,1. Systèmes de jeu,Joueur à pied,course,Joueur à pied — course : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0036,1. Systèmes de jeu,Joueur à pied,course,Joueur à pied — course : coder,Claude,Claude,—,Toi,P1,fait
-T0037,1. Systèmes de jeu,Joueur à pied,course,Joueur à pied — course : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0038,1. Systèmes de jeu,Joueur à pied,saut,Joueur à pied — saut : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0039,1. Systèmes de jeu,Joueur à pied,saut,Joueur à pied — saut : coder,Claude,Claude,—,Toi,P1,à faire
-T0040,1. Systèmes de jeu,Joueur à pied,saut,Joueur à pied — saut : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0041,1. Systèmes de jeu,Joueur à pied,position accroupie,Joueur à pied — position accroupie : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0042,1. Systèmes de jeu,Joueur à pied,position accroupie,Joueur à pied — position accroupie : coder,Claude,Claude,—,Toi,P1,à faire
-T0043,1. Systèmes de jeu,Joueur à pied,position accroupie,Joueur à pied — position accroupie : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0037,1. Systèmes de jeu,Joueur à pied,course,Joueur à pied — course : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0038,1. Systèmes de jeu,Joueur à pied,saut,Joueur à pied — saut : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0039,1. Systèmes de jeu,Joueur à pied,saut,Joueur à pied — saut : coder,Claude,Claude,—,Toi,P1,fait
+T0040,1. Systèmes de jeu,Joueur à pied,saut,Joueur à pied — saut : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0041,1. Systèmes de jeu,Joueur à pied,position accroupie,Joueur à pied — position accroupie : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0042,1. Systèmes de jeu,Joueur à pied,position accroupie,Joueur à pied — position accroupie : coder,Claude,Claude,—,Toi,P1,fait
+T0043,1. Systèmes de jeu,Joueur à pied,position accroupie,Joueur à pied — position accroupie : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0044,1. Systèmes de jeu,Joueur à pied,nage,Joueur à pied — nage : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0045,1. Systèmes de jeu,Joueur à pied,nage,Joueur à pied — nage : coder,Claude,Claude,—,Toi,P1,à faire
 T0046,1. Systèmes de jeu,Joueur à pied,nage,Joueur à pied — nage : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
@@ -51,9 +51,9 @@ T0049,1. Systèmes de jeu,Joueur à pied,chute et dégâts,Joueur à pied — ch
 T0050,1. Systèmes de jeu,Joueur à pied,franchissement de muret,Joueur à pied — franchissement de muret : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0051,1. Systèmes de jeu,Joueur à pied,franchissement de muret,Joueur à pied — franchissement de muret : coder,Claude,Claude,—,Toi,P1,à faire
 T0052,1. Systèmes de jeu,Joueur à pied,franchissement de muret,Joueur à pied — franchissement de muret : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0053,1. Systèmes de jeu,Joueur à pied,caméra à la troisième personne,Joueur à pied — caméra à la troisième personne : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0053,1. Systèmes de jeu,Joueur à pied,caméra à la troisième personne,Joueur à pied — caméra à la troisième personne : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0054,1. Systèmes de jeu,Joueur à pied,caméra à la troisième personne,Joueur à pied — caméra à la troisième personne : coder,Claude,Claude,—,Toi,P1,fait
-T0055,1. Systèmes de jeu,Joueur à pied,caméra à la troisième personne,Joueur à pied — caméra à la troisième personne : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0055,1. Systèmes de jeu,Joueur à pied,caméra à la troisième personne,Joueur à pied — caméra à la troisième personne : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0056,1. Systèmes de jeu,Joueur à pied,interaction avec les objets,Joueur à pied — interaction avec les objets : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0057,1. Systèmes de jeu,Joueur à pied,interaction avec les objets,Joueur à pied — interaction avec les objets : coder,Claude,Claude,—,Toi,P1,à faire
 T0058,1. Systèmes de jeu,Joueur à pied,interaction avec les objets,Joueur à pied — interaction avec les objets : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire

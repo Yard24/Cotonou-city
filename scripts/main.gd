@@ -5,6 +5,7 @@ extends Node3D
 const CarScript := preload("res://scripts/car.gd")
 const PlayerScript := preload("res://scripts/player.gd")
 const MinimapScript := preload("res://scripts/minimap.gd")
+const SelftestScript := preload("res://scripts/selftest.gd")
 const PAL := ["f2e6d0", "e8c99a", "d98c5f", "f4f1ea", "c4d4c8", "e2b3a0", "9fc3d9", "f0dc8a", "d6d0c4"]
 const SHIRTS := ["d94f8a", "2a7de1", "ffffff", "3f9a3c", "ff7a00", "8e2bd1", "e8112d", "14a3a3"]
 const CARC := ["f4f4f4", "d8d8d8", "2b2b2b", "9aa3a8", "7a1f1f", "23407a"]
@@ -46,7 +47,7 @@ var menu_play: Button
 var minimap: Control
 var selftest := false
 var frames := 0
-var st_start := Vector3.ZERO
+var tester
 
 var missions := [
 	{"t": "Mission 1/3 — Monte dans la voiture rouge à côté de toi (touche E), puis roule jusqu'au Marché Dantokpa (colonne jaune).", "x": 60.0, "z": 22.0, "car": true, "r": 5000, "ok": "Arrivé au marché"},
@@ -169,7 +170,7 @@ func _ready() -> void:
 
 func _inputs() -> void:
 	var m := {"up": [KEY_W, KEY_UP], "down": [KEY_S, KEY_DOWN], "left": [KEY_A, KEY_LEFT], "right": [KEY_D, KEY_RIGHT],
-		"brake": [KEY_SPACE], "run": [KEY_SHIFT], "enter": [KEY_E], "quit": [KEY_ESCAPE], "fps": [KEY_F3], "quality": [KEY_F4]}
+		"brake": [KEY_SPACE], "jump": [KEY_SPACE], "crouch": [KEY_C, KEY_CTRL], "run": [KEY_SHIFT], "enter": [KEY_E], "quit": [KEY_ESCAPE], "fps": [KEY_F3], "quality": [KEY_F4]}
 	for a in m:
 		if not InputMap.has_action(a):
 			InputMap.add_action(a)
@@ -502,7 +503,7 @@ func _hud() -> void:
 	vb.add_child(flag)
 	var help := label(22, Color.WHITE)
 	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	help.text = "Flèches ou ZQSD : avancer, reculer, tourner\nE : monter ou descendre d'une voiture\nEspace : frein à main · Maj : courir\nF4 : niveau graphique · F3 : images par seconde\nÉchap : pause"
+	help.text = "Flèches ou ZQSD : avancer, reculer, tourner\nE : monter ou descendre d'une voiture\nÀ pied — Espace : sauter · Maj : courir · C : s'accroupir\nEn voiture — Espace : frein à main\nF4 : niveau graphique · F3 : images par seconde\nÉchap : pause"
 	vb.add_child(help)
 	menu_play = Button.new()
 	menu_play.add_theme_font_size_override("font_size", 30)
@@ -523,7 +524,7 @@ func open_menu(title: String, play_text: String) -> void:
 	menu_title.text = title
 	menu_play.text = play_text
 	menu.visible = true
-	for a in ["up", "down", "left", "right", "brake", "run"]:
+	for a in ["up", "down", "left", "right", "brake", "run", "jump", "crouch"]:
 		Input.action_release(a)
 
 func _play() -> void:
@@ -584,6 +585,7 @@ func toggle_car() -> void:
 		player.rotation.y = h
 		player.visible = true
 		player.shape.disabled = false
+		player.reset_pose()
 		cur_car.speed = 0.0
 		cur_car = null
 		return
@@ -597,6 +599,7 @@ func toggle_car() -> void:
 		cars.append(c)
 		_banner("Voiture empruntée !")
 	cur_car = c
+	player.reset_pose()
 	player.visible = false
 	player.shape.disabled = true
 
@@ -604,7 +607,9 @@ func toggle_car() -> void:
 func _physics_process(delta: float) -> void:
 	frames += 1
 	if selftest:
-		_selftest()
+		if tester == null:
+			tester = SelftestScript.new()
+		tester.step(self)
 	if "--shot" in OS.get_cmdline_user_args() and frames == 90:
 		get_viewport().get_texture().get_image().save_png("user://shot.png")
 		get_tree().quit()
@@ -685,7 +690,8 @@ func _camera(delta: float, instant: bool) -> void:
 	var h: float = cur_car.heading if cur_car else player.heading
 	var dist := 11.0 if cur_car else 6.5
 	var hh := 4.6 if cur_car else 3.0
-	var want := Vector3(o.x - sin(h) * dist, hh, o.z - cos(h) * dist)
+	# la caméra suit aussi la hauteur du héros (saut, objets sur lesquels il monte)
+	var want := Vector3(o.x - sin(h) * dist, o.y + hh, o.z - cos(h) * dist)
 	var tgt := o + Vector3(0, 1.6, 0)
 	if instant:
 		cam.position = want
@@ -701,7 +707,7 @@ func _hud_update(delta: float) -> void:
 	var t := ""
 	if help_t > 0.0:
 		help_t -= delta
-		t = "Flèches ou ZQSD : bouger · E : monter/descendre · Espace : frein à main · Maj : courir · Échap : pause"
+		t = "Flèches ou ZQSD : bouger · E : monter/descendre · Espace : sauter (frein à main en voiture) · Maj : courir · C : s'accroupir · Échap : pause"
 	if cur_car:
 		l_speed.text = "%d km/h" % int(abs(cur_car.speed) * 3.6)
 		if abs(cur_car.speed) < 1.5 and help_t <= 0.0:
@@ -717,56 +723,3 @@ func _hud_update(delta: float) -> void:
 		banner_t -= delta
 		if banner_t <= 0.0:
 			l_banner.visible = false
-
-# ---------------- test automatique ----------------
-func _selftest() -> void:
-	if frames == 4:
-		if road_segs.size() != 7 or minimap == null or not minimap.is_inside_tree():
-			_fail("mini-carte absente ou routes manquantes")
-			return
-		open_menu("PAUSE", "Reprendre")
-		st_start = traffic[0].global_position
-	elif frames == 8:
-		if traffic[0].global_position.distance_to(st_start) > 0.01:
-			_fail("la pause ne fige pas le jeu")
-			return
-		_play()
-		print("menu : pause et reprise OK · mini-carte présente")
-	elif frames == 10:
-		toggle_car()
-		if cur_car == null:
-			_fail("impossible de monter dans la voiture")
-			return
-		st_start = cur_car.global_position
-		Input.action_press("up")
-	elif frames == 250:
-		Input.action_release("up")
-		var d: float = cur_car.global_position.distance_to(st_start)
-		if d < 20.0:
-			_fail("la voiture n'a pas avancé (%.1f m)" % d)
-			return
-		print("conduite : %.1f m parcourus, %.0f km/h" % [d, cur_car.speed * 3.6])
-		cur_car.speed = 0.0
-		toggle_car()
-		if cur_car != null or not player.visible:
-			_fail("impossible de descendre")
-			return
-		st_start = player.global_position
-		Input.action_press("up")
-	elif frames == 370:
-		Input.action_release("up")
-		var d2: float = player.global_position.distance_to(st_start)
-		if d2 < 3.0:
-			_fail("le héros ne marche pas (%.1f m)" % d2)
-			return
-		var moved := 0
-		for a in traffic:
-			if a.speed > 1.0:
-				moved += 1
-		print("marche : %.1f m · circulation : %d/%d véhicules en mouvement" % [d2, moved, traffic.size()])
-		print("SELFTEST OK")
-		get_tree().quit(0)
-
-func _fail(msg: String) -> void:
-	print("SELFTEST ECHEC : " + msg)
-	get_tree().quit(1)
