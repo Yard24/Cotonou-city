@@ -137,36 +137,36 @@ T0135,1. Systèmes de jeu,Monter et descendre des véhicules,animation des porte
 T0136,1. Systèmes de jeu,Monter et descendre des véhicules,animation des portes,Monter et descendre des véhicules — animation des portes : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0137,1. Systèmes de jeu,Monter et descendre des véhicules,Essai,Monter et descendre des véhicules : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0138,1. Systèmes de jeu,Monter et descendre des véhicules,Essai,Monter et descendre des véhicules : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
-T0139,1. Systèmes de jeu,Circulation,réseau de voies,Circulation — réseau de voies : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0139,1. Systèmes de jeu,Circulation,réseau de voies,Circulation — réseau de voies : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0140,1. Systèmes de jeu,Circulation,réseau de voies,Circulation — réseau de voies : coder,Claude,Claude,—,Toi,P1,fait
-T0141,1. Systèmes de jeu,Circulation,réseau de voies,Circulation — réseau de voies : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0142,1. Systèmes de jeu,Circulation,feux tricolores,Circulation — feux tricolores : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0143,1. Systèmes de jeu,Circulation,feux tricolores,Circulation — feux tricolores : coder,Claude,Claude,—,Toi,P1,à faire
-T0144,1. Systèmes de jeu,Circulation,feux tricolores,Circulation — feux tricolores : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0145,1. Systèmes de jeu,Circulation,priorités aux carrefours,Circulation — priorités aux carrefours : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0146,1. Systèmes de jeu,Circulation,priorités aux carrefours,Circulation — priorités aux carrefours : coder,Claude,Claude,—,Toi,P1,à faire
-T0147,1. Systèmes de jeu,Circulation,priorités aux carrefours,Circulation — priorités aux carrefours : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0148,1. Systèmes de jeu,Circulation,ronds-points,Circulation — ronds-points : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0141,1. Systèmes de jeu,Circulation,réseau de voies,Circulation — réseau de voies : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0142,1. Systèmes de jeu,Circulation,feux tricolores,Circulation — feux tricolores : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0143,1. Systèmes de jeu,Circulation,feux tricolores,Circulation — feux tricolores : coder,Claude,Claude,—,Toi,P1,fait
+T0144,1. Systèmes de jeu,Circulation,feux tricolores,Circulation — feux tricolores : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0145,1. Systèmes de jeu,Circulation,priorités aux carrefours,Circulation — priorités aux carrefours : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0146,1. Systèmes de jeu,Circulation,priorités aux carrefours,Circulation — priorités aux carrefours : coder,Claude,Claude,—,Toi,P1,fait
+T0147,1. Systèmes de jeu,Circulation,priorités aux carrefours,Circulation — priorités aux carrefours : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0148,1. Systèmes de jeu,Circulation,ronds-points,Circulation — ronds-points : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0149,1. Systèmes de jeu,Circulation,ronds-points,Circulation — ronds-points : coder,Claude,Claude,—,Toi,P1,fait
-T0150,1. Systèmes de jeu,Circulation,ronds-points,Circulation — ronds-points : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0151,1. Systèmes de jeu,Circulation,dépassements,Circulation — dépassements : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0152,1. Systèmes de jeu,Circulation,dépassements,Circulation — dépassements : coder,Claude,Claude,—,Toi,P1,à faire
-T0153,1. Systèmes de jeu,Circulation,dépassements,Circulation — dépassements : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0154,1. Systèmes de jeu,Circulation,embouteillages aux heures de pointe,Circulation — embouteillages aux heures de pointe : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0155,1. Systèmes de jeu,Circulation,embouteillages aux heures de pointe,Circulation — embouteillages aux heures de pointe : coder,Claude,Claude,—,Toi,P1,à faire
-T0156,1. Systèmes de jeu,Circulation,embouteillages aux heures de pointe,Circulation — embouteillages aux heures de pointe : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0157,1. Systèmes de jeu,Circulation,réactions au klaxon,Circulation — réactions au klaxon : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0158,1. Systèmes de jeu,Circulation,réactions au klaxon,Circulation — réactions au klaxon : coder,Claude,Claude,—,Toi,P1,à faire
-T0159,1. Systèmes de jeu,Circulation,réactions au klaxon,Circulation — réactions au klaxon : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0160,1. Systèmes de jeu,Circulation,accidents entre véhicules,Circulation — accidents entre véhicules : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0161,1. Systèmes de jeu,Circulation,accidents entre véhicules,Circulation — accidents entre véhicules : coder,Claude,Claude,—,Toi,P1,à faire
-T0162,1. Systèmes de jeu,Circulation,accidents entre véhicules,Circulation — accidents entre véhicules : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0163,1. Systèmes de jeu,Circulation,densité selon l'heure,Circulation — densité selon l'heure : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0164,1. Systèmes de jeu,Circulation,densité selon l'heure,Circulation — densité selon l'heure : coder,Claude,Claude,—,Toi,P1,à faire
-T0165,1. Systèmes de jeu,Circulation,densité selon l'heure,Circulation — densité selon l'heure : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0166,1. Systèmes de jeu,Circulation,apparition et disparition hors champ,Circulation — apparition et disparition hors champ : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0167,1. Systèmes de jeu,Circulation,apparition et disparition hors champ,Circulation — apparition et disparition hors champ : coder,Claude,Claude,—,Toi,P1,à faire
-T0168,1. Systèmes de jeu,Circulation,apparition et disparition hors champ,Circulation — apparition et disparition hors champ : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0150,1. Systèmes de jeu,Circulation,ronds-points,Circulation — ronds-points : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0151,1. Systèmes de jeu,Circulation,dépassements,Circulation — dépassements : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0152,1. Systèmes de jeu,Circulation,dépassements,Circulation — dépassements : coder,Claude,Claude,—,Toi,P1,fait
+T0153,1. Systèmes de jeu,Circulation,dépassements,Circulation — dépassements : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0154,1. Systèmes de jeu,Circulation,embouteillages aux heures de pointe,Circulation — embouteillages aux heures de pointe : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0155,1. Systèmes de jeu,Circulation,embouteillages aux heures de pointe,Circulation — embouteillages aux heures de pointe : coder,Claude,Claude,—,Toi,P1,fait
+T0156,1. Systèmes de jeu,Circulation,embouteillages aux heures de pointe,Circulation — embouteillages aux heures de pointe : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0157,1. Systèmes de jeu,Circulation,réactions au klaxon,Circulation — réactions au klaxon : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0158,1. Systèmes de jeu,Circulation,réactions au klaxon,Circulation — réactions au klaxon : coder,Claude,Claude,—,Toi,P1,fait
+T0159,1. Systèmes de jeu,Circulation,réactions au klaxon,Circulation — réactions au klaxon : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0160,1. Systèmes de jeu,Circulation,accidents entre véhicules,Circulation — accidents entre véhicules : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0161,1. Systèmes de jeu,Circulation,accidents entre véhicules,Circulation — accidents entre véhicules : coder,Claude,Claude,—,Toi,P1,fait
+T0162,1. Systèmes de jeu,Circulation,accidents entre véhicules,Circulation — accidents entre véhicules : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0163,1. Systèmes de jeu,Circulation,densité selon l'heure,Circulation — densité selon l'heure : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0164,1. Systèmes de jeu,Circulation,densité selon l'heure,Circulation — densité selon l'heure : coder,Claude,Claude,—,Toi,P1,fait
+T0165,1. Systèmes de jeu,Circulation,densité selon l'heure,Circulation — densité selon l'heure : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0166,1. Systèmes de jeu,Circulation,apparition et disparition hors champ,Circulation — apparition et disparition hors champ : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0167,1. Systèmes de jeu,Circulation,apparition et disparition hors champ,Circulation — apparition et disparition hors champ : coder,Claude,Claude,—,Toi,P1,fait
+T0168,1. Systèmes de jeu,Circulation,apparition et disparition hors champ,Circulation — apparition et disparition hors champ : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0169,1. Systèmes de jeu,Circulation,Essai,Circulation : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0170,1. Systèmes de jeu,Circulation,Essai,Circulation : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
 T0171,1. Systèmes de jeu,Service de zémidjan,héler un zémidjan,Service de zémidjan — héler un zémidjan : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P2,fait
