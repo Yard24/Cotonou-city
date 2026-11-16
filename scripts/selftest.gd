@@ -2,6 +2,8 @@ extends RefCounted
 # Test automatique sans écran : lancé avec « -- --selftest ».
 # main.gd appelle step() à chaque image ; le test doit finir par « SELFTEST OK ».
 
+const VoitureTest := preload("res://scripts/selftest_voiture.gd")
+var voiture
 var start := Vector3.ZERO
 var max_y := 0.0
 var d_walk := 0.0
@@ -13,6 +15,9 @@ func step(m) -> void:
 	if f == 4:
 		if m.road_segs.size() != 7 or m.minimap == null or not m.minimap.is_inside_tree():
 			_fail(m, "mini-carte absente ou routes manquantes")
+			return
+		if m.menu_title.text != "MARINA CITY" or ProjectSettings.get_setting("application/config/name") != "Marina City":
+			_fail(m, "le titre du jeu n'est pas « Marina City »")
 			return
 		m.open_menu("PAUSE", "Reprendre")
 		start = m.traffic[0].global_position
@@ -278,6 +283,13 @@ func _step2(m, f: int, pl) -> void:
 			return
 		print("ponton : montée depuis la plage, plongeon au bout (z = %.1f) · bouées : nage arrêtée à z = %.1f" % [z_dive, pl.global_position.z])
 		_interactions(m, pl)
+	elif f == 2574 and voiture != null:
+		var e: String = voiture.run(m)
+		if e != "":
+			_fail(m, e)
+			return
+		print("SELFTEST OK")
+		m.get_tree().quit(0)
 
 # Interactions : étal d'eau, banc, panneau. Tout se fait dans la même image.
 func _interactions(m, pl) -> void:
@@ -343,8 +355,9 @@ func _interactions(m, pl) -> void:
 		return
 	c.speed = 0.0
 	print("plage : voiture arrêtée avant la mer à z = %.1f" % c.global_position.z)
-	print("SELFTEST OK")
-	m.get_tree().quit(0)
+	# conduite voiture : la voiture-obstacle est posée maintenant, le test tourne 4 images plus tard
+	voiture = VoitureTest.new()
+	voiture.prepare(m)
 
 # Place le héros quelque part et le fait avancer.
 func _place(pl, pos: Vector3, h: float) -> void:

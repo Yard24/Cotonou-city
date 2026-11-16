@@ -1,5 +1,5 @@
 extends Node3D
-# Cotonou City — monde, circulation, missions, affichage.
+# Marina City (dépôt cotonou-city) — monde, circulation, missions, affichage.
 # Quatre niveaux graphiques (touche F4) : Bas pour les petits PC, jusqu'à Ultra.
 
 const CarScript := preload("res://scripts/car.gd")

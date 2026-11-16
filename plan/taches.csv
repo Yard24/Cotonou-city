@@ -59,27 +59,27 @@ T0057,1. Systèmes de jeu,Joueur à pied,interaction avec les objets,Joueur à p
 T0058,1. Systèmes de jeu,Joueur à pied,interaction avec les objets,Joueur à pied — interaction avec les objets : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0059,1. Systèmes de jeu,Joueur à pied,Essai,Joueur à pied : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0060,1. Systèmes de jeu,Joueur à pied,Essai,Joueur à pied : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
-T0061,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0061,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0062,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : coder,Claude,Claude,—,Toi,P1,fait
 T0063,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
-T0064,1. Systèmes de jeu,Conduite voiture,direction,Conduite voiture — direction : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0064,1. Systèmes de jeu,Conduite voiture,direction,Conduite voiture — direction : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0065,1. Systèmes de jeu,Conduite voiture,direction,Conduite voiture — direction : coder,Claude,Claude,—,Toi,P1,fait
-T0066,1. Systèmes de jeu,Conduite voiture,direction,Conduite voiture — direction : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0067,1. Systèmes de jeu,Conduite voiture,frein à main,Conduite voiture — frein à main : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0066,1. Systèmes de jeu,Conduite voiture,direction,Conduite voiture — direction : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0067,1. Systèmes de jeu,Conduite voiture,frein à main,Conduite voiture — frein à main : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0068,1. Systèmes de jeu,Conduite voiture,frein à main,Conduite voiture — frein à main : coder,Claude,Claude,—,Toi,P1,fait
-T0069,1. Systèmes de jeu,Conduite voiture,frein à main,Conduite voiture — frein à main : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0070,1. Systèmes de jeu,Conduite voiture,marche arrière,Conduite voiture — marche arrière : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0069,1. Systèmes de jeu,Conduite voiture,frein à main,Conduite voiture — frein à main : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0070,1. Systèmes de jeu,Conduite voiture,marche arrière,Conduite voiture — marche arrière : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0071,1. Systèmes de jeu,Conduite voiture,marche arrière,Conduite voiture — marche arrière : coder,Claude,Claude,—,Toi,P1,fait
-T0072,1. Systèmes de jeu,Conduite voiture,marche arrière,Conduite voiture — marche arrière : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0073,1. Systèmes de jeu,Conduite voiture,suspension,Conduite voiture — suspension : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0074,1. Systèmes de jeu,Conduite voiture,suspension,Conduite voiture — suspension : coder,Claude,Claude,—,Toi,P1,à faire
-T0075,1. Systèmes de jeu,Conduite voiture,suspension,Conduite voiture — suspension : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0076,1. Systèmes de jeu,Conduite voiture,collisions,Conduite voiture — collisions : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0072,1. Systèmes de jeu,Conduite voiture,marche arrière,Conduite voiture — marche arrière : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0073,1. Systèmes de jeu,Conduite voiture,suspension,Conduite voiture — suspension : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0074,1. Systèmes de jeu,Conduite voiture,suspension,Conduite voiture — suspension : coder,Claude,Claude,—,Toi,P1,fait
+T0075,1. Systèmes de jeu,Conduite voiture,suspension,Conduite voiture — suspension : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0076,1. Systèmes de jeu,Conduite voiture,collisions,Conduite voiture — collisions : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0077,1. Systèmes de jeu,Conduite voiture,collisions,Conduite voiture — collisions : coder,Claude,Claude,—,Toi,P1,fait
-T0078,1. Systèmes de jeu,Conduite voiture,collisions,Conduite voiture — collisions : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0079,1. Systèmes de jeu,Conduite voiture,dégâts visibles,Conduite voiture — dégâts visibles : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0080,1. Systèmes de jeu,Conduite voiture,dégâts visibles,Conduite voiture — dégâts visibles : coder,Claude,Claude,—,Toi,P1,à faire
-T0081,1. Systèmes de jeu,Conduite voiture,dégâts visibles,Conduite voiture — dégâts visibles : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0078,1. Systèmes de jeu,Conduite voiture,collisions,Conduite voiture — collisions : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0079,1. Systèmes de jeu,Conduite voiture,dégâts visibles,Conduite voiture — dégâts visibles : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0080,1. Systèmes de jeu,Conduite voiture,dégâts visibles,Conduite voiture — dégâts visibles : coder,Claude,Claude,—,Toi,P1,fait
+T0081,1. Systèmes de jeu,Conduite voiture,dégâts visibles,Conduite voiture — dégâts visibles : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0082,1. Systèmes de jeu,Conduite voiture,phares et clignotants,Conduite voiture — phares et clignotants : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0083,1. Systèmes de jeu,Conduite voiture,phares et clignotants,Conduite voiture — phares et clignotants : coder,Claude,Claude,—,Toi,P1,à faire
 T0084,1. Systèmes de jeu,Conduite voiture,phares et clignotants,Conduite voiture — phares et clignotants : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire

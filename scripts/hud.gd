@@ -78,6 +78,10 @@ func build(m) -> void:
 	m.menu_title = m.label(84, Color("f5c400"))
 	m.menu_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vb.add_child(m.menu_title)
+	var sous_titre: Label = m.label(28, Color.WHITE)
+	sous_titre.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	sous_titre.text = "Cotonou, 2017-2026"
+	vb.add_child(sous_titre)
 	var flag := HBoxContainer.new()
 	flag.add_theme_constant_override("separation", 0)
 	flag.custom_minimum_size = Vector2(0, 8)
@@ -102,7 +106,7 @@ func build(m) -> void:
 	bq.custom_minimum_size = Vector2(360, 48)
 	bq.pressed.connect(func() -> void: m.get_tree().quit())
 	vb.add_child(bq)
-	m.open_menu("COTONOU CITY", "Jouer (Entrée)")
+	m.open_menu("MARINA CITY", "Jouer (Entrée)")
 
 func update(m, delta: float) -> void:
 	m.l_money.text = "%d FCFA" % m.money
