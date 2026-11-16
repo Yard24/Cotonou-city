@@ -132,7 +132,7 @@ Ce fichier fait foi : tout passage automatique doit le lire et le respecter. Les
 - 111. La radio parlée diffuse de fausses publicités et des infos sur ce que le joueur vient de faire.
 
 ## Interface, sortie et technique
-- 113. Touches : flèches ou ZQSD, E monter, Espace sauter ou frein à main, Maj courir, C s'accroupir.
+- 113. Touches : flèches ou ZQSD, E monter et descendre, **M accepter une course de zémidjan**, Espace sauter ou frein à main, Maj courir, C s'accroupir.
 - 114. Manette dès que la conduite moto est faite.
 - 115. Sauvegarde automatique après chaque mission, plus 3 emplacements manuels.
 - 116. Trois difficultés : Tranquille, Normal, Corsé.
@@ -154,16 +154,36 @@ Points que Bravo a laissés à Claude (« je te laisse gérer ») ; ils restent 
 
 ## Décisions du 16 novembre 2026 (suite, après le lot « passager et passage entre les voitures »)
 Réponses de Bravo :
-- Courses de zémidjan : **une touche pour accepter la course** (E devant le client qui annonce sa destination et son prix).
+- Courses de zémidjan : **une touche pour accepter la course** (d'abord E ; remplacée par M le même jour, voir plus bas).
 - Chute avec un client : **pas de dédommagement ni d'amende** ; le coût est la santé (« peut-être santé » : aujourd'hui le pilote perd de la santé, le client non).
 - Le passager porte un **casque**, comme le pilote (suite de la décision 52).
 - **On roule à droite** : appliqué tout de suite à toute la circulation.
 - Consigne générale : pour le reste, Claude avance sans attendre ; là où Bravo doit valider, Claude considère que c'est oui, termine, puis demande confirmation.
 
 Points tranchés par Claude en application de cette consigne ; ils restent modifiables sur simple demande :
-- Prix des courses : 100 FCFA + 2 FCFA par mètre, arrondi à 50 FCFA. Les trois missions d'essai paient désormais 500, 750 et 300 FCFA au lieu de 5 000, 7 500 et 3 000, pour rester cohérentes avec une course.
-- On ne tombe pas de moto sans collision ; la caméra penche avec la moto (7° au plus, 17° en vue du guidon) ; la voiture rouge reste garée au départ à côté de la moto.
-- Essais « joueur à pied », « conduite voiture » et « conduite moto » : considérés validés (T0060, T0092, T0115), à rouvrir au premier retour de Bravo.
+- Prix des courses : 100 FCFA + 2 FCFA par mètre, arrondi à 50 FCFA. (La baisse des missions à 500, 750 et 300 FCFA a été refusée par Bravo, voir plus bas.)
+- La voiture rouge reste garée au départ à côté de la moto.
+
+## Décisions du 16 novembre 2026 (matin, après le lot « touche de course et sens de circulation »)
+Réponses de Bravo :
+- **M pour accepter une course de zémidjan**, plus E. E redevient uniquement « monter et descendre ». La touche est celle qui porte la lettre M sur le clavier du joueur : en AZERTY, à droite du L. Avec un client à bord, M le dépose sur place (course non payée).
+- **Les trois missions paient 5 000, 7 500 et 3 000 FCFA.** La division par dix est refusée.
+- Moto : **pas de chute sans collision** (confirmé) ; **la caméra penche avec la moto** (confirmé).
+- Moto : **l'inclinaison doit être la plus réaliste possible** : elle dépend de la vitesse et du rayon du virage, et elle est plafonnée à un angle crédible (35 à 40° pour la moto, moins pour la caméra).
+- Fermeture de T0060, T0092 et T0115 (essais « joueur à pied », « conduite voiture », « conduite moto ») : **acceptée**.
+- Consigne générale, répétée : les validations de Bravo sont considérées comme « oui », on avance.
+
+Points tranchés par Claude pour appliquer ces réponses ; ils restent modifiables sur simple demande :
+- Inclinaison : angle d'équilibre réel (tangente = vitesse² ÷ (rayon × 9,81)), plafond de 38° pour la moto, 8° pour la caméra extérieure et 20° pour la vue du guidon. Conséquence assumée : le virage le plus serré s'élargit avec la vitesse (29 m de rayon à 54 km/h), il faut donc ralentir avant un carrefour. Détail dans `docs/systemes/conduite_moto.md`.
+- E avec un client à bord fait descendre le pilote ; le client descend aussi et la course n'est pas payée.
+
+## Points tranchés par Claude le 16 novembre 2026 (lot « monter et descendre des véhicules »)
+Ils restent modifiables sur simple demande ; détail dans `docs/systemes/monter_et_descendre_des_vehicules.md`.
+- E au-dessus de 22 km/h : saut en marche. Il coûte 5 points de santé plus 2 par m/s au-dessus de 22 km/h et 2 secondes par terre, jamais l'évanouissement (dans l'esprit de la décision 53).
+- Monter côté passager est possible mais plus lent (1,5 s au lieu de 0,7 s avant de démarrer).
+- Deux voitures garées sur cinq sont fermées à clé, ainsi qu'un conducteur sur trois dans la circulation (jamais les taxis). On ne force pas une portière.
+- On n'emprunte une voiture de la circulation que si elle est arrêtée ou presque (moins de 11 km/h). Décision 54 : le deuxième emprunt est compté comme un signalement, en attendant la police.
+- Les véhicules garés sont tournés dans le sens de la circulation.
 
 ## Conséquences pour le plan
 - Les tâches « Combat — visée », « armes à feu » et « mise à couvert » ne concernent plus le joueur (décision 3).

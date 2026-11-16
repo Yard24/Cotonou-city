@@ -93,7 +93,7 @@ func build(m) -> void:
 	vb.add_child(flag)
 	var help: Label = m.label(22, Color.WHITE)
 	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	help.text = "Flèches ou ZQSD : avancer, reculer, tourner\nE : monter sur une moto ou dans une voiture, en descendre\nÀ pied — Espace : sauter, monter sur un muret · Maj : courir · C : s'accroupir\nE : acheter, s'asseoir, lire un panneau · On nage en entrant dans la mer\nEn voiture — Espace : frein à main · H : klaxon · L : phares · J et K : clignotants · V : caméra\nÀ moto — Bas : freiner · Espace : frein arrière (virage serré) · H : klaxon · V : caméra\nZémidjan — arrête ta moto près d'un client qui lève le bras, E pour accepter sa course, puis conduis-le à la colonne bleue\nF4 : niveau graphique · F3 : images par seconde\nÉchap : pause"
+	help.text = "Flèches ou ZQSD : avancer, reculer, tourner\nE : monter sur une moto ou dans une voiture, en descendre\nÀ pied — Espace : sauter, monter sur un muret · Maj : courir · C : s'accroupir\nE : acheter, s'asseoir, lire un panneau · On nage en entrant dans la mer\nEn voiture — Espace : frein à main · H : klaxon · L : phares · J et K : clignotants · V : caméra\nÀ moto — Bas : freiner · Espace : frein arrière (virage serré) · H : klaxon · V : caméra\nZémidjan — arrête ta moto près d'un client qui lève le bras, M pour accepter sa course, puis conduis-le à la colonne bleue\nF4 : niveau graphique · F3 : images par seconde\nÉchap : pause"
 	vb.add_child(help)
 	m.menu_play = Button.new()
 	m.menu_play.add_theme_font_size_override("font_size", 30)
@@ -125,7 +125,7 @@ func update(m, delta: float) -> void:
 		if m.zem.hint != "":
 			t = m.zem.hint
 		elif not m.zem.fare.is_empty() and abs(m.cur_car.speed) < 1.5:
-			t = "E : déposer le client ici (course non payée)"
+			t = "M : déposer le client ici (course non payée)"
 	else:
 		m.l_speed.text = ""
 		if m.need_car:

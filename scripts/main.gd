@@ -14,6 +14,7 @@ const InteractionScript := preload("res://scripts/interaction.gd")
 const TraficScript := preload("res://scripts/trafic.gd")
 const VueScript := preload("res://scripts/vue.gd")
 const ZemScript := preload("res://scripts/zem.gd")
+const EmbScript := preload("res://scripts/embarquement.gd")
 const WATER_Y := ReliefScript.WATER_Y
 const SPAWN := Vector3(14, 0, -50)
 const PAL := ["f2e6d0", "e8c99a", "d98c5f", "f4f1ea", "c4d4c8", "e2b3a0", "9fc3d9", "f0dc8a", "d6d0c4"]
@@ -21,7 +22,8 @@ const SHIRTS := ["d94f8a", "2a7de1", "ffffff", "3f9a3c", "ff7a00", "8e2bd1", "e8
 const CARC := ["f4f4f4", "d8d8d8", "2b2b2b", "9aa3a8", "7a1f1f", "23407a"]
 const XS := [[-200, -127], [-113, -7], [7, 113], [127, 200]]
 const ZS := [[-153, -127], [-113, -7], [7, 113], [127, 200]]
-const PARK := [[10.5, -52.0, 0.0, "c0272d"], [-10.5, 60.0, PI, "f4f4f4"], [129.5, -60.0, 0.0, "2255aa"], [-60.0, -129.5, PI / 2, "9aa3a8"], [-129.5, 70.0, PI, "1d5e3a"]]
+# voitures garées : [x, z, cap, couleur] ; garées dans le sens de la circulation (on roule à droite)
+const PARK := [[10.5, -52.0, PI, "c0272d"], [-10.5, 60.0, 0.0, "f4f4f4"], [129.5, -60.0, PI, "2255aa"], [-60.0, -129.5, -PI / 2, "9aa3a8"], [-129.5, 70.0, 0.0, "1d5e3a"]]
 
 var rng := RandomNumberGenerator.new()
 var mats := {}
@@ -66,6 +68,7 @@ var trafic = TraficScript.new()
 var vue = VueScript.new()
 var zem = ZemScript.new()   # courses de zémidjan : clients et passager
 var sys = preload("res://scripts/systemes.gd").new()   # sauvegarde, options, menus, affichage en jeu
+var emb = EmbScript.new()   # monter et descendre : portières, place libre, saut en marche
 var moto_romaric   # la moto prêtée par Romaric, garée au point de départ (décision 51)
 var hp_fill: ColorRect
 var info_text := ""
@@ -77,9 +80,9 @@ const SOINS_MAX := 2000     # … sans dépasser 2 000 FCFA
 var cam_mode := 1
 
 var missions := [
-	{"t": "Mission 1/3 — Romaric te prête sa moto : monte dessus (touche E), puis roule jusqu'au Marché Dantokpa (colonne jaune).", "x": 60.0, "z": 22.0, "car": true, "r": 500, "ok": "Arrivé au marché"},
-	{"t": "Mission 2/3 — Une commerçante te confie un colis : livre-le sur le Boulevard de la Marina, au bord de la mer.", "x": -80.0, "z": -160.0, "car": true, "r": 750, "ok": "Colis livré"},
-	{"t": "Mission 3/3 — Retourne à la Place de l'Amazone et arrête-toi devant la statue.", "x": 0.0, "z": -40.0, "car": false, "r": 300, "ok": "Bienvenue à l'Amazone"},
+	{"t": "Mission 1/3 — Romaric te prête sa moto : monte dessus (touche E), puis roule jusqu'au Marché Dantokpa (colonne jaune).", "x": 60.0, "z": 22.0, "car": true, "r": 5000, "ok": "Arrivé au marché"},
+	{"t": "Mission 2/3 — Une commerçante te confie un colis : livre-le sur le Boulevard de la Marina, au bord de la mer.", "x": -80.0, "z": -160.0, "car": true, "r": 7500, "ok": "Colis livré"},
+	{"t": "Mission 3/3 — Retourne à la Place de l'Amazone et arrête-toi devant la statue.", "x": 0.0, "z": -40.0, "car": false, "r": 3000, "ok": "Bienvenue à l'Amazone"},
 ]
 
 # ---------------- outils ----------------
@@ -359,14 +362,9 @@ func startle(pos: Vector3, radius: float) -> int:
 	return n
 
 # Touche E : descendre du véhicule, sinon l'objet ou le véhicule le plus proche.
+# (Les courses de zémidjan s'acceptent avec M : zem.gd.)
 func press_e() -> void:
 	if cur_car:
-		if not zem.offer.is_empty():
-			zem.accept(self)      # un client propose sa course : E l'accepte
-			return
-		if not zem.fare.is_empty():
-			zem.drop_here(self)   # le client descend d'abord
-			return
 		toggle_car()
 		return
 	if player.ko_t > 0.0 or player.down_t > 0.0 or player.mantle_t > 0.0:
@@ -424,21 +422,9 @@ func _nearest_car():
 			best = c
 	return best
 
+# Monter ou descendre : portières, place libre, saut en marche… tout est dans embarquement.gd.
 func toggle_car() -> void:
-	if cur_car:
-		if abs(cur_car.speed) > 6.0:
-			return
-		_get_off()
-		return
-	var c = _nearest_car()
-	if c == null or player.ko_t > 0.0 or player.down_t > 0.0 or player.swimming:
-		return
-	if c.moto and c.fallen:
-		# une moto couchée se relève d'abord ; on remonte ensuite
-		c.stand_up()
-		say("Moto relevée — E pour remonter", 3.0)
-		return
-	mount(c)
+	emb.toggle(self)
 
 func mount(c) -> void:
 	if c.ai:
@@ -458,18 +444,9 @@ func mount(c) -> void:
 	player.visible = false
 	player.shape.disabled = true
 
-# Le héros descend et se retrouve debout à gauche du véhicule.
+# Le héros quitte le véhicule de toute façon (chute) : debout à gauche s'il y a la place.
 func _get_off() -> void:
-	var c = cur_car
-	var h: float = c.heading
-	player.global_position = c.global_position + Vector3(cos(h), 0, -sin(h)) * (1.2 if c.moto else 2.4)
-	player.heading = h
-	player.rotation.y = h
-	player.visible = true
-	player.shape.disabled = false
-	player.reset_pose()
-	c.speed = 0.0
-	cur_car = null
+	emb.descendre(self, true)
 
 # Chute à moto : le pilote se retrouve par terre à côté de sa moto couchée. Il perd de la
 # santé et du temps, jamais connaissance (décision 53) : il lui reste toujours 5 points.
@@ -523,12 +500,16 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("cam"):
 			cam_mode = (cam_mode + 1) % CAMS.size()
 			say("Caméra %s (V pour changer)" % CAMS[cam_mode][2], 2.0)
-		cur_car.drive(delta)
+		if emb.bloque(self):
+			cur_car.idle(delta)   # le héros s'installe : la voiture ne démarre pas encore
+		else:
+			cur_car.drive(delta)
 	else:
 		player.walk(self, delta)
 	for c in cars:
 		if c != cur_car:
 			c.idle(delta)
+	emb.step(self, delta)
 	var pp: Vector3 = focus_pos()
 	trafic.step(self, delta, pp)
 	zem.step(self, delta)

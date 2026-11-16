@@ -11,10 +11,11 @@ const FREIN := 20.0          # touche Bas : les deux freins
 const FREIN_AR := 10.0       # Espace seul : frein arrière
 const FREIN_TOUT := 26.0     # Bas + Espace
 const FREIN_MOTEUR := 3.0    # aucune touche
-const PENCHE_MAX := 0.66     # 38°
-const PENCHE_VITE := 7.0     # rapidité de la mise sur l'angle
-const G_VIRAGE := 26.0       # plus c'est grand, plus la moto tourne pour un même angle
-const YAW_MAX := 2.4         # rad/s : virage le plus serré
+const PENCHE_MAX := 0.66     # 38° : plafond de l'inclinaison, jamais dépassé
+const PENCHE_VITE := 7.0     # rapidité de l'angle des motos de la circulation et de la béquille
+const PENCHE_RAD_S := 1.6    # le pilote couche la moto à 90° par seconde au plus : 0,4 s pour l'angle maximal
+const PESANTEUR := 9.81      # m/s² : l'angle d'un virage est celui d'une vraie moto
+const RAYON_MIN := 2.2       # m : virage le plus serré, guidon en butée (au pas)
 const BEQUILLE := 0.14       # moto garée : penchée de 8° sur sa béquille
 const CHUTE_CHOC := 7.0      # m/s perdus d'un coup (25 km/h) : le pilote tombe
 const COUCHEE := 1.35        # angle de la moto couchée
@@ -74,6 +75,16 @@ func set_passenger(on: bool, c := Color.WHITE) -> void:
 	if on:
 		pass_shirt.material_override = main_ref.mat(c)
 
+# Angle d'équilibre d'une moto qui tourne : tan(angle) = vitesse² / (rayon × g), soit
+# vitesse × vitesse de rotation / g. Plafonné à PENCHE_MAX.
+func angle_virage(v: float, lacet: float) -> float:
+	return clamp(atan(v * lacet / PESANTEUR), -PENCHE_MAX, PENCHE_MAX)
+
+# Virage le plus serré possible à cette vitesse (rad/s) : limité par le guidon au pas,
+# puis par l'angle maximal. Plus on roule vite, plus le virage est large.
+func lacet_max(v: float) -> float:
+	return min(v / RAYON_MIN, PESANTEUR * tan(PENCHE_MAX) / max(v, 0.01))
+
 func _ai_target() -> float:
 	return min(vmax, FAUFILE_V) if side_want != 0.0 or abs(side) > 0.2 else vmax
 
@@ -104,16 +115,17 @@ func drive(delta: float) -> void:
 	else:
 		speed = move_toward(speed, 0.0, FREIN_MOTEUR * delta)
 	speed = clamp(speed, V_RECUL, max_speed())
-	# équilibre : la direction commande l'angle, et c'est l'angle qui fait tourner la moto
+	# équilibre : la direction demande un virage ; la moto prend l'angle qui correspond à sa
+	# vitesse et au rayon de ce virage, et c'est cet angle qui la fait tourner
 	var steer := Input.get_axis("right", "left")
 	var v: float = abs(speed)
-	var plein: float = clamp(v / 6.0, 0.0, 1.0)
-	lean += (steer * PENCHE_MAX * plein - lean) * (1.0 - exp(-delta * PENCHE_VITE * (CHARGE_PENCHE if loaded else 1.0)))
+	var want: float = angle_virage(v, steer * lacet_max(v))
+	lean = move_toward(lean, want, PENCHE_RAD_S * (CHARGE_PENCHE if loaded else 1.0) * delta)
+	lean = clamp(lean, -PENCHE_MAX, PENCHE_MAX)
 	var yaw := 0.0
 	if v > 0.05:
-		yaw = clamp(G_VIRAGE * tan(lean) / max(v, 7.0), -YAW_MAX, YAW_MAX)
-		# au pas, on tourne surtout avec le guidon
-		yaw += steer * 1.6 * (1.0 - plein) * clamp(v, 0.0, 1.0)
+		var butee: float = v / RAYON_MIN
+		yaw = clamp(PESANTEUR * tan(lean) / v, -butee, butee)
 		if rear and v > 5.0:
 			yaw *= 1.35   # frein arrière : la roue arrière glisse, le virage se resserre
 	heading += yaw * delta * sign(speed)
@@ -139,7 +151,7 @@ func _lean(dt: float) -> void:
 	else:
 		if ai:
 			# circulation : l'angle suit le virage réellement pris
-			var want: float = clamp(atan(speed * yaw_rate / 9.8), -0.5, 0.5)
+			var want: float = clamp(angle_virage(speed, yaw_rate), -0.5, 0.5)
 			lean += (want - lean) * (1.0 - exp(-dt * PENCHE_VITE))
 		elif not ridden:
 			lean += (BEQUILLE - lean) * (1.0 - exp(-dt * PENCHE_VITE))
