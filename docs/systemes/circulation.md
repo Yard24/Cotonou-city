@@ -39,7 +39,8 @@ On roule à droite. Les chiffres sont des réglages de départ, à ajuster aprè
 ## Dépassements
 - Une voiture ne double que ce qui ne repartira pas : véhicule accidenté ou en panne, voiture garée ou laissée sur la voie, véhicule du joueur à l'arrêt.
 - Elle s'arrête derrière, attend 2,5 s, vérifie que le couloir est libre et que personne n'arrive en face à moins de 30 m après l'obstacle, puis se déporte de 2,8 m à gauche, passe à 22 km/h au plus et se rabat 6 m plus loin.
-- Jamais de dépassement dans un carrefour ni juste avant, ni d'une file qui attend à un feu.
+- Jamais de dépassement dans un carrefour ni juste avant, ni d'une file qui attend à un feu. Exception : si l'obstacle reste dans le carrefour, la voiture le contourne après 12 s d'attente.
+- Une voiture garée au bord de la chaussée, à plus de 2,25 m sur le côté, ne gêne pas : on passe sans s'arrêter.
 - Les motos, elles, remontent toutes les files par le couloir (décision 61).
 - Plus tard : dépassement d'un véhicule lent qui roule, camions qui ne doublent pas.
 - Test : attente, écart de 2,8 m, vitesse, rabattement ; avec une voiture en face, elle attend qu'elle soit passée.

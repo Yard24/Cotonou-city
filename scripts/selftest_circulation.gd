@@ -401,6 +401,29 @@ func _depassement() -> void:
 	elif a.dist < 96.5 + 15.0 or abs(a.side) > 0.05 or a.speed < 10.0:
 		err = "dépassement : la voiture ne se rabat pas ou ne repart pas (%.0f m après, écart %.2f, %.1f m/s)" % [a.dist - 96.5, a.side, a.speed]
 	if err == "":
+		# garée au bord de la chaussée, à 4,3 m de la voie : on passe sans s'arrêter ni se déporter
+		obst.global_position = Vector3(112.2, 0, -60)
+		_seuls([a])
+		_met(a, 50.0)
+		var bord := [99.0, 0.0]
+		_sim(5.0, func(_t):
+			bord[0] = min(bord[0], a.speed)
+			bord[1] = max(bord[1], abs(a.side)))
+		if bord[0] < 12.0 or bord[1] > 0.0:
+			err = "dépassement : une voiture garée au bord de la chaussée gêne la circulation (%.1f m/s, écart %.2f)" % bord
+		# laissée dans un carrefour : après 12 s d'attente, on la contourne quand même
+		obst.global_position = Vector3(116.5, 0, 0)
+		_seuls([a])
+		C.t = _quand(C.carrefours[C.carrefour_en(Vector2(120, 0))], 0, C.VERT)
+		_met(a, 120.0)
+		_sim(13.0)
+		var attend: bool = a.dist < 156.5
+		C.t = _quand(C.carrefours[C.carrefour_en(Vector2(120, 0))], 0, C.VERT)
+		_sim(13.0)
+		if err == "" and (not attend or a.dist < 156.5 + 12.0):
+			err = "dépassement : voiture laissée dans un carrefour, attente %s, puis %.0f m après elle" % [attend, a.dist - 156.5]
+		obst.global_position = Vector3(116.5, 0, -60)
+	if err == "":
 		# quelqu'un arrive en face : elle attend qu'il soit passé
 		var j: Dictionary = C.carrefours[C.carrefour_en(Vector2(120, 0))]
 		_seuls([a, en_face])

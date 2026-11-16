@@ -123,7 +123,10 @@ func blocked_by(m, a, pp: Vector3) -> Array:
 		var dv: Vector3 = o.global_position - a.global_position
 		var d := dv.length()
 		if d < 8.5 and d > 0.1 and dv.dot(f) / d > 0.72:
-			if abs(dv.dot(l)) > _half(a) + _half(o) + COULOIR and (a.moto or o.moto or deboite or cos(o.heading - a.heading) < -0.7 or circ.attend(o)):
+			# assez loin sur le côté : une moto, le véhicule qu'on dépasse, celui d'en face, celui qui attend
+			# à sa ligne, ou un véhicule garé au bord de la chaussée
+			var gare: bool = not o.ai and o != m.cur_car and abs(o.speed) < 1.0
+			if abs(dv.dot(l)) > _half(a) + _half(o) + COULOIR and (a.moto or o.moto or deboite or gare or cos(o.heading - a.heading) < -0.7 or circ.attend(o)):
 				continue
 			if a.side_want != 0.0 and ((a.moto and not o.moto and d > 4.5) or (d > 6.0 and circ.double(a, o))):
 				continue   # il déboîte déjà : il ne s'arrête que s'il n'a pas la place

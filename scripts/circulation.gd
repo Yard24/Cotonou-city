@@ -68,6 +68,7 @@ var nb_accidents := 0
 
 # ---------------- dépassements ----------------
 const PATIENCE_DEP := 2.5     # secondes d'attente derrière un obstacle qui ne repartira pas
+const PATIENCE_CARREFOUR := 12.0   # obstacle dans un carrefour : on attend 12 s avant de le contourner
 const ECART_DEP := 2.8        # déport vers la gauche
 const V_DEPASSE := 6.0        # 22 km/h le long de l'obstacle
 const FIN_DEP := 6.0          # se rabat 6 m après l'obstacle
@@ -521,8 +522,9 @@ func ecart(m, a, i: Dictionary, bl, delta: float) -> float:
 			return ECART_DEP
 	i.bloq_d = i.bloq_d + delta if (bl != null and _durable(bl)) else 0.0
 	if i.bloq_d > PATIENCE_DEP:
-		var pres_carrefour: bool = i.T != null and i.rel > -15.0 and i.rel < i.T.lg + 6.0
-		if not pres_carrefour and zone(Vector2(bl.global_position.x, bl.global_position.z)) < 0 and _voie_libre(m, a, bl, f):
+		# pas de dépassement dans un carrefour ni juste avant… sauf si l'obstacle y reste : après 12 s, on contourne
+		var pres_carrefour: bool = i.bloq_d < PATIENCE_CARREFOUR and ((i.T != null and i.rel > -15.0 and i.rel < i.T.lg + 6.0) or zone(Vector2(bl.global_position.x, bl.global_position.z)) >= 0)
+		if not pres_carrefour and _voie_libre(m, a, bl, f):
 			i.dep = bl
 			i.bloq_d = 0.0
 			return ECART_DEP
