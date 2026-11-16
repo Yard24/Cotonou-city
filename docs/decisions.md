@@ -1,6 +1,6 @@
 # Décisions validées par Bravo
 
-Ce fichier fait foi : tout passage automatique doit le lire et le respecter. Les numéros sont ceux des propositions envoyées à Bravo. Dernière mise à jour : 15 novembre 2026.
+Ce fichier fait foi : tout passage automatique doit le lire et le respecter. Les numéros sont ceux des propositions envoyées à Bravo. Dernière mise à jour : 16 novembre 2026.
 
 ## Nom et cadre
 - 1. Le jeu s'appelle **« Marina City »** (titre affiché). À appliquer dans le jeu : écran d'accueil, nom de la fenêtre, nom du .exe.
@@ -141,7 +141,18 @@ Ce fichier fait foi : tout passage automatique doit le lire et le respecter. Les
 - 119. Première version publique gratuite : chapitre 1, quartiers Ganhi, Marina et Dantokpa.
 - 120. Les décisions validées sont consignées ici.
 
+## Décisions du 16 novembre 2026
+Réponses de Bravo après le lot « conduite voiture » :
+- Le fichier du jeu s'appelle `MarinaCity.exe` (suite de la décision 1).
+- Barème des dégâts des véhicules validé : rien sous 18 km/h perdus d'un coup ; un mur de face à pleine vitesse coûte 75 points sur 100.
+- Le conducteur perd de la santé dans un gros choc.
+
+Points que Bravo a laissés à Claude (« je te laisse gérer ») ; ils restent modifiables sur simple demande :
+- S'évanouir coûte des soins : 10 % de l'argent du joueur, 2 000 FCFA au plus, rien s'il n'a rien (applique la décision 80).
+- Taille de la carte : 6 × 4 km, comme la décision 83.
+- Budget de polygones : celui de `docs/style_graphique.md` est adopté.
+
 ## Conséquences pour le plan
 - Les tâches « Combat — visée », « armes à feu » et « mise à couvert » ne concernent plus le joueur (décision 3).
-- Le titre « Cotonou City » est à remplacer par « Marina City » dans le jeu et le README.
-- Les tâches de Bravo T0009, T0010 et T0011 (nom, ton, héros) sont tranchées par ce fichier ; c'est à Bravo de les passer à « fait ».
+- Le titre « Marina City » est appliqué dans le jeu, le README et le nom du .exe (16 novembre).
+- Les tâches de Bravo T0009, T0010 et T0011 (nom, ton, héros) sont tranchées par ce fichier ; elles sont passées à « fait » le 16 novembre avec l'accord de Bravo.

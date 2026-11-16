@@ -1,6 +1,6 @@
 extends RefCounted
 # Test automatique de la conduite voiture : direction, frein à main, marche arrière,
-# suspension, collisions, dégâts visibles. Appelé par selftest.gd, tout dans la même image.
+# suspension, collisions, dégâts visibles, santé du conducteur, feux, klaxon, caméra. Appelé par selftest.gd, tout dans la même image.
 # Terrain d'essai : la plage (plate, fermée à la circulation), voiture tournée vers l'est.
 
 const DT := 1.0 / 60.0
@@ -17,7 +17,7 @@ func prepare(m) -> void:
 func run(m) -> String:
 	var c = m.cars[1]
 	var b = m.cars[2]
-	for t in [_direction, _frein_a_main, _marche_arriere, _suspension, _collisions, _degats]:
+	for t in [_direction, _frein_a_main, _marche_arriere, _suspension, _collisions, _degats, _sante, _feux, _klaxon, _camera]:
 		_release()
 		c.repair()
 		b.repair()
@@ -241,7 +241,10 @@ func _degats(m, c, b) -> void:
 	m.info_t = 0.0
 	for i in 6:
 		c.hit(30.0, true)
+	# (ces chocs assomment aussi le conducteur : on le remet sur pied, sa santé est testée plus loin)
 	m.cur_car = null
+	m.player.ko_t = 0.0
+	m.player.health = 100.0
 	if c.damage != 100.0 or c.dmg_stage != 3 or c.smoke_mat.albedo_color.r > 0.3 or m.info_t <= 0.0:
 		err = "dégâts : stade 3 non atteint (dégâts %.0f)" % c.damage
 		return
@@ -258,3 +261,203 @@ func _degats(m, c, b) -> void:
 		err = "dégâts : la réparation ne remet pas à neuf"
 		return
 	print("dégâts : mur à 70 km/h environ = %.0f (capot plié, un phare) ; puis %.0f (coffre, fumée claire) ; à 100 fumée noire et %.0f km/h au plus ; %d pièces de tôle retirées à la réparation" % [d1, d2, vmax * 3.6, n])
+
+func _sante(m, c, _b) -> void:
+	var pl = m.player
+	pl.health = 100.0
+	m.cur_car = c
+	pl.visible = false
+	# choc moyen (moins de 36 km/h perdus) : la voiture est abîmée, pas le conducteur
+	c.hit(9.0, true)
+	if pl.health != 100.0 or c.damage <= 0.0:
+		err = "santé au volant : un choc moyen blesse le conducteur (%.0f)" % pl.health
+		return
+	# gros choc : 72 km/h perdus d'un coup = 20 points ; pleine vitesse = 48 points
+	c.hit(20.0, true)
+	var h1: float = pl.health
+	c.hit(34.0, true)
+	if abs(h1 - 80.0) > 0.01 or abs(pl.health - 32.0) > 0.01 or m.cur_car != c:
+		err = "santé au volant : %.0f puis %.0f (attendu 80 puis 32)" % [h1, pl.health]
+		return
+	# le choc de trop : évanoui, sorti de la voiture, qui s'arrête
+	c.speed = 20.0
+	c.hit(34.0, true)
+	if pl.ko_t <= 0.0 or m.cur_car != null or not pl.visible or c.speed != 0.0:
+		err = "santé au volant : pas d'évanouissement à zéro"
+		return
+	# réveil : les soins coûtent 10 % de l'argent, 2 000 FCFA au plus, rien si on n'a rien
+	var paye := []
+	for somme in [0, 5000, 80000]:
+		m.money = somme
+		m.respawn()
+		paye.append(somme - m.money)
+	pl.ko_t = 0.0
+	m.money = 400
+	if paye != [0, 500, 2000] or pl.health != 100.0:
+		err = "soins : %s FCFA payés (attendu 0, 500, 2000)" % str(paye)
+		return
+	print("santé au volant : choc moyen sans mal, 72 km/h = -20, pleine vitesse = -48, évanoui à zéro et sorti de la voiture ; soins 0, 500 et 2 000 FCFA")
+
+func _feux(m, c, _b) -> void:
+	var fx = c.fx
+	if fx.ind[1].size() != 2 or fx.ind[-1].size() != 2 or fx.ind[1][0].position.x < 0.0 or fx.lights_on:
+		err = "feux : clignotants absents ou phares allumés au départ"
+		return
+	# phares : les optiques s'allument, le faisceau n'existe que pour la voiture du joueur
+	fx.toggle_lights()
+	if not fx.lights_on or fx.spot != null or c.lights_f[0].material_override.shading_mode != BaseMaterial3D.SHADING_MODE_UNSHADED:
+		err = "feux : phares d'une voiture vide mal allumés"
+		return
+	m.cur_car = c
+	fx.set_lights(true)
+	if fx.spot == null or not fx.spot.visible:
+		err = "feux : pas de faisceau pour la voiture du joueur"
+		return
+	fx.toggle_lights()
+	if fx.lights_on or fx.spot.visible or c.lights_f[0].material_override != m.mat(Color("fff6c0")):
+		err = "feux : les phares ne s'éteignent pas"
+		return
+	# feux stop : frein, frein à main, pas en roue libre ni en accélérant
+	var stop := []
+	for keys in [["down"], ["brake"], [], ["up"]]:
+		_put(c, 0, -178, EST, 15.0)
+		_run(c, 0.1, keys)
+		stop.append(fx.brake_shown)
+	if stop != [true, true, false, false]:
+		err = "feux stop : %s" % str(stop)
+		return
+	# clignotant gauche : il bat, à gauche seulement, et s'arrête seul après le virage
+	_put(c, 0, -178, EST, 0.0)
+	fx.set_blink(1)
+	var vu := [0, 0]
+	for i in 80:
+		c.drive(DT)
+		vu[0 if fx.ind[1][0].visible else 1] += 1
+		if fx.ind[-1][0].visible or fx.ind[1][0].visible != fx.ind[1][1].visible:
+			err = "clignotants : mauvais côté allumé"
+			return
+	if vu[0] < 30 or vu[1] < 30:
+		err = "clignotants : pas de battement (%s)" % str(vu)
+		return
+	_put(c, 0, -178, EST, 10.0)
+	fx.blink_h0 = EST
+	_run(c, 1.2, ["left"])
+	if fx.blink != 0 or fx.ind[1][0].visible:
+		err = "clignotants : pas d'arrêt automatique après le virage"
+		return
+	# même touche deux fois : éteint ; autre touche : change de côté
+	fx.set_blink(-1)
+	fx.set_blink(1)
+	var b1: int = fx.blink
+	fx.set_blink(1)
+	if b1 != 1 or fx.blink != 0:
+		err = "clignotants : bascule incorrecte"
+		return
+	m.cur_car = null
+	# circulation : feux stop quand elle est bloquée, clignotant quand elle tourne
+	var a = null
+	for t in m.traffic:
+		if not t.moto:
+			a = t
+			break
+	var d0: float = a.dist
+	var v0: float = a.speed
+	var tourne := false
+	var stop_ai := false
+	for i in 1500:
+		a.ai_step(DT, false)
+		tourne = tourne or a.fx.blink != 0
+		stop_ai = stop_ai or a.fx.brake_shown
+	for i in 30:
+		a.ai_step(DT, true)
+	if not tourne or stop_ai or not a.fx.brake_shown:
+		err = "circulation : clignotant %s, feux stop à tort %s, feux stop bloquée %s" % [tourne, stop_ai, a.fx.brake_shown]
+		return
+	a.dist = d0
+	a.speed = v0
+	a.place_on_path()
+	print("feux : phares et faisceau, feux stop au frein et au frein à main, clignotant qui bat %d images sur 80 et s'arrête après le virage ; circulation : clignotant en virage, feux stop à l'arrêt" % vu[0])
+
+func _klaxon(m, c, _b) -> void:
+	var fx = c.fx
+	# un appui bref : le son démarre, puis s'arrête seul
+	_put(c, 0, -178, EST, 0.0)
+	_run(c, 0.2, ["horn"])
+	if not fx.horn_on or fx.honks != 1 or fx.horn_player == null or fx.horn_player.stream.data.size() != 4410:
+		err = "klaxon : il ne sonne pas"
+		return
+	_run(c, 0.3)
+	if fx.horn_on:
+		err = "klaxon : il ne s'arrête pas quand on relâche"
+		return
+	# les passants proches sursautent, pas les autres
+	var p = m.npcs[0]
+	var pres: int = m.startle(p.n.position, fx.HORN_RANGE)
+	var loin: int = m.startle(Vector3(0, 0, -240), fx.HORN_RANGE)
+	if pres < 1 or loin != 0 or p.scare <= 0.0:
+		err = "klaxon : passants %d près, %d loin" % [pres, loin]
+		return
+	# circulation : bloquée par le joueur, elle klaxonne une fois après 3 s, puis patiente (décision 59)
+	var a = m.traffic[0]
+	var d0: float = a.dist
+	var n0: int = a.fx.honks
+	for i in 170:
+		a.ai_step(DT, true, true)
+	var tot: int = a.fx.honks - n0
+	for i in 600:
+		a.ai_step(DT, true, true)
+	var tard: int = a.fx.honks - n0
+	# bloquée par autre chose que le joueur : silence
+	var b = m.traffic[1]
+	var n1: int = b.fx.honks
+	var d1: float = b.dist
+	for i in 600:
+		b.ai_step(DT, true, false)
+	if tot != 0 or tard != 1 or b.fx.honks != n1:
+		err = "klaxon de la circulation : %d avant 3 s, %d en 13 s, %d sans le joueur" % [tot, tard, b.fx.honks - n1]
+		return
+	a.dist = d0
+	b.dist = d1
+	print("klaxon : sonne tant qu'on appuie, %d passant(s) sursaute(nt) ; circulation : un seul coup en 13 s quand le joueur bloque, aucun sinon" % pres)
+
+func _camera(m, c, _b) -> void:
+	_put(c, 0, -178, EST, 0.0)
+	m.cur_car = c
+	var fwd := Vector3(1, 0, 0)
+	var ds := []
+	for mode in 3:
+		m.cam_mode = mode
+		m._camera(0.0, true)
+		var rel: Vector3 = m.cam.global_position - c.global_position
+		var back: float = -rel.dot(fwd)
+		var vise: float = (-m.cam.global_transform.basis.z).angle_to(c.global_position + Vector3(0, 1.6, 0) - m.cam.global_position)
+		if abs(back - m.CAMS[mode][0]) > 0.01 or abs(rel.y - m.CAMS[mode][1]) > 0.01 or abs(rel.z) > 0.01 or vise > 0.01:
+			err = "caméra de conduite : mode %d, %.1f m derrière, %.1f m de haut" % [mode, back, rel.y]
+			return
+		ds.append(back)
+	if not (ds[0] < ds[1] and ds[1] < ds[2]):
+		err = "caméra de conduite : les trois distances ne sont pas croissantes"
+		return
+	# vue intérieure : dans la voiture, à hauteur d'yeux, regard droit devant
+	m.cam_mode = 3
+	m._camera(0.0, true)
+	var r: Vector3 = m.cam.global_position - c.global_position
+	if Vector2(r.x, r.z).length() > 0.5 or r.y < 1.1 or r.y > 1.6 or (-m.cam.global_transform.basis.z).dot(fwd) < 0.99:
+		err = "caméra de conduite : vue intérieure mal placée"
+		return
+	# elle suit la voiture qui tourne, sans retard
+	_put(c, 0, -178, EST + 1.0, 0.0)
+	m._camera(DT, false)
+	if (-m.cam.global_transform.basis.z).dot(Vector3(sin(EST + 1.0), 0, cos(EST + 1.0))) < 0.99:
+		err = "caméra de conduite : la vue intérieure ne suit pas la voiture"
+		return
+	# à pied, la caméra ne dépend pas du mode choisi en voiture
+	m.cur_car = null
+	m._camera(0.0, true)
+	var dp: float = Vector2(m.cam.global_position.x - m.player.global_position.x, m.cam.global_position.z - m.player.global_position.z).length()
+	m.cam_mode = 1
+	if abs(dp - 6.5) > 0.01:
+		err = "caméra : à pied elle n'est plus à 6,5 m (%.1f)" % dp
+		return
+	print("caméra de conduite : %.0f, %.0f et %.0f m derrière la voiture, vue intérieure à %.2f m de haut, 6,5 m à pied" % [ds[0], ds[1], ds[2], r.y])
+

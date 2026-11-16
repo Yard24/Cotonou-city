@@ -7,9 +7,9 @@ T0005,0. Fondations,Démarrage,À faire par toi,Ouvrir un compte de génération
 T0006,0. Fondations,Démarrage,À faire par toi,Créer les clés API Meshy et ElevenLabs,Toi,Toi,Claude,—,P1,à faire
 T0007,0. Fondations,Démarrage,À faire par toi,Déposer les clés API dans le coffre Supabase,Toi,Toi,Claude,—,P1,à faire
 T0008,0. Fondations,Démarrage,À faire par toi,Fixer le budget mensuel du projet,Toi,Toi,Claude,—,P1,à faire
-T0009,0. Fondations,Démarrage,À faire par toi,Choisir le nom définitif du jeu,Toi,Toi,Claude,—,P1,à faire
-T0010,0. Fondations,Démarrage,À faire par toi,"Valider le ton du jeu (humour, réalisme, niveau de violence)",Toi,Toi,Claude,—,P1,à faire
-T0011,0. Fondations,Démarrage,À faire par toi,"Valider le héros (nom, origine, caractère)",Toi,Toi,Claude,—,P1,à faire
+T0009,0. Fondations,Démarrage,À faire par toi,Choisir le nom définitif du jeu,Toi,Toi,Claude,—,P1,fait
+T0010,0. Fondations,Démarrage,À faire par toi,"Valider le ton du jeu (humour, réalisme, niveau de violence)",Toi,Toi,Claude,—,P1,fait
+T0011,0. Fondations,Démarrage,À faire par toi,"Valider le héros (nom, origine, caractère)",Toi,Toi,Claude,—,P1,fait
 T0012,0. Fondations,Démarrage,Mise en place,Attacher le dépôt à la session et pousser le plan,Claude,Claude,—,Toi,P1,fait
 T0013,0. Fondations,Démarrage,Mise en place,Créer le projet Godot 4 vide (structure des dossiers),Claude,Claude,—,Toi,P1,fait
 T0014,0. Fondations,Démarrage,Mise en place,Définir les conventions de nommage des fichiers,Claude,Claude,—,Toi,P1,fait
@@ -80,15 +80,15 @@ T0078,1. Systèmes de jeu,Conduite voiture,collisions,Conduite voiture — colli
 T0079,1. Systèmes de jeu,Conduite voiture,dégâts visibles,Conduite voiture — dégâts visibles : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0080,1. Systèmes de jeu,Conduite voiture,dégâts visibles,Conduite voiture — dégâts visibles : coder,Claude,Claude,—,Toi,P1,fait
 T0081,1. Systèmes de jeu,Conduite voiture,dégâts visibles,Conduite voiture — dégâts visibles : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
-T0082,1. Systèmes de jeu,Conduite voiture,phares et clignotants,Conduite voiture — phares et clignotants : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0083,1. Systèmes de jeu,Conduite voiture,phares et clignotants,Conduite voiture — phares et clignotants : coder,Claude,Claude,—,Toi,P1,à faire
-T0084,1. Systèmes de jeu,Conduite voiture,phares et clignotants,Conduite voiture — phares et clignotants : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0085,1. Systèmes de jeu,Conduite voiture,klaxon,Conduite voiture — klaxon : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0086,1. Systèmes de jeu,Conduite voiture,klaxon,Conduite voiture — klaxon : coder,Claude,Claude,—,Toi,P1,à faire
-T0087,1. Systèmes de jeu,Conduite voiture,klaxon,Conduite voiture — klaxon : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0088,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0082,1. Systèmes de jeu,Conduite voiture,phares et clignotants,Conduite voiture — phares et clignotants : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0083,1. Systèmes de jeu,Conduite voiture,phares et clignotants,Conduite voiture — phares et clignotants : coder,Claude,Claude,—,Toi,P1,fait
+T0084,1. Systèmes de jeu,Conduite voiture,phares et clignotants,Conduite voiture — phares et clignotants : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0085,1. Systèmes de jeu,Conduite voiture,klaxon,Conduite voiture — klaxon : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0086,1. Systèmes de jeu,Conduite voiture,klaxon,Conduite voiture — klaxon : coder,Claude,Claude,—,Toi,P1,fait
+T0087,1. Systèmes de jeu,Conduite voiture,klaxon,Conduite voiture — klaxon : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0088,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0089,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : coder,Claude,Claude,—,Toi,P1,fait
-T0090,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0090,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0091,1. Systèmes de jeu,Conduite voiture,Essai,Conduite voiture : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0092,1. Systèmes de jeu,Conduite voiture,Essai,Conduite voiture : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
 T0093,1. Systèmes de jeu,Conduite moto,équilibre et inclinaison,Conduite moto — équilibre et inclinaison : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire

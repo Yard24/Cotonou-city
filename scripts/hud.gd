@@ -93,7 +93,7 @@ func build(m) -> void:
 	vb.add_child(flag)
 	var help: Label = m.label(22, Color.WHITE)
 	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	help.text = "Flèches ou ZQSD : avancer, reculer, tourner\nE : monter ou descendre d'une voiture\nÀ pied — Espace : sauter, monter sur un muret · Maj : courir · C : s'accroupir\nE : acheter, s'asseoir, lire un panneau · On nage en entrant dans la mer\nEn voiture — Espace : frein à main\nF4 : niveau graphique · F3 : images par seconde\nÉchap : pause"
+	help.text = "Flèches ou ZQSD : avancer, reculer, tourner\nE : monter ou descendre d'une voiture\nÀ pied — Espace : sauter, monter sur un muret · Maj : courir · C : s'accroupir\nE : acheter, s'asseoir, lire un panneau · On nage en entrant dans la mer\nEn voiture — Espace : frein à main · H : klaxon · L : phares · J et K : clignotants · V : caméra\nF4 : niveau graphique · F3 : images par seconde\nÉchap : pause"
 	vb.add_child(help)
 	m.menu_play = Button.new()
 	m.menu_play.add_theme_font_size_override("font_size", 30)

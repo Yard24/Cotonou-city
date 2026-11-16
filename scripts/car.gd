@@ -27,6 +27,7 @@ var prev_speed := 0.0
 var prev_heading := 0.0
 # dégâts visibles : 0 = neuf, 100 = épave roulante (jamais d'explosion, décision 57)
 const DEGATS_SEUILS := [25.0, 50.0, 80.0]
+const CHOC_SANS_MAL := 10.0   # m/s perdus d'un coup sans blessure pour le conducteur
 var damage := 0.0
 var dmg_stage := 0
 var hit_front := false
@@ -38,6 +39,9 @@ var lights_r: Array = []
 var smoke: CPUParticles3D
 var smoke_mat: StandardMaterial3D
 var main_ref
+var fx = preload("res://scripts/car_fx.gd").new()   # feux, clignotants, klaxon
+var acc_long := 0.0   # accélération mesurée (m/s²), < 0 quand on freine
+var yaw_rate := 0.0   # vitesse de rotation (rad/s), > 0 vers la gauche
 var col := Color.WHITE
 
 func setup(main, color: Color, taxi: bool, is_moto: bool) -> void:
@@ -74,6 +78,7 @@ func setup(main, color: Color, taxi: bool, is_moto: bool) -> void:
 			lights_r.append(main.box(Vector3(0.42, 0.18, 0.06), Color("aa0000"), Vector3(sx, 0.84, -2.21), body))
 		for p in [Vector3(-1, 0.38, 1.4), Vector3(1, 0.38, 1.4), Vector3(-1, 0.38, -1.4), Vector3(1, 0.38, -1.4)]:
 			wheels.append(_wheel(main, p, 0.38, 0.3))
+	fx.setup(self, main)
 
 func _wheel(main, pos: Vector3, r: float, w: float) -> Node3D:
 	var pivot := Node3D.new()
@@ -117,7 +122,7 @@ func place_on_path() -> void:
 	heading = q.z
 	rotation.y = heading
 
-func ai_step(delta: float, blocked: bool) -> void:
+func ai_step(delta: float, blocked: bool, by_player := false) -> void:
 	var tgt := 0.0 if blocked else vmax
 	speed += (tgt - speed) * min(1.0, delta * (7.0 if blocked else 1.4))
 	dist += speed * delta
@@ -127,6 +132,7 @@ func ai_step(delta: float, blocked: bool) -> void:
 	rotation.y = heading
 	_spin(delta)
 	_susp(delta)
+	fx.ai(delta, blocked, by_player)
 
 func drive(delta: float) -> void:
 	var brake := Input.is_action_pressed("brake")
@@ -171,10 +177,16 @@ func drive(delta: float) -> void:
 	global_position.y = 0
 	_spin(delta)
 	_susp(delta)
+	fx.braking = brake or (speed > 0.5 and Input.is_action_pressed("down")) or (speed < -0.5 and Input.is_action_pressed("up"))
+	if Input.is_action_pressed("horn"):
+		fx.honk(0.12)
+	fx.step(delta)
 
 func idle(delta: float) -> void:
 	speed = move_toward(speed, 0.0, 12.0 * delta)
 	_susp(delta)
+	fx.braking = false
+	fx.step(delta)
 
 func _spin(delta: float) -> void:
 	for w in wheels:
@@ -191,6 +203,8 @@ func _susp(delta: float) -> void:
 	var yaw: float = angle_difference(prev_heading, heading) / dt
 	prev_speed = speed
 	prev_heading = heading
+	acc_long = acc
+	yaw_rate = yaw
 	if moto:
 		return   # l'inclinaison de la moto sera faite avec la conduite moto
 	var lat: float = clamp(speed * yaw, -25.0, 25.0)
@@ -226,6 +240,9 @@ func hit(impact: float, front: bool) -> void:
 	else:
 		hit_rear = true
 	bounce_v -= min(impact, 20.0) * 0.03
+	# le conducteur encaisse les gros chocs : rien sous 36 km/h perdus, puis 2 points par m/s
+	if main_ref.cur_car == self and impact > CHOC_SANS_MAL:
+		main_ref.crash_hurt((impact - CHOC_SANS_MAL) * 2.0)
 	_show_damage()
 
 func repair() -> void:

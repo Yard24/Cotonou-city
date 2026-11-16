@@ -58,7 +58,7 @@ Code : `scripts/player.gd` (héros), `scripts/relief.gd` (mer, ponton, murets, c
 - Le héros a 100 points de santé, affichés par une jauge sous l'argent (verte, jaune sous 60, rouge sous 30).
 - La hauteur d'une chute se mesure du point le plus haut atteint jusqu'au point d'arrivée.
 - Jusqu'à 3 m : aucune blessure. Au-delà : 11 points par mètre supplémentaire (8 m = 55 points ; 12,1 m et plus = évanouissement).
-- Santé à zéro : le héros s'évanouit, s'allonge 2,5 secondes, puis se réveille place de l'Amazone avec toute sa santé. Il ne perd pas d'argent pour l'instant.
+- Santé à zéro : le héros s'évanouit, s'allonge 2,5 secondes, puis se réveille place de l'Amazone avec toute sa santé. Les soins lui coûtent 10 % de son argent, 2 000 FCFA au plus.
 - La santé remonte seule (1,5 point par seconde) après 10 secondes sans blessure ; 6 points par seconde assis sur un banc ; +25 d'un coup avec un sachet d'eau fraîche.
 - Plus tard : chocs avec les véhicules, coups, cri et bruit de chute, écran qui rougit, frais de clinique au réveil, réveil au centre de santé le plus proche.
 - Test : chute de 2,5 m sans perte ; chute de 8 m, il reste environ 45 points et la jauge suit ; chute de 14 m, évanouissement puis réveil place de l'Amazone avec 100 points ; la santé remonte seule après 10 s.

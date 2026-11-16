@@ -61,6 +61,11 @@ var inter = InteractionScript.new()
 var hp_fill: ColorRect
 var info_text := ""
 var info_t := 0.0
+# caméra de conduite : trois distances puis vue intérieure (touche V)
+const CAMS := [[8.0, 3.4, "proche"], [11.0, 4.6, "normale"], [15.0, 6.2, "lointaine"], [0.0, 0.0, "intérieure"]]
+const SOINS_PART := 0.1     # un évanouissement coûte 10 % de l'argent en soins…
+const SOINS_MAX := 2000     # … sans dépasser 2 000 FCFA
+var cam_mode := 1
 
 var missions := [
 	{"t": "Mission 1/3 — Monte dans la voiture rouge à côté de toi (touche E), puis roule jusqu'au Marché Dantokpa (colonne jaune).", "x": 60.0, "z": 22.0, "car": true, "r": 5000, "ok": "Arrivé au marché"},
@@ -187,7 +192,8 @@ func _ready() -> void:
 
 func _inputs() -> void:
 	var m := {"up": [KEY_W, KEY_UP], "down": [KEY_S, KEY_DOWN], "left": [KEY_A, KEY_LEFT], "right": [KEY_D, KEY_RIGHT],
-		"brake": [KEY_SPACE], "jump": [KEY_SPACE], "crouch": [KEY_C, KEY_CTRL], "run": [KEY_SHIFT], "enter": [KEY_E], "quit": [KEY_ESCAPE], "fps": [KEY_F3], "quality": [KEY_F4]}
+		"brake": [KEY_SPACE], "jump": [KEY_SPACE], "crouch": [KEY_C, KEY_CTRL], "run": [KEY_SHIFT], "enter": [KEY_E], "quit": [KEY_ESCAPE], "fps": [KEY_F3], "quality": [KEY_F4],
+		"horn": [KEY_H], "lights": [KEY_L], "blink_l": [KEY_J], "blink_r": [KEY_K], "cam": [KEY_V]}
 	for a in m:
 		if not InputMap.has_action(a):
 			InputMap.add_action(a)
@@ -354,7 +360,7 @@ func _people() -> void:
 		var n := Node3D.new()
 		add_child(n)
 		var parts := make_human(n, Color(pick(SHIRTS)), Color(pick(["2b2b40", "5a4632", "1d5e3a", "222222"])), Color(pick(["5a3622", "4a2b1a", "6b4228"])))
-		npcs.append({"n": n, "p": parts, "a": a, "c": c, "len": (c - a).length(), "t": rng.randf() * (c - a).length(), "dir": 1.0 if rng.randf() < 0.5 else -1.0, "v": rr(1.2, 2.0), "ph": rng.randf() * 6.0})
+		npcs.append({"n": n, "p": parts, "a": a, "c": c, "len": (c - a).length(), "t": rng.randf() * (c - a).length(), "dir": 1.0 if rng.randf() < 0.5 else -1.0, "v": rr(1.2, 2.0), "ph": rng.randf() * 6.0, "scare": 0.0})
 	marker = Node3D.new()
 	add_child(marker)
 	var bm := cyl(3, 3, 40, Color.WHITE, Vector3(0, 20, 0), marker, 16)
@@ -395,7 +401,25 @@ func say(text: String, secs: float) -> void:
 func respawn() -> void:
 	player.teleport(SPAWN, PI)
 	player.health = player.SANTE_MAX
-	_banner("Tu reprends tes esprits\nplace de l'Amazone")
+	var frais: int = min(SOINS_MAX, int(money * SOINS_PART))
+	money -= frais
+	_banner("Tu reprends tes esprits\nplace de l'Amazone" + ("\nSoins : -%d FCFA" % frais if frais > 0 else ""))
+
+# Choc en voiture : le conducteur perd de la santé ; évanoui, il est sorti du véhicule.
+func crash_hurt(amount: float) -> void:
+	player.hurt(amount)
+	if player.ko_t > 0.0 and cur_car:
+		cur_car.speed = 0.0
+		toggle_car()
+
+# Coup de klaxon : les passants proches sursautent et pressent le pas quelques secondes.
+func startle(pos: Vector3, radius: float) -> int:
+	var n := 0
+	for p in npcs:
+		if p.n.position.distance_to(pos) < radius:
+			p.scare = 2.5
+			n += 1
+	return n
 
 # Touche E : descendre de voiture, sinon l'objet ou la voiture le plus proche.
 func press_e() -> void:
@@ -480,6 +504,9 @@ func toggle_car() -> void:
 		cars.append(c)
 		_banner("Voiture empruntée !")
 	cur_car = c
+	c.fx.blink = 0
+	c.fx._show_blink()
+	c.fx._spot()
 	player.reset_pose()
 	player.visible = false
 	player.shape.disabled = true
@@ -512,6 +539,17 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("fps"):
 		l_fps.visible = not l_fps.visible
 	if cur_car:
+		if Input.is_action_just_pressed("lights"):
+			cur_car.fx.toggle_lights()
+		if Input.is_action_just_pressed("blink_l"):
+			cur_car.fx.set_blink(1)
+		if Input.is_action_just_pressed("blink_r"):
+			cur_car.fx.set_blink(-1)
+		if Input.is_action_just_pressed("horn"):
+			startle(cur_car.global_position, cur_car.fx.HORN_RANGE)
+		if Input.is_action_just_pressed("cam"):
+			cam_mode = (cam_mode + 1) % CAMS.size()
+			say("Caméra %s (V pour changer)" % CAMS[cam_mode][2], 2.0)
 		cur_car.drive(delta)
 	else:
 		player.walk(self, delta)
@@ -522,6 +560,7 @@ func _physics_process(delta: float) -> void:
 	for a in traffic:
 		var f := Vector3(sin(a.heading), 0, cos(a.heading))
 		var blocked := false
+		var by_player := false
 		for o in traffic + cars:
 			if o == a:
 				continue
@@ -529,14 +568,20 @@ func _physics_process(delta: float) -> void:
 			var d := dv.length()
 			if d < 8.5 and d > 0.1 and dv.dot(f) / d > 0.72:
 				blocked = true
+				by_player = o == cur_car
 				break
 		if not blocked and not cur_car:
 			var dv2: Vector3 = pp - a.global_position
 			var d2: float = dv2.length()
 			blocked = d2 < 8.5 and d2 > 0.1 and dv2.dot(f) / d2 > 0.72
-		a.ai_step(delta, blocked)
+			by_player = blocked
+		a.ai_step(delta, blocked, by_player)
 	for n in npcs:
-		n.t += n.dir * n.v * delta
+		var hurry := 1.0
+		if n.scare > 0.0:
+			n.scare -= delta
+			hurry = 2.2
+		n.t += n.dir * n.v * hurry * delta
 		if n.t > n.len:
 			n.t = n.len
 			n.dir = -1.0
@@ -546,7 +591,7 @@ func _physics_process(delta: float) -> void:
 		var p: Vector2 = n.a.lerp(n.c, n.t / n.len)
 		n.n.position = Vector3(p.x, 0.08, p.y)
 		n.n.rotation.y = atan2((n.c.x - n.a.x) * n.dir, (n.c.y - n.a.y) * n.dir)
-		n.ph += delta * n.v * 3.0
+		n.ph += delta * n.v * hurry * 3.0
 		anim_human(n.p, n.ph, 0.6)
 	_mission(pp)
 	_camera(delta, false)
@@ -569,8 +614,15 @@ func _mission(pp: Vector3) -> void:
 func _camera(delta: float, instant: bool) -> void:
 	var o: Vector3 = cur_car.global_position if cur_car else player.global_position
 	var h: float = cur_car.heading if cur_car else player.heading
-	var dist := 11.0 if cur_car else 6.5
-	var hh := 4.6 if cur_car else 3.0
+	if cur_car and cam_mode == 3:
+		# vue intérieure : à la place du conducteur, regard vers l'avant, sans retard
+		var fw := Vector3(sin(h), 0, cos(h))
+		cam.position = o + Vector3(0, 1.35, 0) + fw * 0.2
+		cam_target = o + Vector3(0, 1.2, 0) + fw * 20.0
+		cam.look_at(cam_target, Vector3.UP)
+		return
+	var dist: float = CAMS[cam_mode][0] if cur_car else 6.5
+	var hh: float = CAMS[cam_mode][1] if cur_car else 3.0
 	# la caméra suit aussi la hauteur du héros (saut, objets sur lesquels il monte)
 	var want := Vector3(o.x - sin(h) * dist, o.y + hh, o.z - cos(h) * dist)
 	var tgt := o + Vector3(0, 1.6, 0)
