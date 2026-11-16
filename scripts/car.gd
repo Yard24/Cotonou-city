@@ -12,6 +12,8 @@ var seg_start: Array = []
 var path_len := 0.0
 var dist := 0.0
 var vmax := 12.0
+var side := 0.0        # écart par rapport au trajet (m, > 0 à gauche) : une moto qui se faufile
+var side_want := 0.0
 var wheels: Array = []
 # suspension : la carrosserie (« body ») bouge sur ses ressorts, les roues restent au sol
 const RAIDEUR := 90.0
@@ -117,16 +119,21 @@ func place_on_path() -> void:
 	rotation.y = heading
 
 func ai_step(delta: float, blocked: bool, by_player := false) -> void:
-	var tgt := 0.0 if blocked else vmax
-	speed += (tgt - speed) * min(1.0, delta * (7.0 if blocked else 1.4))
+	var tgt := 0.0 if blocked else _ai_target()
+	speed += (tgt - speed) * min(1.0, delta * (7.0 if blocked or speed > tgt + 0.5 else 1.4))
 	dist += speed * delta
 	var q := pos_on(dist)
-	global_position = Vector3(q.x, 0, q.y)
+	side = move_toward(side, side_want, 2.5 * delta)
+	global_position = Vector3(q.x, 0, q.y) + Vector3(cos(q.z), 0, -sin(q.z)) * side
 	heading = lerp_angle(heading, q.z, 1.0 - exp(-delta * 7.0))
 	rotation.y = heading
 	_spin(delta)
 	_susp(delta)
 	fx.ai(delta, blocked, by_player)
+
+# Vitesse visée par la circulation (la moto ralentit quand elle se faufile : moto.gd).
+func _ai_target() -> float:
+	return vmax
 
 func drive(delta: float) -> void:
 	var brake := Input.is_action_pressed("brake")

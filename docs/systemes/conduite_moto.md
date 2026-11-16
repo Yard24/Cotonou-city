@@ -1,6 +1,6 @@
 # Conduite moto : fonctionnement attendu
 
-Code : `scripts/moto.gd` (conduite, équilibre, chute ; la moto reprend de `scripts/car.gd` les chocs, les dégâts et le klaxon), chute du pilote dans `scripts/main.gd` et `scripts/player.gd`, caméra dans `scripts/vue.gd`. Vérifications : `scripts/selftest_moto.gd` (lancé par le test automatique), sur la plage, moto seule.
+Code : `scripts/moto.gd` (conduite, équilibre, chute ; la moto reprend de `scripts/car.gd` les chocs, les dégâts et le klaxon), chute du pilote dans `scripts/main.gd` et `scripts/player.gd`, caméra dans `scripts/vue.gd`. Vérifications : `scripts/selftest_moto.gd` (lancé par le test automatique), sur la plage, moto seule. Passager et courses de zémidjan : `scripts/zem.gd` ; passage entre les voitures : `scripts/trafic.gd` et `scripts/moto.gd` ; vérifications de ces deux points : `scripts/selftest_moto_ville.gd`.
 
 Conduite « arcade », comme la voiture : simple au clavier, pas une simulation. Les chiffres sont des réglages de départ, à ajuster après essai.
 
@@ -56,7 +56,32 @@ La moto est le premier véhicule du joueur (décision 51) : celle que Romaric pr
 - Plus tard : guidon et compteur visibles en vue du guidon, caméra qui recule un peu avec la vitesse, regard vers l'arrière.
 - Test : trois distances croissantes, toutes plus courtes et plus basses qu'en voiture ; moto penchée de 34° : caméra penchée du même côté, moins que la moto, et davantage en vue du guidon qu'en vue extérieure ; vue du guidon entre 1,5 et 2 m de haut, regard droit devant, qui suit la moto ; 11 m en voiture et 6,5 m à pied inchangés.
 
+## Passager à l'arrière
+C'est la première forme du métier de zémidjan (décisions 11, 64 et 67) : une course simple, sans marchandage pour l'instant.
+- Six clients attendent au bord de la route : place de l'Amazone, marché Dantokpa, boulevard de la Marina, grand carrefour de l'Est, avenue de l'Ouest, bout de la grande avenue. Ils apparaissent en petits points bleus sur la mini-carte.
+- Quand le joueur approche à moto, sans passager, à moins de 30 m, le client se tourne vers lui et lève le bras. Si la moto s'arrête (moins de 4 km/h) à moins de 6 m de lui, il monte à l'arrière. À pied ou en voiture, il ne se passe rien. Un seul client à la fois.
+- Le client annonce sa destination (un des cinq autres points) et le prix. Une colonne bleue marque l'arrivée, avec un rond bleu sur la mini-carte ; la colonne jaune de la mission reste affichée.
+- Prix : 100 FCFA de prise en charge plus 2 FCFA par mètre à vol d'oiseau, arrondi à 50 FCFA, entre 100 et 1 000 FCFA (décision 64). Dans la ville actuelle, les courses vont de 250 à 700 FCFA.
+- Paiement à l'arrivée : la moto doit s'arrêter à moins de 7 m du point d'arrivée. Le client descend sur le trottoir, paie, reste quelques secondes puis s'en va. Trente secondes plus tard, un client attend de nouveau à son point de départ.
+- Avec un passager la moto est plus lourde : 15 % d'accélération en moins (44 km/h après 1 seconde au lieu de 50), 10 % de freinage en moins (16,5 m au lieu de 14,6 m depuis 90 km/h), et elle se couche un peu moins vite dans les virages. La vitesse maximale ne change pas.
+- Le passager est assis derrière le pilote, casqué comme lui (décision 52), avec la chemise du client.
+- E avec un client à bord : le client descend sur place et la course n'est pas payée. E une seconde fois : le pilote descend.
+- Chute avec un client : il tombe lui aussi, reste 2 secondes par terre, se relève et repart à pied (décision 4). La course est perdue. Le client ne perd pas de santé visible et la police ne réagit pas encore.
+- Si la moto s'arrête à l'arrivée à côté d'un autre client qui attend, celui-ci monte aussitôt : on peut enchaîner les courses.
+- Plus tard : marchandage en trois échanges (décision 65), pourboire ou client mécontent selon la conduite, clients qui hèlent depuis n'importe quel trottoir, paiement KwabôPay au chapitre 2, passager sur les motos de la circulation, voix du client.
+- Test : six clients à leur place ; tarif de 100, 300 et 1 000 FCFA pour 0, 100 et 5 000 m ; personne ne monte à pied, en voiture ni sur une moto qui roule ; bras levé à l'approche ; montée à l'arrêt, prix égal au tarif de la distance ; pas de second client ; moto chargée plus lente à accélérer, à freiner et à se coucher ; pas de paiement en roulant, paiement exact à l'arrêt ; le client s'en va puis un autre revient ; E dépose sans payer ; chute : client par terre puis debout, course perdue, 20 points de santé en moins pour le pilote.
+
+## Passage entre les voitures
+Décision 61 : les motos se faufilent, les voitures restent bloquées.
+- La moto du joueur fait 0,8 m de large, une voiture 2 m : la moto passe dans un espace de 1,4 m entre deux voitures sans rien toucher, là où une voiture reste coincée. Dans un espace plus étroit que la moto, elle bute et s'arrête (sans chute à faible vitesse).
+- Les voitures de la circulation ne s'arrêtent plus pour une moto qui roule à côté d'elles, dans le couloir : seule une moto droit devant (à moins de 1,65 m de leur axe) les arrête. Avant, une moto qui les doublait de près les faisait piler. Une voiture à la même place les arrête toujours.
+- Les motos de la circulation remontent les files : derrière une voiture arrêtée ou très lente (moins de 11 km/h), la moto déboîte de 1,9 m vers l'axe de la route, longe la file à 18 km/h au plus, puis se rabat et reprend sa vitesse. Les voitures, elles, attendent derrière.
+- Une moto ne double pas une autre moto, ni une voiture qui roule normalement, et s'arrête toujours devant un piéton.
+- Tant qu'il n'y a ni feux ni embouteillages, les files n'existent que lorsque quelque chose bloque une voie (le joueur arrêté en voiture, par exemple).
+- Plus tard : couloir entre deux files de même sens quand les routes auront plusieurs voies, rétroviseur accroché si on passe trop vite, coups de klaxon des motos, embouteillages aux heures de pointe (décision 60).
+- Test : passage du joueur à 1,4 m sans dégât ni chute ; arrêt derrière un espace de 0,4 m ; une voiture ne passe pas à 1,4 m ; une voiture de la circulation s'arrête pour la moto du joueur droit devant, pas pour la moto à 1,9 m de côté, et s'arrête pour une voiture à 1,9 m de côté ; une moto de la circulation dépasse une voiture arrêtée en moins de 10 s, à 1,9 m d'elle, côté axe de la route, à 18 km/h au plus, puis reprend sa voie et sa vitesse ; la voiture qui suit s'arrête 6,6 m derrière et y reste.
+
 ## Pas encore fait
-- Passager à l'arrière (courses de zémidjan) et passage entre les voitures : prochaines tâches du plan.
+- Marchandage du prix de la course (décision 65).
 - Phare, feu stop et clignotants de la moto (les touches L, J, K n'ont pas d'effet visible à moto).
 - Manette (décision 114), à faire maintenant que la conduite moto existe.

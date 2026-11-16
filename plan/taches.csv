@@ -103,12 +103,12 @@ T0101,1. Systèmes de jeu,Conduite moto,freinage,Conduite moto — freinage : é
 T0102,1. Systèmes de jeu,Conduite moto,chute du pilote,Conduite moto — chute du pilote : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0103,1. Systèmes de jeu,Conduite moto,chute du pilote,Conduite moto — chute du pilote : coder,Claude,Claude,—,Toi,P1,fait
 T0104,1. Systèmes de jeu,Conduite moto,chute du pilote,Conduite moto — chute du pilote : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
-T0105,1. Systèmes de jeu,Conduite moto,passager à l'arrière,Conduite moto — passager à l'arrière : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0106,1. Systèmes de jeu,Conduite moto,passager à l'arrière,Conduite moto — passager à l'arrière : coder,Claude,Claude,—,Toi,P1,à faire
-T0107,1. Systèmes de jeu,Conduite moto,passager à l'arrière,Conduite moto — passager à l'arrière : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0108,1. Systèmes de jeu,Conduite moto,passage entre les voitures,Conduite moto — passage entre les voitures : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0109,1. Systèmes de jeu,Conduite moto,passage entre les voitures,Conduite moto — passage entre les voitures : coder,Claude,Claude,—,Toi,P1,à faire
-T0110,1. Systèmes de jeu,Conduite moto,passage entre les voitures,Conduite moto — passage entre les voitures : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0105,1. Systèmes de jeu,Conduite moto,passager à l'arrière,Conduite moto — passager à l'arrière : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0106,1. Systèmes de jeu,Conduite moto,passager à l'arrière,Conduite moto — passager à l'arrière : coder,Claude,Claude,—,Toi,P1,fait
+T0107,1. Systèmes de jeu,Conduite moto,passager à l'arrière,Conduite moto — passager à l'arrière : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0108,1. Systèmes de jeu,Conduite moto,passage entre les voitures,Conduite moto — passage entre les voitures : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0109,1. Systèmes de jeu,Conduite moto,passage entre les voitures,Conduite moto — passage entre les voitures : coder,Claude,Claude,—,Toi,P1,fait
+T0110,1. Systèmes de jeu,Conduite moto,passage entre les voitures,Conduite moto — passage entre les voitures : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0111,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra moto : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0112,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra moto : coder,Claude,Claude,—,Toi,P1,fait
 T0113,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra moto : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait

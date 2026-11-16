@@ -13,6 +13,7 @@ const ReliefScript := preload("res://scripts/relief.gd")
 const InteractionScript := preload("res://scripts/interaction.gd")
 const TraficScript := preload("res://scripts/trafic.gd")
 const VueScript := preload("res://scripts/vue.gd")
+const ZemScript := preload("res://scripts/zem.gd")
 const WATER_Y := ReliefScript.WATER_Y
 const SPAWN := Vector3(14, 0, -50)
 const PAL := ["f2e6d0", "e8c99a", "d98c5f", "f4f1ea", "c4d4c8", "e2b3a0", "9fc3d9", "f0dc8a", "d6d0c4"]
@@ -63,6 +64,7 @@ var relief = ReliefScript.new()
 var inter = InteractionScript.new()
 var trafic = TraficScript.new()
 var vue = VueScript.new()
+var zem = ZemScript.new()   # courses de zémidjan : clients et passager
 var moto_romaric   # la moto prêtée par Romaric, garée au point de départ (décision 51)
 var hp_fill: ColorRect
 var info_text := ""
@@ -188,6 +190,7 @@ func _ready() -> void:
 	decor.decor(self)
 	trafic.vehicles(self)
 	trafic.people(self)
+	zem.build(self)
 	relief.build(self)
 	inter.build(self)
 	_hud()
@@ -356,6 +359,9 @@ func startle(pos: Vector3, radius: float) -> int:
 # Touche E : descendre du véhicule, sinon l'objet ou le véhicule le plus proche.
 func press_e() -> void:
 	if cur_car:
+		if not zem.fare.is_empty():
+			zem.drop_here(self)   # le client descend d'abord
+			return
 		toggle_car()
 		return
 	if player.ko_t > 0.0 or player.down_t > 0.0 or player.mantle_t > 0.0:
@@ -469,6 +475,7 @@ func moto_fall(_c, impact: float) -> void:
 	player.hurt(min((impact - 4.0) * 2.5, player.health - CHUTE_SANTE_MIN))
 	player.fall_down(CHUTE_T)
 	say("Chute ! Relève la moto avec E, puis remonte dessus.", 5.0)
+	zem.on_fall(self, _c)
 
 # ---------------- boucle ----------------
 func _physics_process(delta: float) -> void:
@@ -517,6 +524,7 @@ func _physics_process(delta: float) -> void:
 			c.idle(delta)
 	var pp: Vector3 = focus_pos()
 	trafic.step(self, delta, pp)
+	zem.step(self, delta)
 	_mission(pp)
 	_camera(delta, false)
 	_hud_update(delta)

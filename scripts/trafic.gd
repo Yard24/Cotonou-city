@@ -90,27 +90,58 @@ func people(m) -> void:
 	bm.material_override = mt
 	m._camera(0.0, true)
 
+# Demi-largeur d'un véhicule, et marge pour passer à côté sans le gêner.
+const COULOIR := 0.25
+func _half(v) -> float:
+	return 0.4 if v.moto else 1.0
+
+# Ce véhicule de la circulation doit-il s'arrêter ? Renvoie [bloqué, bloqué par le joueur].
+# Une moto qui passe à côté, dans le couloir, ne gêne pas (décision 61) ; un obstacle
+# droit devant arrête tout le monde.
+func blocked_by(m, a, pp: Vector3) -> Array:
+	var f := Vector3(sin(a.heading), 0, cos(a.heading))
+	var l := Vector3(f.z, 0, -f.x)
+	for o in m.traffic + m.cars:
+		if o == a:
+			continue
+		var dv: Vector3 = o.global_position - a.global_position
+		var d := dv.length()
+		if d < 8.5 and d > 0.1 and dv.dot(f) / d > 0.72:
+			if (a.moto or o.moto) and abs(dv.dot(l)) > _half(a) + _half(o) + COULOIR:
+				continue
+			if a.moto and a.side_want != 0.0 and not o.moto and d > 4.5:
+				continue   # elle déboîte déjà : elle ne s'arrête que si elle n'a pas la place
+			return [true, o == m.cur_car]
+	if not m.cur_car:
+		var dv2: Vector3 = pp - a.global_position
+		var d2: float = dv2.length()
+		if d2 < 8.5 and d2 > 0.1 and dv2.dot(f) / d2 > 0.72:
+			return [true, true]
+	return [false, false]
+
+# Moto de la circulation : écart à prendre pour remonter une file. Elle déboîte derrière une
+# voiture arrêtée ou très lente sur sa voie, reste dans le couloir tant qu'elle longe une
+# voiture, puis se rabat. Les voitures, elles, restent dans la file.
+func _faufile(m, a) -> float:
+	var q: Vector3 = a.pos_on(a.dist)
+	var f := Vector3(sin(q.z), 0, cos(q.z))
+	var l := Vector3(f.z, 0, -f.x)
+	for o in m.traffic + m.cars:
+		if o == a or o.moto:
+			continue
+		var dv: Vector3 = o.global_position - Vector3(q.x, 0, q.y)
+		var lon: float = dv.dot(f)
+		if abs(dv.dot(l)) < 1.5 and lon > -5.5 and ((lon < 5.5 and abs(a.side) > 0.3) or (lon < 10.0 and abs(o.speed) < 3.0)):
+			return a.FAUFILE_ECART * a.FAUFILE_COTE
+	return 0.0
+
 # À chaque image : la circulation s'arrête derrière un obstacle, les passants vont et viennent.
 func step(m, delta: float, pp: Vector3) -> void:
 	for a in m.traffic:
-		var f := Vector3(sin(a.heading), 0, cos(a.heading))
-		var blocked := false
-		var by_player := false
-		for o in m.traffic + m.cars:
-			if o == a:
-				continue
-			var dv: Vector3 = o.global_position - a.global_position
-			var d := dv.length()
-			if d < 8.5 and d > 0.1 and dv.dot(f) / d > 0.72:
-				blocked = true
-				by_player = o == m.cur_car
-				break
-		if not blocked and not m.cur_car:
-			var dv2: Vector3 = pp - a.global_position
-			var d2: float = dv2.length()
-			blocked = d2 < 8.5 and d2 > 0.1 and dv2.dot(f) / d2 > 0.72
-			by_player = blocked
-		a.ai_step(delta, blocked, by_player)
+		if a.moto:
+			a.side_want = _faufile(m, a)
+		var b: Array = blocked_by(m, a, pp)
+		a.ai_step(delta, b[0], b[1])
 	for n in m.npcs:
 		var hurry := 1.0
 		if n.scare > 0.0:

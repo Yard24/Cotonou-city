@@ -4,7 +4,9 @@ extends RefCounted
 
 const VoitureTest := preload("res://scripts/selftest_voiture.gd")
 const MotoTest := preload("res://scripts/selftest_moto.gd")
+const MotoVilleTest := preload("res://scripts/selftest_moto_ville.gd")
 var voiture
+var moto_ville
 var start := Vector3.ZERO
 var max_y := 0.0
 var d_walk := 0.0
@@ -289,6 +291,8 @@ func _step2(m, f: int, pl) -> void:
 		var e: String = voiture.run(m)
 		if e == "":
 			e = MotoTest.new().run(m)
+		if e == "":
+			e = moto_ville.run(m)
 		if e != "":
 			_fail(m, e)
 			return
@@ -362,6 +366,8 @@ func _interactions(m, pl) -> void:
 	# conduite voiture : la voiture-obstacle est posée maintenant, le test tourne 4 images plus tard
 	voiture = VoitureTest.new()
 	voiture.prepare(m)
+	moto_ville = MotoVilleTest.new()
+	moto_ville.prepare(m)
 
 # Place le héros quelque part et le fait avancer.
 func _place(pl, pos: Vector3, h: float) -> void:

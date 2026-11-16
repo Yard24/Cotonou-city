@@ -38,14 +38,19 @@ func _draw() -> void:
 	for a in main.traffic:
 		var p: Vector2 = tr.call(a.global_position.x, a.global_position.z)
 		draw_rect(Rect2(p - Vector2(1.5, 1.5), Vector2(3, 3)), Color.WHITE)
-	if main.marker.visible:
-		var m: Vector2 = tr.call(main.marker.position.x, main.marker.position.z)
-		var d := m - c
-		var lim := c.x - 10.0
-		if d.length() > lim:
-			m = c + d.normalized() * lim
-		draw_circle(m, 7.0, Color.BLACK)
-		draw_circle(m, 5.0, Color("ffd200"))
+	# clients de zémidjan qui attendent (petits points bleus), objectif de mission (jaune), arrivée de la course (bleu)
+	for cl in main.zem.clients:
+		if cl.state == "attend":
+			draw_circle(tr.call(cl.n.position.x, cl.n.position.z), 2.5, Color("19c0ff"))
+	for mk in [[main.marker, Color("ffd200")], [main.zem.dest_marker, Color("19c0ff")]]:
+		if mk[0].visible:
+			var m: Vector2 = tr.call(mk[0].position.x, mk[0].position.z)
+			var d := m - c
+			var lim := c.x - 10.0
+			if d.length() > lim:
+				m = c + d.normalized() * lim
+			draw_circle(m, 7.0, Color.BLACK)
+			draw_circle(m, 5.0, mk[1])
 	var col := Color("ff4444") if main.cur_car else Color("00d084")
 	draw_colored_polygon(PackedVector2Array([c + Vector2(0, -9), c + Vector2(6, 7), c + Vector2(0, 3), c + Vector2(-6, 7)]), col)
 	draw_rect(Rect2(Vector2.ZERO, size), Color(0, 0, 0, 0.8), false, 3.0)
