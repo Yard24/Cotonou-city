@@ -177,6 +177,14 @@ Points tranchés par Claude pour appliquer ces réponses ; ils restent modifiabl
 - Inclinaison : angle d'équilibre réel (tangente = vitesse² ÷ (rayon × 9,81)), plafond de 38° pour la moto, 8° pour la caméra extérieure et 20° pour la vue du guidon. Conséquence assumée : le virage le plus serré s'élargit avec la vitesse (29 m de rayon à 54 km/h), il faut donc ralentir avant un carrefour. Détail dans `docs/systemes/conduite_moto.md`.
 - E avec un client à bord fait descendre le pilote ; le client descend aussi et la course n'est pas payée.
 
+## Points tranchés par Claude le 16 novembre 2026 (lot « monter et descendre des véhicules »)
+Ils restent modifiables sur simple demande ; détail dans `docs/systemes/monter_et_descendre_des_vehicules.md`.
+- E au-dessus de 22 km/h : saut en marche. Il coûte 5 points de santé plus 2 par m/s au-dessus de 22 km/h et 2 secondes par terre, jamais l'évanouissement (dans l'esprit de la décision 53).
+- Monter côté passager est possible mais plus lent (1,5 s au lieu de 0,7 s avant de démarrer).
+- Deux voitures garées sur cinq sont fermées à clé, ainsi qu'un conducteur sur trois dans la circulation (jamais les taxis). On ne force pas une portière.
+- On n'emprunte une voiture de la circulation que si elle est arrêtée ou presque (moins de 11 km/h). Décision 54 : le deuxième emprunt est compté comme un signalement, en attendant la police.
+- Les véhicules garés sont tournés dans le sens de la circulation.
+
 ## Conséquences pour le plan
 - Les tâches « Combat — visée », « armes à feu » et « mise à couvert » ne concernent plus le joueur (décision 3).
 - Le titre « Marina City » est appliqué dans le jeu, le README et le nom du .exe (16 novembre).

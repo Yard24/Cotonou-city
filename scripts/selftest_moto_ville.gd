@@ -4,6 +4,7 @@ extends RefCounted
 
 const DT := 1.0 / 60.0
 const EST := PI / 2
+const EmbTest := preload("res://scripts/selftest_embarquement.gd")
 var err := ""
 var file: Array = []   # trois voitures côte à côte au bout ouest de la plage
 
@@ -26,7 +27,8 @@ func run(m) -> String:
 		if err != "":
 			return err
 	_reset(m, c)
-	return ""
+	# dernier maillon de la chaîne : monter et descendre des véhicules (selftest_embarquement.gd)
+	return EmbTest.new().run(m)
 
 func _reset(m, c) -> void:
 	for a in ["up", "down", "left", "right", "brake"]:

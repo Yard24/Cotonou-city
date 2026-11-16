@@ -6,7 +6,7 @@ const CarScript := preload("res://scripts/car.gd")
 const MotoScript := preload("res://scripts/moto.gd")
 const PlayerScript := preload("res://scripts/player.gd")
 # motos garées : [x, z, cap, couleur] ; la première est celle de Romaric, à côté du point de départ
-const MOTOS := [[16.0, -52.0, 0.0, "aa1111"], [70.0, 12.0, PI / 2, "1144aa"], [-70.0, -149.8, PI / 2, "111111"]]
+const MOTOS := [[16.0, -52.0, PI, "aa1111"], [70.0, 12.0, PI / 2, "1144aa"], [-70.0, -149.8, PI / 2, "111111"]]
 
 func make(m, color: Color, taxi: bool, is_moto: bool):
 	var c = MotoScript.new() if is_moto else CarScript.new()

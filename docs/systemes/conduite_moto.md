@@ -7,7 +7,7 @@ Conduite « arcade », comme la voiture : simple au clavier, pas une simulation.
 La moto est le premier véhicule du joueur (décision 51) : celle que Romaric prête à Koffi est garée à côté du point de départ, et la mission 1 demande de monter dessus. Deux autres motos sont garées en ville (marché Dantokpa, boulevard de la Marina). Les motos de la circulation ont leur conducteur : on ne peut pas encore les emprunter.
 
 ## Monter et descendre
-- E près d'une moto garée : Koffi monte dessus, casqué (décision 52), en maillot vert. E de nouveau, à moins de 22 km/h : il descend à gauche de la moto.
+- E près d'une moto garée : Koffi monte dessus, casqué (décision 52), en maillot vert. E de nouveau, à moins de 22 km/h : il descend à gauche de la moto s'il y a la place (au-dessus : saut en marche ; voir `monter_et_descendre_des_vehicules.md`).
 - Une moto sans pilote repose sur sa béquille, penchée de 8°.
 - À l'arrêt, le pilote pose le pied gauche par terre.
 
