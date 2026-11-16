@@ -2021,7 +2021,7 @@ T2019,3. Monde — autres villes,Villes,Route inter-villes,Route inter-villes : 
 T2020,3. Monde — autres villes,Villes,Route inter-villes,Route inter-villes : régler le chargement de la ville,Claude,Claude,—,Toi,P3,à faire
 T2021,3. Monde — autres villes,Villes,Route inter-villes,Route inter-villes : mesurer la fluidité,Claude,Claude,—,Toi,P3,à faire
 T2022,3. Monde — autres villes,Villes,Route inter-villes,Route inter-villes : visiter en jeu et valider,Toi,Toi,Claude,—,P3,à faire
-T2023,"4. Véhicules, personnages, animations",Véhicules,Moto de zémidjan,"Moto de zémidjan : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,à faire
+T2023,"4. Véhicules, personnages, animations",Véhicules,Moto de zémidjan,"Moto de zémidjan : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,fait
 T2024,"4. Véhicules, personnages, animations",Véhicules,Moto de zémidjan,Moto de zémidjan : générer le modèle 3D,Claude,Claude,—,Toi,P1,à faire
 T2025,"4. Véhicules, personnages, animations",Véhicules,Moto de zémidjan,Moto de zémidjan : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P1,à faire
 T2026,"4. Véhicules, personnages, animations",Véhicules,Moto de zémidjan,"Moto de zémidjan : séparer roues, portes et vitres",Claude,Claude,—,Toi,P1,à faire
@@ -2031,7 +2031,7 @@ T2029,"4. Véhicules, personnages, animations",Véhicules,Moto de zémidjan,Moto
 T2030,"4. Véhicules, personnages, animations",Véhicules,Moto de zémidjan,Moto de zémidjan : ajouter les sons,Claude,Claude,—,Toi,P1,à faire
 T2031,"4. Véhicules, personnages, animations",Véhicules,Moto de zémidjan,Moto de zémidjan : ajouter les dégâts,Claude,Claude,—,Toi,P1,à faire
 T2032,"4. Véhicules, personnages, animations",Véhicules,Moto de zémidjan,Moto de zémidjan : tester en circulation,Claude,Claude,—,Toi,P1,à faire
-T2033,"4. Véhicules, personnages, animations",Véhicules,Moto de ville,"Moto de ville : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2033,"4. Véhicules, personnages, animations",Véhicules,Moto de ville,"Moto de ville : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2034,"4. Véhicules, personnages, animations",Véhicules,Moto de ville,Moto de ville : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2035,"4. Véhicules, personnages, animations",Véhicules,Moto de ville,Moto de ville : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2036,"4. Véhicules, personnages, animations",Véhicules,Moto de ville,"Moto de ville : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2041,7 +2041,7 @@ T2039,"4. Véhicules, personnages, animations",Véhicules,Moto de ville,Moto de 
 T2040,"4. Véhicules, personnages, animations",Véhicules,Moto de ville,Moto de ville : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2041,"4. Véhicules, personnages, animations",Véhicules,Moto de ville,Moto de ville : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2042,"4. Véhicules, personnages, animations",Véhicules,Moto de ville,Moto de ville : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2043,"4. Véhicules, personnages, animations",Véhicules,Scooter,"Scooter : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2043,"4. Véhicules, personnages, animations",Véhicules,Scooter,"Scooter : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2044,"4. Véhicules, personnages, animations",Véhicules,Scooter,Scooter : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2045,"4. Véhicules, personnages, animations",Véhicules,Scooter,Scooter : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2046,"4. Véhicules, personnages, animations",Véhicules,Scooter,"Scooter : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2051,7 +2051,7 @@ T2049,"4. Véhicules, personnages, animations",Véhicules,Scooter,Scooter : rég
 T2050,"4. Véhicules, personnages, animations",Véhicules,Scooter,Scooter : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2051,"4. Véhicules, personnages, animations",Véhicules,Scooter,Scooter : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2052,"4. Véhicules, personnages, animations",Véhicules,Scooter,Scooter : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2053,"4. Véhicules, personnages, animations",Véhicules,Moto tout-terrain,"Moto tout-terrain : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2053,"4. Véhicules, personnages, animations",Véhicules,Moto tout-terrain,"Moto tout-terrain : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2054,"4. Véhicules, personnages, animations",Véhicules,Moto tout-terrain,Moto tout-terrain : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2055,"4. Véhicules, personnages, animations",Véhicules,Moto tout-terrain,Moto tout-terrain : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2056,"4. Véhicules, personnages, animations",Véhicules,Moto tout-terrain,"Moto tout-terrain : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2061,7 +2061,7 @@ T2059,"4. Véhicules, personnages, animations",Véhicules,Moto tout-terrain,Moto
 T2060,"4. Véhicules, personnages, animations",Véhicules,Moto tout-terrain,Moto tout-terrain : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2061,"4. Véhicules, personnages, animations",Véhicules,Moto tout-terrain,Moto tout-terrain : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2062,"4. Véhicules, personnages, animations",Véhicules,Moto tout-terrain,Moto tout-terrain : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2063,"4. Véhicules, personnages, animations",Véhicules,Tricycle de livraison,"Tricycle de livraison : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2063,"4. Véhicules, personnages, animations",Véhicules,Tricycle de livraison,"Tricycle de livraison : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2064,"4. Véhicules, personnages, animations",Véhicules,Tricycle de livraison,Tricycle de livraison : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2065,"4. Véhicules, personnages, animations",Véhicules,Tricycle de livraison,Tricycle de livraison : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2066,"4. Véhicules, personnages, animations",Véhicules,Tricycle de livraison,"Tricycle de livraison : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2071,7 +2071,7 @@ T2069,"4. Véhicules, personnages, animations",Véhicules,Tricycle de livraison,
 T2070,"4. Véhicules, personnages, animations",Véhicules,Tricycle de livraison,Tricycle de livraison : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2071,"4. Véhicules, personnages, animations",Véhicules,Tricycle de livraison,Tricycle de livraison : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2072,"4. Véhicules, personnages, animations",Véhicules,Tricycle de livraison,Tricycle de livraison : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2073,"4. Véhicules, personnages, animations",Véhicules,Tricycle taxi,"Tricycle taxi : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2073,"4. Véhicules, personnages, animations",Véhicules,Tricycle taxi,"Tricycle taxi : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2074,"4. Véhicules, personnages, animations",Véhicules,Tricycle taxi,Tricycle taxi : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2075,"4. Véhicules, personnages, animations",Véhicules,Tricycle taxi,Tricycle taxi : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2076,"4. Véhicules, personnages, animations",Véhicules,Tricycle taxi,"Tricycle taxi : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2081,7 +2081,7 @@ T2079,"4. Véhicules, personnages, animations",Véhicules,Tricycle taxi,Tricycle
 T2080,"4. Véhicules, personnages, animations",Véhicules,Tricycle taxi,Tricycle taxi : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2081,"4. Véhicules, personnages, animations",Véhicules,Tricycle taxi,Tricycle taxi : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2082,"4. Véhicules, personnages, animations",Véhicules,Tricycle taxi,Tricycle taxi : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2083,"4. Véhicules, personnages, animations",Véhicules,Taxi jaune,"Taxi jaune : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,à faire
+T2083,"4. Véhicules, personnages, animations",Véhicules,Taxi jaune,"Taxi jaune : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,fait
 T2084,"4. Véhicules, personnages, animations",Véhicules,Taxi jaune,Taxi jaune : générer le modèle 3D,Claude,Claude,—,Toi,P1,à faire
 T2085,"4. Véhicules, personnages, animations",Véhicules,Taxi jaune,Taxi jaune : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P1,à faire
 T2086,"4. Véhicules, personnages, animations",Véhicules,Taxi jaune,"Taxi jaune : séparer roues, portes et vitres",Claude,Claude,—,Toi,P1,à faire
@@ -2091,7 +2091,7 @@ T2089,"4. Véhicules, personnages, animations",Véhicules,Taxi jaune,Taxi jaune 
 T2090,"4. Véhicules, personnages, animations",Véhicules,Taxi jaune,Taxi jaune : ajouter les sons,Claude,Claude,—,Toi,P1,à faire
 T2091,"4. Véhicules, personnages, animations",Véhicules,Taxi jaune,Taxi jaune : ajouter les dégâts,Claude,Claude,—,Toi,P1,à faire
 T2092,"4. Véhicules, personnages, animations",Véhicules,Taxi jaune,Taxi jaune : tester en circulation,Claude,Claude,—,Toi,P1,à faire
-T2093,"4. Véhicules, personnages, animations",Véhicules,Berline ancienne,"Berline ancienne : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,à faire
+T2093,"4. Véhicules, personnages, animations",Véhicules,Berline ancienne,"Berline ancienne : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,fait
 T2094,"4. Véhicules, personnages, animations",Véhicules,Berline ancienne,Berline ancienne : générer le modèle 3D,Claude,Claude,—,Toi,P1,à faire
 T2095,"4. Véhicules, personnages, animations",Véhicules,Berline ancienne,Berline ancienne : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P1,à faire
 T2096,"4. Véhicules, personnages, animations",Véhicules,Berline ancienne,"Berline ancienne : séparer roues, portes et vitres",Claude,Claude,—,Toi,P1,à faire
@@ -2101,7 +2101,7 @@ T2099,"4. Véhicules, personnages, animations",Véhicules,Berline ancienne,Berli
 T2100,"4. Véhicules, personnages, animations",Véhicules,Berline ancienne,Berline ancienne : ajouter les sons,Claude,Claude,—,Toi,P1,à faire
 T2101,"4. Véhicules, personnages, animations",Véhicules,Berline ancienne,Berline ancienne : ajouter les dégâts,Claude,Claude,—,Toi,P1,à faire
 T2102,"4. Véhicules, personnages, animations",Véhicules,Berline ancienne,Berline ancienne : tester en circulation,Claude,Claude,—,Toi,P1,à faire
-T2103,"4. Véhicules, personnages, animations",Véhicules,Berline récente,"Berline récente : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2103,"4. Véhicules, personnages, animations",Véhicules,Berline récente,"Berline récente : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2104,"4. Véhicules, personnages, animations",Véhicules,Berline récente,Berline récente : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2105,"4. Véhicules, personnages, animations",Véhicules,Berline récente,Berline récente : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2106,"4. Véhicules, personnages, animations",Véhicules,Berline récente,"Berline récente : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2111,7 +2111,7 @@ T2109,"4. Véhicules, personnages, animations",Véhicules,Berline récente,Berli
 T2110,"4. Véhicules, personnages, animations",Véhicules,Berline récente,Berline récente : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2111,"4. Véhicules, personnages, animations",Véhicules,Berline récente,Berline récente : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2112,"4. Véhicules, personnages, animations",Véhicules,Berline récente,Berline récente : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2113,"4. Véhicules, personnages, animations",Véhicules,Petite citadine,"Petite citadine : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2113,"4. Véhicules, personnages, animations",Véhicules,Petite citadine,"Petite citadine : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2114,"4. Véhicules, personnages, animations",Véhicules,Petite citadine,Petite citadine : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2115,"4. Véhicules, personnages, animations",Véhicules,Petite citadine,Petite citadine : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2116,"4. Véhicules, personnages, animations",Véhicules,Petite citadine,"Petite citadine : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2121,7 +2121,7 @@ T2119,"4. Véhicules, personnages, animations",Véhicules,Petite citadine,Petite
 T2120,"4. Véhicules, personnages, animations",Véhicules,Petite citadine,Petite citadine : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2121,"4. Véhicules, personnages, animations",Véhicules,Petite citadine,Petite citadine : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2122,"4. Véhicules, personnages, animations",Véhicules,Petite citadine,Petite citadine : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2123,"4. Véhicules, personnages, animations",Véhicules,Break familial,"Break familial : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2123,"4. Véhicules, personnages, animations",Véhicules,Break familial,"Break familial : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2124,"4. Véhicules, personnages, animations",Véhicules,Break familial,Break familial : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2125,"4. Véhicules, personnages, animations",Véhicules,Break familial,Break familial : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2126,"4. Véhicules, personnages, animations",Véhicules,Break familial,"Break familial : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2131,7 +2131,7 @@ T2129,"4. Véhicules, personnages, animations",Véhicules,Break familial,Break f
 T2130,"4. Véhicules, personnages, animations",Véhicules,Break familial,Break familial : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2131,"4. Véhicules, personnages, animations",Véhicules,Break familial,Break familial : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2132,"4. Véhicules, personnages, animations",Véhicules,Break familial,Break familial : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2133,"4. Véhicules, personnages, animations",Véhicules,4x4 de ville,"4x4 de ville : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,à faire
+T2133,"4. Véhicules, personnages, animations",Véhicules,4x4 de ville,"4x4 de ville : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,fait
 T2134,"4. Véhicules, personnages, animations",Véhicules,4x4 de ville,4x4 de ville : générer le modèle 3D,Claude,Claude,—,Toi,P1,à faire
 T2135,"4. Véhicules, personnages, animations",Véhicules,4x4 de ville,4x4 de ville : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P1,à faire
 T2136,"4. Véhicules, personnages, animations",Véhicules,4x4 de ville,"4x4 de ville : séparer roues, portes et vitres",Claude,Claude,—,Toi,P1,à faire
@@ -2141,7 +2141,7 @@ T2139,"4. Véhicules, personnages, animations",Véhicules,4x4 de ville,4x4 de vi
 T2140,"4. Véhicules, personnages, animations",Véhicules,4x4 de ville,4x4 de ville : ajouter les sons,Claude,Claude,—,Toi,P1,à faire
 T2141,"4. Véhicules, personnages, animations",Véhicules,4x4 de ville,4x4 de ville : ajouter les dégâts,Claude,Claude,—,Toi,P1,à faire
 T2142,"4. Véhicules, personnages, animations",Véhicules,4x4 de ville,4x4 de ville : tester en circulation,Claude,Claude,—,Toi,P1,à faire
-T2143,"4. Véhicules, personnages, animations",Véhicules,4x4 de brousse,"4x4 de brousse : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2143,"4. Véhicules, personnages, animations",Véhicules,4x4 de brousse,"4x4 de brousse : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2144,"4. Véhicules, personnages, animations",Véhicules,4x4 de brousse,4x4 de brousse : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2145,"4. Véhicules, personnages, animations",Véhicules,4x4 de brousse,4x4 de brousse : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2146,"4. Véhicules, personnages, animations",Véhicules,4x4 de brousse,"4x4 de brousse : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2151,7 +2151,7 @@ T2149,"4. Véhicules, personnages, animations",Véhicules,4x4 de brousse,4x4 de 
 T2150,"4. Véhicules, personnages, animations",Véhicules,4x4 de brousse,4x4 de brousse : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2151,"4. Véhicules, personnages, animations",Véhicules,4x4 de brousse,4x4 de brousse : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2152,"4. Véhicules, personnages, animations",Véhicules,4x4 de brousse,4x4 de brousse : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2153,"4. Véhicules, personnages, animations",Véhicules,Pick-up bâché,"Pick-up bâché : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,à faire
+T2153,"4. Véhicules, personnages, animations",Véhicules,Pick-up bâché,"Pick-up bâché : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,fait
 T2154,"4. Véhicules, personnages, animations",Véhicules,Pick-up bâché,Pick-up bâché : générer le modèle 3D,Claude,Claude,—,Toi,P1,à faire
 T2155,"4. Véhicules, personnages, animations",Véhicules,Pick-up bâché,Pick-up bâché : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P1,à faire
 T2156,"4. Véhicules, personnages, animations",Véhicules,Pick-up bâché,"Pick-up bâché : séparer roues, portes et vitres",Claude,Claude,—,Toi,P1,à faire
@@ -2161,7 +2161,7 @@ T2159,"4. Véhicules, personnages, animations",Véhicules,Pick-up bâché,Pick-u
 T2160,"4. Véhicules, personnages, animations",Véhicules,Pick-up bâché,Pick-up bâché : ajouter les sons,Claude,Claude,—,Toi,P1,à faire
 T2161,"4. Véhicules, personnages, animations",Véhicules,Pick-up bâché,Pick-up bâché : ajouter les dégâts,Claude,Claude,—,Toi,P1,à faire
 T2162,"4. Véhicules, personnages, animations",Véhicules,Pick-up bâché,Pick-up bâché : tester en circulation,Claude,Claude,—,Toi,P1,à faire
-T2163,"4. Véhicules, personnages, animations",Véhicules,Pick-up de chantier,"Pick-up de chantier : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2163,"4. Véhicules, personnages, animations",Véhicules,Pick-up de chantier,"Pick-up de chantier : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2164,"4. Véhicules, personnages, animations",Véhicules,Pick-up de chantier,Pick-up de chantier : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2165,"4. Véhicules, personnages, animations",Véhicules,Pick-up de chantier,Pick-up de chantier : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2166,"4. Véhicules, personnages, animations",Véhicules,Pick-up de chantier,"Pick-up de chantier : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2171,7 +2171,7 @@ T2169,"4. Véhicules, personnages, animations",Véhicules,Pick-up de chantier,Pi
 T2170,"4. Véhicules, personnages, animations",Véhicules,Pick-up de chantier,Pick-up de chantier : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2171,"4. Véhicules, personnages, animations",Véhicules,Pick-up de chantier,Pick-up de chantier : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2172,"4. Véhicules, personnages, animations",Véhicules,Pick-up de chantier,Pick-up de chantier : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2173,"4. Véhicules, personnages, animations",Véhicules,Minibus tokpa-tokpa,"Minibus tokpa-tokpa : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,à faire
+T2173,"4. Véhicules, personnages, animations",Véhicules,Minibus tokpa-tokpa,"Minibus tokpa-tokpa : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,fait
 T2174,"4. Véhicules, personnages, animations",Véhicules,Minibus tokpa-tokpa,Minibus tokpa-tokpa : générer le modèle 3D,Claude,Claude,—,Toi,P1,à faire
 T2175,"4. Véhicules, personnages, animations",Véhicules,Minibus tokpa-tokpa,Minibus tokpa-tokpa : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P1,à faire
 T2176,"4. Véhicules, personnages, animations",Véhicules,Minibus tokpa-tokpa,"Minibus tokpa-tokpa : séparer roues, portes et vitres",Claude,Claude,—,Toi,P1,à faire
@@ -2181,7 +2181,7 @@ T2179,"4. Véhicules, personnages, animations",Véhicules,Minibus tokpa-tokpa,Mi
 T2180,"4. Véhicules, personnages, animations",Véhicules,Minibus tokpa-tokpa,Minibus tokpa-tokpa : ajouter les sons,Claude,Claude,—,Toi,P1,à faire
 T2181,"4. Véhicules, personnages, animations",Véhicules,Minibus tokpa-tokpa,Minibus tokpa-tokpa : ajouter les dégâts,Claude,Claude,—,Toi,P1,à faire
 T2182,"4. Véhicules, personnages, animations",Véhicules,Minibus tokpa-tokpa,Minibus tokpa-tokpa : tester en circulation,Claude,Claude,—,Toi,P1,à faire
-T2183,"4. Véhicules, personnages, animations",Véhicules,Minibus de voyage,"Minibus de voyage : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2183,"4. Véhicules, personnages, animations",Véhicules,Minibus de voyage,"Minibus de voyage : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2184,"4. Véhicules, personnages, animations",Véhicules,Minibus de voyage,Minibus de voyage : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2185,"4. Véhicules, personnages, animations",Véhicules,Minibus de voyage,Minibus de voyage : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2186,"4. Véhicules, personnages, animations",Véhicules,Minibus de voyage,"Minibus de voyage : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2191,7 +2191,7 @@ T2189,"4. Véhicules, personnages, animations",Véhicules,Minibus de voyage,Mini
 T2190,"4. Véhicules, personnages, animations",Véhicules,Minibus de voyage,Minibus de voyage : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2191,"4. Véhicules, personnages, animations",Véhicules,Minibus de voyage,Minibus de voyage : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2192,"4. Véhicules, personnages, animations",Véhicules,Minibus de voyage,Minibus de voyage : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2193,"4. Véhicules, personnages, animations",Véhicules,Bus de ville,"Bus de ville : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2193,"4. Véhicules, personnages, animations",Véhicules,Bus de ville,"Bus de ville : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2194,"4. Véhicules, personnages, animations",Véhicules,Bus de ville,Bus de ville : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2195,"4. Véhicules, personnages, animations",Véhicules,Bus de ville,Bus de ville : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2196,"4. Véhicules, personnages, animations",Véhicules,Bus de ville,"Bus de ville : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2201,7 +2201,7 @@ T2199,"4. Véhicules, personnages, animations",Véhicules,Bus de ville,Bus de vi
 T2200,"4. Véhicules, personnages, animations",Véhicules,Bus de ville,Bus de ville : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2201,"4. Véhicules, personnages, animations",Véhicules,Bus de ville,Bus de ville : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2202,"4. Véhicules, personnages, animations",Véhicules,Bus de ville,Bus de ville : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2203,"4. Véhicules, personnages, animations",Véhicules,Car inter-villes,"Car inter-villes : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2203,"4. Véhicules, personnages, animations",Véhicules,Car inter-villes,"Car inter-villes : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2204,"4. Véhicules, personnages, animations",Véhicules,Car inter-villes,Car inter-villes : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2205,"4. Véhicules, personnages, animations",Véhicules,Car inter-villes,Car inter-villes : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2206,"4. Véhicules, personnages, animations",Véhicules,Car inter-villes,"Car inter-villes : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2211,7 +2211,7 @@ T2209,"4. Véhicules, personnages, animations",Véhicules,Car inter-villes,Car i
 T2210,"4. Véhicules, personnages, animations",Véhicules,Car inter-villes,Car inter-villes : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2211,"4. Véhicules, personnages, animations",Véhicules,Car inter-villes,Car inter-villes : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2212,"4. Véhicules, personnages, animations",Véhicules,Car inter-villes,Car inter-villes : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2213,"4. Véhicules, personnages, animations",Véhicules,Camionnette de livraison,"Camionnette de livraison : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2213,"4. Véhicules, personnages, animations",Véhicules,Camionnette de livraison,"Camionnette de livraison : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2214,"4. Véhicules, personnages, animations",Véhicules,Camionnette de livraison,Camionnette de livraison : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2215,"4. Véhicules, personnages, animations",Véhicules,Camionnette de livraison,Camionnette de livraison : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2216,"4. Véhicules, personnages, animations",Véhicules,Camionnette de livraison,"Camionnette de livraison : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2221,7 +2221,7 @@ T2219,"4. Véhicules, personnages, animations",Véhicules,Camionnette de livrais
 T2220,"4. Véhicules, personnages, animations",Véhicules,Camionnette de livraison,Camionnette de livraison : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2221,"4. Véhicules, personnages, animations",Véhicules,Camionnette de livraison,Camionnette de livraison : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2222,"4. Véhicules, personnages, animations",Véhicules,Camionnette de livraison,Camionnette de livraison : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2223,"4. Véhicules, personnages, animations",Véhicules,Camion de marchandises,"Camion de marchandises : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2223,"4. Véhicules, personnages, animations",Véhicules,Camion de marchandises,"Camion de marchandises : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2224,"4. Véhicules, personnages, animations",Véhicules,Camion de marchandises,Camion de marchandises : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2225,"4. Véhicules, personnages, animations",Véhicules,Camion de marchandises,Camion de marchandises : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2226,"4. Véhicules, personnages, animations",Véhicules,Camion de marchandises,"Camion de marchandises : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2231,7 +2231,7 @@ T2229,"4. Véhicules, personnages, animations",Véhicules,Camion de marchandises
 T2230,"4. Véhicules, personnages, animations",Véhicules,Camion de marchandises,Camion de marchandises : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2231,"4. Véhicules, personnages, animations",Véhicules,Camion de marchandises,Camion de marchandises : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2232,"4. Véhicules, personnages, animations",Véhicules,Camion de marchandises,Camion de marchandises : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2233,"4. Véhicules, personnages, animations",Véhicules,Camion-citerne,"Camion-citerne : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2233,"4. Véhicules, personnages, animations",Véhicules,Camion-citerne,"Camion-citerne : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2234,"4. Véhicules, personnages, animations",Véhicules,Camion-citerne,Camion-citerne : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2235,"4. Véhicules, personnages, animations",Véhicules,Camion-citerne,Camion-citerne : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2236,"4. Véhicules, personnages, animations",Véhicules,Camion-citerne,"Camion-citerne : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2241,7 +2241,7 @@ T2239,"4. Véhicules, personnages, animations",Véhicules,Camion-citerne,Camion-
 T2240,"4. Véhicules, personnages, animations",Véhicules,Camion-citerne,Camion-citerne : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2241,"4. Véhicules, personnages, animations",Véhicules,Camion-citerne,Camion-citerne : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2242,"4. Véhicules, personnages, animations",Véhicules,Camion-citerne,Camion-citerne : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2243,"4. Véhicules, personnages, animations",Véhicules,Camion porte-conteneur,"Camion porte-conteneur : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2243,"4. Véhicules, personnages, animations",Véhicules,Camion porte-conteneur,"Camion porte-conteneur : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2244,"4. Véhicules, personnages, animations",Véhicules,Camion porte-conteneur,Camion porte-conteneur : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2245,"4. Véhicules, personnages, animations",Véhicules,Camion porte-conteneur,Camion porte-conteneur : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2246,"4. Véhicules, personnages, animations",Véhicules,Camion porte-conteneur,"Camion porte-conteneur : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2251,7 +2251,7 @@ T2249,"4. Véhicules, personnages, animations",Véhicules,Camion porte-conteneur
 T2250,"4. Véhicules, personnages, animations",Véhicules,Camion porte-conteneur,Camion porte-conteneur : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2251,"4. Véhicules, personnages, animations",Véhicules,Camion porte-conteneur,Camion porte-conteneur : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2252,"4. Véhicules, personnages, animations",Véhicules,Camion porte-conteneur,Camion porte-conteneur : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2253,"4. Véhicules, personnages, animations",Véhicules,Camion-benne,"Camion-benne : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2253,"4. Véhicules, personnages, animations",Véhicules,Camion-benne,"Camion-benne : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2254,"4. Véhicules, personnages, animations",Véhicules,Camion-benne,Camion-benne : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2255,"4. Véhicules, personnages, animations",Véhicules,Camion-benne,Camion-benne : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2256,"4. Véhicules, personnages, animations",Véhicules,Camion-benne,"Camion-benne : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2261,7 +2261,7 @@ T2259,"4. Véhicules, personnages, animations",Véhicules,Camion-benne,Camion-be
 T2260,"4. Véhicules, personnages, animations",Véhicules,Camion-benne,Camion-benne : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2261,"4. Véhicules, personnages, animations",Véhicules,Camion-benne,Camion-benne : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2262,"4. Véhicules, personnages, animations",Véhicules,Camion-benne,Camion-benne : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2263,"4. Véhicules, personnages, animations",Véhicules,Voiture de police,"Voiture de police : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,à faire
+T2263,"4. Véhicules, personnages, animations",Véhicules,Voiture de police,"Voiture de police : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P1,fait
 T2264,"4. Véhicules, personnages, animations",Véhicules,Voiture de police,Voiture de police : générer le modèle 3D,Claude,Claude,—,Toi,P1,à faire
 T2265,"4. Véhicules, personnages, animations",Véhicules,Voiture de police,Voiture de police : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P1,à faire
 T2266,"4. Véhicules, personnages, animations",Véhicules,Voiture de police,"Voiture de police : séparer roues, portes et vitres",Claude,Claude,—,Toi,P1,à faire
@@ -2271,7 +2271,7 @@ T2269,"4. Véhicules, personnages, animations",Véhicules,Voiture de police,Voit
 T2270,"4. Véhicules, personnages, animations",Véhicules,Voiture de police,Voiture de police : ajouter les sons,Claude,Claude,—,Toi,P1,à faire
 T2271,"4. Véhicules, personnages, animations",Véhicules,Voiture de police,Voiture de police : ajouter les dégâts,Claude,Claude,—,Toi,P1,à faire
 T2272,"4. Véhicules, personnages, animations",Véhicules,Voiture de police,Voiture de police : tester en circulation,Claude,Claude,—,Toi,P1,à faire
-T2273,"4. Véhicules, personnages, animations",Véhicules,Pick-up de police,"Pick-up de police : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2273,"4. Véhicules, personnages, animations",Véhicules,Pick-up de police,"Pick-up de police : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2274,"4. Véhicules, personnages, animations",Véhicules,Pick-up de police,Pick-up de police : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2275,"4. Véhicules, personnages, animations",Véhicules,Pick-up de police,Pick-up de police : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2276,"4. Véhicules, personnages, animations",Véhicules,Pick-up de police,"Pick-up de police : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2281,7 +2281,7 @@ T2279,"4. Véhicules, personnages, animations",Véhicules,Pick-up de police,Pick
 T2280,"4. Véhicules, personnages, animations",Véhicules,Pick-up de police,Pick-up de police : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2281,"4. Véhicules, personnages, animations",Véhicules,Pick-up de police,Pick-up de police : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2282,"4. Véhicules, personnages, animations",Véhicules,Pick-up de police,Pick-up de police : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2283,"4. Véhicules, personnages, animations",Véhicules,Moto de police,"Moto de police : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2283,"4. Véhicules, personnages, animations",Véhicules,Moto de police,"Moto de police : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2284,"4. Véhicules, personnages, animations",Véhicules,Moto de police,Moto de police : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2285,"4. Véhicules, personnages, animations",Véhicules,Moto de police,Moto de police : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2286,"4. Véhicules, personnages, animations",Véhicules,Moto de police,"Moto de police : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2291,7 +2291,7 @@ T2289,"4. Véhicules, personnages, animations",Véhicules,Moto de police,Moto de
 T2290,"4. Véhicules, personnages, animations",Véhicules,Moto de police,Moto de police : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2291,"4. Véhicules, personnages, animations",Véhicules,Moto de police,Moto de police : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2292,"4. Véhicules, personnages, animations",Véhicules,Moto de police,Moto de police : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2293,"4. Véhicules, personnages, animations",Véhicules,Ambulance,"Ambulance : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2293,"4. Véhicules, personnages, animations",Véhicules,Ambulance,"Ambulance : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2294,"4. Véhicules, personnages, animations",Véhicules,Ambulance,Ambulance : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2295,"4. Véhicules, personnages, animations",Véhicules,Ambulance,Ambulance : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2296,"4. Véhicules, personnages, animations",Véhicules,Ambulance,"Ambulance : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2301,7 +2301,7 @@ T2299,"4. Véhicules, personnages, animations",Véhicules,Ambulance,Ambulance : 
 T2300,"4. Véhicules, personnages, animations",Véhicules,Ambulance,Ambulance : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2301,"4. Véhicules, personnages, animations",Véhicules,Ambulance,Ambulance : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2302,"4. Véhicules, personnages, animations",Véhicules,Ambulance,Ambulance : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2303,"4. Véhicules, personnages, animations",Véhicules,Camion de pompiers,"Camion de pompiers : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2303,"4. Véhicules, personnages, animations",Véhicules,Camion de pompiers,"Camion de pompiers : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2304,"4. Véhicules, personnages, animations",Véhicules,Camion de pompiers,Camion de pompiers : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2305,"4. Véhicules, personnages, animations",Véhicules,Camion de pompiers,Camion de pompiers : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2306,"4. Véhicules, personnages, animations",Véhicules,Camion de pompiers,"Camion de pompiers : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2311,7 +2311,7 @@ T2309,"4. Véhicules, personnages, animations",Véhicules,Camion de pompiers,Cam
 T2310,"4. Véhicules, personnages, animations",Véhicules,Camion de pompiers,Camion de pompiers : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2311,"4. Véhicules, personnages, animations",Véhicules,Camion de pompiers,Camion de pompiers : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2312,"4. Véhicules, personnages, animations",Véhicules,Camion de pompiers,Camion de pompiers : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2313,"4. Véhicules, personnages, animations",Véhicules,Voiture officielle,"Voiture officielle : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2313,"4. Véhicules, personnages, animations",Véhicules,Voiture officielle,"Voiture officielle : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2314,"4. Véhicules, personnages, animations",Véhicules,Voiture officielle,Voiture officielle : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2315,"4. Véhicules, personnages, animations",Véhicules,Voiture officielle,Voiture officielle : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2316,"4. Véhicules, personnages, animations",Véhicules,Voiture officielle,"Voiture officielle : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2321,7 +2321,7 @@ T2319,"4. Véhicules, personnages, animations",Véhicules,Voiture officielle,Voi
 T2320,"4. Véhicules, personnages, animations",Véhicules,Voiture officielle,Voiture officielle : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2321,"4. Véhicules, personnages, animations",Véhicules,Voiture officielle,Voiture officielle : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2322,"4. Véhicules, personnages, animations",Véhicules,Voiture officielle,Voiture officielle : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2323,"4. Véhicules, personnages, animations",Véhicules,Voiture de sport,"Voiture de sport : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2323,"4. Véhicules, personnages, animations",Véhicules,Voiture de sport,"Voiture de sport : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2324,"4. Véhicules, personnages, animations",Véhicules,Voiture de sport,Voiture de sport : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2325,"4. Véhicules, personnages, animations",Véhicules,Voiture de sport,Voiture de sport : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2326,"4. Véhicules, personnages, animations",Véhicules,Voiture de sport,"Voiture de sport : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2331,7 +2331,7 @@ T2329,"4. Véhicules, personnages, animations",Véhicules,Voiture de sport,Voitu
 T2330,"4. Véhicules, personnages, animations",Véhicules,Voiture de sport,Voiture de sport : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2331,"4. Véhicules, personnages, animations",Véhicules,Voiture de sport,Voiture de sport : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2332,"4. Véhicules, personnages, animations",Véhicules,Voiture de sport,Voiture de sport : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2333,"4. Véhicules, personnages, animations",Véhicules,Coupé de luxe,"Coupé de luxe : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2333,"4. Véhicules, personnages, animations",Véhicules,Coupé de luxe,"Coupé de luxe : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2334,"4. Véhicules, personnages, animations",Véhicules,Coupé de luxe,Coupé de luxe : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2335,"4. Véhicules, personnages, animations",Véhicules,Coupé de luxe,Coupé de luxe : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2336,"4. Véhicules, personnages, animations",Véhicules,Coupé de luxe,"Coupé de luxe : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2341,7 +2341,7 @@ T2339,"4. Véhicules, personnages, animations",Véhicules,Coupé de luxe,Coupé 
 T2340,"4. Véhicules, personnages, animations",Véhicules,Coupé de luxe,Coupé de luxe : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2341,"4. Véhicules, personnages, animations",Véhicules,Coupé de luxe,Coupé de luxe : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2342,"4. Véhicules, personnages, animations",Véhicules,Coupé de luxe,Coupé de luxe : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2343,"4. Véhicules, personnages, animations",Véhicules,Limousine,"Limousine : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2343,"4. Véhicules, personnages, animations",Véhicules,Limousine,"Limousine : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2344,"4. Véhicules, personnages, animations",Véhicules,Limousine,Limousine : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2345,"4. Véhicules, personnages, animations",Véhicules,Limousine,Limousine : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2346,"4. Véhicules, personnages, animations",Véhicules,Limousine,"Limousine : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2351,7 +2351,7 @@ T2349,"4. Véhicules, personnages, animations",Véhicules,Limousine,Limousine : 
 T2350,"4. Véhicules, personnages, animations",Véhicules,Limousine,Limousine : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2351,"4. Véhicules, personnages, animations",Véhicules,Limousine,Limousine : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2352,"4. Véhicules, personnages, animations",Véhicules,Limousine,Limousine : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2353,"4. Véhicules, personnages, animations",Véhicules,Vélo,"Vélo : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2353,"4. Véhicules, personnages, animations",Véhicules,Vélo,"Vélo : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2354,"4. Véhicules, personnages, animations",Véhicules,Vélo,Vélo : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2355,"4. Véhicules, personnages, animations",Véhicules,Vélo,Vélo : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2356,"4. Véhicules, personnages, animations",Véhicules,Vélo,"Vélo : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2361,7 +2361,7 @@ T2359,"4. Véhicules, personnages, animations",Véhicules,Vélo,Vélo : régler 
 T2360,"4. Véhicules, personnages, animations",Véhicules,Vélo,Vélo : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2361,"4. Véhicules, personnages, animations",Véhicules,Vélo,Vélo : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2362,"4. Véhicules, personnages, animations",Véhicules,Vélo,Vélo : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2363,"4. Véhicules, personnages, animations",Véhicules,Charrette à bras (pousse-pousse),"Charrette à bras (pousse-pousse) : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2363,"4. Véhicules, personnages, animations",Véhicules,Charrette à bras (pousse-pousse),"Charrette à bras (pousse-pousse) : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2364,"4. Véhicules, personnages, animations",Véhicules,Charrette à bras (pousse-pousse),Charrette à bras (pousse-pousse) : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2365,"4. Véhicules, personnages, animations",Véhicules,Charrette à bras (pousse-pousse),Charrette à bras (pousse-pousse) : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2366,"4. Véhicules, personnages, animations",Véhicules,Charrette à bras (pousse-pousse),"Charrette à bras (pousse-pousse) : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2371,7 +2371,7 @@ T2369,"4. Véhicules, personnages, animations",Véhicules,Charrette à bras (pou
 T2370,"4. Véhicules, personnages, animations",Véhicules,Charrette à bras (pousse-pousse),Charrette à bras (pousse-pousse) : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2371,"4. Véhicules, personnages, animations",Véhicules,Charrette à bras (pousse-pousse),Charrette à bras (pousse-pousse) : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2372,"4. Véhicules, personnages, animations",Véhicules,Charrette à bras (pousse-pousse),Charrette à bras (pousse-pousse) : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2373,"4. Véhicules, personnages, animations",Véhicules,Pirogue,"Pirogue : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2373,"4. Véhicules, personnages, animations",Véhicules,Pirogue,"Pirogue : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2374,"4. Véhicules, personnages, animations",Véhicules,Pirogue,Pirogue : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2375,"4. Véhicules, personnages, animations",Véhicules,Pirogue,Pirogue : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2376,"4. Véhicules, personnages, animations",Véhicules,Pirogue,"Pirogue : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2381,7 +2381,7 @@ T2379,"4. Véhicules, personnages, animations",Véhicules,Pirogue,Pirogue : rég
 T2380,"4. Véhicules, personnages, animations",Véhicules,Pirogue,Pirogue : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2381,"4. Véhicules, personnages, animations",Véhicules,Pirogue,Pirogue : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2382,"4. Véhicules, personnages, animations",Véhicules,Pirogue,Pirogue : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2383,"4. Véhicules, personnages, animations",Véhicules,Barque à moteur,"Barque à moteur : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2383,"4. Véhicules, personnages, animations",Véhicules,Barque à moteur,"Barque à moteur : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2384,"4. Véhicules, personnages, animations",Véhicules,Barque à moteur,Barque à moteur : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2385,"4. Véhicules, personnages, animations",Véhicules,Barque à moteur,Barque à moteur : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2386,"4. Véhicules, personnages, animations",Véhicules,Barque à moteur,"Barque à moteur : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2391,7 +2391,7 @@ T2389,"4. Véhicules, personnages, animations",Véhicules,Barque à moteur,Barqu
 T2390,"4. Véhicules, personnages, animations",Véhicules,Barque à moteur,Barque à moteur : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2391,"4. Véhicules, personnages, animations",Véhicules,Barque à moteur,Barque à moteur : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2392,"4. Véhicules, personnages, animations",Véhicules,Barque à moteur,Barque à moteur : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2393,"4. Véhicules, personnages, animations",Véhicules,Bateau de pêche,"Bateau de pêche : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2393,"4. Véhicules, personnages, animations",Véhicules,Bateau de pêche,"Bateau de pêche : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2394,"4. Véhicules, personnages, animations",Véhicules,Bateau de pêche,Bateau de pêche : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2395,"4. Véhicules, personnages, animations",Véhicules,Bateau de pêche,Bateau de pêche : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2396,"4. Véhicules, personnages, animations",Véhicules,Bateau de pêche,"Bateau de pêche : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2401,7 +2401,7 @@ T2399,"4. Véhicules, personnages, animations",Véhicules,Bateau de pêche,Batea
 T2400,"4. Véhicules, personnages, animations",Véhicules,Bateau de pêche,Bateau de pêche : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2401,"4. Véhicules, personnages, animations",Véhicules,Bateau de pêche,Bateau de pêche : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2402,"4. Véhicules, personnages, animations",Véhicules,Bateau de pêche,Bateau de pêche : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2403,"4. Véhicules, personnages, animations",Véhicules,Vedette rapide,"Vedette rapide : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2403,"4. Véhicules, personnages, animations",Véhicules,Vedette rapide,"Vedette rapide : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2404,"4. Véhicules, personnages, animations",Véhicules,Vedette rapide,Vedette rapide : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2405,"4. Véhicules, personnages, animations",Véhicules,Vedette rapide,Vedette rapide : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2406,"4. Véhicules, personnages, animations",Véhicules,Vedette rapide,"Vedette rapide : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2411,7 +2411,7 @@ T2409,"4. Véhicules, personnages, animations",Véhicules,Vedette rapide,Vedette
 T2410,"4. Véhicules, personnages, animations",Véhicules,Vedette rapide,Vedette rapide : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2411,"4. Véhicules, personnages, animations",Véhicules,Vedette rapide,Vedette rapide : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2412,"4. Véhicules, personnages, animations",Véhicules,Vedette rapide,Vedette rapide : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2413,"4. Véhicules, personnages, animations",Véhicules,Avion de ligne régional,"Avion de ligne régional : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2413,"4. Véhicules, personnages, animations",Véhicules,Avion de ligne régional,"Avion de ligne régional : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2414,"4. Véhicules, personnages, animations",Véhicules,Avion de ligne régional,Avion de ligne régional : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2415,"4. Véhicules, personnages, animations",Véhicules,Avion de ligne régional,Avion de ligne régional : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2416,"4. Véhicules, personnages, animations",Véhicules,Avion de ligne régional,"Avion de ligne régional : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2421,7 +2421,7 @@ T2419,"4. Véhicules, personnages, animations",Véhicules,Avion de ligne région
 T2420,"4. Véhicules, personnages, animations",Véhicules,Avion de ligne régional,Avion de ligne régional : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2421,"4. Véhicules, personnages, animations",Véhicules,Avion de ligne régional,Avion de ligne régional : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2422,"4. Véhicules, personnages, animations",Véhicules,Avion de ligne régional,Avion de ligne régional : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2423,"4. Véhicules, personnages, animations",Véhicules,Petit avion,"Petit avion : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2423,"4. Véhicules, personnages, animations",Véhicules,Petit avion,"Petit avion : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2424,"4. Véhicules, personnages, animations",Véhicules,Petit avion,Petit avion : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2425,"4. Véhicules, personnages, animations",Véhicules,Petit avion,Petit avion : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2426,"4. Véhicules, personnages, animations",Véhicules,Petit avion,"Petit avion : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2431,7 +2431,7 @@ T2429,"4. Véhicules, personnages, animations",Véhicules,Petit avion,Petit avio
 T2430,"4. Véhicules, personnages, animations",Véhicules,Petit avion,Petit avion : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2431,"4. Véhicules, personnages, animations",Véhicules,Petit avion,Petit avion : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2432,"4. Véhicules, personnages, animations",Véhicules,Petit avion,Petit avion : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2433,"4. Véhicules, personnages, animations",Véhicules,Hélicoptère,"Hélicoptère : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2433,"4. Véhicules, personnages, animations",Véhicules,Hélicoptère,"Hélicoptère : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2434,"4. Véhicules, personnages, animations",Véhicules,Hélicoptère,Hélicoptère : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2435,"4. Véhicules, personnages, animations",Véhicules,Hélicoptère,Hélicoptère : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2436,"4. Véhicules, personnages, animations",Véhicules,Hélicoptère,"Hélicoptère : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2441,7 +2441,7 @@ T2439,"4. Véhicules, personnages, animations",Véhicules,Hélicoptère,Hélicop
 T2440,"4. Véhicules, personnages, animations",Véhicules,Hélicoptère,Hélicoptère : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2441,"4. Véhicules, personnages, animations",Véhicules,Hélicoptère,Hélicoptère : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2442,"4. Véhicules, personnages, animations",Véhicules,Hélicoptère,Hélicoptère : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2443,"4. Véhicules, personnages, animations",Véhicules,Engin de chantier,"Engin de chantier : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2443,"4. Véhicules, personnages, animations",Véhicules,Engin de chantier,"Engin de chantier : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2444,"4. Véhicules, personnages, animations",Véhicules,Engin de chantier,Engin de chantier : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2445,"4. Véhicules, personnages, animations",Véhicules,Engin de chantier,Engin de chantier : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2446,"4. Véhicules, personnages, animations",Véhicules,Engin de chantier,"Engin de chantier : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2451,7 +2451,7 @@ T2449,"4. Véhicules, personnages, animations",Véhicules,Engin de chantier,Engi
 T2450,"4. Véhicules, personnages, animations",Véhicules,Engin de chantier,Engin de chantier : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2451,"4. Véhicules, personnages, animations",Véhicules,Engin de chantier,Engin de chantier : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2452,"4. Véhicules, personnages, animations",Véhicules,Engin de chantier,Engin de chantier : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2453,"4. Véhicules, personnages, animations",Véhicules,Chariot élévateur du port,"Chariot élévateur du port : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2453,"4. Véhicules, personnages, animations",Véhicules,Chariot élévateur du port,"Chariot élévateur du port : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2454,"4. Véhicules, personnages, animations",Véhicules,Chariot élévateur du port,Chariot élévateur du port : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2455,"4. Véhicules, personnages, animations",Véhicules,Chariot élévateur du port,Chariot élévateur du port : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2456,"4. Véhicules, personnages, animations",Véhicules,Chariot élévateur du port,"Chariot élévateur du port : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
@@ -2461,7 +2461,7 @@ T2459,"4. Véhicules, personnages, animations",Véhicules,Chariot élévateur du
 T2460,"4. Véhicules, personnages, animations",Véhicules,Chariot élévateur du port,Chariot élévateur du port : ajouter les sons,Claude,Claude,—,Toi,P2,à faire
 T2461,"4. Véhicules, personnages, animations",Véhicules,Chariot élévateur du port,Chariot élévateur du port : ajouter les dégâts,Claude,Claude,—,Toi,P2,à faire
 T2462,"4. Véhicules, personnages, animations",Véhicules,Chariot élévateur du port,Chariot élévateur du port : tester en circulation,Claude,Claude,—,Toi,P2,à faire
-T2463,"4. Véhicules, personnages, animations",Véhicules,Voiture épave,"Voiture épave : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,à faire
+T2463,"4. Véhicules, personnages, animations",Véhicules,Voiture épave,"Voiture épave : écrire la fiche (dimensions, vitesse, style)",Claude,Claude,—,Toi,P2,fait
 T2464,"4. Véhicules, personnages, animations",Véhicules,Voiture épave,Voiture épave : générer le modèle 3D,Claude,Claude,—,Toi,P2,à faire
 T2465,"4. Véhicules, personnages, animations",Véhicules,Voiture épave,Voiture épave : nettoyer et alléger le modèle,Claude,Claude,—,Toi,P2,à faire
 T2466,"4. Véhicules, personnages, animations",Véhicules,Voiture épave,"Voiture épave : séparer roues, portes et vitres",Claude,Claude,—,Toi,P2,à faire
