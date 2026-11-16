@@ -65,6 +65,7 @@ var inter = InteractionScript.new()
 var trafic = TraficScript.new()
 var vue = VueScript.new()
 var zem = ZemScript.new()   # courses de zémidjan : clients et passager
+var sys = preload("res://scripts/systemes.gd").new()   # sauvegarde, options, menus, affichage en jeu
 var moto_romaric   # la moto prêtée par Romaric, garée au point de départ (décision 51)
 var hp_fill: ColorRect
 var info_text := ""
@@ -198,6 +199,7 @@ func _ready() -> void:
 	_apply_quality()
 	if not selftest:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+	sys.build(self)
 
 func _inputs() -> void:
 	var m := {"up": [KEY_W, KEY_UP], "down": [KEY_S, KEY_DOWN], "left": [KEY_A, KEY_LEFT], "right": [KEY_D, KEY_RIGHT],
@@ -490,6 +492,8 @@ func _physics_process(delta: float) -> void:
 	if "--shot" in OS.get_cmdline_user_args() and frames == 90:
 		get_viewport().get_texture().get_image().save_png("user://shot.png")
 		get_tree().quit()
+	if sys.step(self, delta):
+		return   # un panneau de menu (sauvegarde, options) est ouvert
 	if Input.is_action_just_pressed("quit") and not selftest:
 		if menu.visible:
 			_play()

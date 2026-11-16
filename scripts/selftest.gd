@@ -293,6 +293,8 @@ func _step2(m, f: int, pl) -> void:
 			e = MotoTest.new().run(m)
 		if e == "":
 			e = moto_ville.run(m)
+		if e == "":
+			e = m.sys.selftest(m)   # sauvegarde, menus, affichage en jeu
 		if e != "":
 			_fail(m, e)
 			return
