@@ -402,21 +402,21 @@ T0400,1. Systèmes de jeu,Carte et GPS,repères personnels,Carte et GPS — rep�
 T0401,1. Systèmes de jeu,Carte et GPS,repères personnels,Carte et GPS — repères personnels : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0402,1. Systèmes de jeu,Carte et GPS,Essai,Carte et GPS : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0403,1. Systèmes de jeu,Carte et GPS,Essai,Carte et GPS : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
-T0404,1. Systèmes de jeu,Sauvegarde,sauvegarde manuelle,Sauvegarde — sauvegarde manuelle : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0405,1. Systèmes de jeu,Sauvegarde,sauvegarde manuelle,Sauvegarde — sauvegarde manuelle : coder,Claude,Claude,—,Toi,P1,à faire
-T0406,1. Systèmes de jeu,Sauvegarde,sauvegarde manuelle,Sauvegarde — sauvegarde manuelle : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0407,1. Systèmes de jeu,Sauvegarde,sauvegarde automatique,Sauvegarde — sauvegarde automatique : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0408,1. Systèmes de jeu,Sauvegarde,sauvegarde automatique,Sauvegarde — sauvegarde automatique : coder,Claude,Claude,—,Toi,P1,à faire
-T0409,1. Systèmes de jeu,Sauvegarde,sauvegarde automatique,Sauvegarde — sauvegarde automatique : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0410,1. Systèmes de jeu,Sauvegarde,chargement,Sauvegarde — chargement : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0411,1. Systèmes de jeu,Sauvegarde,chargement,Sauvegarde — chargement : coder,Claude,Claude,—,Toi,P1,à faire
-T0412,1. Systèmes de jeu,Sauvegarde,chargement,Sauvegarde — chargement : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0413,1. Systèmes de jeu,Sauvegarde,emplacements multiples,Sauvegarde — emplacements multiples : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0414,1. Systèmes de jeu,Sauvegarde,emplacements multiples,Sauvegarde — emplacements multiples : coder,Claude,Claude,—,Toi,P1,à faire
-T0415,1. Systèmes de jeu,Sauvegarde,emplacements multiples,Sauvegarde — emplacements multiples : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0416,1. Systèmes de jeu,Sauvegarde,compatibilité entre versions,Sauvegarde — compatibilité entre versions : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0417,1. Systèmes de jeu,Sauvegarde,compatibilité entre versions,Sauvegarde — compatibilité entre versions : coder,Claude,Claude,—,Toi,P1,à faire
-T0418,1. Systèmes de jeu,Sauvegarde,compatibilité entre versions,Sauvegarde — compatibilité entre versions : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0404,1. Systèmes de jeu,Sauvegarde,sauvegarde manuelle,Sauvegarde — sauvegarde manuelle : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0405,1. Systèmes de jeu,Sauvegarde,sauvegarde manuelle,Sauvegarde — sauvegarde manuelle : coder,Claude,Claude,—,Toi,P1,fait
+T0406,1. Systèmes de jeu,Sauvegarde,sauvegarde manuelle,Sauvegarde — sauvegarde manuelle : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0407,1. Systèmes de jeu,Sauvegarde,sauvegarde automatique,Sauvegarde — sauvegarde automatique : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0408,1. Systèmes de jeu,Sauvegarde,sauvegarde automatique,Sauvegarde — sauvegarde automatique : coder,Claude,Claude,—,Toi,P1,fait
+T0409,1. Systèmes de jeu,Sauvegarde,sauvegarde automatique,Sauvegarde — sauvegarde automatique : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0410,1. Systèmes de jeu,Sauvegarde,chargement,Sauvegarde — chargement : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0411,1. Systèmes de jeu,Sauvegarde,chargement,Sauvegarde — chargement : coder,Claude,Claude,—,Toi,P1,fait
+T0412,1. Systèmes de jeu,Sauvegarde,chargement,Sauvegarde — chargement : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0413,1. Systèmes de jeu,Sauvegarde,emplacements multiples,Sauvegarde — emplacements multiples : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0414,1. Systèmes de jeu,Sauvegarde,emplacements multiples,Sauvegarde — emplacements multiples : coder,Claude,Claude,—,Toi,P1,fait
+T0415,1. Systèmes de jeu,Sauvegarde,emplacements multiples,Sauvegarde — emplacements multiples : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0416,1. Systèmes de jeu,Sauvegarde,compatibilité entre versions,Sauvegarde — compatibilité entre versions : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0417,1. Systèmes de jeu,Sauvegarde,compatibilité entre versions,Sauvegarde — compatibilité entre versions : coder,Claude,Claude,—,Toi,P1,fait
+T0418,1. Systèmes de jeu,Sauvegarde,compatibilité entre versions,Sauvegarde — compatibilité entre versions : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0419,1. Systèmes de jeu,Sauvegarde,Essai,Sauvegarde : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0420,1. Systèmes de jeu,Sauvegarde,Essai,Sauvegarde : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
 T0421,1. Systèmes de jeu,"Jour, nuit et météo",soleil et ombres,"Jour, nuit et météo — soleil et ombres : décrire le fonctionnement attendu",Claude,Toi,Toi,—,P2,à faire
@@ -634,41 +634,41 @@ T0632,1. Systèmes de jeu,Caméra et cinématiques,mode photo,Caméra et cinéma
 T0633,1. Systèmes de jeu,Caméra et cinématiques,mode photo,Caméra et cinématiques — mode photo : écrire et passer le test automatique,Claude,Claude,—,Toi,P2,à faire
 T0634,1. Systèmes de jeu,Caméra et cinématiques,Essai,Caméra et cinématiques : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P2,à faire
 T0635,1. Systèmes de jeu,Caméra et cinématiques,Essai,Caméra et cinématiques : corriger d'après tes retours,Claude,Toi,Toi,—,P2,à faire
-T0636,1. Systèmes de jeu,Affichage en jeu,santé,Affichage en jeu — santé : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0637,1. Systèmes de jeu,Affichage en jeu,santé,Affichage en jeu — santé : coder,Claude,Claude,—,Toi,P1,à faire
-T0638,1. Systèmes de jeu,Affichage en jeu,santé,Affichage en jeu — santé : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0639,1. Systèmes de jeu,Affichage en jeu,argent,Affichage en jeu — argent : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0636,1. Systèmes de jeu,Affichage en jeu,santé,Affichage en jeu — santé : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0637,1. Systèmes de jeu,Affichage en jeu,santé,Affichage en jeu — santé : coder,Claude,Claude,—,Toi,P1,fait
+T0638,1. Systèmes de jeu,Affichage en jeu,santé,Affichage en jeu — santé : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0639,1. Systèmes de jeu,Affichage en jeu,argent,Affichage en jeu — argent : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0640,1. Systèmes de jeu,Affichage en jeu,argent,Affichage en jeu — argent : coder,Claude,Claude,—,Toi,P1,fait
-T0641,1. Systèmes de jeu,Affichage en jeu,argent,Affichage en jeu — argent : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0642,1. Systèmes de jeu,Affichage en jeu,arme,Affichage en jeu — arme : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0643,1. Systèmes de jeu,Affichage en jeu,arme,Affichage en jeu — arme : coder,Claude,Claude,—,Toi,P1,à faire
-T0644,1. Systèmes de jeu,Affichage en jeu,arme,Affichage en jeu — arme : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0645,1. Systèmes de jeu,Affichage en jeu,notifications,Affichage en jeu — notifications : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0646,1. Systèmes de jeu,Affichage en jeu,notifications,Affichage en jeu — notifications : coder,Claude,Claude,—,Toi,P1,à faire
-T0647,1. Systèmes de jeu,Affichage en jeu,notifications,Affichage en jeu — notifications : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0648,1. Systèmes de jeu,Affichage en jeu,indicateur de recherche,Affichage en jeu — indicateur de recherche : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0649,1. Systèmes de jeu,Affichage en jeu,indicateur de recherche,Affichage en jeu — indicateur de recherche : coder,Claude,Claude,—,Toi,P1,à faire
-T0650,1. Systèmes de jeu,Affichage en jeu,indicateur de recherche,Affichage en jeu — indicateur de recherche : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0641,1. Systèmes de jeu,Affichage en jeu,argent,Affichage en jeu — argent : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0642,1. Systèmes de jeu,Affichage en jeu,arme,Affichage en jeu — arme : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0643,1. Systèmes de jeu,Affichage en jeu,arme,Affichage en jeu — arme : coder,Claude,Claude,—,Toi,P1,fait
+T0644,1. Systèmes de jeu,Affichage en jeu,arme,Affichage en jeu — arme : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0645,1. Systèmes de jeu,Affichage en jeu,notifications,Affichage en jeu — notifications : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0646,1. Systèmes de jeu,Affichage en jeu,notifications,Affichage en jeu — notifications : coder,Claude,Claude,—,Toi,P1,fait
+T0647,1. Systèmes de jeu,Affichage en jeu,notifications,Affichage en jeu — notifications : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0648,1. Systèmes de jeu,Affichage en jeu,indicateur de recherche,Affichage en jeu — indicateur de recherche : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0649,1. Systèmes de jeu,Affichage en jeu,indicateur de recherche,Affichage en jeu — indicateur de recherche : coder,Claude,Claude,—,Toi,P1,fait
+T0650,1. Systèmes de jeu,Affichage en jeu,indicateur de recherche,Affichage en jeu — indicateur de recherche : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0651,1. Systèmes de jeu,Affichage en jeu,Essai,Affichage en jeu : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0652,1. Systèmes de jeu,Affichage en jeu,Essai,Affichage en jeu : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
-T0653,1. Systèmes de jeu,Menus,menu principal,Menus — menu principal : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0653,1. Systèmes de jeu,Menus,menu principal,Menus — menu principal : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0654,1. Systèmes de jeu,Menus,menu principal,Menus — menu principal : coder,Claude,Claude,—,Toi,P1,fait
-T0655,1. Systèmes de jeu,Menus,menu principal,Menus — menu principal : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0656,1. Systèmes de jeu,Menus,pause,Menus — pause : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
+T0655,1. Systèmes de jeu,Menus,menu principal,Menus — menu principal : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0656,1. Systèmes de jeu,Menus,pause,Menus — pause : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0657,1. Systèmes de jeu,Menus,pause,Menus — pause : coder,Claude,Claude,—,Toi,P1,fait
 T0658,1. Systèmes de jeu,Menus,pause,Menus — pause : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
-T0659,1. Systèmes de jeu,Menus,options graphiques,Menus — options graphiques : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0660,1. Systèmes de jeu,Menus,options graphiques,Menus — options graphiques : coder,Claude,Claude,—,Toi,P1,à faire
-T0661,1. Systèmes de jeu,Menus,options graphiques,Menus — options graphiques : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0662,1. Systèmes de jeu,Menus,options audio,Menus — options audio : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0663,1. Systèmes de jeu,Menus,options audio,Menus — options audio : coder,Claude,Claude,—,Toi,P1,à faire
-T0664,1. Systèmes de jeu,Menus,options audio,Menus — options audio : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0665,1. Systèmes de jeu,Menus,touches,Menus — touches : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0666,1. Systèmes de jeu,Menus,touches,Menus — touches : coder,Claude,Claude,—,Toi,P1,à faire
-T0667,1. Systèmes de jeu,Menus,touches,Menus — touches : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0668,1. Systèmes de jeu,Menus,manette,Menus — manette : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0669,1. Systèmes de jeu,Menus,manette,Menus — manette : coder,Claude,Claude,—,Toi,P1,à faire
-T0670,1. Systèmes de jeu,Menus,manette,Menus — manette : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0659,1. Systèmes de jeu,Menus,options graphiques,Menus — options graphiques : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0660,1. Systèmes de jeu,Menus,options graphiques,Menus — options graphiques : coder,Claude,Claude,—,Toi,P1,fait
+T0661,1. Systèmes de jeu,Menus,options graphiques,Menus — options graphiques : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0662,1. Systèmes de jeu,Menus,options audio,Menus — options audio : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0663,1. Systèmes de jeu,Menus,options audio,Menus — options audio : coder,Claude,Claude,—,Toi,P1,fait
+T0664,1. Systèmes de jeu,Menus,options audio,Menus — options audio : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0665,1. Systèmes de jeu,Menus,touches,Menus — touches : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0666,1. Systèmes de jeu,Menus,touches,Menus — touches : coder,Claude,Claude,—,Toi,P1,fait
+T0667,1. Systèmes de jeu,Menus,touches,Menus — touches : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0668,1. Systèmes de jeu,Menus,manette,Menus — manette : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0669,1. Systèmes de jeu,Menus,manette,Menus — manette : coder,Claude,Claude,—,Toi,P1,fait
+T0670,1. Systèmes de jeu,Menus,manette,Menus — manette : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0671,1. Systèmes de jeu,Menus,Essai,Menus : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0672,1. Systèmes de jeu,Menus,Essai,Menus : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
 T0673,1. Systèmes de jeu,Performance,niveaux de détail,Performance — niveaux de détail : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
