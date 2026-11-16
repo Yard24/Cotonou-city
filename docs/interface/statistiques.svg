@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<title>Marina City — Statistiques (maquette)</title>
+<defs><linearGradient id="fm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b170b"/><stop offset="1" stop-color="#140a05"/></linearGradient></defs>
+<rect width="1280" height="720" fill="url(#fm)"/>
+<polygon points="0,600 0,552 56,552 64,570 168,570 168,576 272,576 288,540 360,540 360,570 448,570 464,540 520,540 520,560 624,560 624,552 664,552 664,576 736,576 744,560 832,560 848,570 936,570 936,564 1008,564 1008,570 1064,570 1064,560 1136,560 1144,560 1232,560 1240,560 1344,560 1280,600 1280,720 0,720" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M150 600 q6 -35 -4 -70" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M146 530 Q129 523 112 536 Q129 535 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q133 512 120 514 Q133 524 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q143 506 140 502 Q143 518 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q155 509 164 508 Q155 521 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q163 521 180 532 Q163 533 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q157 529 168 548 Q157 541 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q136 530 126 550 Q136 542 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M430 600 q6 -40 -4 -80" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M426 520 Q409 513 392 526 Q409 525 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q413 502 400 504 Q413 514 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q423 496 420 492 Q423 508 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q435 499 444 498 Q435 511 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q443 511 460 522 Q443 523 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q437 519 448 538 Q437 531 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q416 520 406 540 Q416 532 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M905 600 q6 -37.5 -4 -75" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M901 525 Q884 518 867 531 Q884 530 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q888 507 875 509 Q888 519 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q898 501 895 497 Q898 513 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q910 504 919 503 Q910 516 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q918 516 935 527 Q918 528 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q912 524 923 543 Q912 536 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q891 525 881 545 Q891 537 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1130 600 q6 -45 -4 -90" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M1126 510 Q1109 503 1092 516 Q1109 515 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1113 492 1100 494 Q1113 504 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1123 486 1120 482 Q1123 498 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1135 489 1144 488 Q1135 501 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1143 501 1160 512 Q1143 513 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1137 509 1148 528 Q1137 521 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1116 510 1106 530 Q1116 522 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<text x="48" y="88" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="48" font-weight="700" fill="#f4f1ea">Statistiques</text>
+<rect x="48" y="102" width="32" height="6" fill="#008751"/>
+<rect x="80" y="102" width="32" height="6" fill="#fcd116"/>
+<rect x="112" y="102" width="32" height="6" fill="#e8112d"/>
+<text x="48" y="136" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="400" fill="#d6d0c4">Partie en cours · Chapitre 1 · Normal</text>
+<rect x="48" y="160" width="584" height="236" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="72" y="196" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f5c400">Général</text>
+<text x="72" y="230" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Avancement de l'histoire</text>
+<text x="608" y="230" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">9 %</text>
+<text x="72" y="254" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Temps de jeu</text>
+<text x="608" y="254" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">3 h 42</text>
+<text x="72" y="278" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Jours passés à Cotonou</text>
+<text x="608" y="278" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">12</text>
+<text x="72" y="302" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Missions principales réussies</text>
+<text x="608" y="302" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">2 sur 48</text>
+<text x="72" y="326" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Missions secondaires réussies</text>
+<text x="608" y="326" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">5</text>
+<text x="72" y="350" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Succès obtenus</text>
+<text x="608" y="350" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">4 sur 24</text>
+<text x="72" y="374" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Photos prises</text>
+<text x="608" y="374" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">3</text>
+<rect x="648" y="160" width="584" height="236" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="672" y="196" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f5c400">Sur la route</text>
+<text x="672" y="230" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Distance à moto</text>
+<text x="1208" y="230" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">86,4 km</text>
+<text x="672" y="254" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Distance en voiture</text>
+<text x="1208" y="254" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">4,1 km</text>
+<text x="672" y="278" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Distance à pied</text>
+<text x="1208" y="278" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">7,9 km</text>
+<text x="672" y="302" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Distance à la nage</text>
+<text x="1208" y="302" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">120 m</text>
+<text x="672" y="326" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Vitesse maximale atteinte</text>
+<text x="1208" y="326" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">97 km/h</text>
+<text x="672" y="350" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Chutes à moto</text>
+<text x="1208" y="350" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">6</text>
+<text x="672" y="374" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Litres de kpayo achetés</text>
+<text x="1208" y="374" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">14</text>
+<rect x="48" y="408" width="584" height="236" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="72" y="444" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f5c400">Travail et argent</text>
+<text x="72" y="478" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Argent gagné en tout</text>
+<text x="608" y="478" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">41 300 FCFA</text>
+<text x="72" y="502" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Argent dépensé en tout</text>
+<text x="608" y="502" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">28 850 FCFA</text>
+<text x="72" y="526" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Courses de zémidjan</text>
+<text x="608" y="526" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">37</text>
+<text x="72" y="550" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Meilleur prix marchandé</text>
+<text x="608" y="550" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">900 FCFA</text>
+<text x="72" y="574" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Livraisons à l'heure</text>
+<text x="608" y="574" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">4 sur 5</text>
+<text x="72" y="598" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Dette remboursée</text>
+<text x="608" y="598" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">7 000 sur 25 000 FCFA</text>
+<text x="72" y="622" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Repas pris</text>
+<text x="608" y="622" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">11</text>
+<rect x="648" y="408" width="584" height="236" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="672" y="444" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f5c400">Police et santé</text>
+<text x="672" y="478" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Étoiles de recherche reçues</text>
+<text x="1208" y="478" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">9</text>
+<text x="672" y="502" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Poursuites semées</text>
+<text x="1208" y="502" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">3</text>
+<text x="672" y="526" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Arrestations</text>
+<text x="1208" y="526" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">2</text>
+<text x="672" y="550" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Amendes payées</text>
+<text x="1208" y="550" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">1 500 FCFA</text>
+<text x="672" y="574" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Passages au centre de santé</text>
+<text x="1208" y="574" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">1</text>
+<text x="672" y="598" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Soins payés</text>
+<text x="1208" y="598" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">320 FCFA</text>
+<text x="672" y="622" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Bagarres gagnées</text>
+<text x="1208" y="622" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#f4f1ea" text-anchor="end">2</text>
+<rect x="0" y="664" width="1280" height="56" fill="#140a05" fill-opacity="0.88"/>
+<line x1="0" y1="664" x2="1280" y2="664" stroke="#6b4a30" stroke-width="1"/>
+<rect x="1108.73" y="678" width="60.0469" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="1108.73" y="702" width="60.0469" height="4" fill="#d6d0c4" rx="2"/>
+<text x="1138.76" y="697" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">Échap</text>
+<text x="1178.78" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Retour</text>
+</svg>

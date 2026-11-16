@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<title>Marina City — Nouvelle partie (maquette)</title>
+<defs><linearGradient id="fm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b170b"/><stop offset="1" stop-color="#140a05"/></linearGradient></defs>
+<rect width="1280" height="720" fill="url(#fm)"/>
+<polygon points="0,600 0,552 56,552 64,570 168,570 168,576 272,576 288,540 360,540 360,570 448,570 464,540 520,540 520,560 624,560 624,552 664,552 664,576 736,576 744,560 832,560 848,570 936,570 936,564 1008,564 1008,570 1064,570 1064,560 1136,560 1144,560 1232,560 1240,560 1344,560 1280,600 1280,720 0,720" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M150 600 q6 -35 -4 -70" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M146 530 Q129 523 112 536 Q129 535 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q133 512 120 514 Q133 524 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q143 506 140 502 Q143 518 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q155 509 164 508 Q155 521 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q163 521 180 532 Q163 533 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q157 529 168 548 Q157 541 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q136 530 126 550 Q136 542 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M430 600 q6 -40 -4 -80" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M426 520 Q409 513 392 526 Q409 525 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q413 502 400 504 Q413 514 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q423 496 420 492 Q423 508 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q435 499 444 498 Q435 511 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q443 511 460 522 Q443 523 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q437 519 448 538 Q437 531 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q416 520 406 540 Q416 532 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M905 600 q6 -37.5 -4 -75" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M901 525 Q884 518 867 531 Q884 530 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q888 507 875 509 Q888 519 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q898 501 895 497 Q898 513 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q910 504 919 503 Q910 516 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q918 516 935 527 Q918 528 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q912 524 923 543 Q912 536 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q891 525 881 545 Q891 537 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1130 600 q6 -45 -4 -90" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M1126 510 Q1109 503 1092 516 Q1109 515 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1113 492 1100 494 Q1113 504 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1123 486 1120 482 Q1123 498 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1135 489 1144 488 Q1135 501 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1143 501 1160 512 Q1143 513 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1137 509 1148 528 Q1137 521 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1116 510 1106 530 Q1116 522 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<text x="48" y="88" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="48" font-weight="700" fill="#f4f1ea">Nouvelle partie</text>
+<rect x="48" y="102" width="32" height="6" fill="#008751"/>
+<rect x="80" y="102" width="32" height="6" fill="#fcd116"/>
+<rect x="112" y="102" width="32" height="6" fill="#e8112d"/>
+<text x="48" y="136" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="400" fill="#d6d0c4">Choisis la difficulté, puis l'emplacement de sauvegarde.</text>
+<text x="48" y="188" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="26" font-weight="600" fill="#f4f1ea">1. Difficulté</text>
+<rect x="48" y="204" width="384" height="216" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="72" y="246" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="34" font-weight="700" fill="#f4f1ea">Tranquille</text>
+<line x1="72" y1="264" x2="408" y2="264" stroke="#6b4a30" stroke-width="1"/>
+<text x="72" y="298" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="500" fill="#f4f1ea">Pour découvrir la ville sans pression.</text>
+<circle cx="78" cy="332" r="3" fill="#f5c400"/>
+<text x="92" y="338" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Dégâts reçus : −40 %</text>
+<circle cx="78" cy="362" r="3" fill="#f5c400"/>
+<text x="92" y="368" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Chronos : +30 % de temps</text>
+<circle cx="78" cy="392" r="3" fill="#f5c400"/>
+<text x="92" y="398" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Amendes et soins : moitié prix</text>
+<rect x="448" y="204" width="384" height="216" fill="#3a2516" rx="8" stroke="#f5c400" stroke-width="4"/>
+<rect x="448" y="204" width="384" height="60" fill="#f5c400" rx="8"/>
+<rect x="448" y="234" width="384" height="30" fill="#f5c400"/>
+<rect x="438" y="204" width="6" height="72" fill="#008751"/>
+<rect x="438" y="276" width="6" height="72" fill="#fcd116"/>
+<rect x="438" y="348" width="6" height="72" fill="#e8112d"/>
+<text x="472" y="246" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="34" font-weight="700" fill="#140a05">Normal</text>
+<rect x="680" y="220" width="136" height="28" fill="#140a05" rx="14"/>
+<text x="748" y="240" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#f5c400" text-anchor="middle">Recommandé</text>
+<text x="472" y="298" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="500" fill="#f4f1ea">Le jeu tel qu'il est prévu.</text>
+<circle cx="478" cy="332" r="3" fill="#f5c400"/>
+<text x="492" y="338" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Dégâts reçus : normaux</text>
+<circle cx="478" cy="362" r="3" fill="#f5c400"/>
+<text x="492" y="368" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Chronos : normaux</text>
+<circle cx="478" cy="392" r="3" fill="#f5c400"/>
+<text x="492" y="398" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Amendes et soins : prix normal</text>
+<rect x="848" y="204" width="384" height="216" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="872" y="246" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="34" font-weight="700" fill="#f4f1ea">Corsé</text>
+<line x1="872" y1="264" x2="1208" y2="264" stroke="#6b4a30" stroke-width="1"/>
+<text x="872" y="298" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="500" fill="#f4f1ea">Pour qui connaît déjà les rues.</text>
+<circle cx="878" cy="332" r="3" fill="#f5c400"/>
+<text x="892" y="338" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Dégâts reçus : +40 %</text>
+<circle cx="878" cy="362" r="3" fill="#f5c400"/>
+<text x="892" y="368" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Chronos : −15 % de temps</text>
+<circle cx="878" cy="392" r="3" fill="#f5c400"/>
+<text x="892" y="398" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Amendes et soins : +50 %</text>
+<text x="48" y="452" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#a3957f">La difficulté est fixée pour toute la partie.</text>
+<text x="48" y="500" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="26" font-weight="600" fill="#f4f1ea">2. Emplacement de sauvegarde</text>
+<rect x="48" y="516" width="384" height="64" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#008751" stroke-width="3"/>
+<text x="68" y="544" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea">Emplacement 1</text>
+<text x="68" y="568" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="400" fill="#d6d0c4">Vide</text>
+<circle cx="400" cy="548" r="14" fill="#008751"/>
+<polyline points="393,548 397.9,552.9 407,543.1" fill="none" stroke="#f4f1ea" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="448" y="516" width="384" height="64" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="468" y="544" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea">Emplacement 2</text>
+<text x="468" y="568" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="400" fill="#ffe27a">Chapitre 1 · 3 h 42 · sera remplacée</text>
+<rect x="848" y="516" width="384" height="64" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="868" y="544" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea">Emplacement 3</text>
+<text x="868" y="568" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="400" fill="#d6d0c4">Vide</text>
+<rect x="48" y="596" width="200" height="52" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="148" y="630.84" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="26" font-weight="600" fill="#f4f1ea" text-anchor="middle">Retour</text>
+<rect x="952" y="596" width="280" height="52" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="1092" y="630.84" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="26" font-weight="600" fill="#f4f1ea" text-anchor="middle">Commencer</text>
+<rect x="0" y="664" width="1280" height="56" fill="#140a05" fill-opacity="0.88"/>
+<line x1="0" y1="664" x2="1280" y2="664" stroke="#6b4a30" stroke-width="1"/>
+<rect x="559.469" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="559.469" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="576.469,686 569.469,691 576.469,696" fill="#140a05"/>
+<rect x="591.469" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="591.469" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="602.469,686 609.469,691 602.469,696" fill="#140a05"/>
+<text x="629.469" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Choisir</text>
+<rect x="716.641" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="716.641" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="725.641,694 730.641,687 735.641,694" fill="#140a05"/>
+<rect x="748.641" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="748.641" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="757.641,688 762.641,695 767.641,688" fill="#140a05"/>
+<text x="786.641" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Changer de ligne</text>
+<rect x="949.141" y="678" width="63.3125" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="949.141" y="702" width="63.3125" height="4" fill="#d6d0c4" rx="2"/>
+<text x="980.797" y="697" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">Entrée</text>
+<text x="1022.45" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Valider</text>
+<rect x="1108.73" y="678" width="60.0469" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="1108.73" y="702" width="60.0469" height="4" fill="#d6d0c4" rx="2"/>
+<text x="1138.76" y="697" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">Échap</text>
+<text x="1178.78" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Retour</text>
+</svg>

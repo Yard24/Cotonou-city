@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<title>Marina City — Choix de la langue (maquette)</title>
+<defs><linearGradient id="fm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b170b"/><stop offset="1" stop-color="#140a05"/></linearGradient></defs>
+<rect width="1280" height="720" fill="url(#fm)"/>
+<polygon points="0,600 0,552 56,552 64,570 168,570 168,576 272,576 288,540 360,540 360,570 448,570 464,540 520,540 520,560 624,560 624,552 664,552 664,576 736,576 744,560 832,560 848,570 936,570 936,564 1008,564 1008,570 1064,570 1064,560 1136,560 1144,560 1232,560 1240,560 1344,560 1280,600 1280,720 0,720" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M150 600 q6 -35 -4 -70" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M146 530 Q129 523 112 536 Q129 535 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q133 512 120 514 Q133 524 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q143 506 140 502 Q143 518 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q155 509 164 508 Q155 521 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q163 521 180 532 Q163 533 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q157 529 168 548 Q157 541 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q136 530 126 550 Q136 542 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M430 600 q6 -40 -4 -80" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M426 520 Q409 513 392 526 Q409 525 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q413 502 400 504 Q413 514 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q423 496 420 492 Q423 508 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q435 499 444 498 Q435 511 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q443 511 460 522 Q443 523 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q437 519 448 538 Q437 531 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q416 520 406 540 Q416 532 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M905 600 q6 -37.5 -4 -75" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M901 525 Q884 518 867 531 Q884 530 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q888 507 875 509 Q888 519 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q898 501 895 497 Q898 513 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q910 504 919 503 Q910 516 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q918 516 935 527 Q918 528 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q912 524 923 543 Q912 536 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q891 525 881 545 Q891 537 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1130 600 q6 -45 -4 -90" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M1126 510 Q1109 503 1092 516 Q1109 515 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1113 492 1100 494 Q1113 504 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1123 486 1120 482 Q1123 498 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1135 489 1144 488 Q1135 501 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1143 501 1160 512 Q1143 513 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1137 509 1148 528 Q1137 521 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1116 510 1106 530 Q1116 522 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<text x="48" y="88" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="48" font-weight="700" fill="#f4f1ea">Options</text>
+<rect x="48" y="102" width="32" height="6" fill="#008751"/>
+<rect x="80" y="102" width="32" height="6" fill="#fcd116"/>
+<rect x="112" y="102" width="32" height="6" fill="#e8112d"/>
+<rect x="48" y="132" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="48" y="156" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<text x="62" y="151" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">A</text>
+<rect x="88" y="124" width="176" height="44" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="176" y="154" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea" text-anchor="middle">Graphismes</text>
+<rect x="272" y="124" width="176" height="44" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="360" y="154" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea" text-anchor="middle">Audio</text>
+<rect x="456" y="124" width="176" height="44" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="544" y="154" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea" text-anchor="middle">Touches</text>
+<rect x="640" y="124" width="176" height="44" fill="#f5c400" rx="6"/>
+<text x="728" y="154" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#140a05" text-anchor="middle">Langue</text>
+<rect x="824" y="132" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="824" y="156" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<text x="838" y="151" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">E</text>
+<rect x="48" y="188" width="744" height="72" fill="#f5c400" rx="6"/>
+<rect x="38" y="188" width="6" height="24" fill="#008751"/>
+<rect x="38" y="212" width="6" height="24" fill="#fcd116"/>
+<rect x="38" y="236" width="6" height="24" fill="#e8112d"/>
+<text x="72" y="222" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="30" font-weight="600" fill="#140a05">Français</text>
+<text x="72" y="246" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="400" fill="#140a05">Textes, sous-titres et voix</text>
+<circle cx="752" cy="224" r="14" fill="#008751"/>
+<polyline points="745,224 749.9,228.9 759,219.1" fill="none" stroke="#f4f1ea" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="728" y="230" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#140a05" text-anchor="end">Langue actuelle</text>
+<rect x="48" y="268" width="744" height="72" fill="#26170d" fill-opacity="0.6" rx="6" stroke="#6b4a30" stroke-width="1.5" stroke-opacity="0.5"/>
+<text x="72" y="302" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="30" font-weight="600" fill="#a3957f">English</text>
+<text x="72" y="326" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="400" fill="#a3957f">Textes et sous-titres</text>
+<text x="768" y="310" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="600" fill="#a3957f" text-anchor="end">Bientôt disponible</text>
+<text x="48" y="380" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Les voix restent en français parlé de Cotonou dans toutes les langues ; seuls les textes et les</text>
+<text x="48" y="405" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">sous-titres seront traduits.</text>
+<rect x="816" y="188" width="416" height="440" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="840" y="232" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="28" font-weight="600" fill="#f4f1ea">Langue</text>
+<text x="840" y="268" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Change la langue des menus, des sous-titres et</text>
+<text x="840" y="293" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">des panneaux d'aide. Le changement est</text>
+<text x="840" y="318" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">immédiat, sans relancer le jeu.</text>
+<rect x="0" y="664" width="1280" height="56" fill="#140a05" fill-opacity="0.88"/>
+<line x1="0" y1="664" x2="1280" y2="664" stroke="#6b4a30" stroke-width="1"/>
+<rect x="791.969" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="791.969" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="800.969,694 805.969,687 810.969,694" fill="#140a05"/>
+<rect x="823.969" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="823.969" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="832.969,688 837.969,695 842.969,688" fill="#140a05"/>
+<text x="861.969" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Choisir</text>
+<rect x="949.141" y="678" width="63.3125" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="949.141" y="702" width="63.3125" height="4" fill="#d6d0c4" rx="2"/>
+<text x="980.797" y="697" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">Entrée</text>
+<text x="1022.45" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Valider</text>
+<rect x="1108.73" y="678" width="60.0469" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="1108.73" y="702" width="60.0469" height="4" fill="#d6d0c4" rx="2"/>
+<text x="1138.76" y="697" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">Échap</text>
+<text x="1178.78" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Retour</text>
+</svg>

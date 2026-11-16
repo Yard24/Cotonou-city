@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<title>Marina City — Écran titre (maquette)</title>
+<defs><linearGradient id="cc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d0f08"/><stop offset="0.5" stop-color="#8a3d1e"/><stop offset="0.82" stop-color="#f09a4e"/><stop offset="1" stop-color="#f6cf96"/></linearGradient><linearGradient id="eau" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a86b5"/><stop offset="1" stop-color="#143f58"/></linearGradient></defs>
+<rect width="1280" height="470" fill="url(#cc)"/>
+<circle cx="640" cy="440" r="96" fill="#ffdcaa" fill-opacity="0.95"/>
+<circle cx="640" cy="440" r="130" fill="#ffdcaa" fill-opacity="0.18"/>
+<polygon points="0,470 0,440 88,440 104,410 208,410 208,440 312,440 312,440 352,440 360,434 416,434 416,430 520,430 536,422 640,422 640,434 744,434 744,410 784,410 784,446 888,446 904,440 976,440 976,410 1080,410 1088,446 1176,446 1176,386 1264,386 1280,470 1280,720 0,720" fill="#2b170b"/>
+<path d="M150 470 q6 -35 -4 -70" stroke="#2b170b" stroke-width="5" fill="none" stroke-opacity="1"/>
+<path d="M146 400 Q129 393 112 406 Q129 405 146 400 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M146 400 Q133 382 120 384 Q133 394 146 400 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M146 400 Q143 376 140 372 Q143 388 146 400 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M146 400 Q155 379 164 378 Q155 391 146 400 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M146 400 Q163 391 180 402 Q163 403 146 400 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M146 400 Q157 399 168 418 Q157 411 146 400 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M146 400 Q136 400 126 420 Q136 412 146 400 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M430 470 q6 -40 -4 -80" stroke="#2b170b" stroke-width="5" fill="none" stroke-opacity="1"/>
+<path d="M426 390 Q409 383 392 396 Q409 395 426 390 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M426 390 Q413 372 400 374 Q413 384 426 390 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M426 390 Q423 366 420 362 Q423 378 426 390 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M426 390 Q435 369 444 368 Q435 381 426 390 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M426 390 Q443 381 460 392 Q443 393 426 390 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M426 390 Q437 389 448 408 Q437 401 426 390 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M426 390 Q416 390 406 410 Q416 402 426 390 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M905 470 q6 -37.5 -4 -75" stroke="#2b170b" stroke-width="5" fill="none" stroke-opacity="1"/>
+<path d="M901 395 Q884 388 867 401 Q884 400 901 395 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M901 395 Q888 377 875 379 Q888 389 901 395 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M901 395 Q898 371 895 367 Q898 383 901 395 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M901 395 Q910 374 919 373 Q910 386 901 395 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M901 395 Q918 386 935 397 Q918 398 901 395 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M901 395 Q912 394 923 413 Q912 406 901 395 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M901 395 Q891 395 881 415 Q891 407 901 395 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M1130 470 q6 -45 -4 -90" stroke="#2b170b" stroke-width="5" fill="none" stroke-opacity="1"/>
+<path d="M1126 380 Q1109 373 1092 386 Q1109 385 1126 380 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M1126 380 Q1113 362 1100 364 Q1113 374 1126 380 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M1126 380 Q1123 356 1120 352 Q1123 368 1126 380 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M1126 380 Q1135 359 1144 358 Q1135 371 1126 380 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M1126 380 Q1143 371 1160 382 Q1143 383 1126 380 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M1126 380 Q1137 379 1148 398 Q1137 391 1126 380 Z" fill="#2b170b" fill-opacity="1"/>
+<path d="M1126 380 Q1116 380 1106 400 Q1116 392 1126 380 Z" fill="#2b170b" fill-opacity="1"/>
+<rect x="0" y="450" width="420" height="8" fill="#2b170b"/>
+<rect x="20" y="456" width="8" height="16" fill="#2b170b"/>
+<rect x="70" y="456" width="8" height="16" fill="#2b170b"/>
+<rect x="120" y="456" width="8" height="16" fill="#2b170b"/>
+<rect x="170" y="456" width="8" height="16" fill="#2b170b"/>
+<rect x="220" y="456" width="8" height="16" fill="#2b170b"/>
+<rect x="270" y="456" width="8" height="16" fill="#2b170b"/>
+<rect x="320" y="456" width="8" height="16" fill="#2b170b"/>
+<rect x="370" y="456" width="8" height="16" fill="#2b170b"/>
+<rect y="470" width="1280" height="250" fill="url(#eau)"/>
+<rect x="560" y="486" width="160" height="5" fill="#ffdcaa" fill-opacity="0.55" rx="2"/>
+<rect x="590" y="506" width="100" height="5" fill="#ffdcaa" fill-opacity="0.49" rx="2"/>
+<rect x="540" y="530" width="200" height="5" fill="#ffdcaa" fill-opacity="0.43" rx="2"/>
+<rect x="600" y="558" width="80" height="5" fill="#ffdcaa" fill-opacity="0.37" rx="2"/>
+<rect x="570" y="590" width="140" height="5" fill="#ffdcaa" fill-opacity="0.31" rx="2"/>
+<rect x="610" y="626" width="60" height="5" fill="#ffdcaa" fill-opacity="0.25" rx="2"/>
+<path d="M860 540 h150 l-22 16 h-106 z" fill="#140a05"/>
+<rect x="925" y="500" width="5" height="42" fill="#140a05"/>
+<circle cx="927" cy="494" r="8" fill="#140a05"/>
+<path d="M940 510 l40 44" stroke="#140a05" stroke-width="4"/>
+<path d="M90 720 q6 -165 -4 -330" stroke="#140a05" stroke-width="5" fill="none" stroke-opacity="1"/>
+<path d="M86 390 Q69 383 52 396 Q69 395 86 390 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M86 390 Q73 372 60 374 Q73 384 86 390 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M86 390 Q83 366 80 362 Q83 378 86 390 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M86 390 Q95 369 104 368 Q95 381 86 390 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M86 390 Q103 381 120 392 Q103 393 86 390 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M86 390 Q97 389 108 408 Q97 401 86 390 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M86 390 Q76 390 66 410 Q76 402 86 390 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1200 720 q6 -140 -4 -280" stroke="#140a05" stroke-width="5" fill="none" stroke-opacity="1"/>
+<path d="M1196 440 Q1179 433 1162 446 Q1179 445 1196 440 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1196 440 Q1183 422 1170 424 Q1183 434 1196 440 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1196 440 Q1193 416 1190 412 Q1193 428 1196 440 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1196 440 Q1205 419 1214 418 Q1205 431 1196 440 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1196 440 Q1213 431 1230 442 Q1213 443 1196 440 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1196 440 Q1207 439 1218 458 Q1207 451 1196 440 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1196 440 Q1186 440 1176 460 Q1186 452 1196 440 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1120 720 q6 -95 -4 -190" stroke="#140a05" stroke-width="5" fill="none" stroke-opacity="1"/>
+<path d="M1116 530 Q1099 523 1082 536 Q1099 535 1116 530 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1116 530 Q1103 512 1090 514 Q1103 524 1116 530 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1116 530 Q1113 506 1110 502 Q1113 518 1116 530 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1116 530 Q1125 509 1134 508 Q1125 521 1116 530 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1116 530 Q1133 521 1150 532 Q1133 533 1116 530 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1116 530 Q1127 529 1138 548 Q1127 541 1116 530 Z" fill="#140a05" fill-opacity="1"/>
+<path d="M1116 530 Q1106 530 1096 550 Q1106 542 1116 530 Z" fill="#140a05" fill-opacity="1"/>
+<text x="644" y="264" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="136" font-weight="700" fill="#140a05" text-anchor="middle" fill-opacity="0.55" letter-spacing="4">MARINA CITY</text>
+<text x="640" y="260" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="136" font-weight="700" fill="#f5c400" text-anchor="middle" letter-spacing="4">MARINA CITY</text>
+<rect x="460" y="284" width="120" height="8" fill="#008751"/>
+<rect x="580" y="284" width="120" height="8" fill="#fcd116"/>
+<rect x="700" y="284" width="120" height="8" fill="#e8112d"/>
+<text x="640" y="338" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="34" font-weight="500" fill="#f4f1ea" text-anchor="middle">Cotonou, 2017-2026</text>
+<rect x="440" y="552" width="400" height="56" fill="#140a05" fill-opacity="0.72" rx="8"/>
+<text x="640" y="590" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="30" font-weight="600" fill="#f4f1ea" text-anchor="middle">Appuie sur une touche</text>
+<text x="48" y="692" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="500" fill="#d6d0c4">Version 0.1 · Chapitre 1</text>
+<text x="1232" y="692" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="500" fill="#d6d0c4" text-anchor="end">Jeu gratuit, sans publicité ni achat · Conseillé à partir de 12 ans</text>
+</svg>

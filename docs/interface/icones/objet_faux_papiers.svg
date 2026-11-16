@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+<title>Icône d'objet : faux_papiers</title>
+<rect x="12" y="5" width="40" height="54" rx="4" fill="#f4f1ea" stroke="#d6d0c4" stroke-width="2"/><rect x="18" y="12" width="13" height="15" rx="1.500" fill="#a3957f"/><rect x="35" y="13" width="12" height="3" rx="1.500" fill="#a3957f"/><rect x="35" y="20" width="9" height="3" rx="1.500" fill="#d6d0c4"/><rect x="18" y="33" width="28" height="3" rx="1.500" fill="#d6d0c4"/><rect x="18" y="40" width="16" height="3" rx="1.500" fill="#d6d0c4"/><circle cx="40" cy="45" r="8.500" fill="none" stroke="#e8112d" stroke-width="3" stroke-opacity="0.8"/><path d="M35 45h10" stroke="#e8112d" stroke-width="2.500" stroke-opacity="0.8"/>
+</svg>

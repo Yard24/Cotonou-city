@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+<title>Icône d'objet : appareil_photo</title>
+<rect x="22" y="13" width="16" height="9" rx="2" fill="#3a3a3d"/><rect x="7" y="19" width="50" height="34" rx="6" fill="#3a3a3d"/><circle cx="32" cy="36" r="12" fill="#1e2a33" stroke="#d6d0c4" stroke-width="3"/><circle cx="32" cy="36" r="5" fill="#2a86b5"/><rect x="44" y="24" width="8" height="4.500" rx="1.500" fill="#fcd116"/>
+</svg>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+<title>Icône d'objet : jerrican</title>
+<rect x="42" y="8" width="9" height="12" rx="2" fill="#3a3a3d"/><path d="M12 18h28l12 9v27a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V20a2 2 0 0 1 2-2z" fill="#2f7d32"/><rect x="16" y="23" width="18" height="6" rx="3" fill="#140a05"/><path d="M18 36l26 16M44 36L18 52" stroke="#3f9a3c" stroke-width="3" stroke-linecap="round"/>
+</svg>

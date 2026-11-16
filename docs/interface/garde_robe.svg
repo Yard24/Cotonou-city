@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<title>Marina City — Garde-robe (maquette)</title>
+<defs><linearGradient id="fm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b170b"/><stop offset="1" stop-color="#140a05"/></linearGradient></defs>
+<rect width="1280" height="720" fill="url(#fm)"/>
+<polygon points="0,600 0,552 56,552 64,570 168,570 168,576 272,576 288,540 360,540 360,570 448,570 464,540 520,540 520,560 624,560 624,552 664,552 664,576 736,576 744,560 832,560 848,570 936,570 936,564 1008,564 1008,570 1064,570 1064,560 1136,560 1144,560 1232,560 1240,560 1344,560 1280,600 1280,720 0,720" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M150 600 q6 -35 -4 -70" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M146 530 Q129 523 112 536 Q129 535 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q133 512 120 514 Q133 524 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q143 506 140 502 Q143 518 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q155 509 164 508 Q155 521 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q163 521 180 532 Q163 533 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q157 529 168 548 Q157 541 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q136 530 126 550 Q136 542 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M430 600 q6 -40 -4 -80" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M426 520 Q409 513 392 526 Q409 525 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q413 502 400 504 Q413 514 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q423 496 420 492 Q423 508 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q435 499 444 498 Q435 511 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q443 511 460 522 Q443 523 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q437 519 448 538 Q437 531 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q416 520 406 540 Q416 532 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M905 600 q6 -37.5 -4 -75" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M901 525 Q884 518 867 531 Q884 530 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q888 507 875 509 Q888 519 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q898 501 895 497 Q898 513 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q910 504 919 503 Q910 516 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q918 516 935 527 Q918 528 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q912 524 923 543 Q912 536 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q891 525 881 545 Q891 537 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1130 600 q6 -45 -4 -90" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M1126 510 Q1109 503 1092 516 Q1109 515 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1113 492 1100 494 Q1113 504 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1123 486 1120 482 Q1123 498 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1135 489 1144 488 Q1135 501 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1143 501 1160 512 Q1143 513 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1137 509 1148 528 Q1137 521 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1116 510 1106 530 Q1116 522 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<text x="48" y="88" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="48" font-weight="700" fill="#f4f1ea">Garde-robe</text>
+<rect x="48" y="102" width="32" height="6" fill="#008751"/>
+<rect x="80" y="102" width="32" height="6" fill="#fcd116"/>
+<rect x="112" y="102" width="32" height="6" fill="#e8112d"/>
+<text x="48" y="136" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="400" fill="#d6d0c4">Chambre de Koffi · Dantokpa</text>
+<text x="1232" y="88" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="30" font-weight="700" fill="#8df59a" text-anchor="end">12 450 FCFA</text>
+<rect x="48" y="168" width="232" height="48" fill="#f5c400" rx="6"/>
+<rect x="38" y="168" width="6" height="16" fill="#008751"/>
+<rect x="38" y="184" width="6" height="16" fill="#fcd116"/>
+<rect x="38" y="200" width="6" height="16" fill="#e8112d"/>
+<text x="72" y="200.16" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#140a05">Haut</text>
+<rect x="48" y="224" width="232" height="48" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="72" y="256.16" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea">Bas</text>
+<rect x="48" y="280" width="232" height="48" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="72" y="312.16" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea">Chaussures</text>
+<rect x="48" y="336" width="232" height="48" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="72" y="368.16" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea">Tête</text>
+<rect x="48" y="392" width="232" height="48" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="72" y="424.16" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea">Accessoire</text>
+<rect x="48" y="448" width="232" height="48" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="72" y="480.16" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea">Tenues complètes</text>
+<rect x="304" y="168" width="172" height="224" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<rect x="314" y="178" width="152" height="140" fill="#3a2516" rx="6"/>
+<polygon points="366,206 380,206 390,216 400,206 414,206 446,228 432,252 418,244 418,302 362,302 362,244 348,252 334,228" fill="#008751" />
+<text x="390" y="348" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="20" font-weight="600" fill="#f4f1ea" text-anchor="middle">Maillot vert</text>
+<text x="390" y="374" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#d6d0c4" text-anchor="middle">Porté</text>
+<circle cx="454" cy="192" r="12" fill="#008751"/>
+<polyline points="448,192 452.2,196.2 460,187.8" fill="none" stroke="#f4f1ea" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="488" y="168" width="172" height="224" fill="#f5c400" rx="8"/>
+<rect x="498" y="178" width="152" height="140" fill="#3a2516" rx="6"/>
+<polygon points="550,206 564,206 574,216 584,206 598,206 630,228 616,252 602,244 602,302 546,302 546,244 532,252 518,228" fill="#f2c200" />
+<text x="574" y="348" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="20" font-weight="600" fill="#140a05" text-anchor="middle">Chemise jaune n° 27</text>
+<text x="574" y="374" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">À toi</text>
+<rect x="672" y="168" width="172" height="224" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<rect x="682" y="178" width="152" height="140" fill="#3a2516" rx="6"/>
+<polygon points="734,206 748,206 758,216 768,206 782,206 814,228 800,252 786,244 786,302 730,302 730,244 716,252 702,228" fill="#2a86b5" />
+<text x="758" y="348" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="20" font-weight="600" fill="#f4f1ea" text-anchor="middle">Chemise à motifs</text>
+<text x="758" y="374" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#d6d0c4" text-anchor="middle">À toi</text>
+<rect x="304" y="404" width="172" height="224" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<rect x="314" y="414" width="152" height="140" fill="#3a2516" rx="6"/>
+<polygon points="366,442 380,442 390,452 400,442 414,442 446,464 432,488 418,480 418,538 362,538 362,480 348,488 334,464" fill="#f4f1ea" />
+<text x="390" y="584" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="20" font-weight="600" fill="#f4f1ea" text-anchor="middle">Polo blanc</text>
+<text x="390" y="610" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#8df59a" text-anchor="middle">2 500 FCFA</text>
+<rect x="488" y="404" width="172" height="224" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<rect x="498" y="414" width="152" height="140" fill="#3a2516" rx="6"/>
+<polygon points="550,442 564,442 574,452 584,442 598,442 630,464 616,488 602,480 602,538 546,538 546,480 532,488 518,464" fill="#d98c5f" />
+<text x="574" y="584" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="20" font-weight="600" fill="#f4f1ea" text-anchor="middle">Chemise du dimanche</text>
+<text x="574" y="610" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#8df59a" text-anchor="middle">6 000 FCFA</text>
+<rect x="672" y="404" width="172" height="224" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<rect x="682" y="414" width="152" height="140" fill="#3a2516" rx="6"/>
+<polygon points="734,442 748,442 758,452 768,442 782,442 814,464 800,488 786,480 786,538 730,538 730,480 716,488 702,464" fill="#d6d0c4" fill-opacity="0.35"/>
+<text x="758" y="584" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="20" font-weight="600" fill="#f4f1ea" text-anchor="middle">Veste claire</text>
+<text x="758" y="610" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#a3957f" text-anchor="middle">Chapitre 4</text>
+<rect x="872" y="168" width="360" height="400" fill="#3a2516" fill-opacity="0.8" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<ellipse cx="1052" cy="550" rx="70" ry="10" fill="#000" fill-opacity="0.3"/>
+<rect x="1018" y="390" width="28" height="150" fill="#3c4b57" rx="8"/>
+<rect x="1058" y="390" width="28" height="150" fill="#3c4b57" rx="8"/>
+<rect x="1012" y="536" width="36" height="12" fill="#8b5a2b" rx="4"/>
+<rect x="1056" y="536" width="36" height="12" fill="#8b5a2b" rx="4"/>
+<rect x="1004" y="270" width="96" height="136" fill="#f2c200" rx="16"/>
+<rect x="978" y="276" width="26" height="96" fill="#f2c200" rx="10"/>
+<rect x="1100" y="276" width="26" height="96" fill="#f2c200" rx="10"/>
+<rect x="980" y="350" width="22" height="50" fill="#7a4a2a" rx="9"/>
+<rect x="1102" y="350" width="22" height="50" fill="#7a4a2a" rx="9"/>
+<rect x="1042" y="250" width="20" height="26" fill="#7a4a2a"/>
+<circle cx="1052" cy="228" r="32" fill="#7a4a2a"/>
+<path d="M1020 220 a32 32 0 0 1 64 0 z" fill="#140a05"/>
+<text x="1052" y="350" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="34" font-weight="700" fill="#140a05" text-anchor="middle">27</text>
+<rect x="872" y="584" width="360" height="48" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="1052" y="616.16" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea" text-anchor="middle">Porter</text>
+<rect x="0" y="664" width="1280" height="56" fill="#140a05" fill-opacity="0.88"/>
+<line x1="0" y1="664" x2="1280" y2="664" stroke="#6b4a30" stroke-width="1"/>
+<rect x="740.25" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="740.25" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="749.25,694 754.25,687 759.25,694" fill="#140a05"/>
+<rect x="772.25" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="772.25" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="781.25,688 786.25,695 791.25,688" fill="#140a05"/>
+<rect x="804.25" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="804.25" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="821.25,686 814.25,691 821.25,696" fill="#140a05"/>
+<rect x="836.25" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="836.25" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="847.25,686 854.25,691 847.25,696" fill="#140a05"/>
+<text x="874.25" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Choisir</text>
+<rect x="961.422" y="678" width="63.3125" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="961.422" y="702" width="63.3125" height="4" fill="#d6d0c4" rx="2"/>
+<text x="993.078" y="697" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">Entrée</text>
+<text x="1034.73" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Porter</text>
+<rect x="1116.61" y="678" width="60.0469" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="1116.61" y="702" width="60.0469" height="4" fill="#d6d0c4" rx="2"/>
+<text x="1146.63" y="697" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">Échap</text>
+<text x="1186.66" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Sortir</text>
+</svg>

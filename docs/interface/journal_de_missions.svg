@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<title>Marina City — Journal de missions (maquette)</title>
+<defs><linearGradient id="fm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b170b"/><stop offset="1" stop-color="#140a05"/></linearGradient></defs>
+<rect width="1280" height="720" fill="url(#fm)"/>
+<polygon points="0,600 0,552 56,552 64,570 168,570 168,576 272,576 288,540 360,540 360,570 448,570 464,540 520,540 520,560 624,560 624,552 664,552 664,576 736,576 744,560 832,560 848,570 936,570 936,564 1008,564 1008,570 1064,570 1064,560 1136,560 1144,560 1232,560 1240,560 1344,560 1280,600 1280,720 0,720" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M150 600 q6 -35 -4 -70" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M146 530 Q129 523 112 536 Q129 535 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q133 512 120 514 Q133 524 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q143 506 140 502 Q143 518 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q155 509 164 508 Q155 521 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q163 521 180 532 Q163 533 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q157 529 168 548 Q157 541 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M146 530 Q136 530 126 550 Q136 542 146 530 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M430 600 q6 -40 -4 -80" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M426 520 Q409 513 392 526 Q409 525 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q413 502 400 504 Q413 514 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q423 496 420 492 Q423 508 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q435 499 444 498 Q435 511 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q443 511 460 522 Q443 523 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q437 519 448 538 Q437 531 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M426 520 Q416 520 406 540 Q416 532 426 520 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M905 600 q6 -37.5 -4 -75" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M901 525 Q884 518 867 531 Q884 530 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q888 507 875 509 Q888 519 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q898 501 895 497 Q898 513 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q910 504 919 503 Q910 516 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q918 516 935 527 Q918 528 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q912 524 923 543 Q912 536 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M901 525 Q891 525 881 545 Q891 537 901 525 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1130 600 q6 -45 -4 -90" stroke="#3a2516" stroke-width="5" fill="none" stroke-opacity="0.55"/>
+<path d="M1126 510 Q1109 503 1092 516 Q1109 515 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1113 492 1100 494 Q1113 504 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1123 486 1120 482 Q1123 498 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1135 489 1144 488 Q1135 501 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1143 501 1160 512 Q1143 513 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1137 509 1148 528 Q1137 521 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<path d="M1126 510 Q1116 510 1106 530 Q1116 522 1126 510 Z" fill="#3a2516" fill-opacity="0.55"/>
+<text x="48" y="88" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="48" font-weight="700" fill="#f4f1ea">Journal de missions</text>
+<rect x="48" y="102" width="32" height="6" fill="#008751"/>
+<rect x="80" y="102" width="32" height="6" fill="#fcd116"/>
+<rect x="112" y="102" width="32" height="6" fill="#e8112d"/>
+<rect x="48" y="132" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="48" y="156" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<text x="62" y="151" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">A</text>
+<rect x="88" y="124" width="176" height="44" fill="#f5c400" rx="6"/>
+<text x="176" y="154" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#140a05" text-anchor="middle">En cours</text>
+<rect x="272" y="124" width="176" height="44" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="360" y="154" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea" text-anchor="middle">Disponibles</text>
+<rect x="456" y="124" width="176" height="44" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="544" y="154" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea" text-anchor="middle">Terminées</text>
+<rect x="640" y="132" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="640" y="156" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<text x="654" y="151" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">E</text>
+<text x="1232" y="154" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4" text-anchor="end">Chapitre 1 · 2 missions principales sur 8</text>
+<text x="48" y="212" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#a3957f" letter-spacing="1.5">HISTOIRE</text>
+<text x="48" y="320" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#a3957f" letter-spacing="1.5">TRAVAIL ET AFFAIRES</text>
+<rect x="48" y="224" width="440" height="64" fill="#f5c400" rx="6"/>
+<rect x="38" y="224" width="6" height="21.3333" fill="#008751"/>
+<rect x="38" y="245.333" width="6" height="21.3333" fill="#fcd116"/>
+<rect x="38" y="266.667" width="6" height="21.3333" fill="#e8112d"/>
+<g transform="translate(60 236) scale(0.833333)"><circle cx="24" cy="24" r="20" fill="#f5c400" stroke="#140a05" stroke-width="3"/><rect x="21" y="10" width="6" height="17" rx="3" fill="#140a05"/><circle cx="24" cy="34" r="3.6" fill="#140a05"/></g>
+<text x="116" y="254" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#140a05">La moto de Romaric</text>
+<text x="116" y="276" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="400" fill="#140a05">Romaric · Ganhi</text>
+<rect x="48" y="332" width="440" height="64" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<g transform="translate(60 344) scale(0.833333)"><rect x="3" y="3" width="42" height="42" rx="10" fill="#fcd116" stroke="#140a05" stroke-width="3"/><circle cx="23" cy="13.500" r="4.500" fill="#140a05"/><rect x="19" y="19" width="8" height="12" rx="3" fill="#140a05"/><rect x="19" y="29" width="3.300" height="10" rx="1.500" fill="#140a05"/><rect x="23.700" y="29" width="3.300" height="10" rx="1.500" fill="#140a05"/><path d="M26 21.500l8.500-10M20 21.500l-5 7" stroke="#140a05" stroke-width="3.500" stroke-linecap="round"/></g>
+<text x="116" y="362" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea">Courses de zémidjan</text>
+<text x="116" y="384" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="400" fill="#d6d0c4">Le Doyen · partout en ville</text>
+<rect x="48" y="404" width="440" height="64" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<g transform="translate(60 416) scale(0.833333)"><rect x="3" y="3" width="42" height="42" rx="10" fill="#fcd116" stroke="#140a05" stroke-width="3"/><rect x="11" y="14" width="26" height="23" rx="2" fill="#140a05"/><rect x="21.500" y="14" width="5" height="23" fill="#fcd116"/><rect x="11" y="21" width="26" height="2.500" fill="#fcd116"/></g>
+<text x="116" y="434" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea">Beignets du matin</text>
+<text x="116" y="456" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="400" fill="#d6d0c4">Maman Koffi · Dantokpa</text>
+<rect x="48" y="476" width="440" height="64" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<g transform="translate(60 488) scale(0.833333)"><circle cx="24" cy="24" r="20" fill="#f5c400" stroke="#140a05" stroke-width="3"/><circle cx="24" cy="18" r="6.5" fill="#140a05"/><path d="M12 37a12 11 0 0 1 24 0z" fill="#140a05"/></g>
+<text x="116" y="506" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea">La dette de Tonton Gratien</text>
+<text x="116" y="528" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="400" fill="#d6d0c4">Reste 18 000 FCFA à rembourser</text>
+<rect x="512" y="188" width="720" height="452" fill="#26170d" fill-opacity="0.92" rx="8" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="544" y="240" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="38" font-weight="700" fill="#f4f1ea">La moto de Romaric</text>
+<text x="544" y="270" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="400" fill="#d6d0c4">Mission principale 2 sur 8 · Donnée par Romaric · Ganhi</text>
+<text x="544" y="310" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="400" fill="#f4f1ea">Romaric te prête sa moto, mais il veut d'abord voir si tu sais encore conduire</text>
+<text x="544" y="338" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="400" fill="#f4f1ea">à Cotonou après trois ans à Lagos. Fais trois courses sans lui rayer la</text>
+<text x="544" y="366" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="400" fill="#f4f1ea">peinture.</text>
+<text x="544" y="406" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#a3957f" letter-spacing="1.5">OBJECTIFS</text>
+<circle cx="556" cy="430" r="10" fill="#008751"/>
+<polyline points="551,430 554.5,433.5 561,426.5" fill="none" stroke="#f4f1ea" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="580" y="436" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="400" fill="#d6d0c4">Rejoins Romaric à son atelier</text>
+<circle cx="556" cy="460" r="10" fill="#008751"/>
+<polyline points="551,460 554.5,463.5 561,456.5" fill="none" stroke="#f4f1ea" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="580" y="466" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="400" fill="#d6d0c4">Monte sur la moto</text>
+<polygon points="552.2,482 563.4,490 552.2,498" fill="#ffe27a"/>
+<text x="580" y="496" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="600" fill="#ffe27a">Conduis le client à Ganhi</text>
+<circle cx="556" cy="520" r="9" fill="none" stroke="#a3957f" stroke-width="2"/>
+<text x="580" y="526" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="400" fill="#a3957f">Fais deux autres courses</text>
+<circle cx="556" cy="550" r="9" fill="none" stroke="#a3957f" stroke-width="2"/>
+<text x="580" y="556" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="20" font-weight="400" fill="#a3957f">Rapporte la moto à Romaric</text>
+<text x="544" y="548" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#a3957f">Récompense</text>
+<g transform="translate(644 526) scale(0.5)"><rect x="10" y="15" width="50" height="28" rx="4" fill="#2f7d32"/><rect x="4" y="21" width="50" height="28" rx="4" fill="#3f9a3c"/><rect x="9" y="26" width="40" height="18" rx="2" fill="none" stroke="#c4e8c0" stroke-width="2"/><circle cx="29" cy="35" r="6.500" fill="#c4e8c0"/></g>
+<text x="684" y="552" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="26" font-weight="700" fill="#8df59a">500 FCFA</text>
+<rect x="544" y="572" width="260" height="44" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="674" y="602.16" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea" text-anchor="middle">Voir sur la carte</text>
+<rect x="940" y="572" width="260" height="44" fill="#26170d" fill-opacity="0.92" rx="6" stroke="#6b4a30" stroke-width="1.5"/>
+<text x="1070" y="602.16" font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif" font-size="24" font-weight="600" fill="#f4f1ea" text-anchor="middle">Abandonner la mission</text>
+<rect x="0" y="664" width="1280" height="56" fill="#140a05" fill-opacity="0.88"/>
+<line x1="0" y1="664" x2="1280" y2="664" stroke="#6b4a30" stroke-width="1"/>
+<rect x="523.422" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="523.422" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<text x="537.422" y="697" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">A</text>
+<rect x="555.422" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="555.422" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<text x="569.422" y="697" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">E</text>
+<text x="593.422" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Onglet</text>
+<rect x="676.531" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="676.531" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="685.531,694 690.531,687 695.531,694" fill="#140a05"/>
+<rect x="708.531" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="708.531" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="717.531,688 722.531,695 727.531,688" fill="#140a05"/>
+<text x="746.531" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Choisir</text>
+<rect x="833.703" y="678" width="28" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="833.703" y="702" width="28" height="4" fill="#d6d0c4" rx="2"/>
+<polygon points="844.703,686 851.703,691 844.703,696" fill="#140a05"/>
+<text x="871.703" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Détail</text>
+<rect x="949.141" y="678" width="63.3125" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="949.141" y="702" width="63.3125" height="4" fill="#d6d0c4" rx="2"/>
+<text x="980.797" y="697" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">Entrée</text>
+<text x="1022.45" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Valider</text>
+<rect x="1108.73" y="678" width="60.0469" height="28" fill="#f4f1ea" rx="5"/>
+<rect x="1108.73" y="702" width="60.0469" height="4" fill="#d6d0c4" rx="2"/>
+<text x="1138.76" y="697" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="16" font-weight="600" fill="#140a05" text-anchor="middle">Échap</text>
+<text x="1178.78" y="698" font-family="Barlow, 'DejaVu Sans', Arial, sans-serif" font-size="18" font-weight="500" fill="#f4f1ea">Retour</text>
+</svg>
