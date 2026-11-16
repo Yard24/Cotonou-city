@@ -93,7 +93,7 @@ func build(m) -> void:
 	vb.add_child(flag)
 	var help: Label = m.label(22, Color.WHITE)
 	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	help.text = "Flèches ou ZQSD : avancer, reculer, tourner\nE : monter ou descendre d'une voiture\nÀ pied — Espace : sauter, monter sur un muret · Maj : courir · C : s'accroupir\nE : acheter, s'asseoir, lire un panneau · On nage en entrant dans la mer\nEn voiture — Espace : frein à main · H : klaxon · L : phares · J et K : clignotants · V : caméra\nF4 : niveau graphique · F3 : images par seconde\nÉchap : pause"
+	help.text = "Flèches ou ZQSD : avancer, reculer, tourner\nE : monter sur une moto ou dans une voiture, en descendre\nÀ pied — Espace : sauter, monter sur un muret · Maj : courir · C : s'accroupir\nE : acheter, s'asseoir, lire un panneau · On nage en entrant dans la mer\nEn voiture — Espace : frein à main · H : klaxon · L : phares · J et K : clignotants · V : caméra\nÀ moto — Bas : freiner · Espace : frein arrière (virage serré) · H : klaxon · V : caméra\nF4 : niveau graphique · F3 : images par seconde\nÉchap : pause"
 	vb.add_child(help)
 	m.menu_play = Button.new()
 	m.menu_play.add_theme_font_size_override("font_size", 30)
@@ -117,7 +117,7 @@ func update(m, delta: float) -> void:
 	var t := ""
 	if m.help_t > 0.0:
 		m.help_t -= delta
-		t = "Flèches ou ZQSD : bouger · E : monter/descendre · Espace : sauter (frein à main en voiture) · Maj : courir · C : s'accroupir · Échap : pause"
+		t = "Flèches ou ZQSD : bouger · E : monter/descendre · Espace : sauter (frein en véhicule) · Maj : courir · C : s'accroupir · Échap : pause"
 	if m.cur_car:
 		m.l_speed.text = "%d km/h" % int(abs(m.cur_car.speed) * 3.6)
 		if abs(m.cur_car.speed) < 1.5 and m.help_t <= 0.0:
@@ -125,7 +125,7 @@ func update(m, delta: float) -> void:
 	else:
 		m.l_speed.text = ""
 		if m.need_car:
-			t = "Il te faut une voiture pour cette mission"
+			t = "Il te faut un véhicule pour cette mission"
 		else:
 			var it: Dictionary = m.inter.nearest(m)
 			var c = m._nearest_car()
@@ -135,6 +135,8 @@ func update(m, delta: float) -> void:
 				t = "Tu nages — Maj : nager plus vite"
 			elif not it.is_empty() and (c == null or it.d <= c.global_position.distance_to(m.player.global_position)):
 				t = "E : " + it.label
+			elif c != null and c.moto:
+				t = "E : relever la moto" if c.fallen else "Appuie sur E pour monter sur la moto"
 			elif c != null:
 				t = "Appuie sur E pour monter dans la voiture"
 	if m.info_t > 0.0:

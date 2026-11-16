@@ -1,6 +1,6 @@
 # Conduite voiture : fonctionnement attendu
 
-Code : `scripts/car.gd` (conduite, suspension, dégâts), `scripts/car_fx.gd` (feux, clignotants, klaxon), caméra dans `scripts/main.gd`. Vérifications : `scripts/selftest_voiture.gd` (lancé par le test automatique), sur la plage, voiture seule.
+Code : `scripts/car.gd` (conduite, suspension, dégâts), `scripts/car_fx.gd` (feux, clignotants, klaxon), caméra dans `scripts/vue.gd`. Vérifications : `scripts/selftest_voiture.gd` (lancé par le test automatique), sur la plage, voiture seule.
 
 Conduite « arcade » : simple à prendre en main au clavier, pas une simulation. Les chiffres sont des réglages de départ, à ajuster après essai.
 

@@ -3,6 +3,7 @@ extends RefCounted
 # main.gd appelle step() à chaque image ; le test doit finir par « SELFTEST OK ».
 
 const VoitureTest := preload("res://scripts/selftest_voiture.gd")
+const MotoTest := preload("res://scripts/selftest_moto.gd")
 var voiture
 var start := Vector3.ZERO
 var max_y := 0.0
@@ -28,7 +29,8 @@ func step(m) -> void:
 		m._play()
 		print("menu : pause et reprise OK · mini-carte présente")
 	elif f == 10:
-		m.toggle_car()
+		# la voiture rouge garée près du départ (le véhicule le plus proche est la moto de Romaric)
+		m.mount(m.cars[0])
 		if m.cur_car == null:
 			_fail(m, "impossible de monter dans la voiture")
 			return
@@ -285,6 +287,8 @@ func _step2(m, f: int, pl) -> void:
 		_interactions(m, pl)
 	elif f == 2574 and voiture != null:
 		var e: String = voiture.run(m)
+		if e == "":
+			e = MotoTest.new().run(m)
 		if e != "":
 			_fail(m, e)
 			return

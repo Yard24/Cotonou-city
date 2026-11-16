@@ -40,6 +40,7 @@ var sitting := false
 var health := SANTE_MAX
 var hurt_t := 99.0        # secondes depuis la dernière blessure
 var ko_t := 0.0           # temps d'évanouissement restant
+var down_t := 0.0         # temps restant par terre après une chute à moto
 var air_top := 0.0        # point le plus haut atteint depuis le dernier appui
 var last_fall := 0.0      # hauteur de la dernière chute
 var mantle_t := 0.0       # temps de franchissement restant
@@ -72,7 +73,7 @@ func move_speed() -> float:
 	return V_COURSE if run else V_MARCHE
 
 func jump() -> bool:
-	if not on_ground or crouching or swimming or sitting or ko_t > 0.0:
+	if not on_ground or crouching or swimming or sitting or ko_t > 0.0 or down_t > 0.0:
 		return false
 	vy = V_SAUT
 	on_ground = false
@@ -96,6 +97,7 @@ func reset_pose() -> void:
 	wading = false
 	sitting = false
 	mantle_t = 0.0
+	down_t = 0.0
 	air_top = global_position.y
 	body.scale.y = 1.0
 	body.rotation.x = 0.0
@@ -127,6 +129,13 @@ func hurt(amount: float) -> void:
 
 func heal(amount: float) -> void:
 	health = min(SANTE_MAX, health + amount)
+
+# Chute à moto : par terre quelques secondes, conscient mais sans contrôle.
+func fall_down(secs: float) -> void:
+	down_t = secs
+	sitting = false
+	mantle_t = 0.0
+	set_crouch(false)
 
 # ---------------- position assise ----------------
 func sit(pos: Vector3, h: float) -> void:
@@ -207,6 +216,12 @@ func walk(_m, delta: float) -> void:
 		if ko_t <= 0.0:
 			ko_t = 0.0
 			main.respawn()
+		return
+	if down_t > 0.0:
+		# par terre après une chute à moto, puis il se relève tout seul
+		down_t = max(0.0, down_t - delta)
+		body.rotation.x = lerp(body.rotation.x, -PI / 2, 1.0 - exp(-delta * 8.0))
+		body.position.y = lerp(body.position.y, 0.25, 1.0 - exp(-delta * 8.0))
 		return
 	if health < SANTE_MAX and (sitting or hurt_t > T_REPOS):
 		health = min(SANTE_MAX, health + (6.0 if sitting else 1.5) * delta)

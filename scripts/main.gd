@@ -1,5 +1,6 @@
 extends Node3D
-# Marina City (dépôt cotonou-city) — monde, circulation, missions, affichage.
+# Marina City (dépôt cotonou-city) — monde, missions, monter et descendre des véhicules.
+# Circulation et passants : trafic.gd ; caméra : vue.gd ; affichage : hud.gd.
 # Quatre niveaux graphiques (touche F4) : Bas pour les petits PC, jusqu'à Ultra.
 
 const CarScript := preload("res://scripts/car.gd")
@@ -10,6 +11,8 @@ const DecorScript := preload("res://scripts/decor.gd")
 const HudScript := preload("res://scripts/hud.gd")
 const ReliefScript := preload("res://scripts/relief.gd")
 const InteractionScript := preload("res://scripts/interaction.gd")
+const TraficScript := preload("res://scripts/trafic.gd")
+const VueScript := preload("res://scripts/vue.gd")
 const WATER_Y := ReliefScript.WATER_Y
 const SPAWN := Vector3(14, 0, -50)
 const PAL := ["f2e6d0", "e8c99a", "d98c5f", "f4f1ea", "c4d4c8", "e2b3a0", "9fc3d9", "f0dc8a", "d6d0c4"]
@@ -58,6 +61,9 @@ var hud = HudScript.new()
 var decor = DecorScript.new()
 var relief = ReliefScript.new()
 var inter = InteractionScript.new()
+var trafic = TraficScript.new()
+var vue = VueScript.new()
+var moto_romaric   # la moto prêtée par Romaric, garée au point de départ (décision 51)
 var hp_fill: ColorRect
 var info_text := ""
 var info_t := 0.0
@@ -68,7 +74,7 @@ const SOINS_MAX := 2000     # … sans dépasser 2 000 FCFA
 var cam_mode := 1
 
 var missions := [
-	{"t": "Mission 1/3 — Monte dans la voiture rouge à côté de toi (touche E), puis roule jusqu'au Marché Dantokpa (colonne jaune).", "x": 60.0, "z": 22.0, "car": true, "r": 5000, "ok": "Arrivé au marché"},
+	{"t": "Mission 1/3 — Romaric te prête sa moto : monte dessus (touche E), puis roule jusqu'au Marché Dantokpa (colonne jaune).", "x": 60.0, "z": 22.0, "car": true, "r": 5000, "ok": "Arrivé au marché"},
 	{"t": "Mission 2/3 — Une commerçante te confie un colis : livre-le sur le Boulevard de la Marina, au bord de la mer.", "x": -80.0, "z": -160.0, "car": true, "r": 7500, "ok": "Colis livré"},
 	{"t": "Mission 3/3 — Retourne à la Place de l'Amazone et arrête-toi devant la statue.", "x": 0.0, "z": -40.0, "car": false, "r": 3000, "ok": "Bienvenue à l'Amazone"},
 ]
@@ -180,8 +186,8 @@ func _ready() -> void:
 	decor.amazone(self)
 	decor.market(self)
 	decor.decor(self)
-	_vehicles()
-	_people()
+	trafic.vehicles(self)
+	trafic.people(self)
 	relief.build(self)
 	inter.build(self)
 	_hud()
@@ -298,80 +304,6 @@ func _near_park(x: float, z: float, d: float) -> bool:
 			return true
 	return false
 
-func _car(color: Color, taxi: bool, is_moto: bool):
-	var c = CarScript.new()
-	add_child(c)
-	c.setup(self, color, taxi, is_moto)
-	return c
-
-func _quad(sx: float, sz: float) -> Array:
-	var p := [Vector2(sx * 3.5, sz * 26), Vector2(sx * 3.5, sz * 116.5), Vector2(sx * 116.5, sz * 116.5), Vector2(sx * 116.5, sz * 3.5), Vector2(sx * 26, sz * 3.5)]
-	var a1 := atan2(sz * 3.5, sx * 20.5)
-	var da := angle_difference(a1, atan2(sz * 20.5, sx * 3.5))
-	for i in 9:
-		var a := a1 + da * i / 8.0
-		p.append(Vector2(cos(a), sin(a)) * 21.0)
-	return p
-
-func _vehicles() -> void:
-	for p in PARK:
-		var c = _car(Color(p[3]), false, false)
-		c.global_position = Vector3(p[0], 0, p[1])
-		c.heading = p[2]
-		c.rotation.y = p[2]
-		cars.append(c)
-	var paths := [
-		[_quad(1, 1), 12.0, 3, 1], [_quad(-1, 1), 12.0, 3, 1], [_quad(1, -1), 12.0, 3, 1], [_quad(-1, -1), 12.0, 3, 1],
-		[[Vector2(-123.5, -123.5), Vector2(123.5, -123.5), Vector2(123.5, 123.5), Vector2(-123.5, 123.5)], 14.0, 8, 4],
-		[[Vector2(-200, -163.5), Vector2(200, -163.5), Vector2(200, -156.5), Vector2(-200, -156.5)], 16.0, 7, 3]]
-	for P in paths:
-		for i in P[2]:
-			var is_moto: bool = i < P[3]
-			var taxi: bool = (not is_moto) and rng.randf() < 0.45
-			var col := Color(pick(["aa1111", "1144aa", "111111"])) if is_moto else (Color("f2c200") if taxi else Color(pick(CARC)))
-			var c = _car(col, taxi, is_moto)
-			c.ai = true
-			c.set_path(P[0])
-			c.vmax = P[1]
-			c.speed = P[1]
-			c.dist = c.path_len * i / P[2]
-			c.place_on_path()
-			traffic.append(c)
-
-func _people() -> void:
-	player = PlayerScript.new()
-	add_child(player)
-	player.setup(self)
-	player.global_position = SPAWN
-	player.rotation.y = player.heading
-	for i in 30:
-		var b = pick(blocks)
-		var e := rng.randi() % 4
-		var a: Vector2
-		var c: Vector2
-		if e < 2:
-			var z: float = b.z1 - 1.6 if e == 1 else b.z0 + 1.6
-			a = Vector2(b.x0 + 3, z)
-			c = Vector2(b.x1 - 3, z)
-		else:
-			var x: float = b.x0 + 1.6 if e == 2 else b.x1 - 1.6
-			a = Vector2(x, b.z0 + 3)
-			c = Vector2(x, b.z1 - 3)
-		var n := Node3D.new()
-		add_child(n)
-		var parts := make_human(n, Color(pick(SHIRTS)), Color(pick(["2b2b40", "5a4632", "1d5e3a", "222222"])), Color(pick(["5a3622", "4a2b1a", "6b4228"])))
-		npcs.append({"n": n, "p": parts, "a": a, "c": c, "len": (c - a).length(), "t": rng.randf() * (c - a).length(), "dir": 1.0 if rng.randf() < 0.5 else -1.0, "v": rr(1.2, 2.0), "ph": rng.randf() * 6.0, "scare": 0.0})
-	marker = Node3D.new()
-	add_child(marker)
-	var bm := cyl(3, 3, 40, Color.WHITE, Vector3(0, 20, 0), marker, 16)
-	var m := StandardMaterial3D.new()
-	m.albedo_color = Color(1, 0.82, 0, 0.3)
-	m.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	m.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	m.cull_mode = BaseMaterial3D.CULL_DISABLED
-	bm.material_override = m
-	_camera(0.0, true)
-
 func _hud() -> void:
 	hud.build(self)
 
@@ -421,12 +353,12 @@ func startle(pos: Vector3, radius: float) -> int:
 			n += 1
 	return n
 
-# Touche E : descendre de voiture, sinon l'objet ou la voiture le plus proche.
+# Touche E : descendre du véhicule, sinon l'objet ou le véhicule le plus proche.
 func press_e() -> void:
 	if cur_car:
 		toggle_car()
 		return
-	if player.ko_t > 0.0 or player.mantle_t > 0.0:
+	if player.ko_t > 0.0 or player.down_t > 0.0 or player.mantle_t > 0.0:
 		return
 	var it: Dictionary = inter.nearest(self)
 	var c = _nearest_car()
@@ -468,11 +400,12 @@ func _apply_quality() -> void:
 	env.glow_enabled = false
 
 # ---------------- monter / descendre ----------------
+# Véhicule le plus proche sur lequel on peut monter : voitures, et motos garées.
 func _nearest_car():
 	var best = null
 	var bd := 4.8
 	for c in cars + traffic:
-		if c.moto:
+		if c.moto and c.ai:
 			continue
 		var d: float = c.global_position.distance_to(player.global_position)
 		if d < bd:
@@ -484,19 +417,19 @@ func toggle_car() -> void:
 	if cur_car:
 		if abs(cur_car.speed) > 6.0:
 			return
-		var h: float = cur_car.heading
-		player.global_position = cur_car.global_position + Vector3(cos(h), 0, -sin(h)) * 2.4
-		player.heading = h
-		player.rotation.y = h
-		player.visible = true
-		player.shape.disabled = false
-		player.reset_pose()
-		cur_car.speed = 0.0
-		cur_car = null
+		_get_off()
 		return
 	var c = _nearest_car()
-	if c == null or player.ko_t > 0.0 or player.swimming:
+	if c == null or player.ko_t > 0.0 or player.down_t > 0.0 or player.swimming:
 		return
+	if c.moto and c.fallen:
+		# une moto couchée se relève d'abord ; on remonte ensuite
+		c.stand_up()
+		say("Moto relevée — E pour remonter", 3.0)
+		return
+	mount(c)
+
+func mount(c) -> void:
 	if c.ai:
 		c.ai = false
 		c.speed = 0.0
@@ -507,9 +440,35 @@ func toggle_car() -> void:
 	c.fx.blink = 0
 	c.fx._show_blink()
 	c.fx._spot()
+	if c.moto:
+		c.lean = 0.0
+		c.set_rider_color(Color("008751"))
 	player.reset_pose()
 	player.visible = false
 	player.shape.disabled = true
+
+# Le héros descend et se retrouve debout à gauche du véhicule.
+func _get_off() -> void:
+	var c = cur_car
+	var h: float = c.heading
+	player.global_position = c.global_position + Vector3(cos(h), 0, -sin(h)) * (1.2 if c.moto else 2.4)
+	player.heading = h
+	player.rotation.y = h
+	player.visible = true
+	player.shape.disabled = false
+	player.reset_pose()
+	c.speed = 0.0
+	cur_car = null
+
+# Chute à moto : le pilote se retrouve par terre à côté de sa moto couchée. Il perd de la
+# santé et du temps, jamais connaissance (décision 53) : il lui reste toujours 5 points.
+const CHUTE_SANTE_MIN := 5.0
+const CHUTE_T := 2.0
+func moto_fall(_c, impact: float) -> void:
+	_get_off()
+	player.hurt(min((impact - 4.0) * 2.5, player.health - CHUTE_SANTE_MIN))
+	player.fall_down(CHUTE_T)
+	say("Chute ! Relève la moto avec E, puis remonte dessus.", 5.0)
 
 # ---------------- boucle ----------------
 func _physics_process(delta: float) -> void:
@@ -556,43 +515,8 @@ func _physics_process(delta: float) -> void:
 	for c in cars:
 		if c != cur_car:
 			c.idle(delta)
-	var pp: Vector3 = cur_car.global_position if cur_car else player.global_position
-	for a in traffic:
-		var f := Vector3(sin(a.heading), 0, cos(a.heading))
-		var blocked := false
-		var by_player := false
-		for o in traffic + cars:
-			if o == a:
-				continue
-			var dv: Vector3 = o.global_position - a.global_position
-			var d := dv.length()
-			if d < 8.5 and d > 0.1 and dv.dot(f) / d > 0.72:
-				blocked = true
-				by_player = o == cur_car
-				break
-		if not blocked and not cur_car:
-			var dv2: Vector3 = pp - a.global_position
-			var d2: float = dv2.length()
-			blocked = d2 < 8.5 and d2 > 0.1 and dv2.dot(f) / d2 > 0.72
-			by_player = blocked
-		a.ai_step(delta, blocked, by_player)
-	for n in npcs:
-		var hurry := 1.0
-		if n.scare > 0.0:
-			n.scare -= delta
-			hurry = 2.2
-		n.t += n.dir * n.v * hurry * delta
-		if n.t > n.len:
-			n.t = n.len
-			n.dir = -1.0
-		elif n.t < 0.0:
-			n.t = 0.0
-			n.dir = 1.0
-		var p: Vector2 = n.a.lerp(n.c, n.t / n.len)
-		n.n.position = Vector3(p.x, 0.08, p.y)
-		n.n.rotation.y = atan2((n.c.x - n.a.x) * n.dir, (n.c.y - n.a.y) * n.dir)
-		n.ph += delta * n.v * hurry * 3.0
-		anim_human(n.p, n.ph, 0.6)
+	var pp: Vector3 = focus_pos()
+	trafic.step(self, delta, pp)
 	_mission(pp)
 	_camera(delta, false)
 	_hud_update(delta)
@@ -612,27 +536,7 @@ func _mission(pp: Vector3) -> void:
 		_set_mission()
 
 func _camera(delta: float, instant: bool) -> void:
-	var o: Vector3 = cur_car.global_position if cur_car else player.global_position
-	var h: float = cur_car.heading if cur_car else player.heading
-	if cur_car and cam_mode == 3:
-		# vue intérieure : à la place du conducteur, regard vers l'avant, sans retard
-		var fw := Vector3(sin(h), 0, cos(h))
-		cam.position = o + Vector3(0, 1.35, 0) + fw * 0.2
-		cam_target = o + Vector3(0, 1.2, 0) + fw * 20.0
-		cam.look_at(cam_target, Vector3.UP)
-		return
-	var dist: float = CAMS[cam_mode][0] if cur_car else 6.5
-	var hh: float = CAMS[cam_mode][1] if cur_car else 3.0
-	# la caméra suit aussi la hauteur du héros (saut, objets sur lesquels il monte)
-	var want := Vector3(o.x - sin(h) * dist, o.y + hh, o.z - cos(h) * dist)
-	var tgt := o + Vector3(0, 1.6, 0)
-	if instant:
-		cam.position = want
-		cam_target = tgt
-	else:
-		cam.position = cam.position.lerp(want, 1.0 - exp(-delta * 4.5))
-		cam_target = cam_target.lerp(tgt, 1.0 - exp(-delta * 10.0))
-	cam.look_at(cam_target, Vector3.UP)
+	vue.update(self, delta, instant)
 
 func _hud_update(delta: float) -> void:
 	hud.update(self, delta)

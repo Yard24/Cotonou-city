@@ -91,27 +91,27 @@ T0089,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture 
 T0090,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0091,1. Systèmes de jeu,Conduite voiture,Essai,Conduite voiture : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0092,1. Systèmes de jeu,Conduite voiture,Essai,Conduite voiture : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
-T0093,1. Systèmes de jeu,Conduite moto,équilibre et inclinaison,Conduite moto — équilibre et inclinaison : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0094,1. Systèmes de jeu,Conduite moto,équilibre et inclinaison,Conduite moto — équilibre et inclinaison : coder,Claude,Claude,—,Toi,P1,à faire
-T0095,1. Systèmes de jeu,Conduite moto,équilibre et inclinaison,Conduite moto — équilibre et inclinaison : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0096,1. Systèmes de jeu,Conduite moto,accélération,Conduite moto — accélération : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0097,1. Systèmes de jeu,Conduite moto,accélération,Conduite moto — accélération : coder,Claude,Claude,—,Toi,P1,à faire
-T0098,1. Systèmes de jeu,Conduite moto,accélération,Conduite moto — accélération : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0099,1. Systèmes de jeu,Conduite moto,freinage,Conduite moto — freinage : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0100,1. Systèmes de jeu,Conduite moto,freinage,Conduite moto — freinage : coder,Claude,Claude,—,Toi,P1,à faire
-T0101,1. Systèmes de jeu,Conduite moto,freinage,Conduite moto — freinage : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0102,1. Systèmes de jeu,Conduite moto,chute du pilote,Conduite moto — chute du pilote : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0103,1. Systèmes de jeu,Conduite moto,chute du pilote,Conduite moto — chute du pilote : coder,Claude,Claude,—,Toi,P1,à faire
-T0104,1. Systèmes de jeu,Conduite moto,chute du pilote,Conduite moto — chute du pilote : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0093,1. Systèmes de jeu,Conduite moto,équilibre et inclinaison,Conduite moto — équilibre et inclinaison : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0094,1. Systèmes de jeu,Conduite moto,équilibre et inclinaison,Conduite moto — équilibre et inclinaison : coder,Claude,Claude,—,Toi,P1,fait
+T0095,1. Systèmes de jeu,Conduite moto,équilibre et inclinaison,Conduite moto — équilibre et inclinaison : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0096,1. Systèmes de jeu,Conduite moto,accélération,Conduite moto — accélération : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0097,1. Systèmes de jeu,Conduite moto,accélération,Conduite moto — accélération : coder,Claude,Claude,—,Toi,P1,fait
+T0098,1. Systèmes de jeu,Conduite moto,accélération,Conduite moto — accélération : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0099,1. Systèmes de jeu,Conduite moto,freinage,Conduite moto — freinage : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0100,1. Systèmes de jeu,Conduite moto,freinage,Conduite moto — freinage : coder,Claude,Claude,—,Toi,P1,fait
+T0101,1. Systèmes de jeu,Conduite moto,freinage,Conduite moto — freinage : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
+T0102,1. Systèmes de jeu,Conduite moto,chute du pilote,Conduite moto — chute du pilote : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0103,1. Systèmes de jeu,Conduite moto,chute du pilote,Conduite moto — chute du pilote : coder,Claude,Claude,—,Toi,P1,fait
+T0104,1. Systèmes de jeu,Conduite moto,chute du pilote,Conduite moto — chute du pilote : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0105,1. Systèmes de jeu,Conduite moto,passager à l'arrière,Conduite moto — passager à l'arrière : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0106,1. Systèmes de jeu,Conduite moto,passager à l'arrière,Conduite moto — passager à l'arrière : coder,Claude,Claude,—,Toi,P1,à faire
 T0107,1. Systèmes de jeu,Conduite moto,passager à l'arrière,Conduite moto — passager à l'arrière : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
 T0108,1. Systèmes de jeu,Conduite moto,passage entre les voitures,Conduite moto — passage entre les voitures : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0109,1. Systèmes de jeu,Conduite moto,passage entre les voitures,Conduite moto — passage entre les voitures : coder,Claude,Claude,—,Toi,P1,à faire
 T0110,1. Systèmes de jeu,Conduite moto,passage entre les voitures,Conduite moto — passage entre les voitures : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
-T0111,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra moto : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
-T0112,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra moto : coder,Claude,Claude,—,Toi,P1,à faire
-T0113,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra moto : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,à faire
+T0111,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra moto : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
+T0112,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra moto : coder,Claude,Claude,—,Toi,P1,fait
+T0113,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra moto : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0114,1. Systèmes de jeu,Conduite moto,Essai,Conduite moto : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
 T0115,1. Systèmes de jeu,Conduite moto,Essai,Conduite moto : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
 T0116,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté conducteur,Monter et descendre des véhicules — entrée côté conducteur : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
