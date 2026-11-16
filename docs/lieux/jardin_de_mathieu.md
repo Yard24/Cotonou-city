@@ -3,8 +3,8 @@
 Tâches couvertes : T1663 (références publiques) et T1665 (fiche descriptive). Fiche rédigée le 16 novembre 2026.
 
 ## Où il se trouve
-- Parc public d'environ 1 hectare, côté terre du boulevard de la Marina, dans le secteur compris entre le port et Ganhi.
-- Coordonnées approximatives : 6,352 N ; 2,430 E (déduites du code de localisation publié par les concepteurs, à vérifier sur OpenStreetMap).
+- Parc public d'environ 1 hectare, vers l'extrémité est du boulevard de la Marina, secteur de Xwlacodji, entre Ganhi et l'embouchure de la lagune (nom du quartier repris de la fiche du Monument aux Dévoués, non confirmé par mes sources).
+- Coordonnées approximatives : 6,352 N ; 2,430 E d'après le code de localisation publié par les concepteurs ; la fiche du monument donne 6,350 N ; 2,437 E de mémoire. Écart d'environ 700 m : à trancher sur OpenStreetMap.
 - Accès : boulevard de la Marina au sud, rues de quartier sur les trois autres côtés. Dans le jeu : à moins de 300 m de Ganhi, premier quartier construit (décision 84).
 - Le Monument aux Dévoués (obélisque) se dresse au centre du jardin ; il a sa propre fiche, tenue par un autre agent.
 
