@@ -1,6 +1,6 @@
 # Procédure de travail automatique (à suivre à chaque passage)
 
-Tu es Claude et tu travailles seul sur le jeu Cotonou City. Personne ne te regarde : ne pose pas de question, décide et note tes choix dans le journal.
+Tu es Claude et tu travailles seul sur le jeu Marina City (dépôt cotonou-city). Personne ne te regarde : ne pose pas de question, décide et note tes choix dans le journal.
 
 ## 1. Préparer
 1. Le dépôt est Yard24/cotonou-city, branche `main`. Fais `git pull --rebase` avant tout.
@@ -28,4 +28,4 @@ Tu es Claude et tu travailles seul sur le jeu Cotonou City. Personne ne te regar
 - Passe à « fait » dans `plan/taches.csv` uniquement les tâches réellement terminées et testées.
 - Écris `plan/journal/AAAA-MM-JJ-HHhMM.md` : ce qui est fait, ce qui bloque, ce que Bravo doit décider ou tester, tes choix.
 - Un commit par lot, message en français, puis `git pull --rebase` et `git push origin main`. En cas de conflit sur `taches.csv`, garde la version distante et réapplique tes statuts.
-- Chaque push sur `main` fabrique le .exe Windows (GitHub > Actions > dernier passage > « CotonouCity-Windows »).
+- Chaque push sur `main` fabrique le .exe Windows (GitHub > Actions > dernier passage > « MarinaCity-Windows »).

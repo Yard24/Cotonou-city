@@ -20,8 +20,8 @@ jobs:
           ./godot --headless --fixed-fps 60 -- --selftest | tee out.txt
           grep -q "SELFTEST OK" out.txt
       - name: Fabriquer le .exe
-        run: mkdir -p build && ./godot --headless --export-release "Windows" build/CotonouCity.exe
+        run: mkdir -p build && ./godot --headless --export-release "Windows" build/MarinaCity.exe
       - uses: actions/upload-artifact@v4
         with:
-          name: CotonouCity-Windows
-          path: build/CotonouCity.exe
+          name: MarinaCity-Windows
+          path: build/MarinaCity.exe
