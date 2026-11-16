@@ -1,6 +1,6 @@
 extends RefCounted
 # Courses de zémidjan : des clients attendent au bord de la route. Le joueur s'arrête à moto
-# près de l'un d'eux, le client annonce sa destination et son prix, le joueur accepte avec E,
+# près de l'un d'eux, le client annonce sa destination et son prix, le joueur accepte avec M,
 # le client monte à l'arrière, et la course est payée à l'arrivée
 # (décision 64). Fonctionnement attendu : docs/systemes/conduite_moto.md.
 
@@ -30,9 +30,28 @@ var fare := {}             # course en cours : {"cl", "moto", "dest", "prix"} ; 
 var dest_marker: Node3D
 var done := 0              # courses payées
 var hint := ""
+var touche_tenue := false
 var offer := {}            # client qui propose une course à la moto arrêtée : {"cl", "dest", "prix"}
 
+# Touche « course » : la touche marquée M. Les autres touches du jeu sont repérées par leur
+# place sur le clavier (ZQSD = WASD) ; à cette façon de compter, le M d'un clavier AZERTY est
+# à la place du point-virgule d'un clavier QWERTY (la place du M QWERTY porte la virgule).
+# On ajoute aussi la touche qui écrit « m », pour les claviers QWERTY.
+const TOUCHE_PLACE := KEY_SEMICOLON
+const TOUCHE_LETTRE := KEY_M
+func inputs() -> void:
+	if InputMap.has_action("course"):
+		return
+	InputMap.add_action("course")
+	var e := InputEventKey.new()
+	e.physical_keycode = TOUCHE_PLACE
+	InputMap.action_add_event("course", e)
+	var e2 := InputEventKey.new()
+	e2.keycode = TOUCHE_LETTRE
+	InputMap.action_add_event("course", e2)
+
 func build(m) -> void:
+	inputs()
 	for i in SPOTS.size():
 		var n := Node3D.new()
 		m.add_child(n)
@@ -82,10 +101,10 @@ func step(m, delta: float) -> void:
 			if libre:
 				cl.n.rotation.y = atan2(c.global_position.x - cl.n.position.x, c.global_position.z - cl.n.position.z)
 				if d < PRISE and abs(c.speed) < ARRET:
-					# il annonce sa destination et son prix ; le joueur accepte avec E, ou repart
+					# il annonce sa destination et son prix ; le joueur accepte avec M, ou repart
 					if offer.is_empty():
 						offer = _offer(cl)
-						hint = "« %s, %d francs ? » — E : accepter la course" % [_maj(SPOTS[offer.dest][3]), offer.prix]
+						hint = "« %s, %d francs ? » — M : accepter la course" % [_maj(SPOTS[offer.dest][3]), offer.prix]
 				elif hint == "":
 					hint = "Un client te fait signe : arrête-toi près de lui"
 		elif cl.state == "tombe":
@@ -106,10 +125,17 @@ func step(m, delta: float) -> void:
 			if cl.t <= 0.0:
 				_place(cl, spot_pos(cl.home), SPOTS[cl.home][2])
 				cl.state = "attend"
+	# un appui sur M (pas la touche tenue)
+	var appui: bool = Input.is_action_pressed("course")
+	if appui and not touche_tenue:
+		press(m)
+	touche_tenue = appui
 	if fare.is_empty():
 		return
 	if c != fare.moto:
 		_end(m, false, 1.2)   # le pilote n'est plus sur la moto : le client descend aussi
+		if m.info_t <= 0.0:
+			m.say("Tu es descendu : ton client aussi. Course non payée.", 4.0)
 		return
 	var dd: float = _dist(c.global_position, spot_pos(fare.dest))
 	if dd < DEPOSE and abs(c.speed) < ARRET:
@@ -129,7 +155,17 @@ func _offer(cl: Dictionary) -> Dictionary:
 		dest = (dest + 1) % SPOTS.size()
 	return {"cl": cl, "dest": dest, "prix": tarif(_dist(spot_pos(cl.home), spot_pos(dest)))}
 
-# Touche E devant un client qui propose sa course : il monte, colonne bleue à l'arrivée.
+# Touche M : accepter la course proposée ; avec un client à bord, le déposer ici.
+# (E ne sert qu'à monter et descendre.)
+func press(m) -> void:
+	if m.cur_car == null:
+		return
+	if not offer.is_empty():
+		accept(m)
+	elif not fare.is_empty():
+		drop_here(m)
+
+# Touche M devant un client qui propose sa course : il monte, colonne bleue à l'arrivée.
 func accept(m) -> void:
 	if offer.is_empty() or not fare.is_empty():
 		return
@@ -167,7 +203,7 @@ func _end(_m, arrive: bool, ecart: float) -> void:
 	fare = {}
 	dest_marker.visible = false
 
-# Touche E avec un client à bord : on le dépose ici, la course n'est pas payée.
+# Touche M avec un client à bord : on le dépose ici, la course n'est pas payée.
 func drop_here(m) -> void:
 	if abs(fare.moto.speed) > 6.0:
 		return

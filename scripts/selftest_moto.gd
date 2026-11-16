@@ -11,7 +11,7 @@ var err := ""
 # Renvoie "" si tout va bien, sinon le message d'échec.
 func run(m) -> String:
 	var c = m.moto_romaric
-	for t in [_depart, _acceleration, _freinage, _equilibre, _chute, _camera]:
+	for t in [_depart, _acceleration, _freinage, _equilibre, _plafond, _chute, _camera]:
 		_release()
 		c.repair()
 		m.player.health = 100.0
@@ -254,10 +254,10 @@ func _equilibre(m, c) -> void:
 	var lent := _virage(c, 2.0, "left")
 	var ville := _virage(c, 8.0, "left")
 	var vite := _virage(c, 26.0, "left")
-	if not (ville[0] > g[0] and g[0] > vite[0]) or vite[0] < 0.4 or ville[0] > c.YAW_MAX + 0.01:
+	if not (ville[0] > g[0] and g[0] > vite[0]) or vite[0] < 0.2 or ville[0] > 1.2:
 		err = "équilibre : angles tournés en 1 s : %.2f à 29 km/h, %.2f à 54, %.2f à 94" % [ville[0], g[0], vite[0]]
 		return
-	if lent[0] < 0.8 or lent[1] > 0.3:
+	if lent[0] < 0.6 or lent[1] > 0.3:
 		err = "équilibre : au pas, %.2f rad tournés, penchée de %.2f rad" % [lent[0], lent[1]]
 		return
 	# en reculant avec les pieds, le guidon agit à l'envers, comme sur une vraie moto
@@ -286,6 +286,101 @@ func _equilibre(m, c) -> void:
 		err = "équilibre : moto de la circulation, angle maximal %.2f rad" % top
 		return
 	print("équilibre : %.0f° d'angle en virage (38° au plus), gauche et droite symétriques, redressée en ligne droite ; en 1 s : %.0f° à 29 km/h, %.0f° à 54, %.0f° à 94 ; au pas %.0f° au guidon ; circulation : %.0f° dans ses virages" % [rad_to_deg(g[1]), rad_to_deg(ville[0]), rad_to_deg(g[0]), rad_to_deg(vite[0]), rad_to_deg(lent[0]), rad_to_deg(top)])
+
+# Inclinaison réaliste : l'angle dépend de la vitesse et du rayon du virage
+# (tan(angle) = v² / (rayon × g)) et ne dépasse jamais le plafond, pour la moto comme pour la caméra.
+func _plafond(m, c) -> void:
+	m.cur_car = c
+	var maxi: float = c.PENCHE_MAX
+	if maxi < deg_to_rad(35.0) or maxi > deg_to_rad(40.0):
+		err = "plafond : angle maximal de la moto %.0f° (attendu entre 35 et 40°)" % rad_to_deg(maxi)
+		return
+	# la formule : plus vite ou plus serré = plus penché ; ligne droite = droite ; jamais plus que le plafond
+	if abs(c.angle_virage(15.0, 0.0)) > 0.0001 or c.angle_virage(15.0, 15.0 / 60.0) >= c.angle_virage(15.0, 15.0 / 30.0) or c.angle_virage(10.0, 10.0 / 30.0) >= c.angle_virage(15.0, 15.0 / 30.0) or c.angle_virage(30.0, 3.0) > maxi or abs(c.angle_virage(10.0, 10.0 / 20.0) - atan(100.0 / (20.0 * 9.81))) > 0.001 or abs(c.angle_virage(12.0, -0.4) + c.angle_virage(12.0, 0.4)) > 0.0001:
+		err = "plafond : la formule de l'angle ne suit pas la vitesse et le rayon du virage"
+		return
+	# virage tenu 3 s à plusieurs vitesses : on mesure le rayon réellement suivi et l'angle affiché
+	var p0 := Vector3(-100, 0, -178)
+	var lignes := []
+	var angles := []
+	for v in [2.0, 3.0, 6.0, 10.0, 15.0, 20.0, 26.0]:
+		for charge in [false, true]:
+			c.loaded = charge
+			_put(c, p0.x, p0.z, EST, v)
+			Input.action_press("left")
+			var top := 0.0
+			var h_avant := EST
+			for i in 180:
+				c.speed = v
+				h_avant = c.heading
+				c.drive(DT)
+				c.global_position = p0   # sur place : seuls le cap et l'angle comptent
+				top = max(top, max(abs(c.lean), abs(_tilt(c))))
+			Input.action_release("left")
+			var lacet: float = angle_difference(h_avant, c.heading) / DT
+			var rayon: float = v / lacet
+			var attendu: float = min(atan(v * v / (rayon * 9.81)), maxi)
+			if top > maxi + 0.0005 or lacet <= 0.0 or rayon < c.RAYON_MIN - 0.01 or abs(c.lean - attendu) > 0.01 or abs(_tilt(c) - c.lean) > 0.001:
+				err = "plafond : à %.0f km/h, rayon %.1f m, moto penchée de %.1f° (attendu %.1f°, plafond %.0f°)" % [v * 3.6, rayon, rad_to_deg(c.lean), rad_to_deg(attendu), rad_to_deg(maxi)]
+				c.loaded = false
+				return
+			if not charge:
+				lignes.append("%.0f km/h : rayon %.0f m, %.0f°" % [v * 3.6, rayon, rad_to_deg(c.lean)])
+				angles.append(c.lean)
+	c.loaded = false
+	# au pas la moto penche peu ; l'angle grandit avec la vitesse jusqu'au plafond
+	if angles[0] > 0.25 or not (angles[0] < angles[1] and angles[1] < angles[2]) or angles[6] < maxi - 0.01:
+		err = "plafond : l'angle ne grandit pas avec la vitesse (%.0f°, %.0f°, %.0f°)" % [rad_to_deg(angles[0]), rad_to_deg(angles[1]), rad_to_deg(angles[2])]
+		return
+	# conduite brutale pendant 20 s (gauche, droite, freins, accélérateur, passager) : jamais au-delà
+	var top2 := 0.0
+	var seq := [["up", "left"], ["left", "brake"], ["up", "right"], ["right", "down"], ["left"], ["right", "brake", "down"], ["up", "left"], ["right"]]
+	_put(c, p0.x, p0.z, EST, 0.0)
+	for k in 1200:
+		if k % 25 == 0:
+			_release()
+			for a in seq[(k / 25) % seq.size()]:
+				Input.action_press(a)
+			c.loaded = (k / 300) % 2 == 1
+		c.drive(DT)
+		c.global_position = p0
+		top2 = max(top2, max(abs(c.lean), abs(_tilt(c))))
+	_release()
+	c.loaded = false
+	if top2 > maxi + 0.0005 or top2 < 0.3:
+		err = "plafond : en conduite brutale la moto penche de %.1f° (plafond %.0f°)" % [rad_to_deg(top2), rad_to_deg(maxi)]
+		return
+	# caméra : elle penche moins que la moto, et elle a son propre plafond
+	var vue = m.vue
+	if vue.ROULIS_EXT_MAX >= vue.ROULIS_GUIDON_MAX or vue.ROULIS_GUIDON_MAX >= maxi or vue.ROULIS_EXT_MAX > deg_to_rad(10.0):
+		err = "plafond : les plafonds de la caméra ne sont pas inférieurs à celui de la moto"
+		return
+	for i in 41:
+		var a: float = -1.4 + i * 0.07
+		var re: float = vue.roulis(a, false)
+		var rg: float = vue.roulis(a, true)
+		if abs(re) > vue.ROULIS_EXT_MAX + 0.0001 or abs(rg) > vue.ROULIS_GUIDON_MAX + 0.0001 or re * a < 0.0 or rg * a < 0.0 or (abs(a) > 0.01 and (abs(re) >= abs(a) or abs(rg) >= abs(a))):
+			err = "plafond : caméra penchée de %.1f° pour une moto à %.1f°" % [rad_to_deg(rg), rad_to_deg(a)]
+			return
+	# mesuré sur la vraie caméra, moto au plafond puis au-delà (cas impossible, par sécurité)
+	var pires := []
+	for a in [maxi, 1.3]:
+		for mode in [1, 3]:
+			_put(c, 0, -178, EST, 0.0)
+			c.lean = a
+			m.cam_mode = mode
+			m._camera(0.0, true)
+			# roulis autour de l'axe de visée : la verticale vue dans le repère de la caméra
+			var bc: Basis = m.cam.global_transform.basis
+			var r: float = abs(atan2(bc.x.y, bc.y.y))
+			var lim: float = vue.ROULIS_GUIDON_MAX if mode == 3 else vue.ROULIS_EXT_MAX
+			if r > lim + 0.001 or r < 0.05:
+				err = "plafond : la caméra (mode %d) penche de %.1f° (plafond %.0f°)" % [mode, rad_to_deg(r), rad_to_deg(lim)]
+				return
+			pires.append(r)
+	c.lean = 0.0
+	m.cam_mode = 1
+	print("inclinaison réaliste : angle = atan(v² / (rayon × g)), plafond %.0f° ; %s ; conduite brutale %.0f° au plus ; caméra %.0f° au plus, %.0f° en vue du guidon" % [rad_to_deg(maxi), " · ".join(lignes), rad_to_deg(top2), rad_to_deg(pires[2]), rad_to_deg(pires[3])])
 
 func _chute(m, c) -> void:
 	var pl = m.player
@@ -350,7 +445,7 @@ func _chute(m, c) -> void:
 		err = "chute : impossible de remonter sur la moto relevée"
 		return
 	# face au mur : on recule avec les pieds en braquant, puis on repart
-	_run(c, 1.2, ["down", "left"])
+	_run(c, 2.6, ["down", "left"])
 	_run(c, 1.0, ["up"])
 	if c.speed < 5.0 or c.fallen:
 		err = "chute : la moto ne repart pas après la chute"

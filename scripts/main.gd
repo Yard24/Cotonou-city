@@ -76,9 +76,9 @@ const SOINS_MAX := 2000     # … sans dépasser 2 000 FCFA
 var cam_mode := 1
 
 var missions := [
-	{"t": "Mission 1/3 — Romaric te prête sa moto : monte dessus (touche E), puis roule jusqu'au Marché Dantokpa (colonne jaune).", "x": 60.0, "z": 22.0, "car": true, "r": 500, "ok": "Arrivé au marché"},
-	{"t": "Mission 2/3 — Une commerçante te confie un colis : livre-le sur le Boulevard de la Marina, au bord de la mer.", "x": -80.0, "z": -160.0, "car": true, "r": 750, "ok": "Colis livré"},
-	{"t": "Mission 3/3 — Retourne à la Place de l'Amazone et arrête-toi devant la statue.", "x": 0.0, "z": -40.0, "car": false, "r": 300, "ok": "Bienvenue à l'Amazone"},
+	{"t": "Mission 1/3 — Romaric te prête sa moto : monte dessus (touche E), puis roule jusqu'au Marché Dantokpa (colonne jaune).", "x": 60.0, "z": 22.0, "car": true, "r": 5000, "ok": "Arrivé au marché"},
+	{"t": "Mission 2/3 — Une commerçante te confie un colis : livre-le sur le Boulevard de la Marina, au bord de la mer.", "x": -80.0, "z": -160.0, "car": true, "r": 7500, "ok": "Colis livré"},
+	{"t": "Mission 3/3 — Retourne à la Place de l'Amazone et arrête-toi devant la statue.", "x": 0.0, "z": -40.0, "car": false, "r": 3000, "ok": "Bienvenue à l'Amazone"},
 ]
 
 # ---------------- outils ----------------
@@ -357,14 +357,9 @@ func startle(pos: Vector3, radius: float) -> int:
 	return n
 
 # Touche E : descendre du véhicule, sinon l'objet ou le véhicule le plus proche.
+# (Les courses de zémidjan s'acceptent avec M : zem.gd.)
 func press_e() -> void:
 	if cur_car:
-		if not zem.offer.is_empty():
-			zem.accept(self)      # un client propose sa course : E l'accepte
-			return
-		if not zem.fare.is_empty():
-			zem.drop_here(self)   # le client descend d'abord
-			return
 		toggle_car()
 		return
 	if player.ko_t > 0.0 or player.down_t > 0.0 or player.mantle_t > 0.0:

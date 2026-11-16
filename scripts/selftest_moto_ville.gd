@@ -75,6 +75,22 @@ func _passager(m, c) -> void:
 	if z.tarif(0.0) != 100 or z.tarif(100.0) != 300 or z.tarif(5000.0) != 1000 or z.tarif(137.0) % 50 != 0 or z.tarif(300.0) <= z.tarif(150.0):
 		err = "passager : tarif faux (%d, %d, %d)" % [z.tarif(0.0), z.tarif(100.0), z.tarif(5000.0)]
 		return
+	# les trois missions paient 5 000, 7 500 et 3 000 FCFA (décision de Bravo du 16 novembre)
+	var paies := []
+	for mi in m.missions:
+		paies.append(mi.r)
+	var mission0: int = m.mission_i
+	var argent0: int = m.money
+	m.mission_i = 2
+	m.money = 0
+	m._mission(Vector3(m.missions[2].x, 0, m.missions[2].z))
+	var paye: int = m.money
+	m.mission_i = mission0
+	m.money = argent0
+	m._set_mission()
+	if paies != [5000, 7500, 3000] or paye != 3000:
+		err = "missions : elles paient %s FCFA (attendu 5 000, 7 500 et 3 000) ; la troisième verse %d" % [str(paies), paye]
+		return
 	var cl = z.clients[2]
 	var spot: Vector3 = z.spot_pos(2)
 	var money0: int = m.money
@@ -104,7 +120,7 @@ func _passager(m, c) -> void:
 	c.speed = 0.0
 	for i in 30:
 		z.step(m, DT)
-	if not z.fare.is_empty() or z.offer.is_empty() or z.offer.cl != cl or c.loaded or not cl.n.visible or not ("E" in z.hint) or not (str(z.offer.prix) in z.hint):
+	if not z.fare.is_empty() or z.offer.is_empty() or z.offer.cl != cl or c.loaded or not cl.n.visible or not ("M : accepter" in z.hint) or not (str(z.offer.prix) in z.hint):
 		err = "passager : le client monte sans accord, ou ne propose pas sa course (« %s »)" % z.hint
 		return
 	# le joueur peut refuser en repartant : rien ne se passe
@@ -113,13 +129,45 @@ func _passager(m, c) -> void:
 	if not z.offer.is_empty() or not z.fare.is_empty():
 		err = "passager : la proposition reste valable alors que la moto est repartie"
 		return
-	# E : la course est acceptée, le client monte, la colonne bleue montre l'arrivée
+	# la touche M : celle qui porte la lettre M sur un clavier AZERTY (place du point-virgule
+	# QWERTY) ou QWERTY ; pas la place du M QWERTY (virgule en AZERTY), et pas la touche E
+	var t_azerty := InputEventKey.new()
+	t_azerty.physical_keycode = KEY_SEMICOLON
+	t_azerty.keycode = KEY_M
+	var t_qwerty := InputEventKey.new()
+	t_qwerty.physical_keycode = KEY_M
+	t_qwerty.keycode = KEY_M
+	var t_virgule := InputEventKey.new()
+	t_virgule.physical_keycode = KEY_M
+	t_virgule.keycode = KEY_COMMA
+	var t_e := InputEventKey.new()
+	t_e.physical_keycode = KEY_E
+	t_e.keycode = KEY_E
+	if not InputMap.event_is_action(t_azerty, "course") or not InputMap.event_is_action(t_qwerty, "course") or InputMap.event_is_action(t_virgule, "course") or InputMap.event_is_action(t_e, "course") or InputMap.event_is_action(t_azerty, "enter") or not InputMap.event_is_action(t_e, "enter"):
+		err = "passager : la touche M n'est pas celle de la course, ou E l'est encore"
+		return
+	# E devant le client : E ne sert qu'à descendre, la course n'est pas acceptée
 	c.speed = 0.0
 	z.step(m, DT)
 	m.press_e()
+	z.step(m, DT)
+	if m.cur_car != null or not z.fare.is_empty() or c.loaded or cl.state != "attend":
+		err = "passager : E accepte encore la course au lieu de faire descendre le pilote"
+		return
+	m.mount(c)
+	# M : la course est acceptée, le client monte, la colonne bleue montre l'arrivée
+	Input.action_press("course")
+	z.step(m, DT)
+	var monte: bool = not z.fare.is_empty()
+	z.step(m, DT)   # touche tenue : rien de plus (le client ne redescend pas)
+	Input.action_release("course")
+	z.step(m, DT)
 	c.drive(DT)
+	if not monte:
+		err = "passager : la touche M n'accepte pas la course"
+		return
 	if m.cur_car != c:
-		err = "passager : E devant un client fait descendre le pilote au lieu d'accepter la course"
+		err = "passager : M devant un client fait descendre le pilote"
 		return
 	if z.fare.is_empty() or z.fare.cl != cl or not c.loaded or not c.passenger.visible or cl.n.visible or not z.dest_marker.visible:
 		err = "passager : le client ne monte pas à l'arrière de la moto arrêtée"
@@ -181,30 +229,45 @@ func _passager(m, c) -> void:
 	if cl.state != "attend" or not cl.n.visible or _d(cl.n.position, spot) > 0.01:
 		err = "passager : aucun client ne revient attendre"
 		return
-	# E avec un client à bord : il descend ici, sans payer ; E de nouveau : le pilote descend
+	# M avec un client à bord : il descend ici, sans payer ; E : le pilote descend
 	_put(c, sd.x + 4.3, sd.z, 0.0, 0.0)
 	z.step(m, DT)
-	m.press_e()
+	z.press(m)
 	var cl2 = z.clients[dest]
 	if z.fare.is_empty() or z.fare.cl != cl2 or z.fare.dest == dest:
 		err = "passager : le client suivant ne monte pas"
 		return
 	var money1: int = m.money
-	m.press_e()
+	z.press(m)
 	if m.cur_car != c or not z.fare.is_empty() or m.money != money1 or c.loaded or cl2.state != "part" or not cl2.n.visible or _d(cl2.n.position, c.global_position) > 2.0:
-		err = "passager : E ne dépose pas le client (ou la course interrompue est payée)"
+		err = "passager : M ne dépose pas le client (ou la course interrompue est payée)"
 		return
 	z.step(m, DT)
 	m.press_e()
 	if m.cur_car != null or not z.fare.is_empty():
 		err = "passager : après avoir déposé le client, E ne fait pas descendre le pilote"
 		return
-	# chute avec un client : il tombe, se relève et repart à pied ; course perdue (décisions 4 et 53)
+	# E avec un client à bord : le pilote descend, le client aussi, la course n'est pas payée
 	m.mount(c)
 	_put(c, s0.x - 4.3, s0.z, 0.0, 0.0)
 	z.step(m, DT)
-	m.press_e()
+	z.press(m)
 	var cl3 = z.clients[0]
+	if z.fare.is_empty() or z.fare.cl != cl3:
+		err = "passager : pas de client pour l'essai de descente"
+		return
+	m.press_e()
+	z.step(m, DT)
+	if m.cur_car != null or not z.fare.is_empty() or c.loaded or m.money != money1 or cl3.state != "part":
+		err = "passager : E avec un client à bord ne fait pas descendre le pilote et son client"
+		return
+	# chute avec un client : il tombe, se relève et repart à pied ; course perdue (décisions 4 et 53)
+	for i in int((z.T_PART + z.T_RETOUR + 0.5) * 60.0):
+		z.step(m, DT)
+	m.mount(c)
+	_put(c, s0.x - 4.3, s0.z, 0.0, 0.0)
+	z.step(m, DT)
+	z.press(m)
 	if z.fare.is_empty() or z.fare.cl != cl3:
 		err = "passager : pas de client pour l'essai de chute"
 		return
@@ -217,7 +280,7 @@ func _passager(m, c) -> void:
 	if cl3.state != "part" or abs(cl3.n.rotation.x) > 0.001 or not cl3.n.visible:
 		err = "passager : le client tombé ne se relève pas"
 		return
-	print("passager à l'arrière : %d clients au bord des routes ; le client propose, E accepte ; course de %.0f m = %d FCFA, payée à l'arrêt devant l'arrivée ; moto chargée : %.0f km/h après 1 s au lieu de %.0f, freinage sur %.1f m au lieu de %.1f ; E dépose le client sans paiement ; chute : le client tombe, se relève et s'en va" % [z.clients.size(), trajet, prix, mes[1][0] * 3.6, mes[0][0] * 3.6, mes[1][1], mes[0][1]])
+	print("missions : 5 000, 7 500 et 3 000 FCFA · passager à l'arrière : %d clients au bord des routes ; le client propose, M accepte (E ne fait que descendre) ; course de %.0f m = %d FCFA, payée à l'arrêt devant l'arrivée ; moto chargée : %.0f km/h après 1 s au lieu de %.0f, freinage sur %.1f m au lieu de %.1f ; M dépose le client sans paiement ; chute : le client tombe, se relève et s'en va" % [z.clients.size(), trajet, prix, mes[1][0] * 3.6, mes[0][0] * 3.6, mes[1][1], mes[0][1]])
 
 # ---------------- passage entre les voitures : le joueur ----------------
 func _passage(m, c) -> void:

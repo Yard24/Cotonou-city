@@ -6,6 +6,14 @@ extends RefCounted
 const CAMS_MOTO := [[5.5, 2.6], [7.5, 3.4], [10.5, 4.6], [0.0, 0.0]]
 const ROULIS_EXT := 0.2      # vues extérieures : la caméra prend 20 % de l'angle de la moto
 const ROULIS_GUIDON := 0.5   # vue du guidon : 50 %
+const ROULIS_EXT_MAX := 0.14     # plafonds : 8° en vue extérieure…
+const ROULIS_GUIDON_MAX := 0.35  # … et 20° en vue du guidon, toujours moins que la moto
+
+# Angle dont la caméra penche pour une moto penchée de « lean ».
+func roulis(lean: float, guidon: bool) -> float:
+	if guidon:
+		return clamp(lean * ROULIS_GUIDON, -ROULIS_GUIDON_MAX, ROULIS_GUIDON_MAX)
+	return clamp(lean * ROULIS_EXT, -ROULIS_EXT_MAX, ROULIS_EXT_MAX)
 
 func update(m, delta: float, instant: bool) -> void:
 	var car = m.cur_car
@@ -19,7 +27,7 @@ func update(m, delta: float, instant: bool) -> void:
 		m.cam.position = o + Vector3(0, 1.75 if is_moto else 1.35, 0) + fw * 0.2
 		m.cam_target = o + Vector3(0, 1.5 if is_moto else 1.2, 0) + fw * 20.0
 		m.cam.look_at(m.cam_target, Vector3.UP)
-		m.cam.rotate_object_local(Vector3(0, 0, 1), lean * ROULIS_GUIDON)
+		m.cam.rotate_object_local(Vector3(0, 0, 1), roulis(lean, true))
 		return
 	var dist := 6.5
 	var hh := 3.0
@@ -40,4 +48,4 @@ func update(m, delta: float, instant: bool) -> void:
 		m.cam_target = m.cam_target.lerp(tgt, 1.0 - exp(-delta * 10.0))
 	m.cam.look_at(m.cam_target, Vector3.UP)
 	if lean != 0.0:
-		m.cam.rotate_object_local(Vector3(0, 0, 1), lean * ROULIS_EXT)
+		m.cam.rotate_object_local(Vector3(0, 0, 1), roulis(lean, false))
