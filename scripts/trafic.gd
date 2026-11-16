@@ -5,6 +5,8 @@ extends RefCounted
 const CarScript := preload("res://scripts/car.gd")
 const MotoScript := preload("res://scripts/moto.gd")
 const PlayerScript := preload("res://scripts/player.gd")
+const CirculationScript := preload("res://scripts/circulation.gd")
+var circ = CirculationScript.new()   # règles de circulation : feux, priorités, dépassements, densité…
 # motos garées : [x, z, cap, couleur] ; la première est celle de Romaric, à côté du point de départ
 const MOTOS := [[16.0, -52.0, 0.0, "aa1111"], [70.0, 12.0, PI / 2, "1144aa"], [-70.0, -149.8, PI / 2, "111111"]]
 
@@ -43,11 +45,15 @@ func vehicles(m) -> void:
 		[_quad(1, 1), 12.0, 3, 1, true], [_quad(-1, 1), 12.0, 3, 1, false], [_quad(1, -1), 12.0, 3, 1, false], [_quad(-1, -1), 12.0, 3, 1, true],
 		[[Vector2(-123.5, -123.5), Vector2(123.5, -123.5), Vector2(123.5, 123.5), Vector2(-123.5, 123.5)], 14.0, 8, 4, true],
 		[[Vector2(-200, -163.5), Vector2(200, -163.5), Vector2(200, -156.5), Vector2(-200, -156.5)], 16.0, 7, 3, true]]
+	circ.build(m)
+	var noms := ["quartier_a", "quartier_b", "quartier_c", "quartier_d", "grand_tour", "marina"]
 	for P in paths:
+		var r: Dictionary = circ.route(noms[circ.routes.size()], [], P[2], P[1])
 		# on roule à droite, comme au Bénin : les trajets sont parcourus dans ce sens-là
 		var pts: Array = P[0].duplicate()
 		if P[4]:
 			pts.reverse()
+		r.pts = pts
 		for i in P[2]:
 			var is_moto: bool = i < P[3]
 			var taxi: bool = (not is_moto) and m.rng.randf() < 0.45
@@ -60,6 +66,9 @@ func vehicles(m) -> void:
 			c.dist = c.path_len * i / P[2]
 			c.place_on_path()
 			m.traffic.append(c)
+			circ.inscrit(c, r, c.dist, true)
+	# trajets qui croisent les premiers et véhicules des heures de pointe (circulation.gd)
+	circ.complete(m, self)
 
 func people(m) -> void:
 	m.player = PlayerScript.new()
@@ -100,29 +109,31 @@ const COULOIR := 0.25
 func _half(v) -> float:
 	return 0.4 if v.moto else 1.0
 
-# Ce véhicule de la circulation doit-il s'arrêter ? Renvoie [bloqué, bloqué par le joueur].
+# Ce véhicule de la circulation doit-il s'arrêter ? Renvoie [bloqué, bloqué par le joueur, véhicule qui gêne].
 # Une moto qui passe à côté, dans le couloir, ne gêne pas (décision 61) ; un obstacle
-# droit devant arrête tout le monde.
+# droit devant arrête tout le monde. Ne gênent pas non plus, s'ils sont assez loin sur le côté :
+# le véhicule qu'on dépasse, celui qui arrive en face, celui qui attend à sa ligne d'arrêt.
 func blocked_by(m, a, pp: Vector3) -> Array:
 	var f := Vector3(sin(a.heading), 0, cos(a.heading))
 	var l := Vector3(f.z, 0, -f.x)
+	var deboite: bool = a.side_want > 0.4 or a.side > 0.4
 	for o in m.traffic + m.cars:
 		if o == a:
 			continue
 		var dv: Vector3 = o.global_position - a.global_position
 		var d := dv.length()
 		if d < 8.5 and d > 0.1 and dv.dot(f) / d > 0.72:
-			if (a.moto or o.moto) and abs(dv.dot(l)) > _half(a) + _half(o) + COULOIR:
+			if abs(dv.dot(l)) > _half(a) + _half(o) + COULOIR and (a.moto or o.moto or deboite or cos(o.heading - a.heading) < -0.7 or circ.attend(o)):
 				continue
-			if a.moto and a.side_want != 0.0 and not o.moto and d > 4.5:
-				continue   # elle déboîte déjà : elle ne s'arrête que si elle n'a pas la place
-			return [true, o == m.cur_car]
+			if a.side_want != 0.0 and ((a.moto and not o.moto and d > 4.5) or (d > 6.0 and circ.double(a, o))):
+				continue   # il déboîte déjà : il ne s'arrête que s'il n'a pas la place
+			return [true, o == m.cur_car, o]
 	if not m.cur_car:
 		var dv2: Vector3 = pp - a.global_position
 		var d2: float = dv2.length()
 		if d2 < 8.5 and d2 > 0.1 and dv2.dot(f) / d2 > 0.72:
-			return [true, true]
-	return [false, false]
+			return [true, true, null]
+	return [false, false, null]
 
 # Moto de la circulation : écart à prendre pour remonter une file. Elle déboîte derrière une
 # voiture arrêtée ou très lente sur sa voie, reste dans le couloir tant qu'elle longe une
@@ -142,11 +153,18 @@ func _faufile(m, a) -> float:
 
 # À chaque image : la circulation s'arrête derrière un obstacle, les passants vont et viennent.
 func step(m, delta: float, pp: Vector3) -> void:
+	circ.avant(m, delta)
 	for a in m.traffic:
+		var i: Dictionary = circ.info(a)
 		if a.moto:
 			a.side_want = _faufile(m, a)
+			if a.side_want == 0.0 and i.serre > 0.0:
+				a.side_want = -circ.SERRE_MOTO   # klaxonnée : elle se serre à droite
 		var b: Array = blocked_by(m, a, pp)
-		a.ai_step(delta, b[0], b[1])
+		if not a.moto:
+			a.side_want = circ.ecart(m, a, i, b[2], delta)
+		var stop: bool = circ.regle(m, a, i, b, delta)
+		a.ai_step(delta, b[0] or stop, b[1] and not stop)
 	for n in m.npcs:
 		var hurry := 1.0
 		if n.scare > 0.0:

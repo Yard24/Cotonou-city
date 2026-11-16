@@ -5,6 +5,7 @@ extends RefCounted
 const VoitureTest := preload("res://scripts/selftest_voiture.gd")
 const MotoTest := preload("res://scripts/selftest_moto.gd")
 const MotoVilleTest := preload("res://scripts/selftest_moto_ville.gd")
+const CirculationTest := preload("res://scripts/selftest_circulation.gd")
 var voiture
 var moto_ville
 var start := Vector3.ZERO
@@ -291,6 +292,8 @@ func _step2(m, f: int, pl) -> void:
 		var e: String = voiture.run(m)
 		if e == "":
 			e = MotoTest.new().run(m)
+		if e == "":
+			e = CirculationTest.new().run(m)   # remet la circulation comme au lancement
 		if e == "":
 			e = moto_ville.run(m)
 		if e != "":
