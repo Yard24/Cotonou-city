@@ -25,7 +25,7 @@ const CHARGE_PENCHE := 0.75  # mise sur l'angle plus lente
 # circulation : une moto remonte une file arrêtée par le couloir, au pas (décision 61)
 const FAUFILE_ECART := 1.9   # m à côté de la file
 const FAUFILE_V := 5.0       # 18 km/h
-const FAUFILE_COTE := -1.0   # vers l'axe de la route : à droite, la circulation roulant à gauche de la chaussée
+const FAUFILE_COTE := 1.0    # vers l'axe de la route : à gauche de la file, puisqu'on roule à droite
 
 var lean := 0.0
 var fallen := false

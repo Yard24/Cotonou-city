@@ -58,7 +58,7 @@ T0056,1. Systèmes de jeu,Joueur à pied,interaction avec les objets,Joueur à p
 T0057,1. Systèmes de jeu,Joueur à pied,interaction avec les objets,Joueur à pied — interaction avec les objets : coder,Claude,Claude,—,Toi,P1,fait
 T0058,1. Systèmes de jeu,Joueur à pied,interaction avec les objets,Joueur à pied — interaction avec les objets : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0059,1. Systèmes de jeu,Joueur à pied,Essai,Joueur à pied : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
-T0060,1. Systèmes de jeu,Joueur à pied,Essai,Joueur à pied : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
+T0060,1. Systèmes de jeu,Joueur à pied,Essai,Joueur à pied : corriger d'après tes retours,Claude,Toi,Toi,—,P1,fait
 T0061,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0062,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : coder,Claude,Claude,—,Toi,P1,fait
 T0063,1. Systèmes de jeu,Conduite voiture,accélération et freinage,Conduite voiture — accélération et freinage : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
@@ -90,7 +90,7 @@ T0088,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture 
 T0089,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : coder,Claude,Claude,—,Toi,P1,fait
 T0090,1. Systèmes de jeu,Conduite voiture,caméra de conduite,Conduite voiture — caméra de conduite : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0091,1. Systèmes de jeu,Conduite voiture,Essai,Conduite voiture : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
-T0092,1. Systèmes de jeu,Conduite voiture,Essai,Conduite voiture : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
+T0092,1. Systèmes de jeu,Conduite voiture,Essai,Conduite voiture : corriger d'après tes retours,Claude,Toi,Toi,—,P1,fait
 T0093,1. Systèmes de jeu,Conduite moto,équilibre et inclinaison,Conduite moto — équilibre et inclinaison : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,fait
 T0094,1. Systèmes de jeu,Conduite moto,équilibre et inclinaison,Conduite moto — équilibre et inclinaison : coder,Claude,Claude,—,Toi,P1,fait
 T0095,1. Systèmes de jeu,Conduite moto,équilibre et inclinaison,Conduite moto — équilibre et inclinaison : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
@@ -113,7 +113,7 @@ T0111,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra m
 T0112,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra moto : coder,Claude,Claude,—,Toi,P1,fait
 T0113,1. Systèmes de jeu,Conduite moto,caméra moto,Conduite moto — caméra moto : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait
 T0114,1. Systèmes de jeu,Conduite moto,Essai,Conduite moto : jouer sur ton PC et donner ton avis,Toi,Toi,Claude,—,P1,à faire
-T0115,1. Systèmes de jeu,Conduite moto,Essai,Conduite moto : corriger d'après tes retours,Claude,Toi,Toi,—,P1,à faire
+T0115,1. Systèmes de jeu,Conduite moto,Essai,Conduite moto : corriger d'après tes retours,Claude,Toi,Toi,—,P1,fait
 T0116,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté conducteur,Monter et descendre des véhicules — entrée côté conducteur : décrire le fonctionnement attendu,Claude,Toi,Toi,—,P1,à faire
 T0117,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté conducteur,Monter et descendre des véhicules — entrée côté conducteur : coder,Claude,Claude,—,Toi,P1,fait
 T0118,1. Systèmes de jeu,Monter et descendre des véhicules,entrée côté conducteur,Monter et descendre des véhicules — entrée côté conducteur : écrire et passer le test automatique,Claude,Claude,—,Toi,P1,fait

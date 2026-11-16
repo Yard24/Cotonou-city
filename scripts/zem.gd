@@ -1,6 +1,7 @@
 extends RefCounted
 # Courses de zémidjan : des clients attendent au bord de la route. Le joueur s'arrête à moto
-# près de l'un d'eux, le client monte à l'arrière, et la course est payée à l'arrivée
+# près de l'un d'eux, le client annonce sa destination et son prix, le joueur accepte avec E,
+# le client monte à l'arrière, et la course est payée à l'arrivée
 # (décision 64). Fonctionnement attendu : docs/systemes/conduite_moto.md.
 
 # points d'attente : [x, z, cap du client (il regarde la route), nom du lieu]
@@ -13,7 +14,7 @@ const SPOTS := [
 	[-60.0, 127.8, PI, "bout de la grande avenue"]]
 const SHIRTS := ["d94f8a", "2a7de1", "ffffff", "ff7a00", "8e2bd1", "14a3a3"]
 const SIGNE := 30.0        # le client lève le bras quand une moto libre approche à moins de 30 m
-const PRISE := 6.0         # il monte si la moto s'arrête à moins de 6 m de lui
+const PRISE := 6.0         # il propose sa course si la moto s'arrête à moins de 6 m de lui
 const DEPOSE := 7.0        # il descend si elle s'arrête à moins de 7 m de l'arrivée
 const ARRET := 1.0         # « arrêtée » : moins de 1 m/s
 const TARIF_MIN := 100     # FCFA (décision 64 : de 100 à 1 000 selon la distance)
@@ -29,6 +30,7 @@ var fare := {}             # course en cours : {"cl", "moto", "dest", "prix"} ; 
 var dest_marker: Node3D
 var done := 0              # courses payées
 var hint := ""
+var offer := {}            # client qui propose une course à la moto arrêtée : {"cl", "dest", "prix"}
 
 func build(m) -> void:
 	for i in SPOTS.size():
@@ -69,6 +71,7 @@ func _dist(a: Vector3, b: Vector3) -> float:
 # À chaque image.
 func step(m, delta: float) -> void:
 	hint = ""
+	offer = {}
 	var c = m.cur_car
 	var riding: bool = c != null and c.moto and not c.fallen
 	for cl in clients:
@@ -79,9 +82,12 @@ func step(m, delta: float) -> void:
 			if libre:
 				cl.n.rotation.y = atan2(c.global_position.x - cl.n.position.x, c.global_position.z - cl.n.position.z)
 				if d < PRISE and abs(c.speed) < ARRET:
-					_board(m, cl, c)
-				else:
-					hint = "Un client te fait signe : arrête-toi près de lui pour le prendre"
+					# il annonce sa destination et son prix ; le joueur accepte avec E, ou repart
+					if offer.is_empty():
+						offer = _offer(cl)
+						hint = "« %s, %d francs ? » — E : accepter la course" % [_maj(SPOTS[offer.dest][3]), offer.prix]
+				elif hint == "":
+					hint = "Un client te fait signe : arrête-toi près de lui"
 		elif cl.state == "tombe":
 			cl.t -= delta
 			if cl.t <= 0.0:
@@ -116,19 +122,30 @@ func step(m, delta: float) -> void:
 	elif dd < 25.0:
 		hint = "Arrête-toi près de la colonne bleue pour déposer ton client"
 
-# Le client monte : destination, prix annoncé, colonne bleue à l'arrivée.
-func _board(m, cl: Dictionary, c) -> void:
+# Ce que le client demande : où il va et combien il paie.
+func _offer(cl: Dictionary) -> Dictionary:
 	var dest: int = (cl.home + 2 + done) % SPOTS.size()
 	if dest == cl.home:
 		dest = (dest + 1) % SPOTS.size()
-	var prix: int = tarif(_dist(spot_pos(cl.home), spot_pos(dest)))
+	return {"cl": cl, "dest": dest, "prix": tarif(_dist(spot_pos(cl.home), spot_pos(dest)))}
+
+# Touche E devant un client qui propose sa course : il monte, colonne bleue à l'arrivée.
+func accept(m) -> void:
+	if offer.is_empty() or not fare.is_empty():
+		return
+	var cl: Dictionary = offer.cl
+	var c = m.cur_car
+	var dest: int = offer.dest
+	var prix: int = offer.prix
+	offer = {}
+	hint = ""
 	fare = {"cl": cl, "moto": c, "dest": dest, "prix": prix}
 	cl.state = "a_bord"
 	cl.n.visible = false
 	c.set_passenger(true, cl.col)
 	dest_marker.position = Vector3(SPOTS[dest][0], 0, SPOTS[dest][1])
 	dest_marker.visible = true
-	m.say("Le client monte : « %s, %d francs. » Suis la colonne bleue." % [_maj(SPOTS[dest][3]), prix], 7.0)
+	m.say("Le client monte. %s : suis la colonne bleue (%d FCFA à l'arrivée)." % [_maj(SPOTS[dest][3]), prix], 6.0)
 
 func _maj(s: String) -> String:
 	return s.substr(0, 1).to_upper() + s.substr(1)

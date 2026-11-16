@@ -38,18 +38,23 @@ func vehicles(m) -> void:
 		var c = _park(m, p, true)
 		if m.moto_romaric == null:
 			m.moto_romaric = c
+	# dernier élément : trajet à parcourir à l'envers pour rouler à droite de la chaussée
 	var paths := [
-		[_quad(1, 1), 12.0, 3, 1], [_quad(-1, 1), 12.0, 3, 1], [_quad(1, -1), 12.0, 3, 1], [_quad(-1, -1), 12.0, 3, 1],
-		[[Vector2(-123.5, -123.5), Vector2(123.5, -123.5), Vector2(123.5, 123.5), Vector2(-123.5, 123.5)], 14.0, 8, 4],
-		[[Vector2(-200, -163.5), Vector2(200, -163.5), Vector2(200, -156.5), Vector2(-200, -156.5)], 16.0, 7, 3]]
+		[_quad(1, 1), 12.0, 3, 1, true], [_quad(-1, 1), 12.0, 3, 1, false], [_quad(1, -1), 12.0, 3, 1, false], [_quad(-1, -1), 12.0, 3, 1, true],
+		[[Vector2(-123.5, -123.5), Vector2(123.5, -123.5), Vector2(123.5, 123.5), Vector2(-123.5, 123.5)], 14.0, 8, 4, true],
+		[[Vector2(-200, -163.5), Vector2(200, -163.5), Vector2(200, -156.5), Vector2(-200, -156.5)], 16.0, 7, 3, true]]
 	for P in paths:
+		# on roule à droite, comme au Bénin : les trajets sont parcourus dans ce sens-là
+		var pts: Array = P[0].duplicate()
+		if P[4]:
+			pts.reverse()
 		for i in P[2]:
 			var is_moto: bool = i < P[3]
 			var taxi: bool = (not is_moto) and m.rng.randf() < 0.45
 			var col := Color(m.pick(["aa1111", "1144aa", "111111"])) if is_moto else (Color("f2c200") if taxi else Color(m.pick(m.CARC)))
 			var c = make(m, col, taxi, is_moto)
 			c.ai = true
-			c.set_path(P[0])
+			c.set_path(pts)
 			c.vmax = P[1]
 			c.speed = P[1]
 			c.dist = c.path_len * i / P[2]

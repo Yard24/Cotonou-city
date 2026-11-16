@@ -20,7 +20,7 @@ func prepare(m) -> void:
 # Renvoie "" si tout va bien, sinon le message d'échec.
 func run(m) -> String:
 	var c = m.moto_romaric
-	for t in [_passager, _passage, _faufile]:
+	for t in [_passager, _passage, _droite, _faufile]:
 		_reset(m, c)
 		t.call(m, c)
 		if err != "":
@@ -100,10 +100,27 @@ func _passager(m, c) -> void:
 	if cl.state != "attend" or not z.fare.is_empty() or cl.p.armR.rotation.x > -2.0 or z.hint == "" or z.clients[0].p.armR.rotation.x != 0.0:
 		err = "passager : le client ne fait pas signe à la moto qui approche, ou monte en marche"
 		return
-	# arrêt près de lui : il monte, annonce le prix, la colonne bleue montre l'arrivée
+	# arrêt près de lui : il annonce sa destination et son prix, mais ne monte pas tout seul
+	c.speed = 0.0
+	for i in 30:
+		z.step(m, DT)
+	if not z.fare.is_empty() or z.offer.is_empty() or z.offer.cl != cl or c.loaded or not cl.n.visible or not ("E" in z.hint) or not (str(z.offer.prix) in z.hint):
+		err = "passager : le client monte sans accord, ou ne propose pas sa course (« %s »)" % z.hint
+		return
+	# le joueur peut refuser en repartant : rien ne se passe
+	c.speed = 8.0
+	z.step(m, DT)
+	if not z.offer.is_empty() or not z.fare.is_empty():
+		err = "passager : la proposition reste valable alors que la moto est repartie"
+		return
+	# E : la course est acceptée, le client monte, la colonne bleue montre l'arrivée
 	c.speed = 0.0
 	z.step(m, DT)
+	m.press_e()
 	c.drive(DT)
+	if m.cur_car != c:
+		err = "passager : E devant un client fait descendre le pilote au lieu d'accepter la course"
+		return
 	if z.fare.is_empty() or z.fare.cl != cl or not c.loaded or not c.passenger.visible or cl.n.visible or not z.dest_marker.visible:
 		err = "passager : le client ne monte pas à l'arrière de la moto arrêtée"
 		return
@@ -117,7 +134,7 @@ func _passager(m, c) -> void:
 	var s0: Vector3 = z.spot_pos(0)
 	_put(c, s0.x - 4.3, s0.z, 0.0, 0.0)
 	z.step(m, DT)
-	if z.fare.cl != cl or z.clients[0].state != "attend" or z.clients[0].p.armR.rotation.x != 0.0:
+	if z.fare.cl != cl or not z.offer.is_empty() or z.clients[0].state != "attend" or z.clients[0].p.armR.rotation.x != 0.0:
 		err = "passager : un second client monte ou fait signe alors que la moto est prise"
 		return
 	# la moto chargée est plus lourde : elle accélère, freine et se couche moins vite
@@ -167,6 +184,7 @@ func _passager(m, c) -> void:
 	# E avec un client à bord : il descend ici, sans payer ; E de nouveau : le pilote descend
 	_put(c, sd.x + 4.3, sd.z, 0.0, 0.0)
 	z.step(m, DT)
+	m.press_e()
 	var cl2 = z.clients[dest]
 	if z.fare.is_empty() or z.fare.cl != cl2 or z.fare.dest == dest:
 		err = "passager : le client suivant ne monte pas"
@@ -185,6 +203,7 @@ func _passager(m, c) -> void:
 	m.mount(c)
 	_put(c, s0.x - 4.3, s0.z, 0.0, 0.0)
 	z.step(m, DT)
+	m.press_e()
 	var cl3 = z.clients[0]
 	if z.fare.is_empty() or z.fare.cl != cl3:
 		err = "passager : pas de client pour l'essai de chute"
@@ -198,7 +217,7 @@ func _passager(m, c) -> void:
 	if cl3.state != "part" or abs(cl3.n.rotation.x) > 0.001 or not cl3.n.visible:
 		err = "passager : le client tombé ne se relève pas"
 		return
-	print("passager à l'arrière : %d clients au bord des routes ; course de %.0f m = %d FCFA, payée à l'arrêt devant l'arrivée ; moto chargée : %.0f km/h après 1 s au lieu de %.0f, freinage sur %.1f m au lieu de %.1f ; E dépose le client sans paiement ; chute : le client tombe, se relève et s'en va" % [z.clients.size(), trajet, prix, mes[1][0] * 3.6, mes[0][0] * 3.6, mes[1][1], mes[0][1]])
+	print("passager à l'arrière : %d clients au bord des routes ; le client propose, E accepte ; course de %.0f m = %d FCFA, payée à l'arrêt devant l'arrivée ; moto chargée : %.0f km/h après 1 s au lieu de %.0f, freinage sur %.1f m au lieu de %.1f ; E dépose le client sans paiement ; chute : le client tombe, se relève et s'en va" % [z.clients.size(), trajet, prix, mes[1][0] * 3.6, mes[0][0] * 3.6, mes[1][1], mes[0][1]])
 
 # ---------------- passage entre les voitures : le joueur ----------------
 func _passage(m, c) -> void:
@@ -234,6 +253,37 @@ func _passage(m, c) -> void:
 		return
 	print("passage entre les voitures : 1,4 m de large, la moto passe à %.0f km/h sans rien toucher ; 0,4 m, elle reste derrière ; une voiture ne passe pas" % (v_passe * 3.6))
 
+# ---------------- on roule à droite ----------------
+# Chaque véhicule de la circulation qui roule en ligne droite doit être à droite de l'axe de sa route.
+func _droite(m, _c) -> void:
+	var n := 0
+	for a in m.traffic:
+		var f := Vector3(sin(a.heading), 0, cos(a.heading))
+		var p: Vector3 = a.global_position
+		var ecart := 0.0
+		if abs(f.x) > 0.999:
+			var best := 999.0
+			for zr in [-160.0, -120.0, 0.0, 120.0]:
+				if abs(p.z - zr) < abs(best):
+					best = p.z - zr
+			ecart = best * f.x      # à droite d'un cap à l'est : vers +z
+		elif abs(f.z) > 0.999:
+			var best := 999.0
+			for xr in [-120.0, 0.0, 120.0]:
+				if abs(p.x - xr) < abs(best):
+					best = p.x - xr
+			ecart = -best * f.z     # à droite d'un cap vers +z : vers -x
+		else:
+			continue   # en plein virage
+		n += 1
+		if ecart < 2.0 or ecart > 5.0:
+			err = "sens de circulation : un véhicule ne roule pas à droite (%.1f m de l'axe, en %.0f ; %.0f)" % [ecart, p.x, p.z]
+			return
+	if n < 15:
+		err = "sens de circulation : trop peu de véhicules vérifiés (%d)" % n
+		return
+	print("sens de circulation : %d véhicules en ligne droite, tous à droite de l'axe de leur route" % n)
+
 # ---------------- passage entre les voitures : la circulation ----------------
 func _faufile(m, c) -> void:
 	# une file sur le grand tour : une voiture arrêtée, une moto puis une voiture qui arrivent derrière
@@ -265,21 +315,22 @@ func _faufile(m, c) -> void:
 	var f := Vector3(1, 0, 0)
 	var l := Vector3(0, 0, -1)
 	var xp: Vector3 = x.global_position
-	if abs(x.heading - EST) > 0.01 or m.trafic.blocked_by(m, x, Vector3(0, 0, -178))[0]:
+	# on roule à droite : la voie doit être à droite de l'axe de sa route (z = 120), cap à l'est
+	if xp.z < 120.5 or abs(x.heading - EST) > 0.01 or m.trafic.blocked_by(m, x, Vector3(0, 0, -178))[0]:
 		err = "faufilage : la voiture d'essai n'est pas seule sur sa voie"
 		return
 	# le joueur à moto droit devant une voiture : elle s'arrête ; à côté, dans le couloir : elle roule
 	m.mount(c)
 	_put(c, xp.x + 5.0, xp.z, EST, 0.0)
 	var devant: Array = m.trafic.blocked_by(m, x, c.global_position)
-	_put(c, xp.x + 5.0, xp.z + 1.9, EST, 0.0)
+	_put(c, xp.x + 5.0, xp.z - 1.9, EST, 0.0)
 	var a_cote: Array = m.trafic.blocked_by(m, x, c.global_position)
 	_put(c, 0, -178, EST, 0.0)
 	# une voiture à la même place gêne toujours
 	var car = m.cars[0]
 	var car_p: Vector3 = car.global_position
 	var car_h: float = car.heading
-	_put(car, xp.x + 5.0, xp.z + 1.9, EST, 0.0)
+	_put(car, xp.x + 5.0, xp.z - 1.9, EST, 0.0)
 	var auto_cote: Array = m.trafic.blocked_by(m, x, c.global_position)
 	_put(car, car_p.x, car_p.z, car_h, 0.0)
 	if not devant[0] or not devant[1] or a_cote[0] or not auto_cote[0]:
@@ -297,7 +348,7 @@ func _faufile(m, c) -> void:
 		var lon: float = dv.dot(f)
 		if abs(lon) < 3.2:
 			ecart_min = min(ecart_min, abs(dv.dot(l)))
-			cote_axe = cote_axe and dv.dot(l) < 0.0   # côté axe de la route, pas côté trottoir
+			cote_axe = cote_axe and dv.dot(l) > 0.0   # côté axe de la route, pas côté trottoir
 			v_max = max(v_max, mo.speed)
 		if abs((mo.global_position - y.global_position).dot(f)) < 3.2 and abs((mo.global_position - y.global_position).dot(l)) < 1.4:
 			err = "faufilage : la moto traverse la voiture qui la suit"

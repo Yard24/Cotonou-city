@@ -152,6 +152,19 @@ Points que Bravo a laissés à Claude (« je te laisse gérer ») ; ils restent 
 - Taille de la carte : 6 × 4 km, comme la décision 83.
 - Budget de polygones : celui de `docs/style_graphique.md` est adopté.
 
+## Décisions du 16 novembre 2026 (suite, après le lot « passager et passage entre les voitures »)
+Réponses de Bravo :
+- Courses de zémidjan : **une touche pour accepter la course** (E devant le client qui annonce sa destination et son prix).
+- Chute avec un client : **pas de dédommagement ni d'amende** ; le coût est la santé (« peut-être santé » : aujourd'hui le pilote perd de la santé, le client non).
+- Le passager porte un **casque**, comme le pilote (suite de la décision 52).
+- **On roule à droite** : appliqué tout de suite à toute la circulation.
+- Consigne générale : pour le reste, Claude avance sans attendre ; là où Bravo doit valider, Claude considère que c'est oui, termine, puis demande confirmation.
+
+Points tranchés par Claude en application de cette consigne ; ils restent modifiables sur simple demande :
+- Prix des courses : 100 FCFA + 2 FCFA par mètre, arrondi à 50 FCFA. Les trois missions d'essai paient désormais 500, 750 et 300 FCFA au lieu de 5 000, 7 500 et 3 000, pour rester cohérentes avec une course.
+- On ne tombe pas de moto sans collision ; la caméra penche avec la moto (7° au plus, 17° en vue du guidon) ; la voiture rouge reste garée au départ à côté de la moto.
+- Essais « joueur à pied », « conduite voiture » et « conduite moto » : considérés validés (T0060, T0092, T0115), à rouvrir au premier retour de Bravo.
+
 ## Conséquences pour le plan
 - Les tâches « Combat — visée », « armes à feu » et « mise à couvert » ne concernent plus le joueur (décision 3).
 - Le titre « Marina City » est appliqué dans le jeu, le README et le nom du .exe (16 novembre).
