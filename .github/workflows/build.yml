@@ -1,7 +1,8 @@
-name: Test et build Windows
+name: Test et fabrication Windows et Android
 on:
   push:
-    branches: [main]
+    branches: [main, android]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,11 +18,77 @@ jobs:
       - name: Test automatique
         run: |
           ./godot --headless --import || true
-          ./godot --headless --fixed-fps 60 -- --selftest | tee out.txt
+          ./godot --headless --fixed-fps 60 -- --selftest 2>&1 | tee out.txt
           grep -q "SELFTEST OK" out.txt
+          if grep -q "SCRIPT ERROR" out.txt; then echo "Ligne SCRIPT ERROR dans le test"; exit 1; fi
       - name: Fabriquer le .exe
         run: mkdir -p build && ./godot --headless --export-release "Windows" build/MarinaCity.exe
       - uses: actions/upload-artifact@v4
         with:
           name: MarinaCity-Windows
           path: build/MarinaCity.exe
+
+  # Version Android : procédure de docs/android.md (documentation officielle « Exporting for
+  # Android » de Godot 4.3 : OpenJDK 17, Android SDK avec platform-tools, build-tools 34.0.0,
+  # platforms;android-34 ; modèles d'export Godot ; pas de compilation Gradle).
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Installer Godot 4.3 et ses modèles d'export Android
+        run: |
+          curl -sSL -o godot.zip https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip
+          unzip -q godot.zip && mv Godot_v4.3-stable_linux.x86_64 godot
+          curl -sSL -o tpl.tpz https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates/4.3.stable
+          unzip -q -j tpl.tpz 'templates/android_release.apk' 'templates/android_debug.apk' 'templates/version.txt' -d ~/.local/share/godot/export_templates/4.3.stable
+          rm tpl.tpz godot.zip
+      - name: Installer Java (OpenJDK 17)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Installer les outils Android
+        run: |
+          SDK="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
+          yes | "$SDK/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$SDK" "platform-tools" "build-tools;34.0.0" "platforms;android-34" > /dev/null
+          echo "SDK_ANDROID=$SDK" >> "$GITHUB_ENV"
+      - name: Indiquer à Godot où sont Java et les outils Android
+        run: |
+          mkdir -p ~/.config/godot
+          printf '[gd_resource type="EditorSettings" format=3]\n\n[resource]\nexport/android/android_sdk_path = "%s"\nexport/android/java_sdk_path = "%s"\n' "$SDK_ANDROID" "$JAVA_HOME" > ~/.config/godot/editor_settings-4.3.tres
+          cat ~/.config/godot/editor_settings-4.3.tres
+      # Clé de TEST, jamais une clé de publication : créée ici au premier passage, puis gardée
+      # dans le cache de GitHub Actions (pas dans le dépôt) pour que chaque nouveau .apk
+      # s'installe par-dessus l'ancien sans effacer les sauvegardes.
+      - name: Retrouver la clé de test
+        uses: actions/cache@v4
+        with:
+          path: ~/cle-test-android
+          key: cle-test-android-v1
+      - name: Créer la clé de test si besoin
+        run: |
+          D=~/cle-test-android
+          if [ ! -f "$D/test.keystore" ]; then
+            mkdir -p "$D"
+            head -c 32 /dev/urandom | base64 | tr -dc 'A-Za-z0-9' | head -c 24 > "$D/mot_de_passe"
+            keytool -genkeypair -keystore "$D/test.keystore" -alias marinacity-test -keyalg RSA -keysize 2048 -validity 10000 \
+              -storepass "$(cat $D/mot_de_passe)" -keypass "$(cat $D/mot_de_passe)" -dname "CN=Marina City (cle de test), O=Essai, C=BJ"
+            echo "Nouvelle clé de test créée"
+          fi
+          echo "::add-mask::$(cat $D/mot_de_passe)"
+          echo "GODOT_ANDROID_KEYSTORE_RELEASE_PATH=$D/test.keystore" >> "$GITHUB_ENV"
+          echo "GODOT_ANDROID_KEYSTORE_RELEASE_USER=marinacity-test" >> "$GITHUB_ENV"
+          echo "GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD=$(cat $D/mot_de_passe)" >> "$GITHUB_ENV"
+      - name: Fabriquer le .apk
+        run: |
+          ./godot --headless --import || true
+          mkdir -p build
+          ./godot --headless --export-release "Android" build/MarinaCity.apk 2>&1 | tee export.txt
+          test -s build/MarinaCity.apk
+      - name: Vérifier le .apk
+        run: .github/verifier_apk.sh build/MarinaCity.apk "$SDK_ANDROID/build-tools/34.0.0"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MarinaCity-Android
+          path: build/MarinaCity.apk

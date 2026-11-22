@@ -45,7 +45,7 @@ static func sur_la_plage(m) -> void:
 func run(m) -> String:
 	t = m.sys.tactile
 	moto_depart = [m.moto_romaric.global_position, m.moto_romaric.heading]
-	for f in [_sans_ecran, _disposition, _textes, _manette, _boutons, _contexte, _menus_et_android, _vraie_entree]:
+	for f in [_projet, _sans_ecran, _disposition, _textes, _manette, _boutons, _contexte, _menus_et_android, _vraie_entree]:
 		var e: String = f.call(m)
 		if e != "":
 			_remettre(m)
@@ -97,6 +97,40 @@ func _remettre(m) -> void:
 		m.moto_romaric.global_position = moto_depart[0]
 		m.moto_romaric.heading = moto_depart[1]
 		m.moto_romaric.rotation.y = moto_depart[1]
+
+# ---------------- réglages Android du projet ----------------
+func _projet(_m) -> String:
+	var ps := {"application/config/quit_on_go_back": false, "display/window/handheld/orientation": 4,
+		"rendering/textures/vram_compression/import_etc2_astc": true}
+	for k in ps:
+		if ProjectSettings.get_setting(k) != ps[k]:
+			return "projet : %s devrait valoir %s" % [k, ps[k]]
+	var cfg := ConfigFile.new()
+	if cfg.load("res://export_presets.cfg") != OK:
+		return "projet : export_presets.cfg illisible"
+	var android := ""
+	for s in cfg.get_sections():
+		if cfg.get_value(s, "name", "") == "Android" and cfg.get_value(s, "platform", "") == "Android":
+			android = s
+	if android == "":
+		return "projet : pas de préréglage d'export « Android »"
+	var o := android + ".options"
+	for k in [["package/unique_name", "com.yard24.marinacity"], ["package/name", "Marina City"], ["architectures/arm64-v8a", true], ["architectures/armeabi-v7a", true], ["gradle_build/use_gradle_build", false]]:
+		if cfg.get_value(o, k[0], null) != k[1]:
+			return "projet : préréglage Android, %s devrait valoir %s" % k
+	for k in ["keystore/release", "keystore/release_user", "keystore/release_password", "keystore/debug_password"]:
+		if str(cfg.get_value(o, k, "")) != "":
+			return "projet : aucune clé ni aucun mot de passe dans export_presets.cfg (%s)" % k
+	for k in ["launcher_icons/main_192x192", "launcher_icons/adaptive_foreground_432x432", "launcher_icons/adaptive_background_432x432"]:
+		if not FileAccess.file_exists(cfg.get_value(o, k, "")):
+			return "projet : icône absente (%s)" % k
+	if m_qualite_mobile() != 0:
+		return "projet : sur téléphone, le niveau graphique de départ doit être « Bas »"
+	print("projet Android : paysage imposé, Retour ne quitte pas, compression de textures ETC2/ASTC, préréglage « Android » (com.yard24.marinacity, arm64-v8a et armeabi-v7a, icônes, aucune clé enregistrée), niveau Bas par défaut sur téléphone")
+	return ""
+
+func m_qualite_mobile() -> int:
+	return preload("res://scripts/options.gd").QUALITE_MOBILE
 
 # ---------------- sur PC, sans écran tactile ----------------
 func _sans_ecran(m) -> String:

@@ -65,6 +65,7 @@ var forces := {}              # action -> force voulue à cette image
 var dernier := ""             # dernier bouton touché (pour le test)
 var image_test := -1          # test automatique : compteur d'images simulé (-1 : le vrai)
 var hud_origine := {}
+var hauteurs := {}            # hauteur d'origine des boutons de l'écran d'accueil
 var t_zone := 0.0
 var t_klaxon := 0
 var klaxon_utile := false
@@ -525,7 +526,21 @@ func adapter(t: String) -> String:
 func _textes(m) -> void:
 	m.hud.l_aide.text = AIDE if mode else m.hud.aide_clavier
 	m.menu_play.text = adapter(m.menu_play_texte)
+	# boutons de l'écran d'accueil et de pause : plus hauts au doigt
+	for b in _boutons_accueil(m.menu_play.get_parent()):
+		if not hauteurs.has(b):
+			hauteurs[b] = b.custom_minimum_size.y
+		b.custom_minimum_size.y = maxf(hauteurs[b], 70.0) if mode else hauteurs[b]
 	m._set_mission()
+
+func _boutons_accueil(n: Node) -> Array:
+	var out := []
+	for c in n.get_children():
+		if c is Button:
+			out.append(c)
+		else:
+			out.append_array(_boutons_accueil(c))
+	return out
 
 # Au doigt, l'aide et la vitesse se placent entre la manette et les boutons.
 func _hud(m) -> void:
@@ -554,6 +569,7 @@ func _hud(m) -> void:
 	m.l_speed.offset_bottom = -152.0
 	m.l_speed.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	m.l_mission.offset_right = -(206.0 + (2.0 * ECART + petit + 8.0) / echelle)
+	m.l_mission.offset_left = 300.0   # pas collée au chiffre de la santé
 
 # ---------------- dessin ----------------
 func _draw() -> void:
