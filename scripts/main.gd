@@ -70,6 +70,7 @@ var vue = VueScript.new()
 var zem = ZemScript.new()   # courses de zémidjan : clients et passager
 var sys = preload("res://scripts/systemes.gd").new()   # sauvegarde, options, menus, affichage en jeu
 var emb = EmbScript.new()   # monter et descendre : portières, place libre, saut en marche
+var fusion = preload("res://scripts/fusion.gd").new()   # téléphone : décor fixe regroupé (moins d'objets à dessiner)
 var moto_romaric   # la moto prêtée par Romaric, garée au point de départ (décision 51)
 var hp_fill: ColorRect
 var info_text := ""
@@ -198,6 +199,8 @@ func _ready() -> void:
 	zem.build(self)
 	relief.build(self)
 	inter.build(self)
+	if OS.has_feature("mobile"):
+		fusion.fusionner(self)
 	_hud()
 	_set_mission()
 	_apply_quality()

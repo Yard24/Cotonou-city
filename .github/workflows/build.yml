@@ -44,7 +44,7 @@ jobs:
           unzip -q -j tpl.tpz 'templates/android_release.apk' 'templates/android_debug.apk' 'templates/version.txt' -d ~/.local/share/godot/export_templates/4.3.stable
           rm tpl.tpz godot.zip
       - name: Installer Java (OpenJDK 17)
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'

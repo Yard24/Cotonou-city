@@ -45,7 +45,7 @@ static func sur_la_plage(m) -> void:
 func run(m) -> String:
 	t = m.sys.tactile
 	moto_depart = [m.moto_romaric.global_position, m.moto_romaric.heading]
-	for f in [_projet, _sans_ecran, _disposition, _textes, _manette, _boutons, _contexte, _menus_et_android, _vraie_entree]:
+	for f in [_projet, _sans_ecran, _disposition, _textes, _manette, _boutons, _contexte, _menus_et_android, _vraie_entree, _fusion]:
 		var e: String = f.call(m)
 		if e != "":
 			_remettre(m)
@@ -460,6 +460,27 @@ func _vraie_entree(m) -> String:
 	_image(m)
 	_image(m)
 	print("événements du moteur : un toucher envoyé par Input.parse_input_event %s" % ("arrive aux commandes tactiles" if recu else "n'arrive pas sans écran (test sans affichage) : vérifié par appel direct"))
+	return ""
+
+# ---------------- décor regroupé (téléphone) ----------------
+# Le test tourne sur PC : on regroupe ici le décor comme le ferait le téléphone.
+func _fusion(m) -> String:
+	var fu = preload("res://scripts/fusion.gd").new()
+	var blocs := []
+	var attendus := 0
+	for n in m.get_children():
+		if fu.fusionnable(n):
+			blocs.append(n)
+			attendus += n.mesh.surface_get_arrays(0)[Mesh.ARRAY_VERTEX].size()
+	fu.fusionner(m)
+	for n in blocs:
+		if n.visible:
+			return "décor regroupé : un bloc regroupé est encore dessiné à part"
+	if fu.avant != blocs.size() or fu.avant < 500 or fu.apres > 80 or fu.sommets != attendus:
+		return "décor regroupé : %d blocs en %d morceaux, %d sommets sur %d" % [fu.avant, fu.apres, fu.sommets, attendus]
+	if not m.moto_romaric.visible or not m.player.visible and m.cur_car == null:
+		return "décor regroupé : la moto ou le héros ont disparu"
+	print("décor regroupé (téléphone) : %d blocs fixes en %d morceaux de 64 m, %d sommets, couleurs gardées ; véhicules et passants à part" % [fu.avant, fu.apres, fu.sommets])
 	return ""
 
 # ---------------- au doigt, en vrai jeu ----------------
