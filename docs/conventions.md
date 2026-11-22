@@ -32,3 +32,10 @@ Règle générale : noms en minuscules, sans accent ni espace, mots séparés pa
 ## Git
 - Une seule branche, `main`, toujours jouable. Un commit par lot, message en français qui dit ce que le joueur gagne.
 - Identifiants des tâches (`T0039`) cités dans le journal, pas dans le code.
+
+## Version Android (depuis le 22 novembre 2026)
+- Toute nouvelle commande passe par une action d'entrée (`InputMap`) ; si le joueur doit pouvoir la faire au doigt, ajouter son bouton dans `BOUTONS` de `scripts/tactile.gd` (avec la situation où il est utile, dans `contexte()`) et une vérification dans `scripts/selftest_tactile.gd`.
+- Un message qui cite une touche l'écrit seule et en majuscule avec une tournure habituelle (« touche E », « avec E », « E : », « (Espace) », « E pour ») : il est converti tout seul au doigt. Pour une touche nouvelle, compléter `TOUCHES` et `nom_bouton()` dans `tactile.gd`, et la liste `TEXTES` du test.
+- Sur téléphone, les blocs posés directement dans le monde (enfants directs de `main`, faits par `box()` ou `cyl()`) sont regroupés au lancement (`scripts/fusion.gd`) : un bloc qu'on modifie après sa création doit être rangé sous un autre nœud, ou porter la méta `ne_pas_fusionner`.
+- Le jeu doit rester jouable au niveau « Bas » sur un téléphone d'entrée de gamme : pas de nouvel effet coûteux au niveau Bas.
+

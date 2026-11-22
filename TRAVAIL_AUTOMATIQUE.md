@@ -29,3 +29,4 @@ Tu es Claude et tu travailles seul sur le jeu Marina City (dépôt cotonou-city)
 - Écris `plan/journal/AAAA-MM-JJ-HHhMM.md` : ce qui est fait, ce qui bloque, ce que Bravo doit décider ou tester, tes choix.
 - Un commit par lot, message en français, puis `git pull --rebase` et `git push origin main`. En cas de conflit sur `taches.csv`, garde la version distante et réapplique tes statuts.
 - Chaque push sur `main` fabrique le .exe Windows (GitHub > Actions > dernier passage > « MarinaCity-Windows »).
+- Il fabrique aussi le .apk Android (« MarinaCity-Android »). Les commandes tactiles et la version Android suivent `docs/conventions.md` (section Android) et `docs/android.md`.

@@ -22,7 +22,7 @@ Tout l'écran d'accueil tient dans une fenêtre de 1280 × 720. Tous les menus s
 - Test : la circulation ne bouge pas pendant la pause ; « Sauvegarder » visible en pause seulement ; Entrée sur un autre bouton que « Reprendre » ne reprend pas le jeu.
 
 ## Options
-Quatre onglets : Graphismes, Audio, Touches, Manette. Chaque réglage agit tout de suite et est enregistré tout de suite dans `user://options.json` (pas de bouton « Appliquer »). Fichier absent ou abîmé : réglages d'origine. Valeur hors limites : ramenée dans ses limites.
+Cinq onglets : Graphismes, Audio, Touches, Manette, Tactile (voir `docs/systemes/commandes_tactiles.md`). Chaque réglage agit tout de suite et est enregistré tout de suite dans `user://options.json` (pas de bouton « Appliquer »). Fichier absent ou abîmé : réglages d'origine. Valeur hors limites : ramenée dans ses limites.
 
 ### Options graphiques
 - Niveau graphique : Bas (petits PC), Moyen, Élevé, Ultra ; d'origine Élevé. C'est le même réglage que F4 en jeu : changer l'un change l'autre, et le choix est gardé d'un lancement à l'autre.

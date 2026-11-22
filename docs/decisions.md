@@ -1,6 +1,6 @@
 # Décisions validées par Bravo
 
-Ce fichier fait foi : tout passage automatique doit le lire et le respecter. Les numéros sont ceux des propositions envoyées à Bravo. Dernière mise à jour : 16 novembre 2026.
+Ce fichier fait foi : tout passage automatique doit le lire et le respecter. Les numéros sont ceux des propositions envoyées à Bravo. Dernière mise à jour : 22 novembre 2026.
 
 ## Nom et cadre
 - 1. Le jeu s'appelle **« Marina City »** (titre affiché). À appliquer dans le jeu : écran d'accueil, nom de la fenêtre, nom du .exe.
@@ -137,7 +137,7 @@ Ce fichier fait foi : tout passage automatique doit le lire et le respecter. Les
 - 115. Sauvegarde automatique après chaque mission, plus 3 emplacements manuels.
 - 116. Trois difficultés : Tranquille, Normal, Corsé.
 - 117. Français seulement à la sortie ; anglais plus tard.
-- 118. Windows d'abord, Linux ensuite, pas de téléphone pour l'instant.
+- 118. Windows d'abord, Linux ensuite, pas de téléphone pour l'instant. **Remplacée le 22 novembre 2026 : Bravo demande une version Android (voir plus bas).**
 - 119. Première version publique gratuite : chapitre 1, quartiers Ganhi, Marina et Dantokpa.
 - 120. Les décisions validées sont consignées ici.
 
@@ -184,6 +184,25 @@ Ils restent modifiables sur simple demande ; détail dans `docs/systemes/monter_
 - Deux voitures garées sur cinq sont fermées à clé, ainsi qu'un conducteur sur trois dans la circulation (jamais les taxis). On ne force pas une portière.
 - On n'emprunte une voiture de la circulation que si elle est arrêtée ou presque (moins de 11 km/h). Décision 54 : le deuxième emprunt est compté comme un signalement, en attendant la police.
 - Les véhicules garés sont tournés dans le sens de la circulation.
+
+## Décisions du 22 novembre 2026 (version Android)
+Demande de Bravo : une version Android installable directement (.apk), pour arm64-v8a et armeabi-v7a, jouable au doigt sur un téléphone d'entrée de gamme (3 à 4 Go), en paysage, fabriquée par GitHub Actions à côté du .exe, sans changer la version Windows. Nom « Marina City », paquet `com.yard24.marinacity`. Clé de test seulement ; la publication sur le Play Store se fera plus tard avec Bravo. Détail : `docs/android.md` et `docs/systemes/commandes_tactiles.md`.
+
+Points tranchés par Claude ; ils restent modifiables sur simple demande :
+- Version minimale : **Android 5.0 (API 21)**, la plus basse que permettent les modèles d'export de Godot 4.3 avec le moteur « Compatibility », sans recompiler Godot. Pas de fabrication « Gradle ».
+- Les boutons tactiles appuient sur les mêmes actions d'entrée que le clavier : une seule logique de jeu.
+- Commandes tactiles affichées d'office sur téléphone et tablette seulement ; sur PC (même à écran tactile), seulement si l'option est cochée (Options > Tactile).
+- Manette virtuelle qui se centre sous le pouce. En véhicule, elle dirige ; elle n'accélère qu'au-delà de 55 % de sa course, l'accélérateur étant la pédale de droite.
+- Courir et S'accroupir s'allument d'un appui et s'éteignent au suivant (pas besoin de garder le doigt dessus).
+- Frein à main affiché au-dessus de 7 km/h ; klaxon affiché avec un passant à moins de 25 m ou un véhicule à moins de 30 m devant (décision 59 : klaxon peu utilisé).
+- Grands boutons de 11 mm visés, 9,5 mm au moins ; taille (70 à 150 %) et opacité réglables.
+- Bouton Retour d'Android = Échap (pause, reprise, retour dans un menu) ; il ne ferme jamais le jeu.
+- Arrière-plan : pause puis sauvegarde dans l'emplacement automatique ; rien depuis l'écran d'accueil.
+- Paysage dans les deux sens (le téléphone peut être retourné), jamais en portrait.
+- Sur téléphone : niveau graphique « Bas » au départ ; image 3D calculée sur 540 lignes au plus au niveau Bas puis agrandie ; décor fixe regroupé en morceaux de 64 m (même image, beaucoup moins d'objets à dessiner).
+- Clé de test gardée dans le cache de GitHub Actions (jamais dans le dépôt) pour que les nouvelles versions s'installent par-dessus les anciennes sans perdre les sauvegardes.
+- Icône provisoire originale : un zémidjan en chemise jaune et casque vert au coucher du soleil, sans texte ni logo.
+- Le test Windows refuse désormais toute ligne `SCRIPT ERROR`, comme le prévoyait déjà la procédure.
 
 ## Conséquences pour le plan
 - Les tâches « Combat — visée », « armes à feu » et « mise à couvert » ne concernent plus le joueur (décision 3).
