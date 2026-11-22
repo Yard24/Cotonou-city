@@ -1,5 +1,9 @@
 extends RefCounted
 # Affichage à l'écran : argent, santé, mission, aide, vitesse, mini-carte, écran d'accueil et de pause.
+# Les textes qui citent une touche passent par m.sys.adapter (au doigt : le bouton tactile).
+
+var l_aide: Label          # aide de l'écran d'accueil (remplacée au doigt par celle de tactile.gd)
+var aide_clavier := ""
 
 func build(m) -> void:
 	var layer := CanvasLayer.new()
@@ -95,6 +99,8 @@ func build(m) -> void:
 	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	help.text = "Flèches ou ZQSD : avancer, reculer, tourner\nE : monter sur une moto ou dans une voiture, en descendre\nÀ pied — Espace : sauter, monter sur un muret · Maj : courir · C : s'accroupir\nE : acheter, s'asseoir, lire un panneau · On nage en entrant dans la mer\nEn voiture — Espace : frein à main · H : klaxon · L : phares · J et K : clignotants · V : caméra\nÀ moto — Bas : freiner · Espace : frein arrière (virage serré) · H : klaxon · V : caméra\nZémidjan — arrête ta moto près d'un client qui lève le bras, M pour accepter sa course, puis conduis-le à la colonne bleue\nF4 : niveau graphique · F3 : images par seconde\nÉchap : pause"
 	vb.add_child(help)
+	l_aide = help
+	aide_clavier = help.text
 	m.menu_play = Button.new()
 	m.menu_play.add_theme_font_size_override("font_size", 30)
 	m.menu_play.custom_minimum_size = Vector2(360, 64)
@@ -110,7 +116,7 @@ func build(m) -> void:
 
 func update(m, delta: float) -> void:
 	m.l_money.text = "%d FCFA" % m.money
-	m.l_fps.text = "%d images/s · Graphismes : %s (F4)" % [Engine.get_frames_per_second(), m.QNAMES[m.quality]]
+	m.l_fps.text = m.sys.adapter("%d images/s · Graphismes : %s (F4)" % [Engine.get_frames_per_second(), m.QNAMES[m.quality]])
 	var hp: float = m.player.health / m.player.SANTE_MAX
 	m.hp_fill.size.x = 200.0 * hp
 	m.hp_fill.color = Color("e8112d") if hp < 0.3 else (Color("fcd116") if hp < 0.6 else Color("3fbf5a"))
@@ -146,7 +152,7 @@ func update(m, delta: float) -> void:
 	if m.info_t > 0.0:
 		m.info_t -= delta
 		t = m.info_text
-	m.l_hint.text = t
+	m.l_hint.text = m.sys.adapter(t)
 	if m.banner_t > 0.0:
 		m.banner_t -= delta
 		if m.banner_t <= 0.0:

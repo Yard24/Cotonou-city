@@ -3,10 +3,13 @@ extends RefCounted
 # (graphismes, audio, touches, manette). L'écran d'accueil lui-même est dans hud.gd.
 # Fonctionnement attendu : docs/systemes/menus.md et sauvegarde.md. Vérifications : selftest_menus.gd.
 
-const ONGLETS := ["Graphismes", "Audio", "Touches", "Manette"]
+const ONGLETS := ["Graphismes", "Audio", "Touches", "Manette", "Tactile"]
+const HAUTEUR_DOIGT := 76     # au doigt, boutons et lignes plus hauts (7 mm environ sur téléphone)
 const QUALITES := ["Bas (petits PC)", "Moyen", "Élevé", "Ultra"]
 
 var main
+var tactile = null          # tactile.gd : au doigt, textes sans touches et boutons plus grands
+var defile: ScrollContainer  # le contenu d'un panneau défile s'il ne tient pas à l'écran
 var sauvegarde
 var options
 var b_continuer: Button
@@ -68,7 +71,11 @@ func build(m, sauv, opt) -> void:
 	vb2.add_child(l_titre)
 	corps = VBoxContainer.new()
 	corps.add_theme_constant_override("separation", 8)
-	vb2.add_child(corps)
+	corps.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	defile = ScrollContainer.new()
+	defile.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	defile.add_child(corps)
+	vb2.add_child(defile)
 	l_message = m.label(20, Color("ffe27a"))
 	l_message.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	l_message.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -82,11 +89,18 @@ func build(m, sauv, opt) -> void:
 	capteur.gui_input.connect(_touche_recue)
 	racine.add_child(capteur)
 
+func au_doigt() -> bool:
+	return tactile != null and tactile.mode
+
+# Texte d'un menu : au doigt, sans les touches du clavier entre parenthèses.
+func _t(texte: String) -> String:
+	return tactile.adapter(texte) if tactile != null else texte
+
 func _bouton(texte: String, action: Callable, taille := 22) -> Button:
 	var b := Button.new()
-	b.text = texte
-	b.add_theme_font_size_override("font_size", taille)
-	b.custom_minimum_size = Vector2(360, 44)
+	b.text = _t(texte)
+	b.add_theme_font_size_override("font_size", taille + (4 if au_doigt() else 0))
+	b.custom_minimum_size = Vector2(360, HAUTEUR_DOIGT if au_doigt() else 44)
 	b.pressed.connect(action)
 	return b
 
@@ -150,6 +164,8 @@ func ouvrir(nom: String) -> void:
 		c.queue_free()
 	l_message.text = ""
 	b_retour.visible = nom != "confirmer"
+	b_retour.text = _t("Retour (Échap)")
+	b_retour.custom_minimum_size.y = HAUTEUR_DOIGT if au_doigt() else 44
 	match nom:
 		"sauver":
 			_ecran_emplacements(true)
@@ -157,8 +173,18 @@ func ouvrir(nom: String) -> void:
 			_ecran_emplacements(false)
 		"options":
 			_ecran_options()
+	_ajuster_defile()
 	if not boutons.is_empty() and racine.is_inside_tree():
 		boutons[0].grab_focus()
+
+# Le panneau garde sa taille habituelle ; seul un contenu trop haut pour l'écran défile.
+func _ajuster_defile() -> void:
+	var haut := corps.get_combined_minimum_size().y
+	var place := 720.0 - 230.0
+	if racine.is_inside_tree():
+		place = racine.get_viewport_rect().size.y - 230.0
+	defile.custom_minimum_size = Vector2(760, minf(haut, place))
+	defile.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO if haut > place else ScrollContainer.SCROLL_MODE_DISABLED
 
 func fermer() -> void:
 	ecran = ""
@@ -254,12 +280,13 @@ func _ecran_options() -> void:
 	corps.add_child(hb)
 	for i in ONGLETS.size():
 		var b := _ajoute_bouton(ONGLETS[i], choisir_onglet.bind(i), hb)
-		b.custom_minimum_size = Vector2(180, 44)
+		b.custom_minimum_size = Vector2(150, HAUTEUR_DOIGT if au_doigt() else 44)
 		b.disabled = i == onglet
 	match onglet:
 		0:
 			_choix("Niveau graphique (F4 en jeu)", QUALITES, options.v.qualite, func(i: int) -> void: options.regler(main, "qualite", i))
-			_coche("Plein écran", "plein_ecran")
+			if not OS.has_feature("mobile"):
+				_coche("Plein écran", "plein_ecran")   # sur téléphone, le jeu occupe toujours tout l'écran
 			_coche("Synchronisation verticale", "synchro")
 			var noms := []
 			for f in options.FPS_CHOIX:
@@ -308,6 +335,16 @@ func _ecran_options() -> void:
 					corps.add_child(l)
 				else:
 					g.add_child(l)
+		4:
+			_coche("Commandes tactiles même sans écran tactile (pour les essayer sur PC)", "tactile_force")
+			_curseur("Taille des boutons (%)", "tactile_taille", 70, 150, 10)
+			_curseur("Opacité des boutons (%)", "tactile_opacite", 20, 100, 10)
+			var note: Label = main.label(16, Color(1, 1, 1, 0.8))
+			note.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			note.custom_minimum_size = Vector2(760, 0)
+			note.text = "Sur un téléphone ou une tablette, les commandes tactiles s'affichent toujours. Sur PC, la souris joue le rôle d'un doigt."
+			corps.add_child(note)
 
 func choisir_onglet(i: int) -> void:
 	onglet = clampi(i, 0, ONGLETS.size() - 1)
@@ -316,15 +353,21 @@ func choisir_onglet(i: int) -> void:
 func _ligne(texte: String) -> HBoxContainer:
 	var hb := HBoxContainer.new()
 	hb.add_theme_constant_override("separation", 16)
-	var l: Label = main.label(20, Color.WHITE)
-	l.text = texte
+	var l: Label = main.label(20 + (4 if au_doigt() else 0), Color.WHITE)
+	l.text = _t(texte)
 	l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	if au_doigt():
+		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		l.custom_minimum_size = Vector2(380, HAUTEUR_DOIGT)
+		l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	hb.add_child(l)
 	corps.add_child(hb)
 	return hb
 
 func _coche(texte: String, cle: String) -> void:
 	var c := CheckButton.new()
+	if au_doigt():
+		c.custom_minimum_size = Vector2(110, HAUTEUR_DOIGT)
 	c.button_pressed = options.v[cle]
 	c.toggled.connect(func(on: bool) -> void: options.regler(main, cle, on))
 	_ligne(texte).add_child(c)
@@ -347,7 +390,7 @@ func _curseur(texte: String, cle: String, mini: int, maxi: int, pas: int) -> voi
 	s.max_value = maxi
 	s.step = pas
 	s.value = options.v[cle]
-	s.custom_minimum_size = Vector2(300, 24)
+	s.custom_minimum_size = Vector2(300, 48 if au_doigt() else 24)
 	var val: Label = main.label(20, Color.WHITE)
 	val.text = str(options.v[cle])
 	val.custom_minimum_size = Vector2(50, 0)

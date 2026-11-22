@@ -129,10 +129,10 @@ func _graphismes(m, mn, o) -> String:
 	m.open_menu("PAUSE", "Reprendre")
 	_presse(mn.b_options)
 	mn.choisir_onglet(0)
-	if mn.ecran != "options" or mn.boutons.size() != 4 + 5:
-		return "options graphiques : 4 onglets et 5 réglages attendus (%d)" % mn.boutons.size()
+	if mn.ecran != "options" or mn.boutons.size() != mn.ONGLETS.size() + 5:
+		return "options graphiques : %d onglets et 5 réglages attendus (%d)" % [mn.ONGLETS.size(), mn.boutons.size()]
 	# le réglage du menu agit tout de suite
-	(mn.boutons[4] as OptionButton).item_selected.emit(0)
+	(mn.boutons[mn.ONGLETS.size() + 0] as OptionButton).item_selected.emit(0)
 	if o.v.qualite != 0 or m.quality != 0 or m.sun.shadow_enabled or abs(m.get_viewport().scaling_3d_scale - 0.7) > 0.001:
 		return "options graphiques : le niveau Bas n'est pas appliqué"
 	o.regler(m, "qualite", 3)
@@ -147,7 +147,7 @@ func _graphismes(m, mn, o) -> String:
 	o.regler(m, "fps_max", 45)
 	if Engine.max_fps != 0:
 		return "options graphiques : limite inconnue acceptée"
-	(mn.boutons[8] as CheckButton).toggled.emit(false)
+	(mn.boutons[mn.ONGLETS.size() + 4] as CheckButton).toggled.emit(false)
 	if o.v.voir_fps or m.l_fps.visible:
 		return "options graphiques : le compteur d'images reste affiché"
 	o.regler(m, "plein_ecran", true)
@@ -178,13 +178,13 @@ func _graphismes(m, mn, o) -> String:
 
 func _audio(m, mn, o) -> String:
 	mn.choisir_onglet(1)
-	if mn.boutons.size() != 4 + 4:
+	if mn.boutons.size() != mn.ONGLETS.size() + 4:
 		return "options audio : 4 curseurs attendus"
 	for b in ["Master", "Musique", "Effets", "Voix"]:
 		if AudioServer.get_bus_index(b) < 0:
 			return "options audio : piste « %s » absente" % b
 	var mus := AudioServer.get_bus_index("Musique")
-	(mn.boutons[5] as HSlider).value = 50
+	(mn.boutons[mn.ONGLETS.size() + 1] as HSlider).value = 50
 	if o.v.vol_musique != 50 or abs(AudioServer.get_bus_volume_db(mus) + 6.02) > 0.05 or AudioServer.is_bus_mute(mus):
 		return "options audio : musique à 50 = %.1f dB (attendu -6)" % AudioServer.get_bus_volume_db(mus)
 	o.regler(m, "vol_musique", 0)
@@ -222,18 +222,18 @@ func _a(k: int) -> InputEventKey:
 
 func _touches(m, mn, o) -> String:
 	mn.choisir_onglet(2)
-	if mn.boutons.size() != 4 + o.ACTIONS.size() + 1:
+	if mn.boutons.size() != mn.ONGLETS.size() + o.ACTIONS.size() + 1:
 		return "touches : une ligne par action attendue"
 	if o.touches.horn != KEY_H or o.touches.up != KEY_W or o.touches.jump != KEY_SPACE or o.nom_touche(KEY_SPACE) != "Espace":
 		return "touches : touches d'origine inattendues"
 	# par le menu : on clique sur la touche du klaxon, puis on appuie sur G
-	_presse(mn.boutons[4 + 9])
+	_presse(mn.boutons[mn.ONGLETS.size() + 9])
 	if mn.capture != "horn":
 		return "touches : le menu n'attend pas la touche du klaxon"
 	mn._touche_recue(_a(KEY_G))
 	if mn.capture != "" or o.touches.horn != KEY_G or not InputMap.event_is_action(_a(KEY_G), "horn") or InputMap.event_is_action(_a(KEY_H), "horn"):
 		return "touches : le klaxon n'est pas passé sur G"
-	if mn.boutons[4 + 9].text != "G":
+	if mn.boutons[mn.ONGLETS.size() + 9].text != "G":
 		return "touches : le menu n'affiche pas la nouvelle touche"
 	mn.avale = false
 	# même touche pour une autre action du véhicule : les deux échangent
@@ -266,7 +266,7 @@ func _touches(m, mn, o) -> String:
 	o.lire()
 	if o.touches.horn != KEY_L or o.touches.up != KEY_T or o.touches.lights != KEY_G or not InputMap.event_is_action(_a(KEY_T), "up"):
 		return "touches : non relues au lancement"
-	_presse(mn.boutons[4 + o.ACTIONS.size()])
+	_presse(mn.boutons[mn.ONGLETS.size() + o.ACTIONS.size()])
 	if o.touches.horn != KEY_H or o.touches.up != KEY_W or o.touches.jump != KEY_SPACE or int(_fichier(o).touches.horn) != KEY_H:
 		return "touches : le bouton des touches d'origine ne remet pas tout"
 	for a in o.ACTIONS:
@@ -295,7 +295,7 @@ func _axe(axe: int, val: float) -> InputEventJoypadMotion:
 
 func _manette(m, mn, o) -> String:
 	mn.choisir_onglet(3)
-	if mn.boutons.size() != 4 + 3:
+	if mn.boutons.size() != mn.ONGLETS.size() + 3:
 		return "manette : 3 réglages attendus"
 	var attendu := [[_bouton(JOY_BUTTON_A), "jump"], [_bouton(JOY_BUTTON_A), "brake"], [_bouton(JOY_BUTTON_B), "crouch"], [_bouton(JOY_BUTTON_X), "run"],
 		[_bouton(JOY_BUTTON_Y), "enter"], [_bouton(JOY_BUTTON_START), "quit"], [_bouton(JOY_BUTTON_BACK), "cam"], [_bouton(JOY_BUTTON_LEFT_STICK), "horn"],
@@ -312,7 +312,7 @@ func _manette(m, mn, o) -> String:
 	var fond: float = _axe(JOY_AXIS_LEFT_X, -1.0).get_action_strength("left")
 	if _axe(JOY_AXIS_LEFT_X, -0.2).get_action_strength("left") != 0.0 or demi <= 0.2 or demi >= 0.8 or fond < 0.99:
 		return "manette : zone morte de 25 %% ou direction progressive incorrecte (%.2f, %.2f)" % [demi, fond]
-	(mn.boutons[6] as HSlider).value = 10
+	(mn.boutons[mn.ONGLETS.size() + 2] as HSlider).value = 10
 	if o.v.zone_morte != 10 or _axe(JOY_AXIS_LEFT_X, -0.2).get_action_strength("left") <= 0.0:
 		return "manette : la zone morte réglée à 10 % n'est pas appliquée"
 	o.regler(m, "zone_morte", 99)
@@ -332,11 +332,11 @@ func _manette(m, mn, o) -> String:
 	m.sys.affichage.step(m, DT)
 	if o.vibration.is_empty():
 		return "manette : pas de vibration quand le héros est blessé"
-	(mn.boutons[5] as CheckButton).toggled.emit(false)
+	(mn.boutons[mn.ONGLETS.size() + 1] as CheckButton).toggled.emit(false)
 	if o.v.vibrations or o.vibrer(40.0):
 		return "manette : vibrations coupées mais encore envoyées"
 	# manette désactivée : plus aucune commande ; réactivée : tout revient, sans doublon
-	(mn.boutons[4] as CheckButton).toggled.emit(false)
+	(mn.boutons[mn.ONGLETS.size() + 0] as CheckButton).toggled.emit(false)
 	for p in attendu:
 		if p[0].is_action_pressed(p[1]):
 			return "manette : désactivée, « %s » répond encore" % o.libelle(p[1])

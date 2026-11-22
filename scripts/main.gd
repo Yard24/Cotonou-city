@@ -56,6 +56,7 @@ var road_segs: Array = []
 var menu: Control
 var menu_title: Label
 var menu_play: Button
+var menu_play_texte := ""   # texte du bouton « Jouer » au clavier (adapté au doigt par sys.adapter)
 var minimap: Control
 var selftest := false
 var frames := 0
@@ -320,7 +321,8 @@ func _hud() -> void:
 
 func open_menu(title: String, play_text: String) -> void:
 	menu_title.text = title
-	menu_play.text = play_text
+	menu_play_texte = play_text
+	menu_play.text = sys.adapter(play_text)
 	menu.visible = true
 	for a in ["up", "down", "left", "right", "brake", "run", "jump", "crouch"]:
 		Input.action_release(a)
@@ -385,7 +387,7 @@ func focus_heading() -> float:
 func _set_mission() -> void:
 	if mission_i < missions.size():
 		var m: Dictionary = missions[mission_i]
-		l_mission.text = m.t
+		l_mission.text = sys.adapter(m.t)
 		marker.position = Vector3(m.x, 0, m.z)
 		marker.visible = true
 	else:
@@ -402,6 +404,12 @@ func _apply_quality() -> void:
 	sun.shadow_enabled = quality >= 1
 	sun.directional_shadow_max_distance = [0.0, 110.0, 180.0, 260.0][quality]
 	vp.scaling_3d_scale = [0.7, 1.0, 1.0, 1.0][quality]
+	if OS.has_feature("mobile"):
+		# téléphone : l'image 3D est calculée sur 540 à 1080 lignes au plus selon le niveau,
+		# puis agrandie ; les écrans très fins coûteraient trop cher au processeur graphique
+		var lignes: float = DisplayServer.window_get_size().y
+		if lignes > 0.0:
+			vp.scaling_3d_scale = clampf([540.0, 720.0, 900.0, 1080.0][quality] / lignes, 0.4, 1.0)
 	vp.msaa_3d = [Viewport.MSAA_DISABLED, Viewport.MSAA_DISABLED, Viewport.MSAA_2X, Viewport.MSAA_4X][quality]
 	cam.far = [260.0, 420.0, 600.0, 900.0][quality]
 	env.fog_density = [0.006, 0.0035, 0.0025, 0.0018][quality]

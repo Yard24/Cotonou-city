@@ -17,7 +17,12 @@ const DEFAUT := {
 	"manette": true,
 	"zone_morte": 25,       # en pourcentage de la course du manche
 	"vibrations": true,
+	"tactile_force": false,  # commandes tactiles même sans écran tactile (pour les essayer sur PC)
+	"tactile_taille": 100,   # taille des boutons tactiles, en pourcentage
+	"tactile_opacite": 70,   # opacité des boutons tactiles, en pourcentage
 }
+# Sur téléphone, le niveau graphique de départ est « Bas » (les autres restent au choix).
+const QUALITE_MOBILE := 0
 const FPS_CHOIX := [30, 60, 120, 0]
 const BUS := {"vol_general": "Master", "vol_musique": "Musique", "vol_effets": "Effets", "vol_voix": "Voix"}
 # Actions dont on peut changer la touche, dans l'ordre du menu.
@@ -56,7 +61,7 @@ var manette_posee := false
 
 # Appelé une fois au lancement, après la création des actions par main.gd.
 func build(m) -> void:
-	v = DEFAUT.duplicate()
+	v = defauts()
 	for a in ACTIONS:
 		var evs := InputMap.action_get_events(a[0])
 		touches_defaut[a[0]] = (evs[0] as InputEventKey).physical_keycode
@@ -73,6 +78,13 @@ func build(m) -> void:
 			AudioServer.set_bus_name(AudioServer.bus_count - 1, b)
 	lire()
 	appliquer(m)
+
+# Réglages de départ : ceux de DEFAUT, sauf le niveau graphique sur téléphone.
+static func defauts() -> Dictionary:
+	var d: Dictionary = DEFAUT.duplicate()
+	if OS.has_feature("mobile"):
+		d.qualite = QUALITE_MOBILE
+	return d
 
 # ---------------- fichier ----------------
 func lire() -> void:
@@ -118,6 +130,10 @@ func _borne(k: String, x):
 			return n if FPS_CHOIX.has(n) else 0
 		"zone_morte":
 			return clampi(n, 5, 60)
+		"tactile_taille":
+			return clampi(n, 70, 150)
+		"tactile_opacite":
+			return clampi(n, 20, 100)
 	return clampi(n, 0, 100)
 
 # Change un réglage, l'applique tout de suite et l'enregistre.
@@ -136,7 +152,8 @@ func appliquer(m) -> void:
 		m._apply_quality()
 	m.l_fps.visible = v.voir_fps
 	Engine.max_fps = v.fps_max
-	if not sans_ecran:
+	if not sans_ecran and not OS.has_feature("mobile"):
+		# (sur téléphone, le jeu occupe toujours tout l'écran)
 		# on ne touche à la fenêtre que pour entrer en plein écran ou en sortir
 		var plein := DisplayServer.window_get_mode() in [DisplayServer.WINDOW_MODE_FULLSCREEN, DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN]
 		if plein != v.plein_ecran:

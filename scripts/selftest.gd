@@ -6,6 +6,8 @@ const VoitureTest := preload("res://scripts/selftest_voiture.gd")
 const MotoTest := preload("res://scripts/selftest_moto.gd")
 const MotoVilleTest := preload("res://scripts/selftest_moto_ville.gd")
 const CirculationTest := preload("res://scripts/selftest_circulation.gd")
+const TactileTest := preload("res://scripts/selftest_tactile.gd")
+var tactile   # dernière partie : quelques secondes de vrai jeu au doigt
 var voiture
 var moto_ville
 var start := Vector3.ZERO
@@ -13,6 +15,14 @@ var max_y := 0.0
 var d_walk := 0.0
 
 func step(m) -> void:
+	if tactile != null:
+		var r: String = tactile.live(m)
+		if r == "OK":
+			print("SELFTEST OK")
+			m.get_tree().quit(0)
+		elif r != "":
+			_fail(m, r)
+		return
 	var f: int = m.frames
 	var pl = m.player
 	max_y = max(max_y, pl.global_position.y)
@@ -301,8 +311,7 @@ func _step2(m, f: int, pl) -> void:
 		if e != "":
 			_fail(m, e)
 			return
-		print("SELFTEST OK")
-		m.get_tree().quit(0)
+		tactile = TactileTest.new()   # SELFTEST OK sera écrit à la fin de cette partie
 
 # Interactions : étal d'eau, banc, panneau. Tout se fait dans la même image.
 func _interactions(m, pl) -> void:
